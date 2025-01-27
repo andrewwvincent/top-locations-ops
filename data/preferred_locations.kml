@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="preferred">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="other">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/blue-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <name>Victorium</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Victorium</h3>
+        <p><strong>Address:</strong> 9219 E Hidden Spur Trail, Scottsdale, AZ 85255</p>
+        <p><strong>Region:</strong> Scottsdale</p>
+        <p><strong>Phone:</strong> 14802647089</p>
+        <p><strong>Website:</strong> <a href="http://www.victorium.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-111.883004,33.644079</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Asphalt Green - Battery Park City</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Asphalt Green - Battery Park City</h3>
+        <p><strong>Address:</strong> 212 N End Ave New York, NY 10282</p>
+        <p><strong>Region:</strong> New York</p>
+        <p><strong>Phone:</strong> (212) 298-2900</p>
+        <p><strong>Website:</strong> <a href="asphaltgreen.org" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-74.014816,40.71603</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Asphalt Green - Upper East Side campus</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Asphalt Green - Upper East Side campus</h3>
+        <p><strong>Address:</strong> 555 E 90th St, New York, NY 10128</p>
+        <p><strong>Region:</strong> New York</p>
+        <p><strong>Phone:</strong> 12123698890</p>
+        <p><strong>Website:</strong> <a href="http://www.asphaltgreen.org/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-73.943487,40.778151</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Globall Sports Centers - Brooklyn</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Globall Sports Centers - Brooklyn</h3>
+        <p><strong>Address:</strong> 1561 Bedford Ave, Brooklyn, NY 11225</p>
+        <p><strong>Region:</strong> Brooklyn</p>
+        <p><strong>Phone:</strong> 19297772672</p>
+        <p><strong>Website:</strong> <a href="http://globallsportscenters.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-73.955307,40.668753</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Swell Athletic Club</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Swell Athletic Club</h3>
+        <p><strong>Address:</strong> 5800 Cathedral Oaks Rd, Goleta, CA 93117</p>
+        <p><strong>Region:</strong> Santa Barbara</p>
+        <p><strong>Phone:</strong> 18059647762</p>
+        <p><strong>Website:</strong> <a href="http://coac.swellclubs.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-119.824488,34.45275</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Life Time Greenway</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Life Time Greenway</h3>
+        <p><strong>Address:</strong> 1 Healthy Way, Houston, TX 77046</p>
+        <p><strong>Region:</strong> Houston</p>
+        <p><strong>Phone:</strong> 12819167300</p>
+        <p><strong>Website:</strong> <a href="https://www.lifetime.life/locations/tx/greenway.html" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.435,29.7313</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lake Nona Performance Club</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Lake Nona Performance Club</h3>
+        <p><strong>Address:</strong> 6775 Chopra Ter, Orlando, FL 32827</p>
+        <p><strong>Region:</strong> Orlando</p>
+        <p><strong>Phone:</strong> 14072165672</p>
+        <p><strong>Website:</strong> <a href="https://www.lakenonaperformanceclub.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-81.281563,28.371333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dr. P. Phillips YMCA Family Center</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Dr. P. Phillips YMCA Family Center</h3>
+        <p><strong>Address:</strong> 7000 Dr Phillips Blvd, Orlando, FL 32819</p>
+        <p><strong>Region:</strong> Orlando</p>
+        <p><strong>Phone:</strong> 14073519417</p>
+        <p><strong>Website:</strong> <a href="https://ymcacf.org/locations/drphillips/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-81.492533,28.46018</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Club at Cheval</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>The Club at Cheval</h3>
+        <p><strong>Address:</strong> 4312 Cheval Blvd, Lutz, FL 33558</p>
+        <p><strong>Region:</strong> Tampa</p>
+        <p><strong>Phone:</strong> 813-279-5122</p>
+        <p><strong>Website:</strong> <a href="https://playcheval.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-82.50266,28.14367</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>South Tampa Family YMCA</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>South Tampa Family YMCA</h3>
+        <p><strong>Address:</strong> ​4411 S Himes Ave, Tampa, FL 33611</p>
+        <p><strong>Region:</strong> Tampa</p>
+        <p><strong>Phone:</strong> 18138390210</p>
+        <p><strong>Website:</strong> <a href="http://tampaymca.org/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-82.50262,27.90184</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Den Sports Facility</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>The Den Sports Facility</h3>
+        <p><strong>Address:</strong> 17120 House an Hahl Rd, Cypress, TX 77433</p>
+        <p><strong>Region:</strong> Houston</p>
+        <p><strong>Phone:</strong> 18322638408</p>
+        <p><strong>Website:</strong> <a href="http://thedensports.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.710772,29.959999</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Villa Sport - Katy</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Villa Sport - Katy</h3>
+        <p><strong>Address:</strong> 9930 Gaston Rd, Katy, TX 77494</p>
+        <p><strong>Region:</strong> Houston</p>
+        <p><strong>Phone:</strong> 13463222468</p>
+        <p><strong>Website:</strong> <a href="https://www.villasport.com/cinco-ranch/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.81173,29.737707</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crossover Athletics, LLC</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Crossover Athletics, LLC</h3>
+        <p><strong>Address:</strong> 815 Summer Park Dr, Stafford, TX 77477</p>
+        <p><strong>Region:</strong> Houston</p>
+        <p><strong>Phone:</strong> 18325396188</p>
+        <p><strong>Website:</strong> <a href="http://www.crossoverathletics.net/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.569703,29.606875</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Campo Family YMCA</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Campo Family YMCA</h3>
+        <p><strong>Address:</strong> 3414 Culbreath Rd, Valrico, FL 33596</p>
+        <p><strong>Region:</strong> Tampa</p>
+        <p><strong>Phone:</strong> 18136841371</p>
+        <p><strong>Website:</strong> <a href="https://www.tampaymca.org/locations/campo-family-ymca" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-82.247796,27.892706</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Palm Beach Atlantic University - Greene Complex for Sports and Recreation</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Palm Beach Atlantic University - Greene Complex for Sports and Recreation</h3>
+        <p><strong>Address:</strong> 1100 S Dixie Hwy, West Palm Beach, FL 33403</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        <p><strong>Phone:</strong> 15618032334</p>
+        <p><strong>Website:</strong> <a href="https://www.pba.edu/campus-life/recreation/greene-athletic-campus.html" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.053359,26.703481</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Life Time - Downtown Palm Beach Gardens</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Life Time - Downtown Palm Beach Gardens</h3>
+        <p><strong>Address:</strong> 11825 Lake Victoria Gardens Ave, Palm Beach Gardens, FL 33410</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        <p><strong>Phone:</strong> 15613522700</p>
+        <p><strong>Website:</strong> <a href="https://www.lifetime.life/locations/fl/palm-beach-gardens?utm_source=google&utm_medium=local&utm_campaign=google-local-club" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.0948,26.85013</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Aspen Recreation Center</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Aspen Recreation Center</h3>
+        <p><strong>Address:</strong> 0861 Maroon Creek Rd, Aspen, CO 81611</p>
+        <p><strong>Region:</strong> Aspen</p>
+        <p><strong>Phone:</strong> 19705444100</p>
+        <p><strong>Website:</strong> <a href="http://www.aspenrecreation.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-106.850859,39.189359</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>25 E Mason St</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>25 E Mason St</h3>
+        <p><strong>Address:</strong> 25 E Mason St, Santa Barbara, CA 93101</p>
+        <p><strong>Region:</strong> Santa Barbara</p>
+        <p><strong>Phone:</strong> 805-705-1149</p>
+        <p><strong>Website:</strong> <a href="https://www.loopnet.com/Listing/25-E-Mason-St-Santa-Barbara-CA/29269336/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-119.689804,34.413956</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>SBCC</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>SBCC</h3>
+        <p><strong>Address:</strong> 721 Cliff Dr, Santa Barbara, CA 93109</p>
+        <p><strong>Region:</strong> Santa Barbara</p>
+        <p><strong>Phone:</strong> 18059650581</p>
+        <p><strong>Website:</strong> <a href="http://www.sbcc.edu/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-119.697459,34.4063</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ocotillo Village Health Club and Spa</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Ocotillo Village Health Club and Spa</h3>
+        <p><strong>Address:</strong> 4200 S Alma School Rd, Chandler, AZ 85248</p>
+        <p><strong>Region:</strong> Phoenix</p>
+        <p><strong>Phone:</strong> 14806560045</p>
+        <p><strong>Website:</strong> <a href="http://villageclubs.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-111.866733,33.244825</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Life Time - Happy Valley - Peoria</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Life Time - Happy Valley - Peoria</h3>
+        <p><strong>Address:</strong> 24700 N 67th Ave, Peoria, AZ 85383</p>
+        <p><strong>Region:</strong> Phoenix</p>
+        <p><strong>Phone:</strong> 16232593400</p>
+        <p><strong>Website:</strong> <a href="https://www.lifetime.life/locations/az/happy-valley-peoria.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-112.204345,33.708486</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
