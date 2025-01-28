@@ -29,38 +29,72 @@ function initializeMap() {
         center: config.center,
         zoom: config.zoom
     });
-    
-    // Customize the map style after load
+
+    // Wait for map style to load before customizing
     map.on('style.load', () => {
         // Add custom layers and styling
-        map.setPaintProperty('water', 'fill-color', '#b3e0ff');  // Lighter blue water
+        if (map.getLayer('water')) {
+            map.setPaintProperty('water', 'fill-color', '#b3e0ff');  // Lighter blue water
+        }
         
         // Style parks and green areas with more vibrant colors
-        map.setPaintProperty('landuse', 'fill-color', [
-            'match',
-            ['get', 'class'],
-            'park', '#a8e6a8',  // Soft green for parks
-            'cemetery', '#c8e6c8',  // Lighter green for cemeteries
-            'hospital', '#ffd6a5',  // Soft orange for hospitals
-            'school', '#e6c3e6',  // Soft purple for schools
-            'commercial', '#f0f0f0',  // Light gray for commercial areas
-            'residential', '#ffffff',  // White for residential areas
-            '#f8f8f8'  // Default light gray
-        ]);
+        const landuseLayers = [
+            'landuse-residential',
+            'landuse-commercial',
+            'landuse-park',
+            'landuse-cemetery',
+            'landuse-hospital',
+            'landuse-school'
+        ];
+
+        landuseLayers.forEach(layer => {
+            if (map.getLayer(layer)) {
+                map.setPaintProperty(layer, 'fill-color', [
+                    'match',
+                    ['get', 'class'],
+                    'park', '#a8e6a8',  // Soft green for parks
+                    'cemetery', '#c8e6c8',  // Lighter green for cemeteries
+                    'hospital', '#ffd6a5',  // Soft orange for hospitals
+                    'school', '#e6c3e6',  // Soft purple for schools
+                    'commercial', '#f0f0f0',  // Light gray for commercial areas
+                    'residential', '#ffffff',  // White for residential areas
+                    '#f8f8f8'  // Default light gray
+                ]);
+            }
+        });
 
         // Style buildings with a subtle color
-        map.setPaintProperty('building', 'fill-color', '#f5f5f5');
-        map.setPaintProperty('building', 'fill-opacity', 0.8);
-        map.setPaintProperty('building', 'fill-outline-color', '#e0e0e0');
+        if (map.getLayer('building')) {
+            map.setPaintProperty('building', 'fill-color', '#f5f5f5');
+            map.setPaintProperty('building', 'fill-opacity', 0.8);
+            map.setPaintProperty('building', 'fill-outline-color', '#e0e0e0');
+        }
 
         // Add more contrast to roads
-        map.setPaintProperty('road-primary', 'line-color', '#e3e3e3');
-        map.setPaintProperty('road-secondary', 'line-color', '#ebebeb');
-        map.setPaintProperty('road-street', 'line-color', '#f0f0f0');
+        const roadLayers = [
+            'road-primary',
+            'road-secondary',
+            'road-street',
+            'road-minor'
+        ];
+
+        roadLayers.forEach(layer => {
+            if (map.getLayer(layer)) {
+                map.setPaintProperty(layer, 'line-color', '#e3e3e3');
+            }
+        });
 
         // Make water labels more visible
-        map.setPaintProperty('water-point-label', 'text-color', '#4a90e2');
-        map.setPaintProperty('water-line-label', 'text-color', '#4a90e2');
+        const waterLabels = [
+            'water-point-label',
+            'water-line-label'
+        ];
+
+        waterLabels.forEach(layer => {
+            if (map.getLayer(layer)) {
+                map.setPaintProperty(layer, 'text-color', '#4a90e2');
+            }
+        });
 
         // Load location points after style is loaded
         loadLocationPoints();
@@ -242,12 +276,28 @@ async function loadCity(cityName) {
         const bounds = new mapboxgl.LngLatBounds();
         geoJSON.features.forEach(feature => {
             if (feature.geometry && feature.geometry.coordinates) {
-                feature.geometry.coordinates[0].forEach(coord => {
-                    bounds.extend(coord);
-                });
+                // Handle both Polygon and MultiPolygon
+                if (feature.geometry.type === 'Polygon') {
+                    feature.geometry.coordinates[0].forEach(coord => {
+                        bounds.extend(coord);
+                    });
+                } else if (feature.geometry.type === 'MultiPolygon') {
+                    feature.geometry.coordinates.forEach(polygon => {
+                        polygon[0].forEach(coord => {
+                            bounds.extend(coord);
+                        });
+                    });
+                }
             }
         });
-        map.fitBounds(bounds, { padding: 50 });
+        
+        // Only fit bounds if we have valid coordinates
+        if (!bounds.isEmpty()) {
+            map.fitBounds(bounds, { 
+                padding: 50,
+                maxZoom: 13  // Prevent zooming in too close
+            });
+        }
 
         // Apply filters immediately after loading
         validateAndApplyFilters();
@@ -331,20 +381,43 @@ function processPlacemark(placemark) {
 // Function to extract kids count from KML placemark
 function extractKidsCount(placemark) {
     const counts = {};
-    const dataElements = placemark.getElementsByTagName('data');
     
-    for (let i = 0; i < dataElements.length; i++) {
-        const dataElement = dataElements[i];
-        const name = dataElement.getAttribute('name');
-        if (name === 'kids_250k' || name === 'kids_500k') {
-            counts[name] = parseInt(dataElement.textContent) || 0;
+    // Try to get count from description element first
+    const descElement = placemark.getElementsByTagName('description')[0];
+    if (descElement) {
+        const desc = descElement.textContent;
+        if (desc.includes('Kids')) {
+            // Extract the number from descriptions like "1500+ Kids" or "<500 Kids"
+            const match = desc.match(/([<>]?\d+)[\+]?\s*Kids/);
+            if (match) {
+                const value = match[1];
+                if (value.startsWith('<')) {
+                    counts.kids_250k = parseInt(value.substring(1));
+                    counts.kids_500k = parseInt(value.substring(1));
+                } else {
+                    counts.kids_250k = parseInt(value);
+                    counts.kids_500k = parseInt(value);
+                }
+            }
+        }
+    }
+    
+    // Fallback to data elements if no description found
+    if (!counts.kids_250k && !counts.kids_500k) {
+        const dataElements = placemark.getElementsByTagName('data');
+        for (let i = 0; i < dataElements.length; i++) {
+            const dataElement = dataElements[i];
+            const name = dataElement.getAttribute('name');
+            const value = parseInt(dataElement.textContent);
+            
+            if (name === 'kids_250k') counts.kids_250k = value;
+            if (name === 'kids_500k') counts.kids_500k = value;
         }
     }
     
     return counts;
 }
 
-// Function to update visible categories
 function updateVisibleCategories() {
     // Get all checked categories
     const visible250k = [];
@@ -838,7 +911,12 @@ async function loadLocationPoints() {
 
         // Process preferred locations
         console.log('Processing preferred locations...');
-        Array.from(preferredKml.getElementsByTagName('Placemark')).forEach(placemark => {
+        const placemarks = preferredKml.getElementsByTagName('Placemark');
+        console.log(`Found ${placemarks.length} preferred locations`);
+        
+        Array.from(placemarks).forEach((placemark, index) => {
+            console.log(`Processing placemark ${index + 1}:`, placemark);
+            
             const pointElem = placemark.getElementsByTagName('Point')[0];
             if (!pointElem) {
                 console.warn('No Point element found in placemark:', placemark);
@@ -855,14 +933,45 @@ async function loadLocationPoints() {
                 return;
             }
 
-            const nameElem = placemark.getElementsByTagName('n')[0];
-            const name = nameElem ? nameElem.textContent : '';
+            // Extract name - first try 'name' tag, then 'n' tag
+            let name;
+            const nameElem = placemark.getElementsByTagName('name')[0] || placemark.getElementsByTagName('n')[0];
+            if (nameElem) {
+                name = nameElem.textContent.trim();
+                console.log(`Found name for location ${index + 1}:`, name);
+            } else {
+                console.warn(`No name found for location ${index + 1}`);
+                // Try to get name from description
+                const descElem = placemark.getElementsByTagName('description')[0];
+                if (descElem) {
+                    const descText = descElem.textContent;
+                    const h3Match = descText.match(/<h3>(.*?)<\/h3>/);
+                    if (h3Match) {
+                        name = h3Match[1].trim();
+                        console.log(`Extracted name from description for location ${index + 1}:`, name);
+                    }
+                }
+            }
+            
             const descElem = placemark.getElementsByTagName('description')[0];
             const description = descElem ? descElem.textContent : '';
 
+            // Create custom marker element
+            const el = document.createElement('div');
+            el.className = 'location-marker preferred';
+
+            // Add label if name exists
+            if (name) {
+                console.log(`Adding label for ${name}`);
+                const label = document.createElement('div');
+                label.className = 'marker-label';
+                label.textContent = name;
+                el.appendChild(label);
+            }
+
             // Create marker
             const marker = new mapboxgl.Marker({
-                color: '#28a745'  // Green
+                element: el
             })
             .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])]);
 
@@ -875,9 +984,10 @@ async function loadLocationPoints() {
 
             marker.setPopup(popup);
             marker.addTo(map);
+
             preferredMarkers.push(marker);
         });
-
+        
         // Process other locations
         console.log('Processing other locations...');
         Array.from(otherKml.getElementsByTagName('Placemark')).forEach(placemark => {
@@ -902,9 +1012,13 @@ async function loadLocationPoints() {
             const descElem = placemark.getElementsByTagName('description')[0];
             const description = descElem ? descElem.textContent : '';
 
+            // Create custom marker element
+            const el = document.createElement('div');
+            el.className = 'location-marker other';
+
             // Create marker
             const marker = new mapboxgl.Marker({
-                color: '#fd7e14'  // Orange
+                element: el
             })
             .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])]);
 

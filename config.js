@@ -22,6 +22,10 @@ const config = {
             file: "data/Bay Area Demographics_Demographics_Dynamic.kml"
         },
         {
+            name: "Boston",
+            file: "data/Boston_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
             name: "Charleston",
             file: "data/Charleston Demographics_Demographics_Dynamic.kml"
         },
@@ -50,28 +54,68 @@ const config = {
             file: "data/Houston Demographics_Demographics_Dynamic.kml"
         },
         {
-            name: "NYC - 10 Mins",
+            name: "Irvine",
+            file: "data/Irvine_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
+            name: "Jacksonville",
+            file: "data/Jacksonville_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
+            name: "Las Vegas",
+            file: "data/Las_Vegas_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
+            name: "Minneapolis",
+            file: "data/Minneapolis_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
+            name: "NYC",
             file: "data/NYC_-_10_Mins_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
         },
         {
-            name: "NYC - 20 Mins",
-            file: "data/NYC_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            name: "Nashville",
+            file: "data/Nashville_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
         },
         {
             name: "Orlando",
             file: "data/Orlando Demographics_Demographics_Dynamic.kml"
         },
         {
+            name: "Pasadena",
+            file: "data/Pasadena_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
             name: "Phoenix",
             file: "data/Phoenix Demographics_Demographics_Dynamic.kml"
+        },
+        {
+            name: "Sacramento",
+            file: "data/Sacramento_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
+            name: "Salt Lake City",
+            file: "data/Salt_Lake_City_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
         },
         {
             name: "Santa Barbara",
             file: "data/Santa Barbara Demographics_Demographics_Dynamic.kml"
         },
         {
+            name: "Santa Monica",
+            file: "data/Santa_Monica_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
+            name: "Seattle",
+            file: "data/Seattle_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
             name: "Tampa",
             file: "data/Tampa Demographics_Demographics_Dynamic.kml"
+        },
+        {
+            name: "Washington DC",
+            file: "data/Washington_DC_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
         },
         {
             name: "West Palm Beach",
