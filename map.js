@@ -273,7 +273,6 @@ async function loadCity(cityName) {
                 source: 'demographics',
                 paint: {
                     'fill-color': 'rgba(0, 0, 0, 0)',
-                    'fill-opacity': 0.7,
                     'fill-outline-color': 'rgba(0, 0, 0, 0)'
                 }
             });
@@ -462,10 +461,7 @@ function updateVisibleCategories() {
             '#ff0000'      // Default red
         ];
 
-        const opacityExpression = 0.4;
-
         map.setPaintProperty('demographics', 'fill-color', colorExpression);
-        map.setPaintProperty('demographics', 'fill-opacity', opacityExpression);
     }
 }
 
@@ -572,8 +568,6 @@ function applyFiltersToMap(filters) {
 
     // Update the layer's paint properties
     map.setPaintProperty('demographics', 'fill-color', colorExpr);
-    map.setPaintProperty('demographics', 'fill-opacity', 0.7);
-    map.setPaintProperty('demographics', 'fill-outline-color', 'rgba(0, 0, 0, 0)');
 }
 
 function resetBucketValues() {
