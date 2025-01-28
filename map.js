@@ -485,7 +485,7 @@ function validateAndApplyFilters() {
                 const colorBox = category.querySelector('.color-box');
                 const minInput = category.querySelector('.range-min');
                 const maxInput = category.querySelector('.range-max');
-
+                
                 if (colorBox) {
                     filters.income250k.push({
                         min: parseInt(minInput?.value) || 0,
@@ -506,7 +506,7 @@ function validateAndApplyFilters() {
                 const colorBox = category.querySelector('.color-box');
                 const minInput = category.querySelector('.range-min');
                 const maxInput = category.querySelector('.range-max');
-
+                
                 if (colorBox) {
                     filters.income500k.push({
                         min: parseInt(minInput?.value) || 0,
@@ -594,6 +594,21 @@ function resetBucketValues() {
 }
 
 function setupEventListeners() {
+    // Add collapse button listener
+    const collapseBtn = document.getElementById('collapse-btn');
+    const sidebar = document.querySelector('.sidebar');
+    
+    collapseBtn.addEventListener('click', function() {
+        const willCollapse = !sidebar.classList.contains('collapsed');
+        sidebar.classList.toggle('collapsed');
+        this.innerHTML = willCollapse ? '<' : 'X';
+        
+        // Force map resize after transition
+        setTimeout(() => {
+            map.resize();
+        }, 300);
+    });
+
     // Store checkbox states for each income group
     const checkboxStates = new Map();
 

@@ -5,8 +5,12 @@ body {
 }
 
 .container {
-    display: flex;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
 }
 
 .sidebar {
@@ -15,18 +19,67 @@ body {
     top: 0;
     bottom: 0;
     left: 0;
-    overflow-y: auto;
     background: #fff;
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.sidebar-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     padding: 15px;
-    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    width: 50px;
+}
+
+.sidebar.collapsed .sidebar-content {
+    display: none;
+}
+
+.collapse-btn {
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    width: 20px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 0 3px rgba(0,0,0,0.1);
+}
+
+.collapse-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar.collapsed .collapse-btn {
+    transform: translateX(-20px) rotate(180deg);
 }
 
 #map {
     position: absolute;
     top: 0;
-    bottom: 0;
     right: 0;
-    width: calc(100% - 300px);
+    bottom: 0;
+    left: 300px;
+    transition: left 0.3s ease;
+}
+
+.sidebar.collapsed ~ #map {
+    left: 50px;
 }
 
 .heading {
@@ -667,7 +720,7 @@ body {
     }
     
     #map {
-        width: calc(100% - 200px);
+        left: 200px;
     }
 }
 
