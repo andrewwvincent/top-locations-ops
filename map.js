@@ -19,6 +19,16 @@ const defaultColors = [
     '#6600cc'   // Purple
 ];
 
+// Default bucket ranges
+const defaultBucketRanges = [
+    { min: 1500, max: Infinity, label: '1500+' },
+    { min: 1250, max: 1500, label: '1250-1500' },
+    { min: 1000, max: 1250, label: '1000-1250' },
+    { min: 750, max: 1000, label: '750-1000' },
+    { min: 500, max: 750, label: '500-750' },
+    { min: 0, max: 500, label: '0-500' }
+];
+
 // Initialize the map
 function initializeMap() {
     mapboxgl.accessToken = config.accessToken;
@@ -566,6 +576,29 @@ function applyFiltersToMap(filters) {
     map.setPaintProperty('demographics', 'fill-outline-color', 'rgba(0, 0, 0, 0)');
 }
 
+function resetBucketValues() {
+    const bucketRows = document.querySelectorAll('.bucket-row');
+    
+    bucketRows.forEach((row, index) => {
+        const minInput = row.querySelector('.range-min');
+        const maxInput = row.querySelector('.range-max');
+        
+        if (minInput && maxInput) {
+            minInput.value = defaultBucketRanges[index].min;
+            if (defaultBucketRanges[index].max === Infinity) {
+                maxInput.value = '';
+                maxInput.placeholder = 'No limit';
+            } else {
+                maxInput.value = defaultBucketRanges[index].max;
+            }
+        }
+    });
+    
+    // Update filters and apply changes
+    updateFilterRanges();
+    validateAndApplyFilters();
+}
+
 function setupEventListeners() {
     // Store checkbox states for each income group
     const checkboxStates = new Map();
@@ -575,6 +608,7 @@ function setupEventListeners() {
     const editBucketsForm = document.getElementById('edit-buckets-form');
     const applyBucketsBtn = document.getElementById('apply-buckets');
     const cancelBucketsBtn = document.getElementById('cancel-buckets');
+    const resetBucketsBtn = document.getElementById('reset-buckets');
 
     editBucketsBtn.addEventListener('click', () => {
         editBucketsForm.classList.remove('hidden');
@@ -583,6 +617,9 @@ function setupEventListeners() {
     cancelBucketsBtn.addEventListener('click', () => {
         editBucketsForm.classList.add('hidden');
     });
+
+    // Add reset button event listener
+    resetBucketsBtn.addEventListener('click', resetBucketValues);
 
     // Handle bucket range inputs
     const bucketRows = document.querySelectorAll('.bucket-row');
