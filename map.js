@@ -6,7 +6,7 @@ let visibleCategories = [];
 
 // Global variables for locations
 let allLocations = null;
-let locations = { preferred: [], other: [] };
+let locations = { preferred: [], other: [], family: [] };
 let locationMarkers = [];
 
 // Default colors for buckets
@@ -760,6 +760,11 @@ function setupEventListeners() {
         e.preventDefault();
         validateAndApplyFilters();
     });
+
+    // Add location filter listeners
+    document.getElementById('preferred-locations').addEventListener('change', updateMarkerVisibility);
+    document.getElementById('other-locations').addEventListener('change', updateMarkerVisibility);
+    document.getElementById('family-locations').addEventListener('change', updateMarkerVisibility);
 }
 
 function updateFilterRanges() {
@@ -926,192 +931,128 @@ function updateCityStats(geoJSON) {
 // Load location points from KML files
 async function loadLocationPoints() {
     try {
+        // Clear existing markers
+        locationMarkers.forEach(marker => marker.remove());
+        locationMarkers = [];
+        
+        // Reset locations
+        locations = {
+            preferred: [],
+            other: [],
+            family: []
+        };
+
         // Wait for map style to load
         if (!map.isStyleLoaded()) {
             await new Promise(resolve => map.once('style.load', resolve));
         }
 
-        console.log('Loading preferred locations...');
-        // Load preferred locations
-        const preferredResponse = await fetch('data/preferred_locations.kml');
-        if (!preferredResponse.ok) {
-            throw new Error(`Failed to load preferred locations: ${preferredResponse.status} ${preferredResponse.statusText}`);
-        }
-        const preferredText = await preferredResponse.text();
-        console.log('Preferred locations loaded, parsing XML...');
-        const preferredKml = new DOMParser().parseFromString(preferredText, 'text/xml');
+        // Load KML files
+        const preferredKml = await fetch('data/preferred_locations.kml').then(res => res.text()).then(text => new DOMParser().parseFromString(text, 'text/xml'));
+        const otherKml = await fetch('data/other_locations.kml').then(res => res.text()).then(text => new DOMParser().parseFromString(text, 'text/xml'));
+        const familyKml = await fetch('data/family_locations.kml').then(res => res.text()).then(text => new DOMParser().parseFromString(text, 'text/xml'));
+
+        // Process locations
+        processLocations(preferredKml, 'preferred', '#FF0000');
+        processLocations(otherKml, 'other', '#0000FF');
+        processLocations(familyKml, 'family', '#00FF00');
+
+        // Update visibility
+        updateMarkerVisibility();
         
-        console.log('Loading other locations...');
-        // Load other locations
-        const otherResponse = await fetch('data/other_locations.kml');
-        if (!otherResponse.ok) {
-            throw new Error(`Failed to load other locations: ${otherResponse.status} ${otherResponse.statusText}`);
-        }
-        const otherText = await otherResponse.text();
-        console.log('Other locations loaded, parsing XML...');
-        const otherKml = new DOMParser().parseFromString(otherText, 'text/xml');
-
-        // Arrays to store markers
-        let preferredMarkers = [];
-        let otherMarkers = [];
-
-        // Process preferred locations
-        console.log('Processing preferred locations...');
-        const placemarks = preferredKml.getElementsByTagName('Placemark');
-        console.log(`Found ${placemarks.length} preferred locations`);
-        
-        Array.from(placemarks).forEach((placemark, index) => {
-            console.log(`Processing placemark ${index + 1}:`, placemark);
-            
-            const pointElem = placemark.getElementsByTagName('Point')[0];
-            if (!pointElem) {
-                console.warn('No Point element found in placemark:', placemark);
-                return;
-            }
-            const coordsElem = pointElem.getElementsByTagName('coordinates')[0];
-            if (!coordsElem) {
-                console.warn('No coordinates found in Point:', pointElem);
-                return;
-            }
-            const coords = coordsElem.textContent.trim().split(',');
-            if (coords.length < 2) {
-                console.warn('Invalid coordinates:', coords);
-                return;
-            }
-
-            // Extract name - first try 'name' tag, then 'n' tag
-            let name;
-            const nameElem = placemark.getElementsByTagName('name')[0] || placemark.getElementsByTagName('n')[0];
-            if (nameElem) {
-                name = nameElem.textContent.trim();
-                console.log(`Found name for location ${index + 1}:`, name);
-            } else {
-                console.warn(`No name found for location ${index + 1}`);
-                // Try to get name from description
-                const descElem = placemark.getElementsByTagName('description')[0];
-                if (descElem) {
-                    const descText = descElem.textContent;
-                    const h3Match = descText.match(/<h3>(.*?)<\/h3>/);
-                    if (h3Match) {
-                        name = h3Match[1].trim();
-                        console.log(`Extracted name from description for location ${index + 1}:`, name);
-                    }
-                }
-            }
-            
-            const descElem = placemark.getElementsByTagName('description')[0];
-            const description = descElem ? descElem.textContent : '';
-
-            // Create custom marker element
-            const el = document.createElement('div');
-            el.className = 'location-marker preferred';
-
-            // Add label if name exists
-            if (name) {
-                console.log(`Adding label for ${name}`);
-                const label = document.createElement('div');
-                label.className = 'marker-label';
-                label.textContent = name;
-                el.appendChild(label);
-            }
-
-            // Create marker
-            const marker = new mapboxgl.Marker({
-                element: el
-            })
-            .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])]);
-
-            // Add popup
-            const popup = new mapboxgl.Popup({
-                offset: 25,
-                maxWidth: '300px'
-            })
-            .setHTML(description);
-
-            marker.setPopup(popup);
-            marker.addTo(map);
-
-            preferredMarkers.push(marker);
-        });
-        
-        // Process other locations
-        console.log('Processing other locations...');
-        Array.from(otherKml.getElementsByTagName('Placemark')).forEach(placemark => {
-            const pointElem = placemark.getElementsByTagName('Point')[0];
-            if (!pointElem) {
-                console.warn('No Point element found in placemark:', placemark);
-                return;
-            }
-            const coordsElem = pointElem.getElementsByTagName('coordinates')[0];
-            if (!coordsElem) {
-                console.warn('No coordinates found in Point:', pointElem);
-                return;
-            }
-            const coords = coordsElem.textContent.trim().split(',');
-            if (coords.length < 2) {
-                console.warn('Invalid coordinates:', coords);
-                return;
-            }
-
-            const nameElem = placemark.getElementsByTagName('n')[0];
-            const name = nameElem ? nameElem.textContent : '';
-            const descElem = placemark.getElementsByTagName('description')[0];
-            const description = descElem ? descElem.textContent : '';
-
-            // Create custom marker element
-            const el = document.createElement('div');
-            el.className = 'location-marker other';
-
-            // Create marker
-            const marker = new mapboxgl.Marker({
-                element: el
-            })
-            .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])]);
-
-            // Add popup
-            const popup = new mapboxgl.Popup({
-                offset: 25,
-                maxWidth: '300px'
-            })
-            .setHTML(description);
-
-            marker.setPopup(popup);
-            marker.addTo(map);
-            
-            // Hide other markers by default
-            const markerElement = marker.getElement();
-            markerElement.style.display = 'none';
-            
-            otherMarkers.push(marker);
-        });
-
-        console.log(`Created ${preferredMarkers.length} preferred markers and ${otherMarkers.length} other markers`);
-
-        // Set up event listeners for the checkboxes
-        console.log('Setting up event listeners...');
-        document.getElementById('preferred-locations').addEventListener('change', (e) => {
-            preferredMarkers.forEach(marker => {
-                const markerElement = marker.getElement();
-                markerElement.style.display = e.target.checked ? 'block' : 'none';
-            });
-        });
-
-        document.getElementById('other-locations').addEventListener('change', (e) => {
-            otherMarkers.forEach(marker => {
-                const markerElement = marker.getElement();
-                markerElement.style.display = e.target.checked ? 'block' : 'none';
-            });
-        });
-
-        // Store markers in global variables for access in other functions
-        window.preferredMarkers = preferredMarkers;
-        window.otherMarkers = otherMarkers;
-
-        console.log('Location points setup complete!');
     } catch (error) {
         console.error('Error loading location points:', error);
-        console.error('Stack trace:', error.stack);
     }
+}
+
+function processLocations(kml, type, color) {
+    const placemarks = kml.getElementsByTagName('Placemark');
+    Array.from(placemarks).forEach(placemark => {
+        const pointElem = placemark.getElementsByTagName('Point')[0];
+        if (!pointElem) return;
+        
+        const coordsElem = pointElem.getElementsByTagName('coordinates')[0];
+        if (!coordsElem) return;
+        
+        const coords = coordsElem.textContent.trim().split(',');
+        if (coords.length < 2) return;
+
+        // Get name and description
+        const nameElem = placemark.getElementsByTagName('name')[0] || placemark.getElementsByTagName('n')[0];
+        const name = nameElem ? nameElem.textContent.trim() : '';
+        const descElem = placemark.getElementsByTagName('description')[0];
+        const description = descElem ? descElem.textContent : '';
+
+        // Create marker element
+        const el = document.createElement('div');
+        el.className = `location-marker ${type}`;
+
+        // Add label only for preferred locations
+        if (name && type === 'preferred') {
+            const label = document.createElement('div');
+            label.className = 'marker-label';
+            label.textContent = name;
+            el.appendChild(label);
+        }
+
+        // Create marker
+        const marker = new mapboxgl.Marker({
+            element: el,
+            color: color
+        })
+        .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])]);
+
+        // Add popup
+        if (description) {
+            const popup = new mapboxgl.Popup({
+                offset: 25,
+                maxWidth: '300px'
+            })
+            .setHTML(description);
+            marker.setPopup(popup);
+        }
+
+        // Add to map and store
+        marker.addTo(map);
+        locations[type].push({
+            longitude: parseFloat(coords[0]),
+            latitude: parseFloat(coords[1]),
+            name,
+            description
+        });
+        locationMarkers.push(marker);
+
+        // Hide non-preferred markers by default
+        if (type !== 'preferred') {
+            marker.getElement().style.display = 'none';
+        }
+    });
+}
+
+function updateMarkerVisibility() {
+    const preferredVisible = document.getElementById('preferred-locations').checked;
+    const otherVisible = document.getElementById('other-locations').checked;
+    const familyVisible = document.getElementById('family-locations').checked;
+
+    let currentIndex = 0;
+    
+    // Update preferred markers
+    locations.preferred.forEach(() => {
+        locationMarkers[currentIndex].getElement().style.display = preferredVisible ? 'block' : 'none';
+        currentIndex++;
+    });
+
+    // Update other markers
+    locations.other.forEach(() => {
+        locationMarkers[currentIndex].getElement().style.display = otherVisible ? 'block' : 'none';
+        currentIndex++;
+    });
+
+    // Update family markers
+    locations.family.forEach(() => {
+        locationMarkers[currentIndex].getElement().style.display = familyVisible ? 'block' : 'none';
+        currentIndex++;
+    });
 }
 
 // Initialize the map when the page loads

@@ -458,6 +458,12 @@ body {
     
 }
 
+.location-marker.family {
+    background-color: #279f46;
+    border: 2px solid white;
+    
+}
+
 .marker-label {
     position: absolute;
     left: 50%;

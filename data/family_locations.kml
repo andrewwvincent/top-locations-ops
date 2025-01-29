@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="preferred">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="other">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/blue-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <name>2001</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2001</h3>
+        <p><strong>Address:</strong> 32963</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.355757,27.650584</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2002</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2002</h3>
+        <p><strong>Address:</strong> 33067</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.229992,26.286619</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2003</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2003</h3>
+        <p><strong>Address:</strong> 33323</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.318415,26.145273</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2004</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2004</h3>
+        <p><strong>Address:</strong> 33326</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.38143,26.096892</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2005</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2005</h3>
+        <p><strong>Address:</strong> 33328</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.252276,26.062882</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2006</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2006</h3>
+        <p><strong>Address:</strong> 33405</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.062571,26.690541</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2007</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2007</h3>
+        <p><strong>Address:</strong> 33411</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.229366,26.703627</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2008</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2008</h3>
+        <p><strong>Address:</strong> 33415</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.112476,26.646963</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2009</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2009</h3>
+        <p><strong>Address:</strong> 33434</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.1734,26.368004</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2010</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2010</h3>
+        <p><strong>Address:</strong> 33444</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.073103,26.461647</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2011</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2011</h3>
+        <p><strong>Address:</strong> 33449</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.2047,26.619116</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2012</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2012</h3>
+        <p><strong>Address:</strong> 33458</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.094116,26.934079</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2013</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2013</h3>
+        <p><strong>Address:</strong> 33467</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.145977,26.631876</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2014</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2014</h3>
+        <p><strong>Address:</strong> 33470</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.30452,26.755866</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2015</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2015</h3>
+        <p><strong>Address:</strong> 33477</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.093591,26.934262</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2016</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2016</h3>
+        <p><strong>Address:</strong> 33478</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.17798,26.937703</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2017</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2017</h3>
+        <p><strong>Address:</strong> 33480</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.036503,26.70222</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2018</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2018</h3>
+        <p><strong>Address:</strong> 33486</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.137412,26.361545</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2019</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>2019</h3>
+        <p><strong>Address:</strong> 33496</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        
+        
+        <p><strong>Type:</strong> Preferred Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.121872,26.411858</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
