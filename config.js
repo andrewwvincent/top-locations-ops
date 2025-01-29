@@ -18,6 +18,10 @@ const config = {
             file: "data/Atlanta Demographics_Demographics_Dynamic.kml"
         },
         {
+            name: "Austin",
+            file: "data/Austin_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
             name: "Bay Area",
             file: "data/Bay Area Demographics_Demographics_Dynamic.kml"
         },
@@ -66,6 +70,10 @@ const config = {
             file: "data/Las_Vegas_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
         },
         {
+            name: "Los Angeles",
+            file: "data/Los_Angeles_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
             name: "Minneapolis",
             file: "data/Minneapolis_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
         },
@@ -96,6 +104,10 @@ const config = {
         {
             name: "Salt Lake City",
             file: "data/Salt_Lake_City_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+        },
+        {
+            name: "San Diego",
+            file: "data/San_Diego_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
         },
         {
             name: "Santa Barbara",
