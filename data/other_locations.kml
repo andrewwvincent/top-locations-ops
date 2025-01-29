@@ -1170,5 +1170,35 @@
         <coordinates>-112.392022,33.637228</coordinates>
       </Point>
     </Placemark>
+    <Placemark>
+      <name>Midtown Athletic Club</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Midtown Athletic Club</h3>
+        <p><strong>Address:</strong> 2300 Royal Palm Blvd, Weston, FL 33326</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        <p><strong>Phone:</strong> 19548331282</p>
+        <p><strong>Website:</strong> <a href="https://www.midtown.com/locations/weston/?utm_source=google&utm_medium=organic&utm_campaign=WES_GMB_Listing" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.380378,26.090338</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Peter Blum Family YMCA of Boca Raton</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Peter Blum Family YMCA of Boca Raton</h3>
+        <p><strong>Address:</strong> 6631 Palmetto Cir S, Boca Raton, FL 33433</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        <p><strong>Phone:</strong> 15613959622</p>
+        <p><strong>Website:</strong> <a href="http://www.ymcaspbc.org/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.14827,26.352621</coordinates>
+      </Point>
+    </Placemark>
   </Document>
 </kml>

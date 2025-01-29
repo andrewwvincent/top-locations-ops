@@ -330,5 +330,50 @@
         <coordinates>-112.204345,33.708486</coordinates>
       </Point>
     </Placemark>
+    <Placemark>
+      <name>Pembroke Pines YMCA Family Center</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Pembroke Pines YMCA Family Center</h3>
+        <p><strong>Address:</strong> 501 SW 172nd Ave, Pembroke Pines, FL 33029</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        <p><strong>Phone:</strong> 19547279622</p>
+        <p><strong>Website:</strong> <a href="https://ymcasouthflorida.org/location/pembroke-pines-ymca-family-center/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.375702,26.003671</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Weston YMCA Family Center</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Weston YMCA Family Center</h3>
+        <p><strong>Address:</strong> 20201 Saddle Club Rd, Weston, FL 33327</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        <p><strong>Phone:</strong> 19544249622</p>
+        <p><strong>Website:</strong> <a href="https://ymcasouthflorida.org/location/weston-ymca-family-center/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.417927,26.104831</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Pick A Ball Sports Complex</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Pick A Ball Sports Complex</h3>
+        <p><strong>Address:</strong> 3650 SW 10th St, Deerfield Beach, FL 33442</p>
+        <p><strong>Region:</strong> West Palm Beach</p>
+        <p><strong>Phone:</strong> 19545311875</p>
+        <p><strong>Website:</strong> <a href="http://pickaballcourts.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-80.15376,26.303029</coordinates>
+      </Point>
+    </Placemark>
   </Document>
 </kml>

@@ -119,7 +119,7 @@ const config = {
         },
         {
             name: "West Palm Beach",
-            file: "data/West_Palm_Beach_Demographics_-_South_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/West_Palm_Beach_Demographics_-_West_Demographics_Dynamic.kml"
         }
     ],
     defaultColors: {
