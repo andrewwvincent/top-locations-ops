@@ -444,42 +444,37 @@ body {
 }
 
 .location-marker.preferred {
-    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e72121" width="40" height="40"><path d="M12 0C7.31 0 3.5 3.81 3.5 8.5c0 5.94 8.5 15.5 8.5 15.5s8.5-9.56 8.5-15.5C20.5 3.81 16.69 0 12 0zm0 11.5c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg>');
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40"><path stroke="black" stroke-width="1" fill="%23e72121" d="M12 0C7.31 0 3.5 3.81 3.5 8.5c0 5.94 8.5 15.5 8.5 15.5s8.5-9.56 8.5-15.5C20.5 3.81 16.69 0 12 0zm0 11.5c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg>');
     width: 40px;
     height: 40px;
-    border-radius: 0;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .location-marker.other {
     background-color: #0026ff;
     border: 2px solid white;
-    
 }
 
 .location-marker.family {
     background-color: #279f46;
     border: 2px solid white;
-    
 }
 
 .marker-label {
     position: absolute;
     left: 50%;
-    bottom: 100%;
     transform: translateX(-50%);
-    margin-bottom: 5px;
-    background-color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 14px;
+    top: -20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
     white-space: nowrap;
-    color: #e72121;
-    font-weight: bold;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    z-index: 1;
     pointer-events: none;
+    display: none;  /* Hidden by default */
+}
+
+.marker-label.visible {
+    display: block;
 }
 
 /* Location Filter Styles */
@@ -820,4 +815,31 @@ body {
 
 .other-marker .mapboxgl-marker {
     color: #fd7e14;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.filter-row label {
+    margin-right: auto;
+    margin-left: 8px;
+}
+
+.label-toggle {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.label-toggle.active {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #45a049;
 }

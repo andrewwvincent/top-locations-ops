@@ -46,18 +46,24 @@
                 </div>
 
                 <!-- Location Filters -->
-                <div class="location-filters">
-                    <div class="filter-item">
-                        <input type="checkbox" id="preferred-locations" checked>
-                        <label for="preferred-locations">Preferred Locations</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="other-locations">
-                        <label for="other-locations">Other Locations</label>
-                    </div>
-                    <div class="filter-item">
-                        <input type="checkbox" id="family-locations">
-                        <label for="family-locations">Family Locations</label>
+                <div class="filter-section">
+                    <h3>Location Filters</h3>
+                    <div class="filter-group">
+                        <div class="filter-row">
+                            <input type="checkbox" id="preferred-locations" checked>
+                            <label for="preferred-locations">Preferred Locations</label>
+                            <button id="preferred-labels-toggle" class="label-toggle">Labels Off</button>
+                        </div>
+                        <div class="filter-row">
+                            <input type="checkbox" id="other-locations">
+                            <label for="other-locations">Other Locations</label>
+                            <button id="other-labels-toggle" class="label-toggle">Labels Off</button>
+                        </div>
+                        <div class="filter-row">
+                            <input type="checkbox" id="family-locations">
+                            <label for="family-locations">Family Locations</label>
+                            <button id="family-labels-toggle" class="label-toggle">Labels Off</button>
+                        </div>
                     </div>
                 </div>
 

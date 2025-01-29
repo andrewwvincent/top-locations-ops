@@ -339,7 +339,7 @@
         <p><strong>Region:</strong> West Palm Beach</p>
         <p><strong>Phone:</strong> 19547279622</p>
         <p><strong>Website:</strong> <a href="https://ymcasouthflorida.org/location/pembroke-pines-ymca-family-center/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-80.375702,26.003671</coordinates>
@@ -354,7 +354,7 @@
         <p><strong>Region:</strong> West Palm Beach</p>
         <p><strong>Phone:</strong> 19544249622</p>
         <p><strong>Website:</strong> <a href="https://ymcasouthflorida.org/location/weston-ymca-family-center/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-80.417927,26.104831</coordinates>
@@ -369,10 +369,160 @@
         <p><strong>Region:</strong> West Palm Beach</p>
         <p><strong>Phone:</strong> 19545311875</p>
         <p><strong>Website:</strong> <a href="http://pickaballcourts.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-80.15376,26.303029</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sports Academy</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Sports Academy</h3>
+        <p><strong>Address:</strong> 1011 Rancho Conejo Blvd, Thousand Oaks, CA 91320</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 18445187246</p>
+        <p><strong>Website:</strong> <a href="https://sportsacademy.us/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.923927,34.193205</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>1st Place Sports Complex</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>1st Place Sports Complex</h3>
+        <p><strong>Address:</strong> 9400 Penfield Ave, Chatsworth, CA 91311</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 18182806410</p>
+        <p><strong>Website:</strong> <a href="https://www.1stplacesportscomplex.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.569023,34.241138</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Academy USA</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Academy USA</h3>
+        <p><strong>Address:</strong> 1219 Los Angeles St, Glendale, CA 91204</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 18182456200</p>
+        <p><strong>Website:</strong> <a href="https://www.academyusa.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.263887,34.13188</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>JHoops - Basketball at J Los Angeles</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>JHoops - Basketball at J Los Angeles</h3>
+        <p><strong>Address:</strong> 5870 W Olympic Blvd, Los Angeles, CA 90036</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 13235565203</p>
+        <p><strong>Website:</strong> <a href="https://thejla.org/jhoops" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.359138,34.05702</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Griffin Club Los Angeles</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Griffin Club Los Angeles</h3>
+        <p><strong>Address:</strong> 3084 Motor Ave, Los Angeles, CA 90064</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 13108364400</p>
+        <p><strong>Website:</strong> <a href="http://www.griffinclubla.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.410186,34.034202</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bay Club El Segundo</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Bay Club El Segundo</h3>
+        <p><strong>Address:</strong> 2250 Park Pl, El Segundo, CA 90245</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 13106436878</p>
+        <p><strong>Website:</strong> <a href="https://www.bayclubs.com/elsegundo/?utm_source=Chatmeter&utm_medium=Google&utm_campaign=ClubPage&utm_content=ElSegundoCH" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.38385,33.904431</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bay Club Redondo Beach</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Bay Club Redondo Beach</h3>
+        <p><strong>Address:</strong> 819 N Harbor Dr, Redondo Beach, CA 90277</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 13103769443</p>
+        <p><strong>Website:</strong> <a href="https://www.bayclubs.com/redondobeach/?utm_source=Chatmeter&utm_medium=Google&utm_campaign=ClubPage&utm_content=RedondoBeachCH" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.396272,33.849595</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Harbor House Athletic Club</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Harbor House Athletic Club</h3>
+        <p><strong>Address:</strong> 921 S Beacon St Ground Floor, San Pedro, CA 90731</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 13237625752</p>
+        <p><strong>Website:</strong> <a href="https://hhac.la/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.28061,33.73561</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Los Cab Sports Village</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Los Cab Sports Village</h3>
+        <p><strong>Address:</strong> 17272 Newhope St, Fountain Valley, CA 92708</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> (714) 546-8560 ext 200</p>
+        <p><strong>Website:</strong> <a href="http://www.loscab.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.924515,33.714</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Momentous Sports Center</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Momentous Sports Center</h3>
+        <p><strong>Address:</strong> 14522 Myford Rd, Irvine, CA 92606</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 17143897900</p>
+        <p><strong>Website:</strong> <a href="http://momentoussportscenter.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.802796,33.714219</coordinates>
       </Point>
     </Placemark>
   </Document>

@@ -1179,7 +1179,7 @@
         <p><strong>Region:</strong> West Palm Beach</p>
         <p><strong>Phone:</strong> 19548331282</p>
         <p><strong>Website:</strong> <a href="https://www.midtown.com/locations/weston/?utm_source=google&utm_medium=organic&utm_campaign=WES_GMB_Listing" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-80.380378,26.090338</coordinates>
@@ -1194,10 +1194,115 @@
         <p><strong>Region:</strong> West Palm Beach</p>
         <p><strong>Phone:</strong> 15613959622</p>
         <p><strong>Website:</strong> <a href="http://www.ymcaspbc.org/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-80.14827,26.352621</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Royal Basketball School Encino</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Royal Basketball School Encino</h3>
+        <p><strong>Address:</strong> 15739 Ventura Blvd, Encino, CA 91436</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 17473183704</p>
+        <p><strong>Website:</strong> <a href="https://royalbasketballschool.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-118.476639,34.15589</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>PickUp USA Fitness Irwindale</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>PickUp USA Fitness Irwindale</h3>
+        <p><strong>Address:</strong> 2387 Buena Vista St, Irwindale, CA 91010</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 16265577241</p>
+        <p><strong>Website:</strong> <a href="https://www.pickupusafitness.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.980482,34.120884</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Claremont Club</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>The Claremont Club</h3>
+        <p><strong>Address:</strong> 1777 Monte Vista Ave, Claremont, CA 91711</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 19096256791</p>
+        <p><strong>Website:</strong> <a href="https://www.claremontclub.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.699421,34.114463</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sofive Soccer Centers Upland (Upland Arena)</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Sofive Soccer Centers Upland (Upland Arena)</h3>
+        <p><strong>Address:</strong> 1721 W 11th St, Upland, CA 91786</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 19099857903</p>
+        <p><strong>Website:</strong> <a href="https://www.sofive.com/locations/upland" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.684672,34.104366</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>TOCA Soccer Center Costa Mesa</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>TOCA Soccer Center Costa Mesa</h3>
+        <p><strong>Address:</strong> 2777 Bristol St # A, Costa Mesa, CA 92626</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 17143618990</p>
+        <p><strong>Website:</strong> <a href="https://www.tocafootball.com/centers/costamesa" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.889689,33.674208</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Life Time - Laguna Niguel</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Life Time - Laguna Niguel</h3>
+        <p><strong>Address:</strong> 25600 Rancho Niguel Rd, Laguna Niguel, CA 92677</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 19492382700</p>
+        <p><strong>Website:</strong> <a href="https://www.lifetime.life/locations/ca/laguna-niguel.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.683531,33.556749</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rancho Sports Center</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Rancho Sports Center</h3>
+        <p><strong>Address:</strong> 28780 Single Oak Dr STE 100, Temecula, CA 92590</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 19512654695</p>
+        
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.161428,33.499398</coordinates>
       </Point>
     </Placemark>
   </Document>

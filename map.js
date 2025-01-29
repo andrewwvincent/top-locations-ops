@@ -9,6 +9,13 @@ let allLocations = null;
 let locations = { preferred: [], other: [], family: [] };
 let locationMarkers = [];
 
+// Add label toggle state
+let labelToggles = {
+    preferred: false,
+    other: false,
+    family: false
+};
+
 // Default colors for buckets
 const defaultColors = [
     '#ff0000',  // Red
@@ -765,6 +772,28 @@ function setupEventListeners() {
     document.getElementById('preferred-locations').addEventListener('change', updateMarkerVisibility);
     document.getElementById('other-locations').addEventListener('change', updateMarkerVisibility);
     document.getElementById('family-locations').addEventListener('change', updateMarkerVisibility);
+
+    // Add label toggle functionality
+    document.getElementById('preferred-labels-toggle').addEventListener('click', function() {
+        labelToggles.preferred = !labelToggles.preferred;
+        this.textContent = labelToggles.preferred ? 'Labels On' : 'Labels Off';
+        this.classList.toggle('active');
+        updateLabelVisibility();
+    });
+
+    document.getElementById('other-labels-toggle').addEventListener('click', function() {
+        labelToggles.other = !labelToggles.other;
+        this.textContent = labelToggles.other ? 'Labels On' : 'Labels Off';
+        this.classList.toggle('active');
+        updateLabelVisibility();
+    });
+
+    document.getElementById('family-labels-toggle').addEventListener('click', function() {
+        labelToggles.family = !labelToggles.family;
+        this.textContent = labelToggles.family ? 'Labels On' : 'Labels Off';
+        this.classList.toggle('active');
+        updateLabelVisibility();
+    });
 }
 
 function updateFilterRanges() {
@@ -987,8 +1016,8 @@ function processLocations(kml, type, color) {
         const el = document.createElement('div');
         el.className = `location-marker ${type}`;
 
-        // Add label only for preferred locations
-        if (name && type === 'preferred') {
+        // Always add label if name exists, but initially hidden
+        if (name) {
             const label = document.createElement('div');
             label.className = 'marker-label';
             label.textContent = name;
@@ -1051,6 +1080,40 @@ function updateMarkerVisibility() {
     // Update family markers
     locations.family.forEach(() => {
         locationMarkers[currentIndex].getElement().style.display = familyVisible ? 'block' : 'none';
+        currentIndex++;
+    });
+}
+
+function updateLabelVisibility() {
+    let currentIndex = 0;
+    
+    // Update preferred markers
+    locations.preferred.forEach(() => {
+        const markerEl = locationMarkers[currentIndex].getElement();
+        const label = markerEl.querySelector('.marker-label');
+        if (label) {
+            label.classList.toggle('visible', labelToggles.preferred);
+        }
+        currentIndex++;
+    });
+
+    // Update other markers
+    locations.other.forEach(() => {
+        const markerEl = locationMarkers[currentIndex].getElement();
+        const label = markerEl.querySelector('.marker-label');
+        if (label) {
+            label.classList.toggle('visible', labelToggles.other);
+        }
+        currentIndex++;
+    });
+
+    // Update family markers
+    locations.family.forEach(() => {
+        const markerEl = locationMarkers[currentIndex].getElement();
+        const label = markerEl.querySelector('.marker-label');
+        if (label) {
+            label.classList.toggle('visible', labelToggles.family);
+        }
         currentIndex++;
     });
 }
