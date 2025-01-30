@@ -136,23 +136,80 @@ function initializeMap() {
         populateCityDropdown();
         setupEventListeners();
         
-        // Apply URL parameters first
+        // Get URL parameters first
+        const params = getUrlParameters();
+        
+        // Apply locations
         applyLocationsFromUrl();
         
-        // Apply filters and buckets in the correct order
-        const params = getUrlParameters();
-        const filter250k = params.filter250k;
-        const filter500k = params.filter500k;
-        
         // First apply buckets which will set up the ranges
-        applyBucketsFromUrl();
-        
-        // Then apply the filter states if they exist
-        if (validateFilterParam(filter250k) || validateFilterParam(filter500k)) {
-            applyFiltersFromUrl();
-        } else {
-            // If no filter states in URL, update them based on the current bucket states
+        if (validateBucketParam(params.buckets)) {
+            // Apply buckets but don't validate/apply filters yet
+            const buckets = params.buckets;
+            const matches = buckets.match(/^(\d+)A(\d+)B(\d+)C(\d+)D(\d+)E(\d+)F$/);
+            const values = [
+                parseInt(matches[1]), // A
+                parseInt(matches[2]), // B
+                parseInt(matches[3]), // C
+                parseInt(matches[4]), // D
+                parseInt(matches[5]), // E
+                parseInt(matches[6])  // F
+            ];
+
+            // Apply values to bucket inputs
+            const bucketRows = document.querySelectorAll('.bucket-row');
+            bucketRows.forEach((row, index) => {
+                if (index < values.length) {
+                    const minInput = row.querySelector('.range-min');
+                    const maxInput = row.querySelector('.range-max');
+                    
+                    // Set min value
+                    if (minInput) {
+                        minInput.value = values[index];
+                    }
+                    
+                    // Set max value
+                    if (maxInput) {
+                        if (index === 0) {
+                            maxInput.value = '';
+                            maxInput.placeholder = 'No limit';
+                        } else if (index < values.length) {
+                            // Max value is the next bucket's min value minus 1
+                            maxInput.value = values[index - 1] - 1;
+                        }
+                    }
+                }
+            });
+            
+            // Update ranges but don't apply filters yet
             updateFilterRanges();
+        }
+        
+        // Set default filter states if no URL parameters
+        if (!validateFilterParam(params.filter250k) && !validateFilterParam(params.filter500k)) {
+            // Set default states - 250k unchecked, 500k checked
+            const parent250k = document.querySelector('#income250k-parent');
+            const parent500k = document.querySelector('#income500k-parent');
+            const checkboxes250k = document.querySelectorAll('#income250k-categories .category-checkbox');
+            const checkboxes500k = document.querySelectorAll('#income500k-categories .category-checkbox');
+            
+            if (parent250k) {
+                parent250k.checked = false;
+                checkboxes250k.forEach(checkbox => {
+                    checkbox.disabled = true;
+                });
+            }
+            
+            if (parent500k) {
+                parent500k.checked = true;
+                checkboxes500k.forEach(checkbox => {
+                    checkbox.disabled = false;
+                });
+            }
+        }
+        // Then apply filter states from URL if they exist
+        else {
+            applyFiltersFromUrl();
         }
         
         // Finally validate and apply all filters
@@ -458,6 +515,9 @@ function applyBucketsFromUrl() {
             }
         }
     });
+
+    // Just update the ranges, don't apply filters
+    updateFilterRanges();
 }
 
 // Load the list of available cities
