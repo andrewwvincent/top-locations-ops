@@ -897,32 +897,6 @@ function setupEventListeners() {
         });
     });
 
-    // Handle category header clicks
-    document.querySelectorAll('.category-header').forEach(header => {
-        header.addEventListener('click', function(e) {
-            // Don't toggle if clicking checkbox
-            if (e.target.matches('.category-checkbox')) {
-                return;
-            }
-            // Prevent range inputs from showing
-            e.preventDefault();
-            e.stopPropagation();
-        });
-    });
-
-    // Handle income header clicks
-    document.querySelectorAll('.income-header').forEach(header => {
-        header.addEventListener('click', function(e) {
-            // Don't toggle if clicking checkbox
-            if (e.target.matches('.parent-checkbox')) {
-                return;
-            }
-            // Prevent range inputs from showing
-            e.preventDefault();
-            e.stopPropagation();
-        });
-    });
-
     // Add location filter listeners
     document.getElementById('preferred-locations').addEventListener('change', function() {
         updateMarkerVisibility();

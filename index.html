@@ -299,10 +299,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Handle category label clicks
             document.querySelectorAll('.category-label').forEach(label => {
-                label.addEventListener('click', function() {
-                    const rangeInputs = this.closest('.category-item').querySelector('.range-inputs');
-                    rangeInputs.classList.toggle('hidden');
-                });
+                // Remove click handler that shows range inputs
             });
         });
     </script>
