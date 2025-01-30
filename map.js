@@ -135,6 +135,27 @@ function initializeMap() {
     map.on('load', () => {
         populateCityDropdown();
         setupEventListeners();
+        
+        // Apply URL parameters first
+        applyLocationsFromUrl();
+        
+        // Apply filters and buckets in the correct order
+        const params = getUrlParameters();
+        const filter250k = params.filter250k;
+        const filter500k = params.filter500k;
+        
+        // First apply buckets which will set up the ranges
+        applyBucketsFromUrl();
+        
+        // Then apply the filter states if they exist
+        if (validateFilterParam(filter250k) || validateFilterParam(filter500k)) {
+            applyFiltersFromUrl();
+        } else {
+            // If no filter states in URL, update them based on the current bucket states
+            updateFilterRanges();
+        }
+        
+        // Finally validate and apply all filters
         validateAndApplyFilters();
     });
 }
@@ -191,7 +212,8 @@ function getUrlParameters() {
         city: params.get('city'),
         locations: params.get('locations') || '100000',
         filter250k: params.get('filter250k') || '0111110',  // Default: parent off, first 5 buckets checked
-        filter500k: params.get('filter500k') || '1111110'   // Default: parent on, all but last bucket
+        filter500k: params.get('filter500k') || '1111110',  // Default: parent on, all but last bucket
+        buckets: params.get('buckets') || '1500A1250B1000C750D500E0F'  // Default bucket min values
     };
 }
 
@@ -216,6 +238,33 @@ function validateFilterParam(filter) {
     if (!filter) return false;
     if (filter.length !== 7) return false;
     return /^[01]{7}$/.test(filter);
+}
+
+// Function to validate bucket parameter
+function validateBucketParam(buckets) {
+    if (!buckets) return false;
+    
+    // Check format A###B###C###D###E###F### where ### are numbers
+    const regex = /^(\d+)A(\d+)B(\d+)C(\d+)D(\d+)E(\d+)F$/;
+    if (!regex.test(buckets)) return false;
+    
+    // Extract numbers and verify they are in descending order
+    const matches = buckets.match(regex);
+    const values = [
+        parseInt(matches[1]), // A
+        parseInt(matches[2]), // B
+        parseInt(matches[3]), // C
+        parseInt(matches[4]), // D
+        parseInt(matches[5]), // E
+        parseInt(matches[6])  // F
+    ];
+    
+    // Check that each number is greater than the next
+    for (let i = 0; i < values.length - 1; i++) {
+        if (values[i] <= values[i + 1]) return false;
+    }
+    
+    return true;
 }
 
 // Function to update URL parameters
@@ -260,6 +309,18 @@ function updateUrlParameters() {
         filter500k += checkbox.checked ? '1' : '0';
     });
     params.set('filter500k', filter500k);
+    
+    // Build bucket string from range inputs
+    const bucketRows = document.querySelectorAll('.bucket-row');
+    const bucketValues = Array.from(bucketRows).map(row => {
+        const minInput = row.querySelector('.range-min');
+        return parseInt(minInput.value) || 0;
+    });
+    
+    // Format bucket string as A###B###C###D###E###F###
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const bucketString = bucketValues.map((val, i) => `${val}${letters[i]}`).join('');
+    params.set('buckets', bucketString);
     
     // Update URL without reloading the page
     const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
@@ -314,38 +375,89 @@ function applyFiltersFromUrl() {
     if (validateFilterParam(params.filter250k)) {
         const filter250k = params.filter250k;
         const parent250k = document.querySelector('#income250k-parent');
+        const checkboxes250k = document.querySelectorAll('#income250k-categories .category-checkbox');
+        
+        // Set parent state
         if (parent250k) {
             parent250k.checked = filter250k[0] === '1';
-            
-            // Apply individual bucket states
-            const checkboxes = document.querySelectorAll('#income250k-categories .category-checkbox');
-            checkboxes.forEach((checkbox, index) => {
-                if (checkbox) {
-                    checkbox.checked = filter250k[index + 1] === '1';
-                }
-            });
         }
+        
+        // Set children states
+        checkboxes250k.forEach((checkbox, index) => {
+            checkbox.checked = filter250k[index + 1] === '1';
+            checkbox.disabled = !parent250k.checked;
+        });
     }
     
     // Apply 500k filters
     if (validateFilterParam(params.filter500k)) {
         const filter500k = params.filter500k;
         const parent500k = document.querySelector('#income500k-parent');
+        const checkboxes500k = document.querySelectorAll('#income500k-categories .category-checkbox');
+        
+        // Set parent state
         if (parent500k) {
             parent500k.checked = filter500k[0] === '1';
-            
-            // Apply individual bucket states
-            const checkboxes = document.querySelectorAll('#income500k-categories .category-checkbox');
-            checkboxes.forEach((checkbox, index) => {
-                if (checkbox) {
-                    checkbox.checked = filter500k[index + 1] === '1';
-                }
-            });
         }
+        
+        // Set children states
+        checkboxes500k.forEach((checkbox, index) => {
+            checkbox.checked = filter500k[index + 1] === '1';
+            checkbox.disabled = !parent500k.checked;
+        });
     }
     
-    // Update the map with new filter states
     validateAndApplyFilters();
+}
+
+// Function to apply bucket values from URL parameter
+function applyBucketsFromUrl() {
+    const params = getUrlParameters();
+    const buckets = params.buckets;
+
+    if (!validateBucketParam(buckets)) {
+        // Invalid or missing buckets parameter, set to default
+        const params = new URLSearchParams(window.location.search);
+        params.set('buckets', '1500A1000B500C250D100E50F');
+        window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+        return;
+    }
+
+    // Extract values from bucket string
+    const matches = buckets.match(/^(\d+)A(\d+)B(\d+)C(\d+)D(\d+)E(\d+)F$/);
+    const values = [
+        parseInt(matches[1]), // A
+        parseInt(matches[2]), // B
+        parseInt(matches[3]), // C
+        parseInt(matches[4]), // D
+        parseInt(matches[5]), // E
+        parseInt(matches[6])  // F
+    ];
+
+    // Apply values to bucket inputs
+    const bucketRows = document.querySelectorAll('.bucket-row');
+    bucketRows.forEach((row, index) => {
+        if (index < values.length) {
+            const minInput = row.querySelector('.range-min');
+            const maxInput = row.querySelector('.range-max');
+            
+            // Set min value
+            if (minInput) {
+                minInput.value = values[index];
+            }
+            
+            // Set max value
+            if (maxInput) {
+                if (index === 0) {
+                    maxInput.value = '';
+                    maxInput.placeholder = 'No limit';
+                } else if (index < values.length) {
+                    // Max value is the next bucket's min value minus 1
+                    maxInput.value = values[index - 1] - 1;
+                }
+            }
+        }
+    });
 }
 
 // Load the list of available cities
@@ -805,12 +917,22 @@ function setupEventListeners() {
         editBucketsForm.classList.remove('hidden');
     });
 
+    applyBucketsBtn.addEventListener('click', () => {
+        editBucketsForm.classList.add('hidden');
+        updateFilterRanges();
+        validateAndApplyFilters();
+        updateUrlParameters();
+    });
+
     cancelBucketsBtn.addEventListener('click', () => {
         editBucketsForm.classList.add('hidden');
     });
 
     // Add reset button event listener
-    resetBucketsBtn.addEventListener('click', resetBucketValues);
+    resetBucketsBtn.addEventListener('click', () => {
+        resetBucketValues();
+        updateUrlParameters();
+    });
 
     // Handle bucket range inputs
     const bucketRows = document.querySelectorAll('.bucket-row');
@@ -830,6 +952,7 @@ function setupEventListeners() {
                     }
                 }
                 validateBucketRanges();
+                updateUrlParameters();
             });
         }
 
@@ -845,6 +968,7 @@ function setupEventListeners() {
                     }
                 }
                 validateBucketRanges();
+                updateUrlParameters();
             });
         }
     });
@@ -915,7 +1039,7 @@ function setupEventListeners() {
     document.getElementById('preferred-labels-toggle').addEventListener('click', function() {
         labelToggles.preferred = !labelToggles.preferred;
         this.textContent = labelToggles.preferred ? 'Labels On' : 'Labels Off';
-        this.classList.toggle('active');
+        this.classList.toggle('active', labelToggles.preferred);
         updateLabelVisibility();
         updateUrlParameters();
     });
@@ -923,7 +1047,7 @@ function setupEventListeners() {
     document.getElementById('other-labels-toggle').addEventListener('click', function() {
         labelToggles.other = !labelToggles.other;
         this.textContent = labelToggles.other ? 'Labels On' : 'Labels Off';
-        this.classList.toggle('active');
+        this.classList.toggle('active', labelToggles.other);
         updateLabelVisibility();
         updateUrlParameters();
     });
@@ -931,7 +1055,7 @@ function setupEventListeners() {
     document.getElementById('family-labels-toggle').addEventListener('click', function() {
         labelToggles.family = !labelToggles.family;
         this.textContent = labelToggles.family ? 'Labels On' : 'Labels Off';
-        this.classList.toggle('active');
+        this.classList.toggle('active', labelToggles.family);
         updateLabelVisibility();
         updateUrlParameters();
     });
@@ -1001,8 +1125,9 @@ function updateFilterRanges() {
         });
     });
 
-    // Trigger filter update
+    // Trigger filter update and update URL parameters
     validateAndApplyFilters();
+    updateUrlParameters();
 }
 
 function validateBucketRanges() {
@@ -1168,10 +1293,8 @@ function initializeFilterStates() {
         if (parent250k) {
             parent250k.checked = filter250k[0] === '1';
             checkboxes250k.forEach((checkbox, index) => {
-                if (checkbox) {
-                    checkbox.checked = filter250k[index + 1] === '1';
-                    checkbox.disabled = !parent250k.checked;
-                }
+                checkbox.checked = filter250k[index + 1] === '1';
+                checkbox.disabled = !parent250k.checked;
             });
         }
     }
@@ -1185,10 +1308,8 @@ function initializeFilterStates() {
         if (parent500k) {
             parent500k.checked = filter500k[0] === '1';
             checkboxes500k.forEach((checkbox, index) => {
-                if (checkbox) {
-                    checkbox.checked = filter500k[index + 1] === '1';
-                    checkbox.disabled = !parent500k.checked;
-                }
+                checkbox.checked = filter500k[index + 1] === '1';
+                checkbox.disabled = !parent500k.checked;
             });
         }
     }
