@@ -170,7 +170,41 @@ function populateCityDropdown() {
         } else {
             clearMapData();
         }
+        // Update URL parameters when city changes
+        updateUrlParameters();
     });
+    
+    // Check for city in URL parameters
+    const params = getUrlParameters();
+    if (params.city) {
+        citySelector.value = params.city;
+        if (citySelector.value === params.city) { // Only load if it's a valid city
+            loadCity(params.city);
+        }
+    }
+}
+
+// Function to get URL parameters
+function getUrlParameters() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        city: params.get('city')
+    };
+}
+
+// Function to update URL parameters
+function updateUrlParameters() {
+    const params = new URLSearchParams(window.location.search);
+    
+    if (currentCity) {
+        params.set('city', currentCity);
+    } else {
+        params.delete('city');
+    }
+    
+    // Update URL without reloading the page
+    const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
+    window.history.pushState({}, '', newUrl);
 }
 
 // Load the list of available cities
