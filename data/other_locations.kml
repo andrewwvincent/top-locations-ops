@@ -46,21 +46,6 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>Momentous Sports Center</name>
-      <styleUrl>#other</styleUrl>
-      <description><![CDATA[
-        <h3>Momentous Sports Center</h3>
-        <p><strong>Address:</strong> 14522 Myford Rd, Irvine, CA 92606</p>
-        <p><strong>Region:</strong> Irvine</p>
-        <p><strong>Phone:</strong> 17143897900</p>
-        <p><strong>Website:</strong> <a href="http://momentoussportscenter.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other</p>
-      ]]></description>
-      <Point>
-        <coordinates>-117.802796,33.714219</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
       <name>The Plex</name>
       <styleUrl>#other</styleUrl>
       <description><![CDATA[
@@ -1209,7 +1194,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 17473183704</p>
         <p><strong>Website:</strong> <a href="https://royalbasketballschool.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-118.476639,34.15589</coordinates>
@@ -1224,7 +1209,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 16265577241</p>
         <p><strong>Website:</strong> <a href="https://www.pickupusafitness.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-117.980482,34.120884</coordinates>
@@ -1239,7 +1224,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 19096256791</p>
         <p><strong>Website:</strong> <a href="https://www.claremontclub.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-117.699421,34.114463</coordinates>
@@ -1254,7 +1239,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 19099857903</p>
         <p><strong>Website:</strong> <a href="https://www.sofive.com/locations/upland" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-117.684672,34.104366</coordinates>
@@ -1269,7 +1254,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 17143618990</p>
         <p><strong>Website:</strong> <a href="https://www.tocafootball.com/centers/costamesa" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-117.889689,33.674208</coordinates>
@@ -1284,7 +1269,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 19492382700</p>
         <p><strong>Website:</strong> <a href="https://www.lifetime.life/locations/ca/laguna-niguel.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-117.683531,33.556749</coordinates>
@@ -1299,10 +1284,25 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 19512654695</p>
         
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-117.161428,33.499398</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>OGP Ladera</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>OGP Ladera</h3>
+        <p><strong>Address:</strong> 2 Terrace Rd, Ladera Ranch, CA 92694</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        
+        <p><strong>Website:</strong> <a href="http://opengympremier.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.627453,33.558122</coordinates>
       </Point>
     </Placemark>
   </Document>

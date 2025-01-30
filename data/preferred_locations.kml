@@ -384,7 +384,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 18445187246</p>
         <p><strong>Website:</strong> <a href="https://sportsacademy.us/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.923927,34.193205</coordinates>
@@ -399,7 +399,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 18182806410</p>
         <p><strong>Website:</strong> <a href="https://www.1stplacesportscomplex.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.569023,34.241138</coordinates>
@@ -414,7 +414,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 18182456200</p>
         <p><strong>Website:</strong> <a href="https://www.academyusa.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.263887,34.13188</coordinates>
@@ -429,7 +429,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 13235565203</p>
         <p><strong>Website:</strong> <a href="https://thejla.org/jhoops" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.359138,34.05702</coordinates>
@@ -444,7 +444,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 13108364400</p>
         <p><strong>Website:</strong> <a href="http://www.griffinclubla.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.410186,34.034202</coordinates>
@@ -459,7 +459,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 13106436878</p>
         <p><strong>Website:</strong> <a href="https://www.bayclubs.com/elsegundo/?utm_source=Chatmeter&utm_medium=Google&utm_campaign=ClubPage&utm_content=ElSegundoCH" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.38385,33.904431</coordinates>
@@ -474,7 +474,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 13103769443</p>
         <p><strong>Website:</strong> <a href="https://www.bayclubs.com/redondobeach/?utm_source=Chatmeter&utm_medium=Google&utm_campaign=ClubPage&utm_content=RedondoBeachCH" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.396272,33.849595</coordinates>
@@ -489,7 +489,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 13237625752</p>
         <p><strong>Website:</strong> <a href="https://hhac.la/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-118.28061,33.73561</coordinates>
@@ -504,7 +504,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> (714) 546-8560 ext 200</p>
         <p><strong>Website:</strong> <a href="http://www.loscab.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-117.924515,33.714</coordinates>
@@ -523,6 +523,36 @@
       ]]></description>
       <Point>
         <coordinates>-117.802796,33.714219</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>ClubSport Aliso Viejo Health and Fitness Gym</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>ClubSport Aliso Viejo Health and Fitness Gym</h3>
+        <p><strong>Address:</strong> 50 Enterprise, Aliso Viejo, CA 92656</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        <p><strong>Phone:</strong> 19496436700</p>
+        <p><strong>Website:</strong> <a href="https://www.clubsports.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.730055,33.58237</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Clava Sports Facility</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Clava Sports Facility</h3>
+        <p><strong>Address:</strong> 26923 Fuerte Dr, Lake Forest, CA 92630</p>
+        <p><strong>Region:</strong> </p>
+        <p><strong>Phone:</strong> 19494080319</p>
+        <p><strong>Website:</strong> <a href="https://clavasports.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.660417,33.668229</coordinates>
       </Point>
     </Placemark>
   </Document>
