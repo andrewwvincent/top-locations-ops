@@ -189,8 +189,33 @@ function getUrlParameters() {
     const params = new URLSearchParams(window.location.search);
     return {
         city: params.get('city'),
-        locations: params.get('locations') || '100000'
+        locations: params.get('locations') || '100000',
+        filter250k: params.get('filter250k') || '0111110',  // Default: parent off, first 5 buckets checked
+        filter500k: params.get('filter500k') || '1111110'   // Default: parent on, all but last bucket
     };
+}
+
+// Function to validate locations parameter
+function validateLocationsParam(locations) {
+    if (!locations) return false;
+    if (locations.length !== 6) return false;
+    if (!/^[01]{6}$/.test(locations)) return false;
+    
+    // Check that labels are off if their corresponding filter is off
+    for (let i = 0; i < 3; i++) {
+        if (locations[i] === '0' && locations[i + 3] === '1') {
+            return false; // Invalid: label is on but filter is off
+        }
+    }
+    
+    return true;
+}
+
+// Function to validate filter parameters
+function validateFilterParam(filter) {
+    if (!filter) return false;
+    if (filter.length !== 7) return false;
+    return /^[01]{7}$/.test(filter);
 }
 
 // Function to update URL parameters
@@ -218,25 +243,27 @@ function updateUrlParameters() {
     
     params.set('locations', locationString);
     
+    // Get current state of household filters
+    const parent250k = document.querySelector('#income250k-parent');
+    const parent500k = document.querySelector('#income500k-parent');
+    
+    // Build 250k filter string
+    let filter250k = parent250k.checked ? '1' : '0';
+    document.querySelectorAll('#income250k-categories .category-checkbox').forEach(checkbox => {
+        filter250k += checkbox.checked ? '1' : '0';
+    });
+    params.set('filter250k', filter250k);
+    
+    // Build 500k filter string
+    let filter500k = parent500k.checked ? '1' : '0';
+    document.querySelectorAll('#income500k-categories .category-checkbox').forEach(checkbox => {
+        filter500k += checkbox.checked ? '1' : '0';
+    });
+    params.set('filter500k', filter500k);
+    
     // Update URL without reloading the page
     const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
     window.history.pushState({}, '', newUrl);
-}
-
-// Function to validate locations parameter
-function validateLocationsParam(locations) {
-    if (!locations) return false;
-    if (locations.length !== 6) return false;
-    if (!/^[01]{6}$/.test(locations)) return false;
-    
-    // Check that labels are off if their corresponding filter is off
-    for (let i = 0; i < 3; i++) {
-        if (locations[i] === '0' && locations[i + 3] === '1') {
-            return false; // Invalid: label is on but filter is off
-        }
-    }
-    
-    return true;
 }
 
 // Function to apply locations from URL parameter
@@ -277,6 +304,48 @@ function applyLocationsFromUrl() {
     // Update visibility
     updateMarkerVisibility();
     updateLabelVisibility();
+}
+
+// Function to apply filter states from URL parameters
+function applyFiltersFromUrl() {
+    const params = getUrlParameters();
+    
+    // Apply 250k filters
+    if (validateFilterParam(params.filter250k)) {
+        const filter250k = params.filter250k;
+        const parent250k = document.querySelector('#income250k-parent');
+        if (parent250k) {
+            parent250k.checked = filter250k[0] === '1';
+            
+            // Apply individual bucket states
+            const checkboxes = document.querySelectorAll('#income250k-categories .category-checkbox');
+            checkboxes.forEach((checkbox, index) => {
+                if (checkbox) {
+                    checkbox.checked = filter250k[index + 1] === '1';
+                }
+            });
+        }
+    }
+    
+    // Apply 500k filters
+    if (validateFilterParam(params.filter500k)) {
+        const filter500k = params.filter500k;
+        const parent500k = document.querySelector('#income500k-parent');
+        if (parent500k) {
+            parent500k.checked = filter500k[0] === '1';
+            
+            // Apply individual bucket states
+            const checkboxes = document.querySelectorAll('#income500k-categories .category-checkbox');
+            checkboxes.forEach((checkbox, index) => {
+                if (checkbox) {
+                    checkbox.checked = filter500k[index + 1] === '1';
+                }
+            });
+        }
+    }
+    
+    // Update the map with new filter states
+    validateAndApplyFilters();
 }
 
 // Load the list of available cities
@@ -815,63 +884,43 @@ function setupEventListeners() {
                 childCheckbox.disabled = !this.checked;
             });
             
-            // Always validate and apply filters
             validateAndApplyFilters();
+            updateUrlParameters();
         });
     });
 
     // Handle child checkbox changes
     document.querySelectorAll('.category-checkbox').forEach(childCheckbox => {
-        childCheckbox.addEventListener('change', validateAndApplyFilters);
+        childCheckbox.addEventListener('change', function() {
+            validateAndApplyFilters();
+            updateUrlParameters();
+        });
     });
 
-    // Handle category header clicks for collapse/expand
+    // Handle category header clicks
     document.querySelectorAll('.category-header').forEach(header => {
         header.addEventListener('click', function(e) {
             // Don't toggle if clicking checkbox
             if (e.target.matches('.category-checkbox')) {
                 return;
             }
-            const rangeInputs = this.closest('.category-item').querySelector('.range-inputs');
-            rangeInputs.classList.toggle('hidden');
+            // Prevent range inputs from showing
+            e.preventDefault();
+            e.stopPropagation();
         });
     });
 
-    // Close range inputs when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.category-header') && !e.target.closest('.range-inputs')) {
-            document.querySelectorAll('.range-inputs:not(.hidden)').forEach(input => {
-                input.classList.add('hidden');
-            });
-        }
-    });
-
-    // Handle income header clicks for collapse/expand all in group
+    // Handle income header clicks
     document.querySelectorAll('.income-header').forEach(header => {
         header.addEventListener('click', function(e) {
             // Don't toggle if clicking checkbox
             if (e.target.matches('.parent-checkbox')) {
                 return;
             }
-            const group = this.closest('.income-group');
-            const rangeInputs = group.querySelectorAll('.range-inputs');
-            const allHidden = Array.from(rangeInputs).every(input => input.classList.contains('hidden'));
-            
-            rangeInputs.forEach(input => {
-                input.classList.toggle('hidden', !allHidden);
-            });
+            // Prevent range inputs from showing
+            e.preventDefault();
+            e.stopPropagation();
         });
-    });
-
-    // Handle range input changes
-    document.querySelectorAll('.range-inputs input').forEach(input => {
-        input.addEventListener('change', validateAndApplyFilters);
-    });
-
-    // Handle form submission
-    document.getElementById('filter-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        validateAndApplyFilters();
     });
 
     // Add location filter listeners
@@ -912,6 +961,24 @@ function setupEventListeners() {
         updateLabelVisibility();
         updateUrlParameters();
     });
+
+    // Handle range input changes
+    document.querySelectorAll('.range-inputs input').forEach(input => {
+        input.addEventListener('change', function() {
+            validateAndApplyFilters();
+            updateUrlParameters();
+        });
+    });
+
+    // Handle form submission
+    const filterForm = document.getElementById('filter-form');
+    if (filterForm) {
+        filterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            validateAndApplyFilters();
+            updateUrlParameters();
+        });
+    }
 }
 
 function updateFilterRanges() {
@@ -1104,12 +1171,56 @@ async function loadLocationPoints() {
         processLocations(otherKml, 'other', '#0000FF');
         processLocations(familyKml, 'family', '#00FF00');
 
-        // Apply locations from URL and update visibility
+        // Apply locations from URL
         applyLocationsFromUrl();
+        
+        // Initialize filter states
+        initializeFilterStates();
         
     } catch (error) {
         console.error('Error loading location points:', error);
     }
+}
+
+function initializeFilterStates() {
+    const params = getUrlParameters();
+    
+    // Set 250k filter states
+    if (validateFilterParam(params.filter250k)) {
+        const filter250k = params.filter250k;
+        const parent250k = document.querySelector('#income250k-parent');
+        const checkboxes250k = document.querySelectorAll('#income250k-categories .category-checkbox');
+        
+        if (parent250k) {
+            parent250k.checked = filter250k[0] === '1';
+            checkboxes250k.forEach((checkbox, index) => {
+                if (checkbox) {
+                    checkbox.checked = filter250k[index + 1] === '1';
+                    checkbox.disabled = !parent250k.checked;
+                }
+            });
+        }
+    }
+    
+    // Set 500k filter states
+    if (validateFilterParam(params.filter500k)) {
+        const filter500k = params.filter500k;
+        const parent500k = document.querySelector('#income500k-parent');
+        const checkboxes500k = document.querySelectorAll('#income500k-categories .category-checkbox');
+        
+        if (parent500k) {
+            parent500k.checked = filter500k[0] === '1';
+            checkboxes500k.forEach((checkbox, index) => {
+                if (checkbox) {
+                    checkbox.checked = filter500k[index + 1] === '1';
+                    checkbox.disabled = !parent500k.checked;
+                }
+            });
+        }
+    }
+    
+    // Apply the filters to update the map
+    validateAndApplyFilters();
 }
 
 function processLocations(kml, type, color) {
