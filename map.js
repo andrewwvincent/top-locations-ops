@@ -188,7 +188,8 @@ function populateCityDropdown() {
 function getUrlParameters() {
     const params = new URLSearchParams(window.location.search);
     return {
-        city: params.get('city')
+        city: params.get('city'),
+        locations: params.get('locations') || '100000'
     };
 }
 
@@ -202,9 +203,80 @@ function updateUrlParameters() {
         params.delete('city');
     }
     
+    // Get current state of location filters
+    const preferredLocations = document.getElementById('preferred-locations').checked ? '1' : '0';
+    const otherLocations = document.getElementById('other-locations').checked ? '1' : '0';
+    const familyLocations = document.getElementById('family-locations').checked ? '1' : '0';
+    
+    // Only allow labels to be on if their corresponding filter is on
+    const preferredLabels = (preferredLocations === '1' && labelToggles.preferred) ? '1' : '0';
+    const otherLabels = (otherLocations === '1' && labelToggles.other) ? '1' : '0';
+    const familyLabels = (familyLocations === '1' && labelToggles.family) ? '1' : '0';
+    
+    const locationString = preferredLocations + otherLocations + familyLocations + 
+                          preferredLabels + otherLabels + familyLabels;
+    
+    params.set('locations', locationString);
+    
     // Update URL without reloading the page
     const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
     window.history.pushState({}, '', newUrl);
+}
+
+// Function to validate locations parameter
+function validateLocationsParam(locations) {
+    if (!locations) return false;
+    if (locations.length !== 6) return false;
+    if (!/^[01]{6}$/.test(locations)) return false;
+    
+    // Check that labels are off if their corresponding filter is off
+    for (let i = 0; i < 3; i++) {
+        if (locations[i] === '0' && locations[i + 3] === '1') {
+            return false; // Invalid: label is on but filter is off
+        }
+    }
+    
+    return true;
+}
+
+// Function to apply locations from URL parameter
+function applyLocationsFromUrl() {
+    const params = getUrlParameters();
+    const locations = params.locations;
+    
+    if (!validateLocationsParam(locations)) {
+        // Invalid or missing locations parameter, set to default '100000'
+        const params = new URLSearchParams(window.location.search);
+        params.set('locations', '100000');
+        window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+        return;
+    }
+    
+    // Apply checkbox states
+    document.getElementById('preferred-locations').checked = locations[0] === '1';
+    document.getElementById('other-locations').checked = locations[1] === '1';
+    document.getElementById('family-locations').checked = locations[2] === '1';
+    
+    // Apply label toggle states
+    const preferredLabelsBtn = document.getElementById('preferred-labels-toggle');
+    const otherLabelsBtn = document.getElementById('other-labels-toggle');
+    const familyLabelsBtn = document.getElementById('family-labels-toggle');
+    
+    labelToggles.preferred = locations[3] === '1';
+    labelToggles.other = locations[4] === '1';
+    labelToggles.family = locations[5] === '1';
+    
+    preferredLabelsBtn.textContent = labelToggles.preferred ? 'Labels On' : 'Labels Off';
+    otherLabelsBtn.textContent = labelToggles.other ? 'Labels On' : 'Labels Off';
+    familyLabelsBtn.textContent = labelToggles.family ? 'Labels On' : 'Labels Off';
+    
+    preferredLabelsBtn.classList.toggle('active', labelToggles.preferred);
+    otherLabelsBtn.classList.toggle('active', labelToggles.other);
+    familyLabelsBtn.classList.toggle('active', labelToggles.family);
+    
+    // Update visibility
+    updateMarkerVisibility();
+    updateLabelVisibility();
 }
 
 // Load the list of available cities
@@ -803,9 +875,18 @@ function setupEventListeners() {
     });
 
     // Add location filter listeners
-    document.getElementById('preferred-locations').addEventListener('change', updateMarkerVisibility);
-    document.getElementById('other-locations').addEventListener('change', updateMarkerVisibility);
-    document.getElementById('family-locations').addEventListener('change', updateMarkerVisibility);
+    document.getElementById('preferred-locations').addEventListener('change', function() {
+        updateMarkerVisibility();
+        updateUrlParameters();
+    });
+    document.getElementById('other-locations').addEventListener('change', function() {
+        updateMarkerVisibility();
+        updateUrlParameters();
+    });
+    document.getElementById('family-locations').addEventListener('change', function() {
+        updateMarkerVisibility();
+        updateUrlParameters();
+    });
 
     // Add label toggle functionality
     document.getElementById('preferred-labels-toggle').addEventListener('click', function() {
@@ -813,6 +894,7 @@ function setupEventListeners() {
         this.textContent = labelToggles.preferred ? 'Labels On' : 'Labels Off';
         this.classList.toggle('active');
         updateLabelVisibility();
+        updateUrlParameters();
     });
 
     document.getElementById('other-labels-toggle').addEventListener('click', function() {
@@ -820,6 +902,7 @@ function setupEventListeners() {
         this.textContent = labelToggles.other ? 'Labels On' : 'Labels Off';
         this.classList.toggle('active');
         updateLabelVisibility();
+        updateUrlParameters();
     });
 
     document.getElementById('family-labels-toggle').addEventListener('click', function() {
@@ -827,6 +910,7 @@ function setupEventListeners() {
         this.textContent = labelToggles.family ? 'Labels On' : 'Labels Off';
         this.classList.toggle('active');
         updateLabelVisibility();
+        updateUrlParameters();
     });
 }
 
@@ -1020,8 +1104,8 @@ async function loadLocationPoints() {
         processLocations(otherKml, 'other', '#0000FF');
         processLocations(familyKml, 'family', '#00FF00');
 
-        // Update visibility
-        updateMarkerVisibility();
+        // Apply locations from URL and update visibility
+        applyLocationsFromUrl();
         
     } catch (error) {
         console.error('Error loading location points:', error);
@@ -1121,12 +1205,18 @@ function updateMarkerVisibility() {
 function updateLabelVisibility() {
     let currentIndex = 0;
     
+    // Get marker visibility states
+    const preferredVisible = document.getElementById('preferred-locations').checked;
+    const otherVisible = document.getElementById('other-locations').checked;
+    const familyVisible = document.getElementById('family-locations').checked;
+    
     // Update preferred markers
     locations.preferred.forEach(() => {
         const markerEl = locationMarkers[currentIndex].getElement();
         const label = markerEl.querySelector('.marker-label');
         if (label) {
-            label.classList.toggle('visible', labelToggles.preferred);
+            // Only show label if both toggle is on AND marker is visible
+            label.classList.toggle('visible', labelToggles.preferred && preferredVisible);
         }
         currentIndex++;
     });
@@ -1136,7 +1226,8 @@ function updateLabelVisibility() {
         const markerEl = locationMarkers[currentIndex].getElement();
         const label = markerEl.querySelector('.marker-label');
         if (label) {
-            label.classList.toggle('visible', labelToggles.other);
+            // Only show label if both toggle is on AND marker is visible
+            label.classList.toggle('visible', labelToggles.other && otherVisible);
         }
         currentIndex++;
     });
@@ -1146,7 +1237,8 @@ function updateLabelVisibility() {
         const markerEl = locationMarkers[currentIndex].getElement();
         const label = markerEl.querySelector('.marker-label');
         if (label) {
-            label.classList.toggle('visible', labelToggles.family);
+            // Only show label if both toggle is on AND marker is visible
+            label.classList.toggle('visible', labelToggles.family && familyVisible);
         }
         currentIndex++;
     });
