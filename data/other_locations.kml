@@ -1290,20 +1290,5 @@
         <coordinates>-117.161428,33.499398</coordinates>
       </Point>
     </Placemark>
-    <Placemark>
-      <name>OGP Ladera</name>
-      <styleUrl>#other</styleUrl>
-      <description><![CDATA[
-        <h3>OGP Ladera</h3>
-        <p><strong>Address:</strong> 2 Terrace Rd, Ladera Ranch, CA 92694</p>
-        <p><strong>Region:</strong> Los Angeles</p>
-        
-        <p><strong>Website:</strong> <a href="http://opengympremier.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other</p>
-      ]]></description>
-      <Point>
-        <coordinates>-117.627453,33.558122</coordinates>
-      </Point>
-    </Placemark>
   </Document>
 </kml>

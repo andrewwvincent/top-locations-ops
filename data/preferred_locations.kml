@@ -519,10 +519,25 @@
         <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 17143897900</p>
         <p><strong>Website:</strong> <a href="http://momentoussportscenter.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-117.802796,33.714219</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>OGP Ladera</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>OGP Ladera</h3>
+        <p><strong>Address:</strong> 2 Terrace Rd, Ladera Ranch, CA 92694</p>
+        <p><strong>Region:</strong> Los Angeles</p>
+        
+        <p><strong>Website:</strong> <a href="http://opengympremier.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-117.627453,33.558122</coordinates>
       </Point>
     </Placemark>
     <Placemark>
