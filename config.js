@@ -158,6 +158,10 @@ const config = {
             file: "data/KMLs/Phoenix.kml"
         },
         {
+            name: "Pittsburgh",
+            file: "data/KMLs/Pittsburgh.kml"
+        },
+        {
             name: "Portland OR",
             file: "data/KMLs/Portland_OR.kml"
         },
