@@ -10,130 +10,226 @@ const config = {
     popupInfo: ["Location_Name"],
     polygonLayers: [
         {
+            name: "Albany",
+            file: "data/KMLs/Albany.kml"
+        },
+        {
+            name: "Anchorage",
+            file: "data/KMLs/Anchorage.kml"
+        },
+        {
             name: "Aspen",
-            file: "data/Aspen_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Aspen.kml"
         },
         {
             name: "Atlanta",
-            file: "data/Atlanta Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Atlanta.kml"
         },
         {
             name: "Austin",
-            file: "data/Austin_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Austin.kml"
+        },
+        {
+            name: "Baltimore",
+            file: "data/KMLs/Baltimore.kml"
         },
         {
             name: "Bay Area",
-            file: "data/Bay Area Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Bay_Area.kml"
+        },
+        {
+            name: "Bloomington IL",
+            file: "data/KMLs/Bloomington_IL.kml"
         },
         {
             name: "Boston",
-            file: "data/Boston_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Boston.kml"
+        },
+        {
+            name: "Burlington VT",
+            file: "data/KMLs/Burlington_VT.kml"
+        },
+        {
+            name: "Cedar Rapids IA",
+            file: "data/KMLs/Cedar_Rapids_IA.kml"
         },
         {
             name: "Charleston",
-            file: "data/Charleston Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Charleston.kml"
         },
         {
             name: "Charlotte",
-            file: "data/Charlotte Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Charlotte.kml"
+        },
+        {
+            name: "Charlottesville",
+            file: "data/KMLs/Charlottesville.kml"
         },
         {
             name: "Chicago",
-            file: "data/Chicago Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Chicago.kml"
+        },
+        {
+            name: "Cincinnati",
+            file: "data/KMLs/Cincinnati.kml"
+        },
+        {
+            name: "Columbus OH",
+            file: "data/KMLs/Columbus_OH.kml"
         },
         {
             name: "Dallas",
-            file: "data/Dallas_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Dallas.kml"
         },
         {
             name: "Denver",
-            file: "data/Denver_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Denver.kml"
+        },
+        {
+            name: "Des Moines",
+            file: "data/KMLs/Des_Moines.kml"
+        },
+        {
+            name: "Detroit",
+            file: "data/KMLs/Detroit.kml"
+        },
+        {
+            name: "Fort Collins CO",
+            file: "data/KMLs/Fort_Collins_CO.kml"
         },
         {
             name: "Fort Worth",
-            file: "data/Fort_Worth_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Fort_Worth.kml"
+        },
+        {
+            name: "Hartford CT",
+            file: "data/KMLs/Hartford_CT.kml"
         },
         {
             name: "Houston",
-            file: "data/Houston Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Houston.kml"
         },
         {
-            name: "Irvine",
-            file: "data/Irvine_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            name: "Indianapolis",
+            file: "data/KMLs/Indianapolis.kml"
         },
         {
             name: "Jacksonville",
-            file: "data/Jacksonville_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Jacksonville.kml"
         },
         {
             name: "Las Vegas",
-            file: "data/Las_Vegas_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Las_Vegas.kml"
         },
         {
             name: "Los Angeles",
-            file: "data/Los_Angeles_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Los_Angeles.kml"
+        },
+        {
+            name: "Milwaukee",
+            file: "data/KMLs/Milwaukee.kml"
         },
         {
             name: "Minneapolis",
-            file: "data/Minneapolis_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Minneapolis.kml"
         },
         {
             name: "NYC",
-            file: "data/NYC_-_10_Mins_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/NYC.kml"
         },
         {
             name: "Nashville",
-            file: "data/Nashville_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Nashville.kml"
+        },
+        {
+            name: "Newark",
+            file: "data/KMLs/Newark.kml"
         },
         {
             name: "Orlando",
-            file: "data/Orlando Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Orlando.kml"
         },
         {
-            name: "Pasadena",
-            file: "data/Pasadena_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            name: "Philadelhpia",
+            file: "data/KMLs/Philadelhpia.kml"
         },
         {
             name: "Phoenix",
-            file: "data/Phoenix Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Phoenix.kml"
+        },
+        {
+            name: "Portland OR",
+            file: "data/KMLs/Portland_OR.kml"
+        },
+        {
+            name: "Raleigh",
+            file: "data/KMLs/Raleigh.kml"
+        },
+        {
+            name: "Reno",
+            file: "data/KMLs/Reno.kml"
+        },
+        {
+            name: "Richmond",
+            file: "data/KMLs/Richmond.kml"
+        },
+        {
+            name: "Rochester MN",
+            file: "data/KMLs/Rochester_MN.kml"
         },
         {
             name: "Sacramento",
-            file: "data/Sacramento_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Sacramento.kml"
         },
         {
             name: "Salt Lake City",
-            file: "data/Salt_Lake_City_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Salt_Lake_City.kml"
         },
         {
             name: "San Diego",
-            file: "data/San_Diego_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/San_Diego.kml"
         },
         {
             name: "Santa Barbara",
-            file: "data/Santa Barbara Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Santa_Barbara.kml"
         },
         {
-            name: "Santa Monica",
-            file: "data/Santa_Monica_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            name: "Santa Fe",
+            file: "data/KMLs/Santa_Fe.kml"
         },
         {
             name: "Seattle",
-            file: "data/Seattle_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Seattle.kml"
+        },
+        {
+            name: "Springfield IL",
+            file: "data/KMLs/Springfield_IL.kml"
+        },
+        {
+            name: "St. Louis",
+            file: "data/KMLs/St._Louis.kml"
+        },
+        {
+            name: "Stamford",
+            file: "data/KMLs/Stamford.kml"
         },
         {
             name: "Tampa",
-            file: "data/Tampa Demographics_Demographics_Dynamic.kml"
+            file: "data/KMLs/Tampa.kml"
+        },
+        {
+            name: "Trenton",
+            file: "data/KMLs/Trenton.kml"
         },
         {
             name: "Washington DC",
-            file: "data/Washington_DC_Demographics_Kids__$250k_HH_Income_Demographics_Dynamic.kml"
+            file: "data/KMLs/Washington_DC.kml"
         },
         {
             name: "West Palm Beach",
-            file: "data/West_Palm_Beach_Demographics_-_West_Demographics_Dynamic.kml"
+            file: "data/KMLs/West_Palm_Beach.kml"
         }
-    ],
+],
     defaultColors: {
         '250k': {
             '1500+': 'rgba(255, 59, 59, 0.4)',         // Bright red
