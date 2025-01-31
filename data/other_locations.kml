@@ -901,21 +901,6 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>Woodlands Indoor</name>
-      <styleUrl>#other</styleUrl>
-      <description><![CDATA[
-        <h3>Woodlands Indoor</h3>
-        <p><strong>Address:</strong> 28408 Sweetgum Rd, Magnolia, TX 77354</p>
-        <p><strong>Region:</strong> Houston</p>
-        
-        <p><strong>Website:</strong> <a href="https://www.woodlandsindoor.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other</p>
-      ]]></description>
-      <Point>
-        <coordinates>-95.571072,30.171382</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
       <name>The Woodlands Family YMCA at Branch Crossing</name>
       <styleUrl>#other</styleUrl>
       <description><![CDATA[
@@ -1288,6 +1273,21 @@
       ]]></description>
       <Point>
         <coordinates>-117.161428,33.499398</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Fitness Center at South Shore Harbour</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>The Fitness Center at South Shore Harbour</h3>
+        <p><strong>Address:</strong> 3000 Invincible Cir, League City, TX 77573</p>
+        <p><strong>Region:</strong> Houston</p>
+        <p><strong>Phone:</strong> 12813342560</p>
+        <p><strong>Website:</strong> <a href="https://www.southshorefitness.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.06223,29.543898</coordinates>
       </Point>
     </Placemark>
   </Document>

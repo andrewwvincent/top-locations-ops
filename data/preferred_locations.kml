@@ -166,6 +166,21 @@
       </Point>
     </Placemark>
     <Placemark>
+      <name>Woodlands Indoor</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Woodlands Indoor</h3>
+        <p><strong>Address:</strong> 28408 Sweetgum Rd, Magnolia, TX 77354</p>
+        <p><strong>Region:</strong> Houston</p>
+        
+        <p><strong>Website:</strong> <a href="https://www.woodlandsindoor.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.571072,30.171382</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
       <name>The Den Sports Facility</name>
       <styleUrl>#preferred</styleUrl>
       <description><![CDATA[
@@ -534,7 +549,7 @@
         <p><strong>Region:</strong> Los Angeles</p>
         
         <p><strong>Website:</strong> <a href="http://opengympremier.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-117.627453,33.558122</coordinates>
@@ -561,13 +576,43 @@
       <description><![CDATA[
         <h3>Clava Sports Facility</h3>
         <p><strong>Address:</strong> 26923 Fuerte Dr, Lake Forest, CA 92630</p>
-        <p><strong>Region:</strong> </p>
+        <p><strong>Region:</strong> Los Angeles</p>
         <p><strong>Phone:</strong> 19494080319</p>
         <p><strong>Website:</strong> <a href="https://clavasports.com/" target="_blank">Visit Website</a></p>
         <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-117.660417,33.668229</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Upside SportsPlex</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Upside SportsPlex</h3>
+        <p><strong>Address:</strong> 1156 Fox Meadow Dr, Alvin, TX 77511</p>
+        <p><strong>Region:</strong> Houston</p>
+        <p><strong>Phone:</strong> 12819820480</p>
+        <p><strong>Website:</strong> <a href="http://www.upsidesportsplex.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Suburb Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.233535,29.462514</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Challenge Elite Sports</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Challenge Elite Sports</h3>
+        <p><strong>Address:</strong> 14150 Beamer Rd, Friendswood, TX 77546</p>
+        <p><strong>Region:</strong> Houston</p>
+        <p><strong>Phone:</strong> 832-212-1898</p>
+        <p><strong>Website:</strong> <a href="https://www.challengeelite.org/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-95.196112,29.569189</coordinates>
       </Point>
     </Placemark>
   </Document>
