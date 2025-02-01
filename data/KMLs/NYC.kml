@@ -10,8 +10,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100001</name>
-<data name="kids_250k">295</data>
-<data name="kids_500k">98</data>
+<data name="kids_250k">1142</data>
+<data name="kids_500k">372</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -23,8 +23,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100010</name>
-<data name="kids_250k">1173</data>
-<data name="kids_500k">450</data>
+<data name="kids_250k">7252</data>
+<data name="kids_500k">2785</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -36,8 +36,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100100</name>
-<data name="kids_250k">18</data>
-<data name="kids_500k">6</data>
+<data name="kids_250k">779</data>
+<data name="kids_500k">215</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -49,8 +49,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100101</name>
-<data name="kids_250k">23</data>
-<data name="kids_500k">7</data>
+<data name="kids_250k">948</data>
+<data name="kids_500k">268</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -62,8 +62,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100102</name>
-<data name="kids_250k">105</data>
-<data name="kids_500k">30</data>
+<data name="kids_250k">582</data>
+<data name="kids_500k">165</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -75,8 +75,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100103</name>
-<data name="kids_250k">0</data>
-<data name="kids_500k">0</data>
+<data name="kids_250k">4</data>
+<data name="kids_500k">2</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -101,8 +101,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100105</name>
-<data name="kids_250k">132</data>
-<data name="kids_500k">59</data>
+<data name="kids_250k">281</data>
+<data name="kids_500k">118</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -114,8 +114,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100106</name>
-<data name="kids_250k">180</data>
-<data name="kids_500k">80</data>
+<data name="kids_250k">541</data>
+<data name="kids_500k">224</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -127,8 +127,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100107</name>
-<data name="kids_250k">282</data>
-<data name="kids_500k">119</data>
+<data name="kids_250k">918</data>
+<data name="kids_500k">382</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -140,8 +140,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100108</name>
-<data name="kids_250k">365</data>
-<data name="kids_500k">155</data>
+<data name="kids_250k">1206</data>
+<data name="kids_500k">491</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -153,8 +153,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100109</name>
-<data name="kids_250k">74</data>
-<data name="kids_500k">36</data>
+<data name="kids_250k">1043</data>
+<data name="kids_500k">343</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -166,8 +166,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100011</name>
-<data name="kids_250k">1152</data>
-<data name="kids_500k">425</data>
+<data name="kids_250k">3781</data>
+<data name="kids_500k">1349</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -179,8 +179,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100110</name>
-<data name="kids_250k">259</data>
-<data name="kids_500k">66</data>
+<data name="kids_250k">1714</data>
+<data name="kids_500k">640</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -192,8 +192,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100111</name>
-<data name="kids_250k">335</data>
-<data name="kids_500k">119</data>
+<data name="kids_250k">2359</data>
+<data name="kids_500k">894</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -205,8 +205,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100112</name>
-<data name="kids_250k">950</data>
-<data name="kids_500k">410</data>
+<data name="kids_250k">4356</data>
+<data name="kids_500k">1708</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -218,8 +218,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100113</name>
-<data name="kids_250k">1056</data>
-<data name="kids_500k">464</data>
+<data name="kids_250k">4334</data>
+<data name="kids_500k">1708</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -231,8 +231,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100114</name>
-<data name="kids_250k">4380</data>
-<data name="kids_500k">1748</data>
+<data name="kids_250k">16494</data>
+<data name="kids_500k">6600</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -244,8 +244,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100115</name>
-<data name="kids_250k">8022</data>
-<data name="kids_500k">3221</data>
+<data name="kids_250k">16154</data>
+<data name="kids_500k">6428</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -257,8 +257,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100116</name>
-<data name="kids_250k">8540</data>
-<data name="kids_500k">3500</data>
+<data name="kids_250k">15091</data>
+<data name="kids_500k">5985</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -270,8 +270,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100117</name>
-<data name="kids_250k">6490</data>
-<data name="kids_500k">2653</data>
+<data name="kids_250k">14700</data>
+<data name="kids_500k">5826</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -283,8 +283,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100118</name>
-<data name="kids_250k">692</data>
-<data name="kids_500k">220</data>
+<data name="kids_250k">2051</data>
+<data name="kids_500k">715</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -296,8 +296,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100119</name>
-<data name="kids_250k">776</data>
-<data name="kids_500k">230</data>
+<data name="kids_250k">2304</data>
+<data name="kids_500k">740</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -309,8 +309,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100012</name>
-<data name="kids_250k">551</data>
-<data name="kids_500k">182</data>
+<data name="kids_250k">2623</data>
+<data name="kids_500k">999</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -322,8 +322,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100120</name>
-<data name="kids_250k">675</data>
-<data name="kids_500k">187</data>
+<data name="kids_250k">2006</data>
+<data name="kids_500k">616</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -335,8 +335,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100121</name>
-<data name="kids_250k">554</data>
-<data name="kids_500k">141</data>
+<data name="kids_250k">2047</data>
+<data name="kids_500k">601</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -348,8 +348,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100122</name>
-<data name="kids_250k">424</data>
-<data name="kids_500k">93</data>
+<data name="kids_250k">2585</data>
+<data name="kids_500k">812</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -361,8 +361,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100123</name>
-<data name="kids_250k">115</data>
-<data name="kids_500k">14</data>
+<data name="kids_250k">1398</data>
+<data name="kids_500k">371</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -374,8 +374,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100124</name>
-<data name="kids_250k">121</data>
-<data name="kids_500k">51</data>
+<data name="kids_250k">687</data>
+<data name="kids_500k">264</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -387,8 +387,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100125</name>
-<data name="kids_250k">326</data>
-<data name="kids_500k">130</data>
+<data name="kids_250k">1519</data>
+<data name="kids_500k">561</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -400,8 +400,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100126</name>
-<data name="kids_250k">475</data>
-<data name="kids_500k">191</data>
+<data name="kids_250k">1201</data>
+<data name="kids_500k">468</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -413,8 +413,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100127</name>
-<data name="kids_250k">22</data>
-<data name="kids_500k">3</data>
+<data name="kids_250k">848</data>
+<data name="kids_500k">266</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -426,8 +426,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100128</name>
-<data name="kids_250k">885</data>
-<data name="kids_500k">273</data>
+<data name="kids_250k">3299</data>
+<data name="kids_500k">1268</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -439,8 +439,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100129</name>
-<data name="kids_250k">986</data>
-<data name="kids_500k">362</data>
+<data name="kids_250k">2631</data>
+<data name="kids_500k">1069</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -452,8 +452,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100013</name>
-<data name="kids_250k">336</data>
-<data name="kids_500k">113</data>
+<data name="kids_250k">2159</data>
+<data name="kids_500k">778</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -465,8 +465,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100130</name>
-<data name="kids_250k">866</data>
-<data name="kids_500k">397</data>
+<data name="kids_250k">2963</data>
+<data name="kids_500k">1176</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -478,8 +478,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100131</name>
-<data name="kids_250k">1983</data>
-<data name="kids_500k">765</data>
+<data name="kids_250k">11896</data>
+<data name="kids_500k">4731</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -491,8 +491,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100132</name>
-<data name="kids_250k">2556</data>
-<data name="kids_500k">1001</data>
+<data name="kids_250k">13656</data>
+<data name="kids_500k">5499</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -504,8 +504,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100133</name>
-<data name="kids_250k">4847</data>
-<data name="kids_500k">1934</data>
+<data name="kids_250k">15397</data>
+<data name="kids_500k">6153</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -517,8 +517,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100134</name>
-<data name="kids_250k">4954</data>
-<data name="kids_500k">2018</data>
+<data name="kids_250k">14749</data>
+<data name="kids_500k">5876</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -530,8 +530,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100135</name>
-<data name="kids_250k">2051</data>
-<data name="kids_500k">845</data>
+<data name="kids_250k">11162</data>
+<data name="kids_500k">4415</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -543,8 +543,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100136</name>
-<data name="kids_250k">679</data>
-<data name="kids_500k">250</data>
+<data name="kids_250k">4361</data>
+<data name="kids_500k">1617</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -556,8 +556,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100137</name>
-<data name="kids_250k">758</data>
-<data name="kids_500k">238</data>
+<data name="kids_250k">3244</data>
+<data name="kids_500k">1134</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -569,8 +569,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100138</name>
-<data name="kids_250k">728</data>
-<data name="kids_500k">193</data>
+<data name="kids_250k">2344</data>
+<data name="kids_500k">729</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -582,8 +582,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100139</name>
-<data name="kids_250k">923</data>
-<data name="kids_500k">260</data>
+<data name="kids_250k">2407</data>
+<data name="kids_500k">698</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -595,8 +595,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100014</name>
-<data name="kids_250k">571</data>
-<data name="kids_500k">207</data>
+<data name="kids_250k">2504</data>
+<data name="kids_500k">902</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -608,8 +608,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100140</name>
-<data name="kids_250k">969</data>
-<data name="kids_500k">297</data>
+<data name="kids_250k">2064</data>
+<data name="kids_500k">645</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -621,8 +621,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100141</name>
-<data name="kids_250k">666</data>
-<data name="kids_500k">164</data>
+<data name="kids_250k">2611</data>
+<data name="kids_500k">951</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -634,8 +634,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100142</name>
-<data name="kids_250k">266</data>
-<data name="kids_500k">79</data>
+<data name="kids_250k">2089</data>
+<data name="kids_500k">772</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -647,8 +647,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100143</name>
-<data name="kids_250k">253</data>
-<data name="kids_500k">87</data>
+<data name="kids_250k">1718</data>
+<data name="kids_500k">673</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -660,8 +660,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100144</name>
-<data name="kids_250k">369</data>
-<data name="kids_500k">130</data>
+<data name="kids_250k">1209</data>
+<data name="kids_500k">454</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -673,8 +673,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100145</name>
-<data name="kids_250k">600</data>
-<data name="kids_500k">198</data>
+<data name="kids_250k">3495</data>
+<data name="kids_500k">1290</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -686,8 +686,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100146</name>
-<data name="kids_250k">1144</data>
-<data name="kids_500k">412</data>
+<data name="kids_250k">3986</data>
+<data name="kids_500k">1540</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -699,8 +699,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100147</name>
-<data name="kids_250k">589</data>
-<data name="kids_500k">246</data>
+<data name="kids_250k">2970</data>
+<data name="kids_500k">1191</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -712,8 +712,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100148</name>
-<data name="kids_250k">584</data>
-<data name="kids_500k">260</data>
+<data name="kids_250k">1281</data>
+<data name="kids_500k">533</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -725,8 +725,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100149</name>
-<data name="kids_250k">3431</data>
-<data name="kids_500k">1370</data>
+<data name="kids_250k">8894</data>
+<data name="kids_500k">3496</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -738,8 +738,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100015</name>
-<data name="kids_250k">497</data>
-<data name="kids_500k">178</data>
+<data name="kids_250k">1638</data>
+<data name="kids_500k">590</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -751,8 +751,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100150</name>
-<data name="kids_250k">3008</data>
-<data name="kids_500k">1191</data>
+<data name="kids_250k">10931</data>
+<data name="kids_500k">4309</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -764,8 +764,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100151</name>
-<data name="kids_250k">3403</data>
-<data name="kids_500k">1348</data>
+<data name="kids_250k">12573</data>
+<data name="kids_500k">5017</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -777,8 +777,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100152</name>
-<data name="kids_250k">395</data>
-<data name="kids_500k">148</data>
+<data name="kids_250k">3779</data>
+<data name="kids_500k">1412</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -790,8 +790,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100153</name>
-<data name="kids_250k">1020</data>
-<data name="kids_500k">387</data>
+<data name="kids_250k">8051</data>
+<data name="kids_500k">3050</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -803,8 +803,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100154</name>
-<data name="kids_250k">750</data>
-<data name="kids_500k">229</data>
+<data name="kids_250k">7323</data>
+<data name="kids_500k">2658</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -816,8 +816,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100155</name>
-<data name="kids_250k">171</data>
-<data name="kids_500k">45</data>
+<data name="kids_250k">3020</data>
+<data name="kids_500k">836</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -829,8 +829,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100156</name>
-<data name="kids_250k">460</data>
-<data name="kids_500k">126</data>
+<data name="kids_250k">2448</data>
+<data name="kids_500k">715</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -842,8 +842,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100157</name>
-<data name="kids_250k">718</data>
-<data name="kids_500k">243</data>
+<data name="kids_250k">3061</data>
+<data name="kids_500k">922</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -855,8 +855,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100158</name>
-<data name="kids_250k">888</data>
-<data name="kids_500k">325</data>
+<data name="kids_250k">2728</data>
+<data name="kids_500k">956</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -868,8 +868,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100159</name>
-<data name="kids_250k">928</data>
-<data name="kids_500k">326</data>
+<data name="kids_250k">2942</data>
+<data name="kids_500k">1106</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -881,8 +881,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100016</name>
-<data name="kids_250k">413</data>
-<data name="kids_500k">152</data>
+<data name="kids_250k">1777</data>
+<data name="kids_500k">658</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -894,8 +894,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100160</name>
-<data name="kids_250k">1031</data>
-<data name="kids_500k">420</data>
+<data name="kids_250k">3132</data>
+<data name="kids_500k">1192</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -907,8 +907,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100161</name>
-<data name="kids_250k">239</data>
-<data name="kids_500k">86</data>
+<data name="kids_250k">2317</data>
+<data name="kids_500k">929</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -920,8 +920,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100162</name>
-<data name="kids_250k">503</data>
-<data name="kids_500k">181</data>
+<data name="kids_250k">2720</data>
+<data name="kids_500k">1086</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -933,8 +933,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100163</name>
-<data name="kids_250k">682</data>
-<data name="kids_500k">237</data>
+<data name="kids_250k">3141</data>
+<data name="kids_500k">1160</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -946,8 +946,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100164</name>
-<data name="kids_250k">1232</data>
-<data name="kids_500k">492</data>
+<data name="kids_250k">3447</data>
+<data name="kids_500k">1311</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -959,8 +959,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100165</name>
-<data name="kids_250k">1403</data>
-<data name="kids_500k">557</data>
+<data name="kids_250k">5647</data>
+<data name="kids_500k">2200</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -972,8 +972,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100166</name>
-<data name="kids_250k">1050</data>
-<data name="kids_500k">417</data>
+<data name="kids_250k">4128</data>
+<data name="kids_500k">1635</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -985,8 +985,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100167</name>
-<data name="kids_250k">3639</data>
-<data name="kids_500k">1423</data>
+<data name="kids_250k">8404</data>
+<data name="kids_500k">3291</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -998,8 +998,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100168</name>
-<data name="kids_250k">3822</data>
-<data name="kids_500k">1505</data>
+<data name="kids_250k">10171</data>
+<data name="kids_500k">3992</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1011,8 +1011,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100169</name>
-<data name="kids_250k">1912</data>
-<data name="kids_500k">728</data>
+<data name="kids_250k">9322</data>
+<data name="kids_500k">3666</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1024,8 +1024,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100017</name>
-<data name="kids_250k">404</data>
-<data name="kids_500k">149</data>
+<data name="kids_250k">2563</data>
+<data name="kids_500k">968</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1037,8 +1037,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100170</name>
-<data name="kids_250k">1760</data>
-<data name="kids_500k">504</data>
+<data name="kids_250k">4613</data>
+<data name="kids_500k">1563</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1050,8 +1050,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100171</name>
-<data name="kids_250k">1561</data>
-<data name="kids_500k">438</data>
+<data name="kids_250k">5526</data>
+<data name="kids_500k">1904</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1063,8 +1063,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100172</name>
-<data name="kids_250k">560</data>
-<data name="kids_500k">99</data>
+<data name="kids_250k">5043</data>
+<data name="kids_500k">1667</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1076,8 +1076,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100173</name>
-<data name="kids_250k">133</data>
-<data name="kids_500k">37</data>
+<data name="kids_250k">3000</data>
+<data name="kids_500k">853</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1089,8 +1089,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100174</name>
-<data name="kids_250k">371</data>
-<data name="kids_500k">119</data>
+<data name="kids_250k">3403</data>
+<data name="kids_500k">1017</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1102,8 +1102,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100175</name>
-<data name="kids_250k">449</data>
-<data name="kids_500k">162</data>
+<data name="kids_250k">1901</data>
+<data name="kids_500k">699</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1115,8 +1115,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100176</name>
-<data name="kids_250k">662</data>
-<data name="kids_500k">272</data>
+<data name="kids_250k">2380</data>
+<data name="kids_500k">902</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1128,8 +1128,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100177</name>
-<data name="kids_250k">938</data>
-<data name="kids_500k">388</data>
+<data name="kids_250k">2681</data>
+<data name="kids_500k">1044</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1141,8 +1141,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100178</name>
-<data name="kids_250k">934</data>
-<data name="kids_500k">390</data>
+<data name="kids_250k">2783</data>
+<data name="kids_500k">1093</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1154,8 +1154,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100179</name>
-<data name="kids_250k">784</data>
-<data name="kids_500k">338</data>
+<data name="kids_250k">2948</data>
+<data name="kids_500k">1167</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1167,8 +1167,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100018</name>
-<data name="kids_250k">485</data>
-<data name="kids_500k">176</data>
+<data name="kids_250k">2594</data>
+<data name="kids_500k">969</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1180,8 +1180,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100180</name>
-<data name="kids_250k">348</data>
-<data name="kids_500k">151</data>
+<data name="kids_250k">1877</data>
+<data name="kids_500k">762</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1193,8 +1193,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100181</name>
-<data name="kids_250k">501</data>
-<data name="kids_500k">147</data>
+<data name="kids_250k">2491</data>
+<data name="kids_500k">987</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1206,8 +1206,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100182</name>
-<data name="kids_250k">792</data>
-<data name="kids_500k">302</data>
+<data name="kids_250k">2720</data>
+<data name="kids_500k">1042</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1219,8 +1219,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100183</name>
-<data name="kids_250k">606</data>
-<data name="kids_500k">244</data>
+<data name="kids_250k">2556</data>
+<data name="kids_500k">972</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1232,8 +1232,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100184</name>
-<data name="kids_250k">1974</data>
-<data name="kids_500k">779</data>
+<data name="kids_250k">5319</data>
+<data name="kids_500k">2134</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1245,8 +1245,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100185</name>
-<data name="kids_250k">2497</data>
-<data name="kids_500k">990</data>
+<data name="kids_250k">6307</data>
+<data name="kids_500k">2523</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1258,8 +1258,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100186</name>
-<data name="kids_250k">2231</data>
-<data name="kids_500k">864</data>
+<data name="kids_250k">8450</data>
+<data name="kids_500k">3344</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1271,8 +1271,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100187</name>
-<data name="kids_250k">1154</data>
-<data name="kids_500k">428</data>
+<data name="kids_250k">7150</data>
+<data name="kids_500k">2799</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1284,8 +1284,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100188</name>
-<data name="kids_250k">3187</data>
-<data name="kids_500k">1041</data>
+<data name="kids_250k">8231</data>
+<data name="kids_500k">3035</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1297,8 +1297,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100189</name>
-<data name="kids_250k">3291</data>
-<data name="kids_500k">1043</data>
+<data name="kids_250k">7455</data>
+<data name="kids_500k">2640</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1310,8 +1310,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100019</name>
-<data name="kids_250k">107</data>
-<data name="kids_500k">34</data>
+<data name="kids_250k">651</data>
+<data name="kids_500k">207</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1323,8 +1323,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100190</name>
-<data name="kids_250k">1043</data>
-<data name="kids_500k">270</data>
+<data name="kids_250k">5109</data>
+<data name="kids_500k">1621</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1336,8 +1336,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100191</name>
-<data name="kids_250k">682</data>
-<data name="kids_500k">229</data>
+<data name="kids_250k">3804</data>
+<data name="kids_500k">1069</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1349,8 +1349,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100192</name>
-<data name="kids_250k">577</data>
-<data name="kids_500k">186</data>
+<data name="kids_250k">2078</data>
+<data name="kids_500k">667</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1362,8 +1362,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100193</name>
-<data name="kids_250k">214</data>
-<data name="kids_500k">85</data>
+<data name="kids_250k">1157</data>
+<data name="kids_500k">404</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1375,8 +1375,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100194</name>
-<data name="kids_250k">368</data>
-<data name="kids_500k">144</data>
+<data name="kids_250k">2751</data>
+<data name="kids_500k">1024</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1388,8 +1388,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100195</name>
-<data name="kids_250k">664</data>
-<data name="kids_500k">255</data>
+<data name="kids_250k">3173</data>
+<data name="kids_500k">1180</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1401,8 +1401,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100196</name>
-<data name="kids_250k">1014</data>
-<data name="kids_500k">426</data>
+<data name="kids_250k">3713</data>
+<data name="kids_500k">1354</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1414,8 +1414,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100197</name>
-<data name="kids_250k">770</data>
-<data name="kids_500k">321</data>
+<data name="kids_250k">2903</data>
+<data name="kids_500k">1056</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1427,8 +1427,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100198</name>
-<data name="kids_250k">386</data>
-<data name="kids_500k">162</data>
+<data name="kids_250k">2025</data>
+<data name="kids_500k">787</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1440,8 +1440,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100199</name>
-<data name="kids_250k">455</data>
-<data name="kids_500k">168</data>
+<data name="kids_250k">2404</data>
+<data name="kids_500k">963</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1453,8 +1453,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100002</name>
-<data name="kids_250k">235</data>
-<data name="kids_500k">63</data>
+<data name="kids_250k">1275</data>
+<data name="kids_500k">420</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1466,8 +1466,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100020</name>
-<data name="kids_250k">122</data>
-<data name="kids_500k">34</data>
+<data name="kids_250k">660</data>
+<data name="kids_500k">207</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1479,8 +1479,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100200</name>
-<data name="kids_250k">441</data>
-<data name="kids_500k">179</data>
+<data name="kids_250k">2257</data>
+<data name="kids_500k">913</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1492,8 +1492,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100201</name>
-<data name="kids_250k">576</data>
-<data name="kids_500k">232</data>
+<data name="kids_250k">2543</data>
+<data name="kids_500k">970</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1505,8 +1505,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100202</name>
-<data name="kids_250k">1616</data>
-<data name="kids_500k">631</data>
+<data name="kids_250k">4792</data>
+<data name="kids_500k">1911</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1518,8 +1518,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100203</name>
-<data name="kids_250k">1648</data>
-<data name="kids_500k">634</data>
+<data name="kids_250k">4315</data>
+<data name="kids_500k">1728</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1531,8 +1531,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100204</name>
-<data name="kids_250k">1342</data>
-<data name="kids_500k">612</data>
+<data name="kids_250k">5517</data>
+<data name="kids_500k">2384</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1544,8 +1544,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100205</name>
-<data name="kids_250k">2529</data>
-<data name="kids_500k">1119</data>
+<data name="kids_250k">10678</data>
+<data name="kids_500k">4336</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1557,8 +1557,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100206</name>
-<data name="kids_250k">3170</data>
-<data name="kids_500k">1264</data>
+<data name="kids_250k">9930</data>
+<data name="kids_500k">3922</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1570,8 +1570,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100207</name>
-<data name="kids_250k">2374</data>
-<data name="kids_500k">919</data>
+<data name="kids_250k">9888</data>
+<data name="kids_500k">3800</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1583,8 +1583,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100208</name>
-<data name="kids_250k">1904</data>
-<data name="kids_500k">656</data>
+<data name="kids_250k">7051</data>
+<data name="kids_500k">2410</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1596,8 +1596,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100209</name>
-<data name="kids_250k">1106</data>
-<data name="kids_500k">369</data>
+<data name="kids_250k">4054</data>
+<data name="kids_500k">1358</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1609,8 +1609,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100021</name>
-<data name="kids_250k">115</data>
-<data name="kids_500k">29</data>
+<data name="kids_250k">364</data>
+<data name="kids_500k">106</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1622,8 +1622,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100210</name>
-<data name="kids_250k">896</data>
-<data name="kids_500k">284</data>
+<data name="kids_250k">3385</data>
+<data name="kids_500k">1148</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1635,8 +1635,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100211</name>
-<data name="kids_250k">568</data>
-<data name="kids_500k">163</data>
+<data name="kids_250k">3154</data>
+<data name="kids_500k">1085</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1648,8 +1648,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100212</name>
-<data name="kids_250k">200</data>
-<data name="kids_500k">33</data>
+<data name="kids_250k">1839</data>
+<data name="kids_500k">584</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1661,8 +1661,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100213</name>
-<data name="kids_250k">796</data>
-<data name="kids_500k">201</data>
+<data name="kids_250k">3084</data>
+<data name="kids_500k">1066</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1674,8 +1674,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100214</name>
-<data name="kids_250k">1024</data>
-<data name="kids_500k">309</data>
+<data name="kids_250k">2921</data>
+<data name="kids_500k">1013</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1687,8 +1687,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100215</name>
-<data name="kids_250k">950</data>
-<data name="kids_500k">315</data>
+<data name="kids_250k">2696</data>
+<data name="kids_500k">949</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1700,8 +1700,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100216</name>
-<data name="kids_250k">737</data>
-<data name="kids_500k">239</data>
+<data name="kids_250k">2559</data>
+<data name="kids_500k">927</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1713,8 +1713,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100217</name>
-<data name="kids_250k">25</data>
-<data name="kids_500k">10</data>
+<data name="kids_250k">402</data>
+<data name="kids_500k">151</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1726,8 +1726,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100218</name>
-<data name="kids_250k">371</data>
-<data name="kids_500k">149</data>
+<data name="kids_250k">2180</data>
+<data name="kids_500k">879</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1739,8 +1739,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100219</name>
-<data name="kids_250k">378</data>
-<data name="kids_500k">152</data>
+<data name="kids_250k">2188</data>
+<data name="kids_500k">883</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1752,8 +1752,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100022</name>
-<data name="kids_250k">140</data>
-<data name="kids_500k">40</data>
+<data name="kids_250k">1169</data>
+<data name="kids_500k">406</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1765,8 +1765,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100220</name>
-<data name="kids_250k">366</data>
-<data name="kids_500k">175</data>
+<data name="kids_250k">3296</data>
+<data name="kids_500k">1429</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1778,8 +1778,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100221</name>
-<data name="kids_250k">1118</data>
-<data name="kids_500k">526</data>
+<data name="kids_250k">7057</data>
+<data name="kids_500k">3008</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1791,8 +1791,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100222</name>
-<data name="kids_250k">2550</data>
-<data name="kids_500k">1115</data>
+<data name="kids_250k">7952</data>
+<data name="kids_500k">3372</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1804,8 +1804,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100223</name>
-<data name="kids_250k">3630</data>
-<data name="kids_500k">1551</data>
+<data name="kids_250k">9555</data>
+<data name="kids_500k">4017</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1817,8 +1817,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100224</name>
-<data name="kids_250k">3027</data>
-<data name="kids_500k">1269</data>
+<data name="kids_250k">10321</data>
+<data name="kids_500k">4319</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1830,8 +1830,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100225</name>
-<data name="kids_250k">2899</data>
-<data name="kids_500k">1140</data>
+<data name="kids_250k">10305</data>
+<data name="kids_500k">4117</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1843,8 +1843,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100226</name>
-<data name="kids_250k">1871</data>
-<data name="kids_500k">635</data>
+<data name="kids_250k">7197</data>
+<data name="kids_500k">2762</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1856,8 +1856,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100227</name>
-<data name="kids_250k">1083</data>
-<data name="kids_500k">358</data>
+<data name="kids_250k">4362</data>
+<data name="kids_500k">1470</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1869,8 +1869,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100228</name>
-<data name="kids_250k">820</data>
-<data name="kids_500k">255</data>
+<data name="kids_250k">3806</data>
+<data name="kids_500k">1274</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1882,8 +1882,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100229</name>
-<data name="kids_250k">445</data>
-<data name="kids_500k">96</data>
+<data name="kids_250k">2557</data>
+<data name="kids_500k">783</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1895,8 +1895,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100023</name>
-<data name="kids_250k">384</data>
-<data name="kids_500k">144</data>
+<data name="kids_250k">1869</data>
+<data name="kids_500k">670</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1908,8 +1908,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100230</name>
-<data name="kids_250k">523</data>
-<data name="kids_500k">138</data>
+<data name="kids_250k">1941</data>
+<data name="kids_500k">533</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1921,8 +1921,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100231</name>
-<data name="kids_250k">730</data>
-<data name="kids_500k">199</data>
+<data name="kids_250k">1952</data>
+<data name="kids_500k">562</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1934,8 +1934,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100232</name>
-<data name="kids_250k">895</data>
-<data name="kids_500k">225</data>
+<data name="kids_250k">2296</data>
+<data name="kids_500k">703</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1947,8 +1947,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100233</name>
-<data name="kids_250k">932</data>
-<data name="kids_500k">261</data>
+<data name="kids_250k">2411</data>
+<data name="kids_500k">800</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1960,8 +1960,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100234</name>
-<data name="kids_250k">842</data>
-<data name="kids_500k">266</data>
+<data name="kids_250k">2191</data>
+<data name="kids_500k">741</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1973,8 +1973,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100235</name>
-<data name="kids_250k">29</data>
-<data name="kids_500k">12</data>
+<data name="kids_250k">399</data>
+<data name="kids_500k">122</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1986,8 +1986,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100236</name>
-<data name="kids_250k">13</data>
-<data name="kids_500k">6</data>
+<data name="kids_250k">339</data>
+<data name="kids_500k">127</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -1999,8 +1999,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100237</name>
-<data name="kids_250k">404</data>
-<data name="kids_500k">177</data>
+<data name="kids_250k">4329</data>
+<data name="kids_500k">1881</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2012,8 +2012,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100238</name>
-<data name="kids_250k">404</data>
-<data name="kids_500k">177</data>
+<data name="kids_250k">4329</data>
+<data name="kids_500k">1881</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2025,8 +2025,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100239</name>
-<data name="kids_250k">279</data>
-<data name="kids_500k">131</data>
+<data name="kids_250k">3869</data>
+<data name="kids_500k">1681</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2038,8 +2038,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100024</name>
-<data name="kids_250k">496</data>
-<data name="kids_500k">198</data>
+<data name="kids_250k">1794</data>
+<data name="kids_500k">655</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2051,8 +2051,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100240</name>
-<data name="kids_250k">2409</data>
-<data name="kids_500k">1016</data>
+<data name="kids_250k">10597</data>
+<data name="kids_500k">4482</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2064,8 +2064,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100241</name>
-<data name="kids_250k">2850</data>
-<data name="kids_500k">1200</data>
+<data name="kids_250k">10322</data>
+<data name="kids_500k">4303</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2077,8 +2077,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100242</name>
-<data name="kids_250k">3794</data>
-<data name="kids_500k">1585</data>
+<data name="kids_250k">11134</data>
+<data name="kids_500k">4626</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2090,8 +2090,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100243</name>
-<data name="kids_250k">2096</data>
-<data name="kids_500k">800</data>
+<data name="kids_250k">8963</data>
+<data name="kids_500k">3582</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2103,8 +2103,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100244</name>
-<data name="kids_250k">1460</data>
-<data name="kids_500k">483</data>
+<data name="kids_250k">7075</data>
+<data name="kids_500k">2817</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2116,8 +2116,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100245</name>
-<data name="kids_250k">734</data>
-<data name="kids_500k">226</data>
+<data name="kids_250k">3146</data>
+<data name="kids_500k">1059</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2129,8 +2129,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100246</name>
-<data name="kids_250k">256</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">1776</data>
+<data name="kids_500k">532</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2142,8 +2142,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100247</name>
-<data name="kids_250k">268</data>
-<data name="kids_500k">70</data>
+<data name="kids_250k">1451</data>
+<data name="kids_500k">428</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2155,8 +2155,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100248</name>
-<data name="kids_250k">255</data>
-<data name="kids_500k">73</data>
+<data name="kids_250k">1373</data>
+<data name="kids_500k">426</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2168,8 +2168,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100249</name>
-<data name="kids_250k">265</data>
-<data name="kids_500k">79</data>
+<data name="kids_250k">1253</data>
+<data name="kids_500k">356</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2181,8 +2181,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100025</name>
-<data name="kids_250k">492</data>
-<data name="kids_500k">199</data>
+<data name="kids_250k">1501</data>
+<data name="kids_500k">558</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2194,8 +2194,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100250</name>
-<data name="kids_250k">386</data>
-<data name="kids_500k">132</data>
+<data name="kids_250k">1742</data>
+<data name="kids_500k">535</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2207,8 +2207,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100251</name>
-<data name="kids_250k">375</data>
-<data name="kids_500k">128</data>
+<data name="kids_250k">1815</data>
+<data name="kids_500k">571</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2220,8 +2220,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100252</name>
-<data name="kids_250k">303</data>
-<data name="kids_500k">85</data>
+<data name="kids_250k">1596</data>
+<data name="kids_500k">517</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2233,8 +2233,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100253</name>
-<data name="kids_250k">205</data>
-<data name="kids_500k">69</data>
+<data name="kids_250k">677</data>
+<data name="kids_500k">250</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2246,8 +2246,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100254</name>
-<data name="kids_250k">204</data>
-<data name="kids_500k">69</data>
+<data name="kids_250k">674</data>
+<data name="kids_500k">249</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2259,8 +2259,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100255</name>
-<data name="kids_250k">901</data>
-<data name="kids_500k">381</data>
+<data name="kids_250k">3167</data>
+<data name="kids_500k">1178</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2272,8 +2272,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100256</name>
-<data name="kids_250k">479</data>
-<data name="kids_500k">157</data>
+<data name="kids_250k">2952</data>
+<data name="kids_500k">1164</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2285,8 +2285,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100257</name>
-<data name="kids_250k">970</data>
-<data name="kids_500k">288</data>
+<data name="kids_250k">7168</data>
+<data name="kids_500k">3018</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2298,8 +2298,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100258</name>
-<data name="kids_250k">119</data>
-<data name="kids_500k">41</data>
+<data name="kids_250k">2470</data>
+<data name="kids_500k">965</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2311,8 +2311,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100259</name>
-<data name="kids_250k">3123</data>
-<data name="kids_500k">1285</data>
+<data name="kids_250k">10226</data>
+<data name="kids_500k">4197</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2324,8 +2324,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100026</name>
-<data name="kids_250k">173</data>
-<data name="kids_500k">70</data>
+<data name="kids_250k">1265</data>
+<data name="kids_500k">492</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2337,8 +2337,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100260</name>
-<data name="kids_250k">2756</data>
-<data name="kids_500k">1107</data>
+<data name="kids_250k">10471</data>
+<data name="kids_500k">4179</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2350,8 +2350,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100261</name>
-<data name="kids_250k">1908</data>
-<data name="kids_500k">750</data>
+<data name="kids_250k">9129</data>
+<data name="kids_500k">3629</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2363,8 +2363,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100262</name>
-<data name="kids_250k">970</data>
-<data name="kids_500k">303</data>
+<data name="kids_250k">6003</data>
+<data name="kids_500k">2332</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2376,8 +2376,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100263</name>
-<data name="kids_250k">546</data>
-<data name="kids_500k">152</data>
+<data name="kids_250k">3037</data>
+<data name="kids_500k">1041</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2389,8 +2389,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100264</name>
-<data name="kids_250k">482</data>
-<data name="kids_500k">152</data>
+<data name="kids_250k">1933</data>
+<data name="kids_500k">627</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2402,8 +2402,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100265</name>
-<data name="kids_250k">397</data>
-<data name="kids_500k">113</data>
+<data name="kids_250k">1719</data>
+<data name="kids_500k">586</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2415,8 +2415,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100266</name>
-<data name="kids_250k">210</data>
-<data name="kids_500k">56</data>
+<data name="kids_250k">1489</data>
+<data name="kids_500k">508</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2428,8 +2428,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100267</name>
-<data name="kids_250k">198</data>
-<data name="kids_500k">58</data>
+<data name="kids_250k">1523</data>
+<data name="kids_500k">517</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2441,8 +2441,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100268</name>
-<data name="kids_250k">207</data>
-<data name="kids_500k">78</data>
+<data name="kids_250k">653</data>
+<data name="kids_500k">227</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2454,8 +2454,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100269</name>
-<data name="kids_250k">97</data>
-<data name="kids_500k">34</data>
+<data name="kids_250k">695</data>
+<data name="kids_500k">217</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2467,8 +2467,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100027</name>
-<data name="kids_250k">1161</data>
-<data name="kids_500k">411</data>
+<data name="kids_250k">10155</data>
+<data name="kids_500k">3915</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2480,8 +2480,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100270</name>
-<data name="kids_250k">9</data>
-<data name="kids_500k">6</data>
+<data name="kids_250k">452</data>
+<data name="kids_500k">161</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2493,8 +2493,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100271</name>
-<data name="kids_250k">223</data>
-<data name="kids_500k">76</data>
+<data name="kids_250k">681</data>
+<data name="kids_500k">246</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2506,8 +2506,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100272</name>
-<data name="kids_250k">836</data>
-<data name="kids_500k">377</data>
+<data name="kids_250k">2461</data>
+<data name="kids_500k">908</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2519,8 +2519,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100273</name>
-<data name="kids_250k">966</data>
-<data name="kids_500k">423</data>
+<data name="kids_250k">2801</data>
+<data name="kids_500k">1031</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2532,8 +2532,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100274</name>
-<data name="kids_250k">1258</data>
-<data name="kids_500k">528</data>
+<data name="kids_250k">3578</data>
+<data name="kids_500k">1330</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2545,8 +2545,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100275</name>
-<data name="kids_250k">1849</data>
-<data name="kids_500k">680</data>
+<data name="kids_250k">4861</data>
+<data name="kids_500k">1855</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2558,8 +2558,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100276</name>
-<data name="kids_250k">2221</data>
-<data name="kids_500k">770</data>
+<data name="kids_250k">7006</data>
+<data name="kids_500k">2787</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2571,8 +2571,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100277</name>
-<data name="kids_250k">2497</data>
-<data name="kids_500k">981</data>
+<data name="kids_250k">8016</data>
+<data name="kids_500k">3237</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2584,8 +2584,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100278</name>
-<data name="kids_250k">2459</data>
-<data name="kids_500k">1014</data>
+<data name="kids_250k">8877</data>
+<data name="kids_500k">3469</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2597,8 +2597,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100279</name>
-<data name="kids_250k">1763</data>
-<data name="kids_500k">709</data>
+<data name="kids_250k">6820</data>
+<data name="kids_500k">2702</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2610,8 +2610,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100028</name>
-<data name="kids_250k">1158</data>
-<data name="kids_500k">413</data>
+<data name="kids_250k">5600</data>
+<data name="kids_500k">2063</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2623,8 +2623,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100280</name>
-<data name="kids_250k">1290</data>
-<data name="kids_500k">483</data>
+<data name="kids_250k">4684</data>
+<data name="kids_500k">1816</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2636,8 +2636,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100281</name>
-<data name="kids_250k">846</data>
-<data name="kids_500k">303</data>
+<data name="kids_250k">2870</data>
+<data name="kids_500k">1108</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2649,8 +2649,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100282</name>
-<data name="kids_250k">602</data>
-<data name="kids_500k">202</data>
+<data name="kids_250k">1870</data>
+<data name="kids_500k">678</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2662,8 +2662,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100283</name>
-<data name="kids_250k">521</data>
-<data name="kids_500k">194</data>
+<data name="kids_250k">1881</data>
+<data name="kids_500k">663</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2675,8 +2675,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100284</name>
-<data name="kids_250k">425</data>
-<data name="kids_500k">148</data>
+<data name="kids_250k">2255</data>
+<data name="kids_500k">751</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2688,8 +2688,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100285</name>
-<data name="kids_250k">364</data>
-<data name="kids_500k">127</data>
+<data name="kids_250k">2006</data>
+<data name="kids_500k">682</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2701,8 +2701,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100286</name>
-<data name="kids_250k">189</data>
-<data name="kids_500k">80</data>
+<data name="kids_250k">598</data>
+<data name="kids_500k">205</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2714,8 +2714,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100287</name>
-<data name="kids_250k">192</data>
-<data name="kids_500k">81</data>
+<data name="kids_250k">593</data>
+<data name="kids_500k">202</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2727,8 +2727,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100288</name>
-<data name="kids_250k">227</data>
-<data name="kids_500k">96</data>
+<data name="kids_250k">601</data>
+<data name="kids_500k">201</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2740,8 +2740,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100289</name>
-<data name="kids_250k">257</data>
-<data name="kids_500k">74</data>
+<data name="kids_250k">768</data>
+<data name="kids_500k">282</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2753,8 +2753,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100029</name>
-<data name="kids_250k">478</data>
-<data name="kids_500k">189</data>
+<data name="kids_250k">3298</data>
+<data name="kids_500k">1172</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2766,8 +2766,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100290</name>
-<data name="kids_250k">188</data>
-<data name="kids_500k">50</data>
+<data name="kids_250k">726</data>
+<data name="kids_500k">260</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2779,8 +2779,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100291</name>
-<data name="kids_250k">666</data>
-<data name="kids_500k">306</data>
+<data name="kids_250k">2398</data>
+<data name="kids_500k">901</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2792,8 +2792,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100292</name>
-<data name="kids_250k">1463</data>
-<data name="kids_500k">598</data>
+<data name="kids_250k">3640</data>
+<data name="kids_500k">1335</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2805,8 +2805,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100293</name>
-<data name="kids_250k">1802</data>
-<data name="kids_500k">682</data>
+<data name="kids_250k">4530</data>
+<data name="kids_500k">1739</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2818,8 +2818,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100294</name>
-<data name="kids_250k">1727</data>
-<data name="kids_500k">578</data>
+<data name="kids_250k">5850</data>
+<data name="kids_500k">2342</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2831,8 +2831,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100295</name>
-<data name="kids_250k">2358</data>
-<data name="kids_500k">900</data>
+<data name="kids_250k">6127</data>
+<data name="kids_500k">2340</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2844,8 +2844,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100296</name>
-<data name="kids_250k">2501</data>
-<data name="kids_500k">1062</data>
+<data name="kids_250k">6500</data>
+<data name="kids_500k">2397</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2857,8 +2857,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100297</name>
-<data name="kids_250k">2162</data>
-<data name="kids_500k">914</data>
+<data name="kids_250k">5740</data>
+<data name="kids_500k">2201</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2870,8 +2870,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100298</name>
-<data name="kids_250k">1256</data>
-<data name="kids_500k">524</data>
+<data name="kids_250k">4355</data>
+<data name="kids_500k">1710</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2883,8 +2883,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100299</name>
-<data name="kids_250k">916</data>
-<data name="kids_500k">378</data>
+<data name="kids_250k">3088</data>
+<data name="kids_500k">1248</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2896,8 +2896,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100003</name>
-<data name="kids_250k">161</data>
-<data name="kids_500k">36</data>
+<data name="kids_250k">935</data>
+<data name="kids_500k">306</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2909,8 +2909,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100030</name>
-<data name="kids_250k">393</data>
-<data name="kids_500k">161</data>
+<data name="kids_250k">2829</data>
+<data name="kids_500k">1045</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2922,8 +2922,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100300</name>
-<data name="kids_250k">602</data>
-<data name="kids_500k">256</data>
+<data name="kids_250k">1924</data>
+<data name="kids_500k">774</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2935,8 +2935,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100301</name>
-<data name="kids_250k">500</data>
-<data name="kids_500k">223</data>
+<data name="kids_250k">1548</data>
+<data name="kids_500k">628</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2948,8 +2948,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100302</name>
-<data name="kids_250k">607</data>
-<data name="kids_500k">215</data>
+<data name="kids_250k">2799</data>
+<data name="kids_500k">990</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2961,8 +2961,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100303</name>
-<data name="kids_250k">364</data>
-<data name="kids_500k">127</data>
+<data name="kids_250k">2007</data>
+<data name="kids_500k">682</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2974,8 +2974,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100304</name>
-<data name="kids_250k">190</data>
-<data name="kids_500k">83</data>
+<data name="kids_250k">582</data>
+<data name="kids_500k">198</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -2987,8 +2987,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100305</name>
-<data name="kids_250k">190</data>
-<data name="kids_500k">83</data>
+<data name="kids_250k">579</data>
+<data name="kids_500k">197</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3000,8 +3000,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100306</name>
-<data name="kids_250k">147</data>
-<data name="kids_500k">66</data>
+<data name="kids_250k">564</data>
+<data name="kids_500k">196</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3013,8 +3013,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100307</name>
-<data name="kids_250k">390</data>
-<data name="kids_500k">137</data>
+<data name="kids_250k">2280</data>
+<data name="kids_500k">919</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3026,8 +3026,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100308</name>
-<data name="kids_250k">99</data>
-<data name="kids_500k">33</data>
+<data name="kids_250k">609</data>
+<data name="kids_500k">227</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3039,8 +3039,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100309</name>
-<data name="kids_250k">814</data>
-<data name="kids_500k">346</data>
+<data name="kids_250k">3327</data>
+<data name="kids_500k">1242</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3052,8 +3052,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100031</name>
-<data name="kids_250k">277</data>
-<data name="kids_500k">115</data>
+<data name="kids_250k">1849</data>
+<data name="kids_500k">679</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3065,8 +3065,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100310</name>
-<data name="kids_250k">821</data>
-<data name="kids_500k">322</data>
+<data name="kids_250k">3739</data>
+<data name="kids_500k">1349</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3078,8 +3078,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100311</name>
-<data name="kids_250k">852</data>
-<data name="kids_500k">307</data>
+<data name="kids_250k">3879</data>
+<data name="kids_500k">1414</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3091,8 +3091,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100312</name>
-<data name="kids_250k">1084</data>
-<data name="kids_500k">344</data>
+<data name="kids_250k">5197</data>
+<data name="kids_500k">2022</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3104,8 +3104,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100313</name>
-<data name="kids_250k">1529</data>
-<data name="kids_500k">559</data>
+<data name="kids_250k">5383</data>
+<data name="kids_500k">2041</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3117,8 +3117,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100314</name>
-<data name="kids_250k">1897</data>
-<data name="kids_500k">740</data>
+<data name="kids_250k">5227</data>
+<data name="kids_500k">1962</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3130,8 +3130,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100315</name>
-<data name="kids_250k">1956</data>
-<data name="kids_500k">776</data>
+<data name="kids_250k">4775</data>
+<data name="kids_500k">1807</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3143,8 +3143,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100316</name>
-<data name="kids_250k">1236</data>
-<data name="kids_500k">521</data>
+<data name="kids_250k">3774</data>
+<data name="kids_500k">1479</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3156,8 +3156,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100317</name>
-<data name="kids_250k">613</data>
-<data name="kids_500k">250</data>
+<data name="kids_250k">3300</data>
+<data name="kids_500k">1289</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3169,8 +3169,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100318</name>
-<data name="kids_250k">368</data>
-<data name="kids_500k">176</data>
+<data name="kids_250k">1144</data>
+<data name="kids_500k">461</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3182,8 +3182,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100319</name>
-<data name="kids_250k">0</data>
-<data name="kids_500k">0</data>
+<data name="kids_250k">459</data>
+<data name="kids_500k">189</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3195,8 +3195,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100032</name>
-<data name="kids_250k">621</data>
-<data name="kids_500k">223</data>
+<data name="kids_250k">2477</data>
+<data name="kids_500k">899</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3208,8 +3208,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100320</name>
-<data name="kids_250k">0</data>
-<data name="kids_500k">0</data>
+<data name="kids_250k">513</data>
+<data name="kids_500k">212</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3221,8 +3221,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100321</name>
-<data name="kids_250k">6</data>
-<data name="kids_500k">3</data>
+<data name="kids_250k">884</data>
+<data name="kids_500k">339</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3234,8 +3234,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100322</name>
-<data name="kids_250k">67</data>
-<data name="kids_500k">24</data>
+<data name="kids_250k">561</data>
+<data name="kids_500k">212</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3247,8 +3247,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100323</name>
-<data name="kids_250k">90</data>
-<data name="kids_500k">38</data>
+<data name="kids_250k">552</data>
+<data name="kids_500k">201</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3260,8 +3260,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100324</name>
-<data name="kids_250k">104</data>
-<data name="kids_500k">46</data>
+<data name="kids_250k">538</data>
+<data name="kids_500k">192</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3273,8 +3273,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100325</name>
-<data name="kids_250k">188</data>
-<data name="kids_500k">68</data>
+<data name="kids_250k">689</data>
+<data name="kids_500k">234</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3286,8 +3286,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100326</name>
-<data name="kids_250k">176</data>
-<data name="kids_500k">61</data>
+<data name="kids_250k">893</data>
+<data name="kids_500k">325</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3299,8 +3299,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100327</name>
-<data name="kids_250k">115</data>
-<data name="kids_500k">39</data>
+<data name="kids_250k">643</data>
+<data name="kids_500k">235</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3312,8 +3312,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100328</name>
-<data name="kids_250k">65</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">214</data>
+<data name="kids_500k">68</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3325,8 +3325,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100329</name>
-<data name="kids_250k">733</data>
-<data name="kids_500k">268</data>
+<data name="kids_250k">4025</data>
+<data name="kids_500k">1517</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3338,8 +3338,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100033</name>
-<data name="kids_250k">411</data>
-<data name="kids_500k">127</data>
+<data name="kids_250k">1513</data>
+<data name="kids_500k">551</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3351,8 +3351,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100330</name>
-<data name="kids_250k">309</data>
-<data name="kids_500k">100</data>
+<data name="kids_250k">2447</data>
+<data name="kids_500k">867</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3364,8 +3364,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100331</name>
-<data name="kids_250k">488</data>
-<data name="kids_500k">172</data>
+<data name="kids_250k">2650</data>
+<data name="kids_500k">945</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3377,8 +3377,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100332</name>
-<data name="kids_250k">974</data>
-<data name="kids_500k">329</data>
+<data name="kids_250k">2993</data>
+<data name="kids_500k">1134</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3390,8 +3390,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100333</name>
-<data name="kids_250k">1146</data>
-<data name="kids_500k">429</data>
+<data name="kids_250k">3197</data>
+<data name="kids_500k">1230</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3403,8 +3403,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100334</name>
-<data name="kids_250k">576</data>
-<data name="kids_500k">206</data>
+<data name="kids_250k">2491</data>
+<data name="kids_500k">969</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3416,8 +3416,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100335</name>
-<data name="kids_250k">157</data>
-<data name="kids_500k">57</data>
+<data name="kids_250k">1728</data>
+<data name="kids_500k">689</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3429,8 +3429,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100336</name>
-<data name="kids_250k">433</data>
-<data name="kids_500k">186</data>
+<data name="kids_250k">2862</data>
+<data name="kids_500k">1068</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3442,8 +3442,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100337</name>
-<data name="kids_250k">57</data>
-<data name="kids_500k">31</data>
+<data name="kids_250k">1307</data>
+<data name="kids_500k">479</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3455,8 +3455,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100338</name>
-<data name="kids_250k">11</data>
-<data name="kids_500k">6</data>
+<data name="kids_250k">934</data>
+<data name="kids_500k">352</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3468,8 +3468,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100339</name>
-<data name="kids_250k">153</data>
-<data name="kids_500k">66</data>
+<data name="kids_250k">478</data>
+<data name="kids_500k">204</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3481,8 +3481,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100034</name>
-<data name="kids_250k">348</data>
-<data name="kids_500k">126</data>
+<data name="kids_250k">1373</data>
+<data name="kids_500k">511</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3494,8 +3494,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100340</name>
-<data name="kids_250k">155</data>
-<data name="kids_500k">67</data>
+<data name="kids_250k">449</data>
+<data name="kids_500k">187</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3507,8 +3507,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100341</name>
-<data name="kids_250k">186</data>
-<data name="kids_500k">73</data>
+<data name="kids_250k">416</data>
+<data name="kids_500k">165</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3520,8 +3520,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100342</name>
-<data name="kids_250k">170</data>
-<data name="kids_500k">52</data>
+<data name="kids_250k">597</data>
+<data name="kids_500k">221</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3533,8 +3533,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100343</name>
-<data name="kids_250k">239</data>
-<data name="kids_500k">78</data>
+<data name="kids_250k">704</data>
+<data name="kids_500k">244</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3546,8 +3546,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100344</name>
-<data name="kids_250k">223</data>
-<data name="kids_500k">75</data>
+<data name="kids_250k">735</data>
+<data name="kids_500k">254</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3559,8 +3559,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100345</name>
-<data name="kids_250k">179</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">1036</data>
+<data name="kids_500k">391</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3572,8 +3572,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100346</name>
-<data name="kids_250k">66</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">226</data>
+<data name="kids_500k">71</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3585,8 +3585,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100347</name>
-<data name="kids_250k">66</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">233</data>
+<data name="kids_500k">73</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3598,8 +3598,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100348</name>
-<data name="kids_250k">82</data>
-<data name="kids_500k">21</data>
+<data name="kids_250k">651</data>
+<data name="kids_500k">194</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3611,8 +3611,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100349</name>
-<data name="kids_250k">334</data>
-<data name="kids_500k">106</data>
+<data name="kids_250k">1323</data>
+<data name="kids_500k">433</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3624,8 +3624,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100035</name>
-<data name="kids_250k">220</data>
-<data name="kids_500k">68</data>
+<data name="kids_250k">1562</data>
+<data name="kids_500k">601</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3637,8 +3637,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100350</name>
-<data name="kids_250k">425</data>
-<data name="kids_500k">126</data>
+<data name="kids_250k">1474</data>
+<data name="kids_500k">511</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3650,8 +3650,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100351</name>
-<data name="kids_250k">398</data>
-<data name="kids_500k">116</data>
+<data name="kids_250k">1382</data>
+<data name="kids_500k">504</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3663,8 +3663,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100352</name>
-<data name="kids_250k">163</data>
-<data name="kids_500k">49</data>
+<data name="kids_250k">603</data>
+<data name="kids_500k">190</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3676,8 +3676,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100353</name>
-<data name="kids_250k">437</data>
-<data name="kids_500k">147</data>
+<data name="kids_250k">2678</data>
+<data name="kids_500k">987</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3689,8 +3689,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100354</name>
-<data name="kids_250k">105</data>
-<data name="kids_500k">53</data>
+<data name="kids_250k">604</data>
+<data name="kids_500k">255</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3702,8 +3702,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100355</name>
-<data name="kids_250k">262</data>
-<data name="kids_500k">117</data>
+<data name="kids_250k">1993</data>
+<data name="kids_500k">740</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3715,8 +3715,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100356</name>
-<data name="kids_250k">180</data>
-<data name="kids_500k">81</data>
+<data name="kids_250k">983</data>
+<data name="kids_500k">368</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3728,8 +3728,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100357</name>
-<data name="kids_250k">147</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">483</data>
+<data name="kids_500k">212</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3741,8 +3741,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100358</name>
-<data name="kids_250k">153</data>
-<data name="kids_500k">66</data>
+<data name="kids_250k">337</data>
+<data name="kids_500k">148</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3754,8 +3754,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100359</name>
-<data name="kids_250k">172</data>
-<data name="kids_500k">71</data>
+<data name="kids_250k">349</data>
+<data name="kids_500k">131</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3767,8 +3767,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100036</name>
-<data name="kids_250k">196</data>
-<data name="kids_500k">63</data>
+<data name="kids_250k">1333</data>
+<data name="kids_500k">517</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3780,8 +3780,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100360</name>
-<data name="kids_250k">137</data>
-<data name="kids_500k">46</data>
+<data name="kids_250k">515</data>
+<data name="kids_500k">204</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3793,8 +3793,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100361</name>
-<data name="kids_250k">237</data>
-<data name="kids_500k">78</data>
+<data name="kids_250k">704</data>
+<data name="kids_500k">244</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3806,8 +3806,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100362</name>
-<data name="kids_250k">237</data>
-<data name="kids_500k">78</data>
+<data name="kids_250k">704</data>
+<data name="kids_500k">244</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3819,8 +3819,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100363</name>
-<data name="kids_250k">66</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">233</data>
+<data name="kids_500k">73</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3832,8 +3832,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100364</name>
-<data name="kids_250k">66</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">236</data>
+<data name="kids_500k">74</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3845,8 +3845,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100365</name>
-<data name="kids_250k">68</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">259</data>
+<data name="kids_500k">77</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3858,8 +3858,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100366</name>
-<data name="kids_250k">80</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">551</data>
+<data name="kids_500k">160</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3871,8 +3871,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100367</name>
-<data name="kids_250k">235</data>
-<data name="kids_500k">70</data>
+<data name="kids_250k">1144</data>
+<data name="kids_500k">368</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3884,8 +3884,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100368</name>
-<data name="kids_250k">418</data>
-<data name="kids_500k">123</data>
+<data name="kids_250k">1456</data>
+<data name="kids_500k">504</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3897,8 +3897,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100369</name>
-<data name="kids_250k">425</data>
-<data name="kids_500k">128</data>
+<data name="kids_250k">1442</data>
+<data name="kids_500k">527</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3910,8 +3910,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100037</name>
-<data name="kids_250k">26</data>
-<data name="kids_500k">10</data>
+<data name="kids_250k">702</data>
+<data name="kids_500k">243</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3923,8 +3923,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100370</name>
-<data name="kids_250k">41</data>
-<data name="kids_500k">21</data>
+<data name="kids_250k">129</data>
+<data name="kids_500k">64</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3936,8 +3936,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100371</name>
-<data name="kids_250k">41</data>
-<data name="kids_500k">21</data>
+<data name="kids_250k">240</data>
+<data name="kids_500k">116</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3949,8 +3949,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100372</name>
-<data name="kids_250k">48</data>
-<data name="kids_500k">25</data>
+<data name="kids_250k">367</data>
+<data name="kids_500k">163</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3962,8 +3962,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100373</name>
-<data name="kids_250k">121</data>
-<data name="kids_500k">60</data>
+<data name="kids_250k">741</data>
+<data name="kids_500k">292</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3975,8 +3975,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100374</name>
-<data name="kids_250k">180</data>
-<data name="kids_500k">83</data>
+<data name="kids_250k">1001</data>
+<data name="kids_500k">376</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -3988,8 +3988,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100375</name>
-<data name="kids_250k">150</data>
-<data name="kids_500k">65</data>
+<data name="kids_250k">610</data>
+<data name="kids_500k">260</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4001,8 +4001,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100376</name>
-<data name="kids_250k">139</data>
-<data name="kids_500k">59</data>
+<data name="kids_250k">306</data>
+<data name="kids_500k">136</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4014,8 +4014,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100377</name>
-<data name="kids_250k">171</data>
-<data name="kids_500k">71</data>
+<data name="kids_250k">345</data>
+<data name="kids_500k">130</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4027,8 +4027,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100378</name>
-<data name="kids_250k">165</data>
-<data name="kids_500k">65</data>
+<data name="kids_250k">357</data>
+<data name="kids_500k">135</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4040,8 +4040,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100379</name>
-<data name="kids_250k">216</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">661</data>
+<data name="kids_500k">247</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4053,8 +4053,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100038</name>
-<data name="kids_250k">73</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">641</data>
+<data name="kids_500k">224</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4066,8 +4066,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100380</name>
-<data name="kids_250k">216</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">661</data>
+<data name="kids_500k">247</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4079,8 +4079,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100381</name>
-<data name="kids_250k">66</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">236</data>
+<data name="kids_500k">74</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4092,8 +4092,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100382</name>
-<data name="kids_250k">66</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">220</data>
+<data name="kids_500k">70</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4105,8 +4105,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100383</name>
-<data name="kids_250k">68</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">371</data>
+<data name="kids_500k">110</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4118,8 +4118,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100384</name>
-<data name="kids_250k">79</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">551</data>
+<data name="kids_500k">160</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4131,8 +4131,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100385</name>
-<data name="kids_250k">196</data>
-<data name="kids_500k">61</data>
+<data name="kids_250k">1191</data>
+<data name="kids_500k">380</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4144,8 +4144,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100386</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4157,8 +4157,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100387</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4170,8 +4170,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100388</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4183,8 +4183,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100389</name>
-<data name="kids_250k">41</data>
-<data name="kids_500k">21</data>
+<data name="kids_250k">154</data>
+<data name="kids_500k">76</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4196,8 +4196,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100039</name>
-<data name="kids_250k">51</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">251</data>
+<data name="kids_500k">80</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4209,8 +4209,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100390</name>
-<data name="kids_250k">48</data>
-<data name="kids_500k">25</data>
+<data name="kids_250k">367</data>
+<data name="kids_500k">163</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4222,8 +4222,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100391</name>
-<data name="kids_250k">51</data>
-<data name="kids_500k">27</data>
+<data name="kids_250k">400</data>
+<data name="kids_500k">179</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4235,8 +4235,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100392</name>
-<data name="kids_250k">51</data>
-<data name="kids_500k">27</data>
+<data name="kids_250k">400</data>
+<data name="kids_500k">179</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4248,8 +4248,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100393</name>
-<data name="kids_250k">150</data>
-<data name="kids_500k">65</data>
+<data name="kids_250k">610</data>
+<data name="kids_500k">260</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4261,8 +4261,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100394</name>
-<data name="kids_250k">150</data>
-<data name="kids_500k">65</data>
+<data name="kids_250k">588</data>
+<data name="kids_500k">243</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4274,8 +4274,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100395</name>
-<data name="kids_250k">139</data>
-<data name="kids_500k">59</data>
+<data name="kids_250k">306</data>
+<data name="kids_500k">136</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4287,8 +4287,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100396</name>
-<data name="kids_250k">164</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">357</data>
+<data name="kids_500k">135</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4300,8 +4300,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100397</name>
-<data name="kids_250k">191</data>
-<data name="kids_500k">54</data>
+<data name="kids_250k">636</data>
+<data name="kids_500k">238</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4313,8 +4313,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100398</name>
-<data name="kids_250k">216</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">661</data>
+<data name="kids_500k">248</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4326,8 +4326,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100399</name>
-<data name="kids_250k">66</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">231</data>
+<data name="kids_500k">73</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4339,8 +4339,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100004</name>
-<data name="kids_250k">193</data>
-<data name="kids_500k">55</data>
+<data name="kids_250k">1074</data>
+<data name="kids_500k">376</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4352,8 +4352,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100040</name>
-<data name="kids_250k">101</data>
-<data name="kids_500k">38</data>
+<data name="kids_250k">712</data>
+<data name="kids_500k">276</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4365,8 +4365,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100400</name>
-<data name="kids_250k">68</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">318</data>
+<data name="kids_500k">92</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4378,8 +4378,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100401</name>
-<data name="kids_250k">68</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">371</data>
+<data name="kids_500k">110</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4391,8 +4391,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100402</name>
-<data name="kids_250k">79</data>
-<data name="kids_500k">19</data>
+<data name="kids_250k">551</data>
+<data name="kids_500k">160</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4404,8 +4404,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100403</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4417,8 +4417,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100404</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4430,8 +4430,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100405</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4443,8 +4443,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100406</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4456,8 +4456,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100407</name>
-<data name="kids_250k">34</data>
-<data name="kids_500k">18</data>
+<data name="kids_250k">104</data>
+<data name="kids_500k">53</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4469,8 +4469,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100408</name>
-<data name="kids_250k">41</data>
-<data name="kids_500k">21</data>
+<data name="kids_250k">184</data>
+<data name="kids_500k">91</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4482,8 +4482,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100409</name>
-<data name="kids_250k">48</data>
-<data name="kids_500k">25</data>
+<data name="kids_250k">367</data>
+<data name="kids_500k">163</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4495,8 +4495,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100041</name>
-<data name="kids_250k">226</data>
-<data name="kids_500k">65</data>
+<data name="kids_250k">1308</data>
+<data name="kids_500k">488</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4508,8 +4508,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100410</name>
-<data name="kids_250k">51</data>
-<data name="kids_500k">27</data>
+<data name="kids_250k">400</data>
+<data name="kids_500k">179</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4521,8 +4521,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100411</name>
-<data name="kids_250k">161</data>
-<data name="kids_500k">72</data>
+<data name="kids_250k">888</data>
+<data name="kids_500k">341</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4534,8 +4534,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100412</name>
-<data name="kids_250k">150</data>
-<data name="kids_500k">65</data>
+<data name="kids_250k">610</data>
+<data name="kids_500k">260</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4547,8 +4547,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100413</name>
-<data name="kids_250k">145</data>
-<data name="kids_500k">63</data>
+<data name="kids_250k">432</data>
+<data name="kids_500k">189</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4560,8 +4560,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100414</name>
-<data name="kids_250k">154</data>
-<data name="kids_500k">66</data>
+<data name="kids_250k">328</data>
+<data name="kids_500k">138</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4573,8 +4573,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100042</name>
-<data name="kids_250k">541</data>
-<data name="kids_500k">185</data>
+<data name="kids_250k">1451</data>
+<data name="kids_500k">551</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4586,8 +4586,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100043</name>
-<data name="kids_250k">500</data>
-<data name="kids_500k">196</data>
+<data name="kids_250k">1165</data>
+<data name="kids_500k">438</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4599,8 +4599,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100044</name>
-<data name="kids_250k">417</data>
-<data name="kids_500k">164</data>
+<data name="kids_250k">1701</data>
+<data name="kids_500k">664</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4612,8 +4612,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100045</name>
-<data name="kids_250k">1395</data>
-<data name="kids_500k">460</data>
+<data name="kids_250k">9707</data>
+<data name="kids_500k">3653</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4625,8 +4625,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100046</name>
-<data name="kids_250k">1662</data>
-<data name="kids_500k">549</data>
+<data name="kids_250k">7496</data>
+<data name="kids_500k">2695</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4638,8 +4638,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100047</name>
-<data name="kids_250k">487</data>
-<data name="kids_500k">184</data>
+<data name="kids_250k">3148</data>
+<data name="kids_500k">1085</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4651,8 +4651,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100048</name>
-<data name="kids_250k">466</data>
-<data name="kids_500k">197</data>
+<data name="kids_250k">1301</data>
+<data name="kids_500k">490</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4664,8 +4664,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100049</name>
-<data name="kids_250k">244</data>
-<data name="kids_500k">98</data>
+<data name="kids_250k">973</data>
+<data name="kids_500k">370</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4677,8 +4677,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100005</name>
-<data name="kids_250k">75</data>
-<data name="kids_500k">30</data>
+<data name="kids_250k">920</data>
+<data name="kids_500k">321</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4690,8 +4690,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100050</name>
-<data name="kids_250k">427</data>
-<data name="kids_500k">143</data>
+<data name="kids_250k">1898</data>
+<data name="kids_500k">670</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4703,8 +4703,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100051</name>
-<data name="kids_250k">383</data>
-<data name="kids_500k">135</data>
+<data name="kids_250k">1499</data>
+<data name="kids_500k">523</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4716,8 +4716,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100052</name>
-<data name="kids_250k">364</data>
-<data name="kids_500k">135</data>
+<data name="kids_250k">1681</data>
+<data name="kids_500k">602</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4729,8 +4729,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100053</name>
-<data name="kids_250k">321</data>
-<data name="kids_500k">126</data>
+<data name="kids_250k">1466</data>
+<data name="kids_500k">564</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4742,8 +4742,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100054</name>
-<data name="kids_250k">290</data>
-<data name="kids_500k">110</data>
+<data name="kids_250k">1400</data>
+<data name="kids_500k">536</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4755,8 +4755,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100055</name>
-<data name="kids_250k">112</data>
-<data name="kids_500k">46</data>
+<data name="kids_250k">1062</data>
+<data name="kids_500k">396</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4768,8 +4768,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100056</name>
-<data name="kids_250k">10</data>
-<data name="kids_500k">4</data>
+<data name="kids_250k">522</data>
+<data name="kids_500k">196</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4781,8 +4781,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100057</name>
-<data name="kids_250k">10</data>
-<data name="kids_500k">4</data>
+<data name="kids_250k">522</data>
+<data name="kids_500k">196</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4794,8 +4794,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100058</name>
-<data name="kids_250k">163</data>
-<data name="kids_500k">56</data>
+<data name="kids_250k">922</data>
+<data name="kids_500k">354</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4807,8 +4807,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100059</name>
-<data name="kids_250k">285</data>
-<data name="kids_500k">94</data>
+<data name="kids_250k">1185</data>
+<data name="kids_500k">455</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4820,8 +4820,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100006</name>
-<data name="kids_250k">374</data>
-<data name="kids_500k">144</data>
+<data name="kids_250k">1902</data>
+<data name="kids_500k">708</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4833,8 +4833,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100060</name>
-<data name="kids_250k">457</data>
-<data name="kids_500k">157</data>
+<data name="kids_250k">1322</data>
+<data name="kids_500k">513</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4846,8 +4846,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100061</name>
-<data name="kids_250k">484</data>
-<data name="kids_500k">194</data>
+<data name="kids_250k">1466</data>
+<data name="kids_500k">570</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4859,8 +4859,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100062</name>
-<data name="kids_250k">4020</data>
-<data name="kids_500k">1480</data>
+<data name="kids_250k">14156</data>
+<data name="kids_500k">5501</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4872,8 +4872,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100063</name>
-<data name="kids_250k">2729</data>
-<data name="kids_500k">911</data>
+<data name="kids_250k">12826</data>
+<data name="kids_500k">4948</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4885,8 +4885,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100064</name>
-<data name="kids_250k">1733</data>
-<data name="kids_500k">527</data>
+<data name="kids_250k">9622</data>
+<data name="kids_500k">3596</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4898,8 +4898,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100065</name>
-<data name="kids_250k">438</data>
-<data name="kids_500k">172</data>
+<data name="kids_250k">3327</data>
+<data name="kids_500k">1055</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4911,8 +4911,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100066</name>
-<data name="kids_250k">287</data>
-<data name="kids_500k">111</data>
+<data name="kids_250k">1468</data>
+<data name="kids_500k">532</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4924,8 +4924,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100067</name>
-<data name="kids_250k">175</data>
-<data name="kids_500k">56</data>
+<data name="kids_250k">940</data>
+<data name="kids_500k">344</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4937,8 +4937,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100068</name>
-<data name="kids_250k">79</data>
-<data name="kids_500k">21</data>
+<data name="kids_250k">570</data>
+<data name="kids_500k">207</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4950,8 +4950,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100069</name>
-<data name="kids_250k">295</data>
-<data name="kids_500k">89</data>
+<data name="kids_250k">835</data>
+<data name="kids_500k">268</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4963,8 +4963,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100007</name>
-<data name="kids_250k">563</data>
-<data name="kids_500k">215</data>
+<data name="kids_250k">3081</data>
+<data name="kids_500k">1135</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4976,8 +4976,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100070</name>
-<data name="kids_250k">215</data>
-<data name="kids_500k">65</data>
+<data name="kids_250k">631</data>
+<data name="kids_500k">204</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -4989,8 +4989,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100071</name>
-<data name="kids_250k">156</data>
-<data name="kids_500k">66</data>
+<data name="kids_250k">545</data>
+<data name="kids_500k">213</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5002,8 +5002,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100072</name>
-<data name="kids_250k">217</data>
-<data name="kids_500k">93</data>
+<data name="kids_250k">945</data>
+<data name="kids_500k">360</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5015,8 +5015,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100073</name>
-<data name="kids_250k">168</data>
-<data name="kids_500k">70</data>
+<data name="kids_250k">1211</data>
+<data name="kids_500k">467</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5028,8 +5028,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100074</name>
-<data name="kids_250k">109</data>
-<data name="kids_500k">44</data>
+<data name="kids_250k">496</data>
+<data name="kids_500k">188</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5041,8 +5041,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100075</name>
-<data name="kids_250k">159</data>
-<data name="kids_500k">66</data>
+<data name="kids_250k">1127</data>
+<data name="kids_500k">429</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5054,8 +5054,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100076</name>
-<data name="kids_250k">218</data>
-<data name="kids_500k">89</data>
+<data name="kids_250k">1126</data>
+<data name="kids_500k">439</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5067,8 +5067,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100077</name>
-<data name="kids_250k">556</data>
-<data name="kids_500k">224</data>
+<data name="kids_250k">1367</data>
+<data name="kids_500k">540</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5080,8 +5080,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100078</name>
-<data name="kids_250k">701</data>
-<data name="kids_500k">279</data>
+<data name="kids_250k">1599</data>
+<data name="kids_500k">641</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5093,8 +5093,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100079</name>
-<data name="kids_250k">6763</data>
-<data name="kids_500k">2680</data>
+<data name="kids_250k">15682</data>
+<data name="kids_500k">6166</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5106,8 +5106,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100008</name>
-<data name="kids_250k">425</data>
-<data name="kids_500k">162</data>
+<data name="kids_250k">2716</data>
+<data name="kids_500k">1052</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5119,8 +5119,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100080</name>
-<data name="kids_250k">6251</data>
-<data name="kids_500k">2460</data>
+<data name="kids_250k">14715</data>
+<data name="kids_500k">5766</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5132,8 +5132,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100081</name>
-<data name="kids_250k">5063</data>
-<data name="kids_500k">1918</data>
+<data name="kids_250k">14827</data>
+<data name="kids_500k">5857</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5145,8 +5145,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100082</name>
-<data name="kids_250k">1658</data>
-<data name="kids_500k">541</data>
+<data name="kids_250k">13504</data>
+<data name="kids_500k">5279</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5158,8 +5158,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100083</name>
-<data name="kids_250k">103</data>
-<data name="kids_500k">34</data>
+<data name="kids_250k">3101</data>
+<data name="kids_500k">1065</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5171,8 +5171,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100084</name>
-<data name="kids_250k">109</data>
-<data name="kids_500k">29</data>
+<data name="kids_250k">1767</data>
+<data name="kids_500k">562</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5197,8 +5197,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100086</name>
-<data name="kids_250k">9</data>
-<data name="kids_500k">0</data>
+<data name="kids_250k">316</data>
+<data name="kids_500k">116</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5210,8 +5210,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100087</name>
-<data name="kids_250k">164</data>
-<data name="kids_500k">42</data>
+<data name="kids_250k">467</data>
+<data name="kids_500k">147</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5223,8 +5223,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100088</name>
-<data name="kids_250k">144</data>
-<data name="kids_500k">64</data>
+<data name="kids_250k">352</data>
+<data name="kids_500k">149</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5236,8 +5236,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100089</name>
-<data name="kids_250k">260</data>
-<data name="kids_500k">112</data>
+<data name="kids_250k">931</data>
+<data name="kids_500k">387</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5249,8 +5249,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100009</name>
-<data name="kids_250k">65</data>
-<data name="kids_500k">27</data>
+<data name="kids_250k">832</data>
+<data name="kids_500k">324</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5262,8 +5262,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100090</name>
-<data name="kids_250k">223</data>
-<data name="kids_500k">96</data>
+<data name="kids_250k">790</data>
+<data name="kids_500k">333</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5275,8 +5275,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100091</name>
-<data name="kids_250k">126</data>
-<data name="kids_500k">55</data>
+<data name="kids_250k">365</data>
+<data name="kids_500k">145</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5288,8 +5288,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100092</name>
-<data name="kids_250k">162</data>
-<data name="kids_500k">61</data>
+<data name="kids_250k">1256</data>
+<data name="kids_500k">479</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5301,8 +5301,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100093</name>
-<data name="kids_250k">114</data>
-<data name="kids_500k">41</data>
+<data name="kids_250k">1490</data>
+<data name="kids_500k">566</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5314,8 +5314,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100094</name>
-<data name="kids_250k">438</data>
-<data name="kids_500k">184</data>
+<data name="kids_250k">1640</data>
+<data name="kids_500k">664</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5327,8 +5327,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100095</name>
-<data name="kids_250k">628</data>
-<data name="kids_500k">264</data>
+<data name="kids_250k">1743</data>
+<data name="kids_500k">733</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5340,8 +5340,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100096</name>
-<data name="kids_250k">756</data>
-<data name="kids_500k">322</data>
+<data name="kids_250k">2566</data>
+<data name="kids_500k">998</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5353,8 +5353,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100097</name>
-<data name="kids_250k">7571</data>
-<data name="kids_500k">3054</data>
+<data name="kids_250k">16411</data>
+<data name="kids_500k">6472</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5366,8 +5366,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100098</name>
-<data name="kids_250k">10176</data>
-<data name="kids_500k">4120</data>
+<data name="kids_250k">15625</data>
+<data name="kids_500k">6145</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
@@ -5379,8 +5379,8 @@
 <Placemark>
 <styleUrl>#style_default</styleUrl>
 <name>100099</name>
-<data name="kids_250k">7723</data>
-<data name="kids_500k">3083</data>
+<data name="kids_250k">15089</data>
+<data name="kids_500k">5996</data>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
