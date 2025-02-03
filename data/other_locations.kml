@@ -346,21 +346,6 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>CERA</name>
-      <styleUrl>#other</styleUrl>
-      <description><![CDATA[
-        <h3>CERA</h3>
-        <p><strong>Address:</strong> 3300 Bryant Irvin Rd., Fort Worth, TX 76109</p>
-        <p><strong>Region:</strong> Fort Worth</p>
-        <p><strong>Phone:</strong> (817) 732-7731</p>
-        <p><strong>Website:</strong> <a href="https://cera-fw.org/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other</p>
-      ]]></description>
-      <Point>
-        <coordinates>-97.41349,32.70215</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
       <name>Cooper Fitness Center</name>
       <styleUrl>#other</styleUrl>
       <description><![CDATA[
@@ -1284,7 +1269,7 @@
         <p><strong>Region:</strong> Houston</p>
         <p><strong>Phone:</strong> 12813342560</p>
         <p><strong>Website:</strong> <a href="https://www.southshorefitness.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-95.06223,29.543898</coordinates>

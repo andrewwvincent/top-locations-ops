@@ -76,6 +76,21 @@
       </Point>
     </Placemark>
     <Placemark>
+      <name>CERA</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>CERA</h3>
+        <p><strong>Address:</strong> 3300 Bryant Irvin Rd., Fort Worth, TX 76109</p>
+        <p><strong>Region:</strong> Fort Worth</p>
+        <p><strong>Phone:</strong> (817) 732-7731</p>
+        <p><strong>Website:</strong> <a href="https://cera-fw.org/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred</p>
+      ]]></description>
+      <Point>
+        <coordinates>-97.41349,32.70215</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
       <name>Swell Athletic Club</name>
       <styleUrl>#preferred</styleUrl>
       <description><![CDATA[
@@ -174,7 +189,7 @@
         <p><strong>Region:</strong> Houston</p>
         
         <p><strong>Website:</strong> <a href="https://www.woodlandsindoor.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-95.571072,30.171382</coordinates>
@@ -594,7 +609,7 @@
         <p><strong>Region:</strong> Houston</p>
         <p><strong>Phone:</strong> 12819820480</p>
         <p><strong>Website:</strong> <a href="http://www.upsidesportsplex.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-95.233535,29.462514</coordinates>
@@ -609,10 +624,25 @@
         <p><strong>Region:</strong> Houston</p>
         <p><strong>Phone:</strong> 832-212-1898</p>
         <p><strong>Website:</strong> <a href="https://www.challengeelite.org/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-95.196112,29.569189</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camelback Village</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Camelback Village</h3>
+        <p><strong>Address:</strong> 4444 East Camelback Road, Phoenix, AZ 85018</p>
+        <p><strong>Region:</strong> Phoenix</p>
+        <p><strong>Phone:</strong> (602) 840-6412 </p>
+        <p><strong>Website:</strong> <a href="https://villageclubs.com/membership-village-health-clubs/view-all-locations/camelback-village-racquet-health-club-village-clubs-and-spas/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-111.984559,33.510365</coordinates>
       </Point>
     </Placemark>
   </Document>
