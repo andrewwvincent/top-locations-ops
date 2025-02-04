@@ -2514,7 +2514,7 @@
         <p><strong>Region:</strong> Charlotte</p>
         <p><strong>Phone:</strong> 17049017100</p>
         <p><strong>Website:</strong> <a href="https://www.lifetime.life/locations/nc/charlotte.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-80.774103,35.054649</coordinates>
@@ -2529,7 +2529,7 @@
         <p><strong>Region:</strong> Charlotte</p>
         <p><strong>Phone:</strong> 704-562-8229</p>
         <p><strong>Website:</strong> <a href="https://theplayersathleticclub.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-80.79877,35.197714</coordinates>
@@ -2544,7 +2544,7 @@
         <p><strong>Region:</strong> Charlotte</p>
         <p><strong>Phone:</strong> 17049270774</p>
         <p><strong>Website:</strong> <a href="http://www.cornwellcenter.org/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-80.831478,35.18734</coordinates>
@@ -2559,10 +2559,85 @@
         <p><strong>Region:</strong> Charlotte</p>
         <p><strong>Phone:</strong> 704-716-4600</p>
         <p><strong>Website:</strong> <a href="https://www.ymcacharlotte.org/branches/morrison" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Other Target</p>
+        <p><strong>Type:</strong> Other</p>
       ]]></description>
       <Point>
         <coordinates>-80.827486,35.041917</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>House of Sports NC</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>House of Sports NC</h3>
+        <p><strong>Address:</strong> 1839 S Main St, Wake Forest, NC 27587</p>
+        <p><strong>Region:</strong> Raleigh</p>
+        <p><strong>Phone:</strong> 19194531503</p>
+        <p><strong>Website:</strong> <a href="https://www.houseofsportsnc.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-78.526346,35.951145</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tor Futbol</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Tor Futbol</h3>
+        <p><strong>Address:</strong> 8450 Garvey Dr, Raleigh, NC 27616</p>
+        <p><strong>Region:</strong> Raleigh</p>
+        <p><strong>Phone:</strong> 19195009286</p>
+        <p><strong>Website:</strong> <a href="http://torfutbol.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-78.567581,35.895282</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Soccer Genome</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Soccer Genome</h3>
+        <p><strong>Address:</strong> 9101 Durant Rd, Raleigh, NC 27609</p>
+        <p><strong>Region:</strong> Raleigh</p>
+        <p><strong>Phone:</strong> 19842759216</p>
+        <p><strong>Website:</strong> <a href="http://www.soccergenome.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-78.566615,35.895556</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Redline Athletics - Sutton Square</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>Redline Athletics - Sutton Square</h3>
+        <p><strong>Address:</strong> 6325 Falls of Neuse Rd Suite 24, Raleigh, NC 27615</p>
+        <p><strong>Region:</strong> Raleigh</p>
+        <p><strong>Phone:</strong> 19199007073</p>
+        <p><strong>Website:</strong> <a href="https://redlineathletics.com/suttonsquare/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-78.622929,35.86895</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>XL Sports World Apex</name>
+      <styleUrl>#other</styleUrl>
+      <description><![CDATA[
+        <h3>XL Sports World Apex</h3>
+        <p><strong>Address:</strong> 1016 Investment Blvd, Apex, NC 27502</p>
+        <p><strong>Region:</strong> Raleigh</p>
+        <p><strong>Phone:</strong> 19193872955</p>
+        <p><strong>Website:</strong> <a href="http://www.xlapex.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Other Target</p>
+      ]]></description>
+      <Point>
+        <coordinates>-78.834553,35.724861</coordinates>
       </Point>
     </Placemark>
   </Document>

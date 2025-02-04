@@ -1494,7 +1494,7 @@
         <p><strong>Region:</strong> Charlotte</p>
         <p><strong>Phone:</strong> 17047823000</p>
         <p><strong>Website:</strong> <a href="https://sportscenternc.com/" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Suburb Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-80.603957,35.446065</coordinates>
@@ -1839,10 +1839,40 @@
         <p><strong>Region:</strong> Charlotte</p>
         <p><strong>Phone:</strong> 17047164200</p>
         <p><strong>Website:</strong> <a href="https://www.ymcacharlotte.org/branches/brace-family" target="_blank">Visit Website</a></p>
-        <p><strong>Type:</strong> Preferred Location</p>
+        <p><strong>Type:</strong> Preferred</p>
       ]]></description>
       <Point>
         <coordinates>-80.72943,35.08465</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Pro 3:5 Sports Academy</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Pro 3:5 Sports Academy</h3>
+        <p><strong>Address:</strong> 3201 Northside Dr #119, Raleigh, NC 27615</p>
+        <p><strong>Region:</strong> Raleigh</p>
+        <p><strong>Phone:</strong> 19194382144</p>
+        <p><strong>Website:</strong> <a href="http://www.pro35sports.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-78.582625,35.883756</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Wake Competition Center</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>Wake Competition Center</h3>
+        <p><strong>Address:</strong> Competition Ctr Dr, Morrisville, NC 27560</p>
+        <p><strong>Region:</strong> Raleigh</p>
+        <p><strong>Phone:</strong> 19196465400</p>
+        <p><strong>Website:</strong> <a href="https://wakecompetitioncenter.com/" target="_blank">Visit Website</a></p>
+        <p><strong>Type:</strong> Preferred Location</p>
+      ]]></description>
+      <Point>
+        <coordinates>-78.817432,35.842712</coordinates>
       </Point>
     </Placemark>
   </Document>
