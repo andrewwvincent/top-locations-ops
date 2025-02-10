@@ -102,6 +102,10 @@ const config = {
             file: "data/KMLs/Fort_Worth.kml"
         },
         {
+            name: "Greensboro",
+            file: "data/KMLs/Greensboro.kml"
+        },
+        {
             name: "Hartford CT",
             file: "data/KMLs/Hartford_CT.kml"
         },
@@ -116,6 +120,10 @@ const config = {
         {
             name: "Jacksonville",
             file: "data/KMLs/Jacksonville.kml"
+        },
+        {
+            name: "Kansas City",
+            file: "data/KMLs/Kansas_City.kml"
         },
         {
             name: "Las Vegas",
