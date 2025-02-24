@@ -315,36 +315,33 @@ function setupMapInteractions() {
     // No interactions needed
 }
 
-// Load the list of available cities
-async function loadCityList() {
-    try {
-        const source = map.getSource('all-cities');
-        if (!source || !source._data) return;
+// Load city list into dropdown
+function loadCityList() {
+    const citySelect = document.getElementById('city-select');
+    if (!citySelect) return;
 
-        // Extract unique city names
-        const cities = [...new Set(source._data.features.map(f => f.properties.city))].sort();
-        
-        // Update the dropdown
-        const citySelect = document.getElementById('city-select');
-        citySelect.innerHTML = '<option value="">Select a city</option>';
-        
-        cities.forEach(city => {
-            const option = document.createElement('option');
-            option.value = city;
-            option.textContent = city;
-            citySelect.appendChild(option);
-        });
+    // Clear existing options
+    citySelect.innerHTML = '<option value="">Select a city...</option>';
 
-        // Apply city from URL if present
-        const urlParams = new URLSearchParams(window.location.search);
-        const cityParam = urlParams.get('city');
-        if (cityParam && cities.includes(cityParam)) {
-            citySelect.value = cityParam;
-            loadCity(cityParam);
+    // Add options for each city
+    config.polygonLayers.forEach(layer => {
+        const option = document.createElement('option');
+        option.value = layer.name;
+        option.textContent = layer.name;
+        citySelect.appendChild(option);
+    });
+
+    // Add change event listener
+    citySelect.addEventListener('change', (e) => {
+        const selectedCity = config.polygonLayers.find(layer => layer.name === e.target.value);
+        if (selectedCity && selectedCity.coordinates) {
+            map.flyTo({
+                center: selectedCity.coordinates,
+                zoom: selectedCity.zoom || 10,
+                essential: true
+            });
         }
-    } catch (error) {
-        console.error('Error loading city list:', error);
-    }
+    });
 }
 
 // Function to zoom to a specific city

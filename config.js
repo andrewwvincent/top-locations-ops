@@ -11,235 +11,293 @@ const config = {
     polygonLayers: [         
         {
             name: "AK - Anchorage",
-            file: "data/KMLs/Anchorage.kml"
+            coordinates: [-149.9003, 61.2181],
+            zoom: 10
         },
         {
             name: "AZ - Phoenix",
-            file: "data/KMLs/Phoenix.kml"
+            coordinates: [-112.0740, 33.4484],
+            zoom: 10
         },
         {
             name: "CA - Bay Area",
-            file: "data/KMLs/Bay_Area.kml"
+            coordinates: [-122.4194, 37.7749],
+            zoom: 9
         },
         {
             name: "CA - Los Angeles",
-            file: "data/KMLs/Los_Angeles.kml"
+            coordinates: [-118.2437, 34.0522],
+            zoom: 10
         },
         {
             name: "CA - Sacramento",
-            file: "data/KMLs/Sacramento.kml"
+            coordinates: [-121.4944, 38.5816],
+            zoom: 10
         },
         {
             name: "CA - San Diego",
-            file: "data/KMLs/San_Diego.kml"
+            coordinates: [-117.1611, 32.7157],
+            zoom: 10
         },
         {
             name: "CA - Santa Barbara",
-            file: "data/KMLs/Santa_Barbara.kml"
+            coordinates: [-119.6982, 34.4208],
+            zoom: 11
         },
         {
             name: "CO - Aspen",
-            file: "data/KMLs/Aspen.kml"
+            coordinates: [-106.8175, 39.1911],
+            zoom: 12
         },
         {
             name: "CO - Denver",
-            file: "data/KMLs/Denver.kml"
+            coordinates: [-104.9903, 39.7392],
+            zoom: 10
         },
         {
             name: "CO - Fort Collins",
-            file: "data/KMLs/Fort_Collins_CO.kml"
+            coordinates: [-105.0844, 40.5853],
+            zoom: 11
         },
         {
             name: "CT - Hartford",
-            file: "data/KMLs/Hartford_CT.kml"
+            coordinates: [-72.6851, 41.7658],
+            zoom: 11
         },
         {
             name: "CT - Stamford",
-            file: "data/KMLs/Stamford.kml"
+            coordinates: [-73.5387, 41.0534],
+            zoom: 11
         },
         {
             name: "FL - Jacksonville",
-            file: "data/KMLs/Jacksonville.kml"
+            coordinates: [-81.6557, 30.3322],
+            zoom: 10
         },
         {
             name: "FL - Orlando",
-            file: "data/KMLs/Orlando.kml"
+            coordinates: [-81.3789, 28.5384],
+            zoom: 10
         },
         {
             name: "FL - Tampa",
-            file: "data/KMLs/Tampa.kml"
+            coordinates: [-82.4572, 27.9506],
+            zoom: 10
         },
         {
             name: "FL - West Palm Beach",
-            file: "data/KMLs/West_Palm_Beach.kml"
+            coordinates: [-80.0534, 26.7153],
+            zoom: 11
         },
         {
             name: "GA - Atlanta",
-            file: "data/KMLs/Atlanta.kml"
+            coordinates: [-84.3880, 33.7490],
+            zoom: 10
         },
         {
             name: "IA - Cedar Rapids",
-            file: "data/KMLs/Cedar_Rapids_IA.kml"
+            coordinates: [-91.6656, 41.9779],
+            zoom: 11
         },
         {
             name: "IA - Des Moines",
-            file: "data/KMLs/Des_Moines.kml"
+            coordinates: [-93.6037, 41.5868],
+            zoom: 11
         },
         {
             name: "IL - Bloomington",
-            file: "data/KMLs/Bloomington_IL.kml"
+            coordinates: [-88.9937, 40.4842],
+            zoom: 11
         },
         {
             name: "IL - Chicago",
-            file: "data/KMLs/Chicago.kml"
+            coordinates: [-87.6298, 41.8781],
+            zoom: 10
         },
         {
             name: "IL - Springfield",
-            file: "data/KMLs/Springfield_IL.kml"
+            coordinates: [-89.6501, 39.7817],
+            zoom: 11
         },
         {
             name: "IN - Indianapolis",
-            file: "data/KMLs/Indianapolis.kml"
+            coordinates: [-86.1581, 39.7684],
+            zoom: 10
         },
         {
             name: "KS - Kansas City",
-            file: "data/KMLs/Kansas_City.kml"
+            coordinates: [-94.5783, 39.0997],
+            zoom: 10
         },
         {
             name: "MA - Boston",
-            file: "data/KMLs/Boston.kml"
+            coordinates: [-71.0934, 42.3584],
+            zoom: 11
         },
         {
             name: "MD - Baltimore",
-            file: "data/KMLs/Baltimore.kml"
+            coordinates: [-76.6243, 39.2904],
+            zoom: 10
         },
         {
             name: "MI - Detroit",
-            file: "data/KMLs/Detroit.kml"
+            coordinates: [-83.0457, 42.3314],
+            zoom: 10
         },
         {
             name: "MN - Minneapolis",
-            file: "data/KMLs/Minneapolis.kml"
+            coordinates: [-93.2650, 44.9778],
+            zoom: 10
         },
         {
             name: "MN - Rochester",
-            file: "data/KMLs/Rochester_MN.kml"
+            coordinates: [-92.4638, 44.0225],
+            zoom: 11
         },
         {
             name: "MO - St. Louis",
-            file: "data/KMLs/St._Louis.kml"
+            coordinates: [-90.1969, 38.6270],
+            zoom: 10
         },
         {
             name: "NC - Charlotte",
-            file: "data/KMLs/Charlotte.kml"
+            coordinates: [-80.8431, 35.2271],
+            zoom: 10
         },
         {
             name: "NC - Greensboro",
-            file: "data/KMLs/Greensboro.kml"
+            coordinates: [-79.8193, 36.0726],
+            zoom: 11
         },
         {
             name: "NC - Raleigh",
-            file: "data/KMLs/Raleigh.kml"
+            coordinates: [-78.6382, 35.7796],
+            zoom: 10
         },
         {
             name: "NJ - Newark",
-            file: "data/KMLs/Newark.kml"
+            coordinates: [-74.1724, 40.7357],
+            zoom: 11
         },
         {
             name: "NJ - Trenton",
-            file: "data/KMLs/Trenton.kml"
+            coordinates: [-74.7596, 40.2170],
+            zoom: 11
         },
         {
             name: "NM - Santa Fe",
-            file: "data/KMLs/Santa_Fe.kml"
+            coordinates: [-105.9378, 35.6869],
+            zoom: 11
         },
         {
             name: "NV - Las Vegas",
-            file: "data/KMLs/Las_Vegas.kml"
+            coordinates: [-115.1398, 36.1699],
+            zoom: 10
         },
         {
             name: "NV - Reno",
-            file: "data/KMLs/Reno.kml"
+            coordinates: [-119.8133, 39.5296],
+            zoom: 10
         },
         {
             name: "NY - Albany",
-            file: "data/KMLs/Albany.kml"
+            coordinates: [-73.7871, 42.6526],
+            zoom: 11
         },
         {
             name: "NY - New York City",
-            file: "data/KMLs/NYC.kml"
+            coordinates: [-74.0060, 40.7128],
+            zoom: 10
         },
         {
             name: "OH - Cincinnati",
-            file: "data/KMLs/Cincinnati.kml"
+            coordinates: [-84.5120, 39.1031],
+            zoom: 10
         },
         {
             name: "OH - Columbus",
-            file: "data/KMLs/Columbus_OH.kml"
+            coordinates: [-82.9988, 39.9612],
+            zoom: 10
         },
         {
             name: "OR - Portland",
-            file: "data/KMLs/Portland_OR.kml"
+            coordinates: [-122.6765, 45.5236],
+            zoom: 10
         },
         {
             name: "PA - Philadelhpia",
-            file: "data/KMLs/Philadelhpia.kml"
+            coordinates: [-75.1631, 39.9523],
+            zoom: 10
         },
         {
             name: "PA - Pittsburgh",
-            file: "data/KMLs/Pittsburgh.kml"
+            coordinates: [-80.0121, 40.4396],
+            zoom: 10
         },
         {
             name: "SC - Charleston",
-            file: "data/KMLs/Charleston.kml"
+            coordinates: [-79.9307, 32.7765],
+            zoom: 11
         },
         {
             name: "TN - Nashville",
-            file: "data/KMLs/Nashville.kml"
+            coordinates: [-86.7816, 36.1627],
+            zoom: 10
         },
         {
             name: "TX - Austin",
-            file: "data/KMLs/Austin.kml"
+            coordinates: [-97.7431, 30.2672],
+            zoom: 10
         },
         {
             name: "TX - Dallas",
-            file: "data/KMLs/Dallas.kml"
+            coordinates: [-96.7969, 32.7767],
+            zoom: 10
         },
         {
             name: "TX - Fort Worth",
-            file: "data/KMLs/Fort_Worth.kml"
+            coordinates: [-97.3209, 32.7551],
+            zoom: 10
         },
         {
             name: "TX - Houston",
-            file: "data/KMLs/Houston.kml"
+            coordinates: [-95.3698, 29.7633],
+            zoom: 9
         },
         {
             name: "UT - Salt Lake City",
-            file: "data/KMLs/Salt_Lake_City.kml"
+            coordinates: [-111.8907, 40.7608],
+            zoom: 10
         },
         {
             name: "VA - Charlottesville",
-            file: "data/KMLs/Charlottesville.kml"
+            coordinates: [-78.4767, 38.0293],
+            zoom: 11
         },
         {
             name: "VA - Richmond",
-            file: "data/KMLs/Richmond.kml"
+            coordinates: [-77.4367, 37.5407],
+            zoom: 10
         },
         {
             name: "VT - Burlington",
-            file: "data/KMLs/Burlington_VT.kml"
+            coordinates: [-73.2121, 44.4759],
+            zoom: 11
         },
         {
             name: "WA - Seattle",
-            file: "data/KMLs/Seattle.kml"
+            coordinates: [-122.3321, 47.6067],
+            zoom: 10
         },
         {
             name: "Washington DC",
-            file: "data/KMLs/Washington_DC.kml"
+            coordinates: [-77.0365, 38.8951],
+            zoom: 11
         },
         {
             name: "WI - Milwaukee",
-            file: "data/KMLs/Milwaukee.kml"
+            coordinates: [-87.9065, 43.0389],
+            zoom: 10
         }
 ],
     defaultColors: {
