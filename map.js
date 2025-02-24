@@ -49,72 +49,76 @@ function initializeMap() {
 
     // Wait for map style to load before customizing
     map.on('style.load', () => {
-        // Add custom layers and styling
-        if (map.getLayer('water')) {
-            map.setPaintProperty('water', 'fill-color', '#b3e0ff');  // Lighter blue water
-        }
-        
-        // Style parks and green areas with more vibrant colors
-        const landuseLayers = [
-            'landuse-residential',
-            'landuse-commercial',
-            'landuse-park',
-            'landuse-cemetery',
-            'landuse-hospital',
-            'landuse-school'
-        ];
+        // Load all cities GeoJSON data
+        fetch('data/all_cities.geojson')
+            .then(response => response.json())
+            .then(data => {
+                // Add the source for all cities
+                map.addSource('all-cities', {
+                    type: 'geojson',
+                    data: data,
+                    tolerance: 5,  // Simplify geometries for better performance
+                    maxzoom: 12
+                });
 
-        landuseLayers.forEach(layer => {
-            if (map.getLayer(layer)) {
-                map.setPaintProperty(layer, 'fill-color', [
-                    'match',
-                    ['get', 'class'],
-                    'park', '#a8e6a8',  // Soft green for parks
-                    'cemetery', '#c8e6c8',  // Lighter green for cemeteries
-                    'hospital', '#ffd6a5',  // Soft orange for hospitals
-                    'school', '#e6c3e6',  // Soft purple for schools
-                    'commercial', '#f0f0f0',  // Light gray for commercial areas
-                    'residential', '#ffffff',  // White for residential areas
-                    '#f8f8f8'  // Default light gray
-                ]);
-            }
-        });
+                // Add the fill layer for all cities
+                map.addLayer({
+                    'id': 'city-fills',
+                    'type': 'fill',
+                    'source': 'all-cities',
+                    'paint': {
+                        'fill-color': [
+                            'step',
+                            ['get', 'kids_count'],
+                            'rgba(255, 59, 59, 0.1)',   // 0-500
+                            500, 'rgba(255, 149, 5, 0.1)',  // 500-750
+                            750, 'rgba(255, 219, 77, 0.1)',  // 750-1000
+                            1000, 'rgba(51, 153, 0, 0.1)',  // 1000-1250
+                            1250, 'rgba(0, 102, 204, 0.1)',  // 1250-1500
+                            1500, 'rgba(102, 0, 204, 0.1)'   // 1500+
+                        ],
+                        'fill-opacity': [
+                            'interpolate',
+                            ['linear'],
+                            ['zoom'],
+                            4, 0.3,
+                            8, 0.6,
+                            12, 0.8
+                        ]
+                    }
+                });
 
-        // Style buildings with a subtle color
-        if (map.getLayer('building')) {
-            map.setPaintProperty('building', 'fill-color', '#f5f5f5');
-            map.setPaintProperty('building', 'fill-opacity', 0.8);
-            map.setPaintProperty('building', 'fill-outline-color', '#e0e0e0');
-        }
+                // Add outline layer
+                map.addLayer({
+                    'id': 'city-borders',
+                    'type': 'line',
+                    'source': 'all-cities',
+                    'paint': {
+                        'line-color': '#000',
+                        'line-width': 1,
+                        'line-opacity': 0.5
+                    }
+                });
 
-        // Add more contrast to roads
-        const roadLayers = [
-            'road-primary',
-            'road-secondary',
-            'road-street',
-            'road-minor'
-        ];
+                // Add hover effect layer
+                map.addLayer({
+                    'id': 'city-fills-hover',
+                    'type': 'fill',
+                    'source': 'all-cities',
+                    'paint': {
+                        'fill-color': '#000',
+                        'fill-opacity': [
+                            'case',
+                            ['boolean', ['feature-state', 'hover'], false],
+                            0.2,
+                            0
+                        ]
+                    }
+                });
 
-        roadLayers.forEach(layer => {
-            if (map.getLayer(layer)) {
-                map.setPaintProperty(layer, 'line-color', '#e3e3e3');
-            }
-        });
-
-        // Make water labels more visible
-        const waterLabels = [
-            'water-point-label',
-            'water-line-label'
-        ];
-
-        waterLabels.forEach(layer => {
-            if (map.getLayer(layer)) {
-                map.setPaintProperty(layer, 'text-color', '#4a90e2');
-            }
-        });
-
-        // Load location points after style is loaded
-        loadLocationPoints();
+                setupEventListeners();
+                loadLocationPoints();
+            });
     });
     
     // Add navigation controls
@@ -352,7 +356,7 @@ function updateUrlParameters() {
     // Get current state of household filters
     const parent250k = document.querySelector('#income250k-parent');
     const parent500k = document.querySelector('#income500k-parent');
-    
+
     // Build 250k filter string
     let filter250k = parent250k.checked ? '1' : '0';
     document.querySelectorAll('#income250k-categories .category-checkbox').forEach(checkbox => {
@@ -670,6 +674,52 @@ async function loadCity(cityName) {
     }
 }
 
+// Function to zoom to a specific city
+function zoomToCity(cityName) {
+    const source = map.getSource('all-cities');
+    if (!source) return;
+
+    const data = source._data;
+    if (!data || !data.features) return;
+
+    // Find all features for the selected city
+    const cityFeatures = data.features.filter(f => f.properties.city === cityName);
+    if (cityFeatures.length === 0) return;
+
+    // Calculate the bounding box for all features in the city
+    const bounds = new mapboxgl.LngLatBounds();
+    cityFeatures.forEach(feature => {
+        if (feature.geometry && feature.geometry.coordinates) {
+            if (feature.geometry.type === 'Polygon') {
+                feature.geometry.coordinates[0].forEach(coord => {
+                    bounds.extend(coord);
+                });
+            } else if (feature.geometry.type === 'MultiPolygon') {
+                feature.geometry.coordinates.forEach(polygon => {
+                    polygon[0].forEach(coord => {
+                        bounds.extend(coord);
+                    });
+                });
+            }
+        }
+    });
+
+    // Zoom to the city bounds with padding
+    map.fitBounds(bounds, {
+        padding: 50,
+        duration: 1000
+    });
+}
+
+// Update the loadCity function to only handle zooming
+function loadCity(cityName) {
+    if (!cityName) return;
+    
+    currentCity = cityName;
+    zoomToCity(cityName);
+    updateUrlParameters();
+}
+
 // Load KML file
 async function loadKMLFile(kmlFile) {
     try {
@@ -877,8 +927,8 @@ function validateAndApplyFilters() {
 }
 
 function applyFiltersToMap(filters) {
-    if (!map.getSource('demographics')) {
-        console.warn('No demographic data loaded');
+    if (!map.getSource('all-cities')) {
+        console.warn('No city data loaded');
         return;
     }
 
@@ -889,10 +939,8 @@ function applyFiltersToMap(filters) {
     filters.income500k.forEach(f => {
         conditions.push([
             'all',
-            ['has', 'kids_500k'],
-            ['>', ['to-number', ['get', 'kids_500k']], 0],
-            ['>=', ['to-number', ['get', 'kids_500k']], f.min],
-            ['<=', ['to-number', ['get', 'kids_500k']], f.max]
+            ['>=', ['to-number', ['get', 'kids_count']], f.min],
+            ['<=', ['to-number', ['get', 'kids_count']], f.max]
         ]);
         conditions.push(f.color);
     });
@@ -901,27 +949,21 @@ function applyFiltersToMap(filters) {
     filters.income250k.forEach(f => {
         conditions.push([
             'all',
-            ['has', 'kids_250k'],
-            ['>', ['to-number', ['get', 'kids_250k']], 0],
-            ['>=', ['to-number', ['get', 'kids_250k']], f.min],
-            ['<=', ['to-number', ['get', 'kids_250k']], f.max]
+            ['>=', ['to-number', ['get', 'kids_count']], f.min],
+            ['<=', ['to-number', ['get', 'kids_count']], f.max]
         ]);
         conditions.push(f.color);
     });
 
-    // Create the final expression
-    const colorExpr = conditions.length > 0 
-        ? ['case', ...conditions, 'rgba(0, 0, 0, 0)']
-        : ['literal', 'rgba(0, 0, 0, 0)'];
+    // Default color
+    conditions.push('rgba(0, 0, 0, 0)');
 
-    console.log('Color expression:', JSON.stringify(colorExpr, null, 2));
-    console.log('Active filters:', {
-        '500k': filters.income500k.length,
-        '250k': filters.income250k.length
-    });
-
-    // Update the layer's paint properties
-    map.setPaintProperty('demographics', 'fill-color', colorExpr);
+    map.setPaintProperty('city-fills', 'fill-color', [
+        'case',
+        ['has', 'kids_count'],
+        ['case', ...conditions],
+        'rgba(0, 0, 0, 0)'
+    ]);
 }
 
 function resetBucketValues() {
@@ -948,6 +990,61 @@ function resetBucketValues() {
 }
 
 function setupEventListeners() {
+    let hoveredStateId = null;
+
+    // Create hover effect
+    map.on('mousemove', 'city-fills', (e) => {
+        if (e.features.length > 0) {
+            if (hoveredStateId !== null) {
+                map.setFeatureState(
+                    { source: 'all-cities', id: hoveredStateId },
+                    { hover: false }
+                );
+            }
+            hoveredStateId = e.features[0].id;
+            map.setFeatureState(
+                { source: 'all-cities', id: hoveredStateId },
+                { hover: true }
+            );
+        }
+    });
+
+    map.on('mouseleave', 'city-fills', () => {
+        if (hoveredStateId !== null) {
+            map.setFeatureState(
+                { source: 'all-cities', id: hoveredStateId },
+                { hover: false }
+            );
+        }
+        hoveredStateId = null;
+    });
+
+    // Add popup
+    const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+    map.on('mouseenter', 'city-fills', (e) => {
+        map.getCanvas().style.cursor = 'pointer';
+        const feature = e.features[0];
+        const coordinates = e.lngLat;
+        const description = `
+            <strong>${feature.properties.name || 'Unnamed Area'}</strong><br>
+            City: ${feature.properties.city}<br>
+            Kids Count: ${feature.properties.kids_count}
+        `;
+
+        popup.setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
+
+    map.on('mouseleave', 'city-fills', () => {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
+
     // Add collapse button listener
     const collapseBtn = document.getElementById('collapse-btn');
     const sidebar = document.querySelector('.sidebar');
