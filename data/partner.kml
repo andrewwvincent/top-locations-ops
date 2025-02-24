@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="Partner">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <n>CERA</n>
+      <styleUrl>#Partner</styleUrl>
+      <description><![CDATA[3300 Bryant Irvin Rd, Fort Worth, TX 76109]]></description>
+      <Point>
+        <coordinates>-97.412779,32.702523</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Westlake Athletic and Community Center (WACC)</n>
+      <styleUrl>#Partner</styleUrl>
+      <description><![CDATA[4300 Westbank Dr, West Lake Hills, TX 78746]]></description>
+      <Point>
+        <coordinates>-97.817274,30.27821</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

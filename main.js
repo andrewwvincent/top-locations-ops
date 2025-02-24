@@ -43,6 +43,10 @@ function initializeMap() {
     map.on('load', () => {
         console.log('Map loaded, loading city data...');
         loadAllCityData();
+        loadLocationData();
+        initializeLocationFilters();
+        setupFilterEventListeners();
+        setupMapInteractions();
     });
 }
 
@@ -406,6 +410,121 @@ function loadCity(cityName) {
     window.history.pushState({}, '', url);
 }
 
+// Load KML location data
+async function loadLocationData() {
+    // Clear existing markers
+    if (window.locationMarkers) {
+        window.locationMarkers.forEach(marker => marker.remove());
+    }
+    window.locationMarkers = [];
+
+    for (const layer of config.locationLayers) {
+        try {
+            // Load and parse KML
+            const response = await fetch(layer.file);
+            const kmlText = await response.text();
+            const kml = new DOMParser().parseFromString(kmlText, 'text/xml');
+            const placemarks = kml.getElementsByTagName('Placemark');
+
+            // Process each placemark
+            Array.from(placemarks).forEach(placemark => {
+                const pointElem = placemark.getElementsByTagName('Point')[0];
+                if (!pointElem) return;
+                
+                const coordsElem = pointElem.getElementsByTagName('coordinates')[0];
+                if (!coordsElem) return;
+                
+                const coords = coordsElem.textContent.trim().split(',');
+                if (coords.length < 2) return;
+
+                // Get name and description - try both 'name' and 'n' tags
+                const nameElem = placemark.getElementsByTagName('name')[0] || placemark.getElementsByTagName('n')[0];
+                const name = nameElem ? nameElem.textContent.trim() : '';
+
+                // Get description
+                const descElem = placemark.getElementsByTagName('description')[0];
+                const description = descElem ? descElem.textContent.trim() : '';
+
+                // Create marker element
+                const el = document.createElement('div');
+                el.className = `location-marker ${layer.id}`;
+                el.style.backgroundColor = layer.color;
+                el.style.width = '12px';
+                el.style.height = '12px';
+                el.style.borderRadius = '50%';
+                el.style.cursor = 'pointer';
+                el.style.border = '2px solid black'; // Add black border
+                el.style.boxSizing = 'border-box'; // Ensure border doesn't increase size
+
+                // Create marker
+                const marker = new mapboxgl.Marker(el)
+                    .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])])
+                    .addTo(map);
+
+                // Add popup if name exists
+                if (name || description) {
+                    const popupContent = name + (description ? `\n${description}` : '');
+                    const popup = new mapboxgl.Popup({
+                        closeButton: false,
+                        closeOnClick: false
+                    }).setText(popupContent);
+
+                    marker.setPopup(popup);
+
+                    // Show popup on hover
+                    el.addEventListener('mouseenter', () => popup.addTo(map));
+                    el.addEventListener('mouseleave', () => popup.remove());
+                }
+
+                // Store marker reference
+                window.locationMarkers.push(marker);
+                marker.layerId = layer.id;
+                marker.getElement().style.display = layer.defaultChecked ? 'block' : 'none';
+            });
+
+        } catch (error) {
+            console.error(`Error loading location data for ${layer.id}:`, error);
+        }
+    }
+}
+
+// Initialize location filters
+function initializeLocationFilters() {
+    const filterContainer = document.getElementById('location-filters');
+    
+    config.locationLayers.forEach(layer => {
+        const row = document.createElement('div');
+        row.className = 'filter-row';
+        
+        // Create checkbox
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = layer.id;
+        checkbox.checked = layer.defaultChecked;
+        
+        // Create label
+        const label = document.createElement('label');
+        label.htmlFor = layer.id;
+        label.textContent = layer.name;
+        
+        // Add event listener
+        checkbox.addEventListener('change', (e) => {
+            const visibility = e.target.checked ? 'block' : 'none';
+            // Update marker visibility
+            window.locationMarkers
+                .filter(marker => marker.layerId === layer.id)
+                .forEach(marker => {
+                    marker.getElement().style.display = visibility;
+                });
+        });
+        
+        // Assemble row
+        row.appendChild(checkbox);
+        row.appendChild(label);
+        filterContainer.appendChild(row);
+    });
+}
+
 // Initialize everything when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initializeMap();
@@ -417,8 +536,4 @@ document.addEventListener('DOMContentLoaded', () => {
             loadCity(e.target.value);
         });
     }
-    setupMapInteractions();
-    loadCityList();
-    initializeFilterStates();
-    setupFilterEventListeners();
 });

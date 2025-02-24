@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="Pending_Partner">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <n>Redline Athletics - Forsyth County</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[1670 Redi Rd, Cumming, GA 30040]]></description>
+      <Point>
+        <coordinates>-84.165378,34.177752</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Buffalo Grove</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[1455 Busch Parkway, Buffalo Grove,IL 60089]]></description>
+      <Point>
+        <coordinates>-87.927343,42.170656</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Frisco</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[145 Rose Lane, Frisco, TX 75034]]></description>
+      <Point>
+        <coordinates>-96.913126,33.149782</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - McKinney</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[8410 W University Dr Building C, McKinney, TX 75071]]></description>
+      <Point>
+        <coordinates>-96.725865,33.220213</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Westminster</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[1401 W 122nd Ave, Westminster, CO]]></description>
+      <Point>
+        <coordinates>-105.03747,39.830822</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Keller</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[5951 Park Vista Circle, Keller, TX 76244]]></description>
+      <Point>
+        <coordinates>-97.258309,32.910561</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Weston</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[1756 N. Commerce Parkway, Weston, FL 33326]]></description>
+      <Point>
+        <coordinates>-80.365614,26.095721</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Cypress</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[5930 Lakeshore Drive, Cypress, CA 90630]]></description>
+      <Point>
+        <coordinates>-118.030754,33.829213</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Lake Forest</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[22600F Lambert Street, Suite 1205, Lake Forest, CA 92630]]></description>
+      <Point>
+        <coordinates>-117.715236,33.635074</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - San Juan Capistrano</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[32405 Calle Perfecto, San Juan Capistrano 92675]]></description>
+      <Point>
+        <coordinates>-117.66523,33.489544</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Woodbury</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[707 Commerce Drive #300, Woodbury, MN 55125]]></description>
+      <Point>
+        <coordinates>-92.913931,44.940686</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Morristown</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[900 The American Road, Unit 1, Morris Plains, NJ 07950]]></description>
+      <Point>
+        <coordinates>-74.47121,40.825506</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Montgomeryville</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[101 Commerce Dr, Montgomeryville, PA 18936]]></description>
+      <Point>
+        <coordinates>-75.225155,40.233182</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Scottsdale</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[14000 N Hayden Road, Scottsdale, AZ 85260]]></description>
+      <Point>
+        <coordinates>-111.90927,33.612722</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Hemlock Plaza</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[2978 Kildaire Farm Rd, Cary, NC 27518]]></description>
+      <Point>
+        <coordinates>-78.788704,35.718097</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - San Diego - 4S Ranch</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[10890 Thornmint Rd, Suite 100, San Diego,CA]]></description>
+      <Point>
+        <coordinates>-117.0987,33.016793</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Manalapan</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[28 Harrison Ave., Englishtown, NJ 07726]]></description>
+      <Point>
+        <coordinates>-74.354454,40.297985</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Clarksburg</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[22616 Gateway Center Dr., Clarksburg, MD 20871]]></description>
+      <Point>
+        <coordinates>-77.281281,39.233449</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Kensington</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[3835 Plyers Mill Rd, Kensington, MD 20895]]></description>
+      <Point>
+        <coordinates>-77.076865,39.029834</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Asphalt Green - Battery Park City</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[212 N End Ave New York, NY 10282]]></description>
+      <Point>
+        <coordinates>-74.014884,40.716085</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Asphalt Green - Upper East Side campus</n>
+      <styleUrl>#Pending_Partner</styleUrl>
+      <description><![CDATA[555 E 90th St, New York, NY 10128]]></description>
+      <Point>
+        <coordinates>-73.943485,40.778152</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

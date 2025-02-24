@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="Secondary_Partner">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <n>D1 Training Brookhaven</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[3367 Buford Hwy NE  Unit 900 Brookhaven, GA 30329]]></description>
+      <Point>
+        <coordinates>-84.326802,33.842378</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Milton</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[12850 Hwy 9 N.  Suite 1800 Alpharetta, GA 30004]]></description>
+      <Point>
+        <coordinates>-84.279268,34.096352</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Norcross</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[5250 Triangle Parkway  Suite 400 Norcross, GA 30092]]></description>
+      <Point>
+        <coordinates>-84.224365,33.978429</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Sandy Springs</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[6335-H Roswell Road Sandy Springs, GA 30328]]></description>
+      <Point>
+        <coordinates>-84.377106,33.927373</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Upper Westside Atlanta</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1483 Chattahoochee Ave  Suite 100 Atlanta, GA 30318]]></description>
+      <Point>
+        <coordinates>-84.47405,33.844371</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training of Lake Travis</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[14532 Hamilton Pool Rd Austin, TX 78738]]></description>
+      <Point>
+        <coordinates>-97.970629,30.307394</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Pleasanton</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[4299 Rosewood Dr, Suite 100 Pleasanton, CA 94588]]></description>
+      <Point>
+        <coordinates>-121.873057,37.699486</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Boston-Burlington</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[60 South Ave. Burlington, MA 01803]]></description>
+      <Point>
+        <coordinates>-71.21993,42.483672</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Prosperity</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[5350 Docia Crossing Road; Suite C Charlotte, NC 28269]]></description>
+      <Point>
+        <coordinates>-80.786813,35.367107</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Fox Valley</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[403 S IL-59 Aurora, IL 60504]]></description>
+      <Point>
+        <coordinates>-88.208628,41.750427</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training North Shore</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[2345 Willow Road Glenview, IL 60025]]></description>
+      <Point>
+        <coordinates>-87.790159,42.105437</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Oswego</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1670 Douglas Rd Oswego, IL 60543]]></description>
+      <Point>
+        <coordinates>-88.222866,39.766078</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Dallas</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[8081 Walnut Hill Lane Dallas, TX 75231]]></description>
+      <Point>
+        <coordinates>-96.767224,32.882242</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Frisco</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[4944 Preston Road, Suite 252, Frisco, TX 75034]]></description>
+      <Point>
+        <coordinates>-96.803935,33.119735</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Prosper</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[100 S. Preston Road Suite 30 Prosper, TX 75078]]></description>
+      <Point>
+        <coordinates>-96.790883,33.235399</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training West Frisco</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[8275 Judges Way  Suite 100A Frisco, TX 75036]]></description>
+      <Point>
+        <coordinates>-96.892643,33.1477</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Allen</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[500 W Bethany Dr  Suite 120 Allen, TX 75013]]></description>
+      <Point>
+        <coordinates>-96.678122,33.09261</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Firewheel</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[475 Coneflower Drive Garland, TX 75040]]></description>
+      <Point>
+        <coordinates>-96.612335,32.952981</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Greenwood Village</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[6570 S Yosemite Street Greenwood Village, CO 80111]]></description>
+      <Point>
+        <coordinates>-104.888105,39.597141</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Westminster</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[4750 W. 120th Avenue, Suite 100 Westminster, CO 80020]]></description>
+      <Point>
+        <coordinates>-105.047617,39.912344</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Southlake</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[500 W. Southlake Blvd, Suite 100 Southlake, TX 76092]]></description>
+      <Point>
+        <coordinates>-97.158583,32.941549</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Mansfield</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1836 Cannon Dr  Suite 600 Mansfield, TX 76063]]></description>
+      <Point>
+        <coordinates>-97.107875,32.573052</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Spring</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[8727 W. Rayford Rd.  Suite 150 Spring, TX 77389]]></description>
+      <Point>
+        <coordinates>-95.55113,30.112406</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Bellaire</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[5300 N. Braeswood Blvd  Suite 44 Houston, TX 77096]]></description>
+      <Point>
+        <coordinates>-95.477805,29.67923</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Friendswood</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[709 W Parkwood Ave Friendswood, TX 77546]]></description>
+      <Point>
+        <coordinates>-95.192145,29.505068</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Sugar Land</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[16550 Southwest Freeway Sugar Land, TX 77479]]></description>
+      <Point>
+        <coordinates>-95.632889,29.59176</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training The Woodlands</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[30340 FM 2978  Suite 100 The Woodlands, TX 77354]]></description>
+      <Point>
+        <coordinates>-95.590767,30.189844</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Mission Viejo</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[555 The Shops at Mission Viejo Mission Viejo, CA 92691]]></description>
+      <Point>
+        <coordinates>-117.667923,33.605527</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Torrance</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[21760 Hawthorne Blvd Ste 284A Torrance, CA 90503]]></description>
+      <Point>
+        <coordinates>-118.349442,33.830645</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Huntington Beach</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[10188 Adams Ave Huntington Beach, CA 92646]]></description>
+      <Point>
+        <coordinates>-117.950956,33.672236</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Temecula</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[40820 Winchester Rd  Suite 1425 Temecula, CA 92591]]></description>
+      <Point>
+        <coordinates>-117.153965,33.524763</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Malvern</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[480 Lancaster Ave Suite 3 Malvern, PA 19355]]></description>
+      <Point>
+        <coordinates>-75.51381,40.03622</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Chandler</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1870 W Germann Rd Suite 2 Chandler, AZ 85286]]></description>
+      <Point>
+        <coordinates>-111.873526,33.27751</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Gilbert</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[8490 S Power Rd Gilbert, AZ 85297]]></description>
+      <Point>
+        <coordinates>-111.686957,33.26466</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Ocotillo</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[4100 S. Arizona Avenue  Suites A-103 & A-111 Chandler, AZ 85248]]></description>
+      <Point>
+        <coordinates>-111.845062,33.246624</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Scottsdale</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[13402 N. Scottsdale Road  Suite B Scottsdale, AZ 85254]]></description>
+      <Point>
+        <coordinates>-111.926311,33.607904</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Val Vista</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1551 E. Elliot rd. Gilbert, AZ 85234]]></description>
+      <Point>
+        <coordinates>-111.756819,33.349773</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training of Cary</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1279 NW Maynard Rd Cary, NC 27513]]></description>
+      <Point>
+        <coordinates>-78.811002,35.78582</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Sandy</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[61 West 10600 South Sandy, UT 84070]]></description>
+      <Point>
+        <coordinates>-111.892674,40.558151</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Armonk</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[130 Business Park Dr Armonk, NY 10504]]></description>
+      <Point>
+        <coordinates>-73.708503,41.117136</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Norwalk</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[100 N. Water Street  #SL0600 Norwalk, CT 06854]]></description>
+      <Point>
+        <coordinates>-73.414801,41.097092</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Ridge Hill</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[26 Market St Yonkers, NY 10710]]></description>
+      <Point>
+        <coordinates>-73.855883,40.961216</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Princeton</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[3373 Brunswick Pike RT.1  #46 Lawrenceville, NJ 08648]]></description>
+      <Point>
+        <coordinates>-74.68153,40.298506</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Middletown</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1519 Route 35 Middletown, NJ 07748]]></description>
+      <Point>
+        <coordinates>-74.126677,40.404857</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Reston</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[1700 Bracknell Dr. Suite A Reston, VA 20194]]></description>
+      <Point>
+        <coordinates>-77.35777,38.96731</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Alexandria</n>
+      <styleUrl>#Secondary_Partner</styleUrl>
+      <description><![CDATA[6550 Little River Turnpike  Unit A Alexandria, VA 22313]]></description>
+      <Point>
+        <coordinates>-77.160874,38.823159</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

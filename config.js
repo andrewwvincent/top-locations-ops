@@ -304,18 +304,52 @@ const config = {
         '250k': {
             '1500+': 'rgba(255, 59, 59, 0.4)',         // Bright red
             '1250-1500': 'rgba(255, 149, 5, 0.4)',    // Orange
-            '1000-1250': 'rgba(255, 215, 0, 0.4)',    // Gold/Yellow
-            '750-1000': 'rgba(76, 187, 23, 0.4)',     // Bright green
-            '500-750': 'rgba(0, 120, 255, 0.4)',      // Sky blue
-            '0-500': 'rgba(173, 216, 230, 0.4)'      // Light blue
+            '1000-1250': 'rgba(255, 215, 0, 0.4)',    // Yellow
+            '750-1000': 'rgba(76, 187, 23, 0.4)',     // Green
+            '500-750': 'rgba(0, 102, 204, 0.4)',      // Blue
+            '0-500': 'rgba(173, 216, 230, 0.4)'       // Light blue
         },
         '500k': {
-            '1500+': 'rgba(102, 0, 153, 0.8)',         // Dark purple
-            '1250-1500': 'rgba(186, 85, 211, 0.8)',   // Medium purple
-            '1000-1250': 'rgba(220, 20, 60, 0.8)',    // Deep red
-            '750-1000': 'rgba(255, 140, 0, 0.8)',     // Dark orange
-            '500-750': 'rgba(255, 215, 0, 0.8)',      // Gold
-            '0-500': 'rgba(255, 255, 224, 0.8)'      // Light yellow
+            '1500+': 'rgba(102, 0, 153, 0.8)',        // Deep purple
+            '1250-1500': 'rgba(255, 0, 255, 0.8)',    // Magenta
+            '1000-1250': 'rgba(255, 128, 0, 0.8)',    // Orange
+            '750-1000': 'rgba(0, 255, 0, 0.8)',       // Bright green
+            '500-750': 'rgba(0, 128, 255, 0.8)',      // Sky blue
+            '0-500': 'rgba(255, 255, 224, 0.8)'       // Light yellow
         }
-    }
+    },
+    locationLayers: [
+        {
+            id: 'pending-partner',
+            name: 'Pending Partners',
+            file: 'data/pending_partner.kml',
+            color: '#FF0000',  // Red
+            defaultChecked: true,
+            defaultLabels: false
+        },
+        {
+            id: 'secondary-partners',
+            name: 'Secondary Partners',
+            file: 'data/secondary_partner.kml',
+            color: '#0000FF',  // Blue
+            defaultChecked: false,
+            defaultLabels: false
+        },
+        {
+            id: 'partners',
+            name: 'Current Partners',
+            file: 'data/partner.kml',
+            color: '#00FF00',  // Green
+            defaultChecked: false,
+            defaultLabels: false
+        },
+        {
+            id: 'targets',
+            name: 'Potential Targets',
+            file: 'data/target.kml',
+            color: '#FF00FF',  // Purple
+            defaultChecked: false,
+            defaultLabels: false
+        }
+    ]
 };
