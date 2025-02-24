@@ -45,5 +45,20 @@
         <coordinates>-73.962948, 40.776402</coordinates>
       </Point>
     </Placemark>
+    <Placemark>
+      <name>GEMS World Academy - Chicago</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>GEMS World Academy</h3>
+        <p><strong>Address:</strong> 350 East South Water Street, Chicago, IL 60601, USA</p>
+        <p><strong>Region:</strong> Chicago</p>
+        
+        
+        <p><strong>Type:</strong> Full Alpha</p>
+      ]]></description>
+      <Point>
+        <coordinates>-87.618766, 41.886671</coordinates>
+      </Point>
+    </Placemark>
   </Document>
 </kml>
