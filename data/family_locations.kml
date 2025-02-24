@@ -24,10 +24,25 @@
         <p><strong>Region:</strong> San Francisco</p>
         
         
-        <p><strong>Type:</strong> Full Alpah</p>
+        <p><strong>Type:</strong> Full Alpha</p>
       ]]></description>
       <Point>
         <coordinates>-122.410972, 37.787713</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>12 E 79th St, New York</name>
+      <styleUrl>#preferred</styleUrl>
+      <description><![CDATA[
+        <h3>12 E 79th St</h3>
+        <p><strong>Address:</strong> 12 E 79th St, New York, NY 10075, USA</p>
+        <p><strong>Region:</strong> NYC</p>
+        
+        
+        <p><strong>Type:</strong> Full Alpha</p>
+      ]]></description>
+      <Point>
+        <coordinates>-73.962948, 40.776402</coordinates>
       </Point>
     </Placemark>
   </Document>
