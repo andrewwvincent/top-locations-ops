@@ -91,17 +91,23 @@ function initializeFilterStates() {
     const parent250k = document.querySelector('#income250k-parent');
     const parent500k = document.querySelector('#income500k-parent');
 
-    if (parent250k) parent250k.checked = true;
+    // Set 500k checked, 250k unchecked by default
+    if (parent250k) parent250k.checked = false;
     if (parent500k) parent500k.checked = true;
 
     // Initialize category checkboxes
-    document.querySelectorAll('.category-checkbox').forEach((checkbox, index) => {
-        // Set all checkboxes to checked except for the last ones in each group (0-500 buckets)
+    document.querySelectorAll('.category-checkbox').forEach((checkbox) => {
         const parentGroup = checkbox.closest('.categories-container');
         const allCheckboxesInGroup = parentGroup.querySelectorAll('.category-checkbox');
         const isLastInGroup = checkbox === allCheckboxesInGroup[allCheckboxesInGroup.length - 1];
         
+        // Set all checkboxes to checked except for the last ones in each group (0-500 buckets)
         checkbox.checked = !isLastInGroup;
+
+        // Hide 250k group initially since parent is unchecked
+        if (parentGroup.id === 'income250k-categories') {
+            parentGroup.style.display = 'none';
+        }
     });
 
     // Apply initial filters
@@ -221,9 +227,18 @@ function setupFilterEventListeners() {
 
     if (parent250k) {
         parent250k.addEventListener('change', () => {
-            const group = document.querySelector('#income250k-group');
+            const group = document.querySelector('#income250k-categories');
             if (group) {
                 group.style.display = parent250k.checked ? 'block' : 'none';
+                
+                // When parent is checked, restore previous child states (except 0-500)
+                if (parent250k.checked) {
+                    const checkboxes = group.querySelectorAll('.category-checkbox');
+                    checkboxes.forEach((checkbox, index) => {
+                        // Set all to checked except the last one (0-500)
+                        checkbox.checked = (index < checkboxes.length - 1);
+                    });
+                }
             }
             validateAndApplyFilters();
         });
@@ -231,7 +246,7 @@ function setupFilterEventListeners() {
 
     if (parent500k) {
         parent500k.addEventListener('change', () => {
-            const group = document.querySelector('#income500k-group');
+            const group = document.querySelector('#income500k-categories');
             if (group) {
                 group.style.display = parent500k.checked ? 'block' : 'none';
             }
