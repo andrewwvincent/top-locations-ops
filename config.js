@@ -324,6 +324,8 @@ const config = {
             name: 'Pending Partners',
             file: 'data/pending_partner.kml',
             color: '#FF0000',  // Red
+            shape: 'circle',  // Options: circle, square, triangle, star
+            size: 16, // Size in pixels
             defaultChecked: true,
             defaultLabels: false
         },
@@ -332,6 +334,8 @@ const config = {
             name: 'Secondary Partners',
             file: 'data/secondary_partner.kml',
             color: '#0000FF',  // Blue
+            shape: 'circle',
+            size: 16,
             defaultChecked: false,
             defaultLabels: false
         },
@@ -340,6 +344,8 @@ const config = {
             name: 'Current Partners',
             file: 'data/partner.kml',
             color: '#00FF00',  // Green
+            shape: 'circle',
+            size: 20,
             defaultChecked: false,
             defaultLabels: false
         },
@@ -348,6 +354,8 @@ const config = {
             name: 'Potential Targets',
             file: 'data/target.kml',
             color: '#FF00FF',  // Purple
+            shape: 'circle',
+            size: 16,
             defaultChecked: false,
             defaultLabels: false
         }

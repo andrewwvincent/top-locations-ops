@@ -410,6 +410,42 @@ function loadCity(cityName) {
     window.history.pushState({}, '', url);
 }
 
+// Create marker shapes
+function createMarkerElement(layer) {
+    const el = document.createElement('div');
+    el.className = `location-marker ${layer.id}`;
+    
+    const size = layer.size || 16; // Default size if not specified
+    
+    // Common styles
+    el.style.cursor = 'pointer';
+    el.style.width = `${size}px`;
+    el.style.height = `${size}px`;
+    el.style.border = '2px solid black';
+    el.style.backgroundColor = layer.color;
+    
+    switch (layer.shape) {
+        case 'square':
+            // Square is default
+            break;
+            
+        case 'triangle':
+            el.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+            break;
+            
+        case 'star':
+            el.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
+            break;
+            
+        case 'circle':
+        default:
+            el.style.borderRadius = '50%';
+            break;
+    }
+    
+    return el;
+}
+
 // Load KML location data
 async function loadLocationData() {
     // Clear existing markers
@@ -445,16 +481,8 @@ async function loadLocationData() {
                 const descElem = placemark.getElementsByTagName('description')[0];
                 const description = descElem ? descElem.textContent.trim() : '';
 
-                // Create marker element
-                const el = document.createElement('div');
-                el.className = `location-marker ${layer.id}`;
-                el.style.backgroundColor = layer.color;
-                el.style.width = '12px';
-                el.style.height = '12px';
-                el.style.borderRadius = '50%';
-                el.style.cursor = 'pointer';
-                el.style.border = '2px solid black'; // Add black border
-                el.style.boxSizing = 'border-box'; // Ensure border doesn't increase size
+                // Create marker with specified shape
+                const el = createMarkerElement(layer);
 
                 // Create marker
                 const marker = new mapboxgl.Marker(el)
