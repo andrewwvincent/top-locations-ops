@@ -1,6 +1,9 @@
 // Global variables
 let map;
 let currentCity = null;
+let loadedTiles = new Set();
+let metadata = null;
+let currentlyLoadingTiles = new Set();
 
 // Default colors for buckets
 const defaultColors = [
@@ -22,6 +25,112 @@ const defaultBucketRanges = [
     { min: 0, max: 500, label: '0-500', enabled: false }
 ];
 
+// Load metadata and initialize tile loading
+async function loadMetadata() {
+    try {
+        const response = await fetch('data/tiles/metadata.json');
+        metadata = await response.json();
+        console.log('Metadata loaded:', metadata);
+    } catch (error) {
+        console.error('Error loading metadata:', error);
+    }
+}
+
+// Load a specific tile
+function loadTile(gridRef) {
+    const layerId = `layer-${gridRef}`;
+    const sourceId = `source-${gridRef}`;
+
+    // Check if tile is already loaded or layer exists
+    if (loadedTiles.has(gridRef)) {
+        console.log(`Tile ${gridRef} already loaded`);
+        return;
+    }
+
+    // Check if layer already exists
+    if (map.getLayer(layerId)) {
+        console.log(`Layer ${layerId} already exists`);
+        loadedTiles.add(gridRef); // Mark as loaded since layer exists
+        return;
+    }
+
+    console.log(`Loading tile ${gridRef}...`);
+    
+    // Load the GeoJSON for this grid reference
+    fetch(`data/tiles/${gridRef}.geojson`)
+        .then(response => response.json())
+        .then(data => {
+            // Remove existing source if it exists
+            if (map.getSource(sourceId)) {
+                if (map.getLayer(layerId)) {
+                    map.removeLayer(layerId);
+                }
+                map.removeSource(sourceId);
+            }
+
+            // Add the source
+            map.addSource(sourceId, {
+                type: 'geojson',
+                data: data
+            });
+
+            // Add a new layer for this tile with no fill or border initially
+            map.addLayer({
+                id: layerId,
+                type: 'fill',
+                source: sourceId,
+                paint: {
+                    'fill-color': 'rgba(0, 0, 0, 0)',
+                    'fill-opacity': 0
+                }
+            });
+
+            console.log(`Successfully loaded tile ${gridRef}`);
+            loadedTiles.add(gridRef);
+
+            // Apply current filters to the new layer
+            validateAndApplyFilters();
+        })
+        .catch(error => {
+            console.error(`Error loading tile ${gridRef}:`, error);
+            // Clean up any partial state on error
+            if (map.getLayer(layerId)) {
+                map.removeLayer(layerId);
+            }
+            if (map.getSource(sourceId)) {
+                map.removeSource(sourceId);
+            }
+        });
+}
+
+// Check which tiles need to be loaded based on viewport
+function checkVisibleTiles() {
+    if (!metadata || !map) return;
+
+    const bounds = map.getBounds();
+    const zoom = map.getZoom();
+    
+    // Only load tiles when zoomed in enough
+    if (zoom < 6) {
+        console.log('Zoom level too low for loading tiles');
+        return;
+    }
+
+    // Check each grid's bounds against the viewport
+    for (const [gridRef, info] of Object.entries(metadata.grids)) {
+        const gridBounds = info.bounds;
+        
+        // Check if grid intersects with viewport
+        if (bounds.getWest() <= gridBounds.max_lon && 
+            bounds.getEast() >= gridBounds.min_lon &&
+            bounds.getSouth() <= gridBounds.max_lat && 
+            bounds.getNorth() >= gridBounds.min_lat) {
+            
+            loadTile(gridRef);
+        }
+    }
+}
+
 // Initialize the map
 function initializeMap() {
     console.log('Initializing map...');
@@ -29,9 +138,9 @@ function initializeMap() {
     
     map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/basic-v9',  // Using basic style
+        style: 'mapbox://styles/mapbox/basic-v9',
         center: [-98.5795, 39.8283],
-        zoom: 4,
+        zoom: 7,  // Start zoomed in enough to see tiles
         preserveDrawingBuffer: true
     });
 
@@ -40,53 +149,19 @@ function initializeMap() {
         console.log('Style loaded');
     });
 
-    map.on('load', () => {
-        console.log('Map loaded, loading city data...');
-        loadAllCityData();
+    map.on('load', async () => {
+        console.log('Map loaded, initializing tile system...');
+        await loadMetadata();
+        
+        // Add move end listener for loading tiles
+        map.on('moveend', checkVisibleTiles);
+        
+        // Initialize other components
         loadLocationData();
         initializeLocationFilters();
         setupFilterEventListeners();
         setupMapInteractions();
     });
-}
-
-// Load all city GeoJSON data
-function loadAllCityData() {
-    console.log('Fetching GeoJSON data...');
-    fetch('data/all_cities.geojson')
-        .then(response => {
-            console.log('GeoJSON response received');
-            return response.json();
-        })
-        .then(data => {
-            console.log('GeoJSON data loaded:', data.features ? data.features.length : 'No features found');
-            
-            if (!map.getSource('all-cities')) {
-                // Add the source for all cities
-                map.addSource('all-cities', {
-                    type: 'geojson',
-                    data: data
-                });
-
-                // Add the fill layer for all cities
-                map.addLayer({
-                    'id': 'city-fills',
-                    'type': 'fill',
-                    'source': 'all-cities',
-                    'paint': {
-                        'fill-color': 'rgba(0, 0, 0, 0)',  // Fully transparent default
-                        'fill-opacity': 1
-                    }
-                });
-
-                console.log('Layer added');
-                loadCityList();
-                initializeFilterStates();
-            }
-        })
-        .catch(error => {
-            console.error('Error loading GeoJSON:', error);
-        });
 }
 
 // Initialize filter states
@@ -144,7 +219,8 @@ function validateAndApplyFilters() {
                     filters.income250k.push({
                         min: parseInt(minInput?.value) || 0,
                         max: maxInput?.value ? parseInt(maxInput.value) : 999999,
-                        color: colorBox.style.backgroundColor
+                        color: colorBox.style.backgroundColor,
+                        enabled: true
                     });
                 }
             }
@@ -165,7 +241,8 @@ function validateAndApplyFilters() {
                     filters.income500k.push({
                         min: parseInt(minInput?.value) || 0,
                         max: maxInput?.value ? parseInt(maxInput.value) : 999999,
-                        color: colorBox.style.backgroundColor
+                        color: colorBox.style.backgroundColor,
+                        enabled: true
                     });
                 }
             }
@@ -175,52 +252,61 @@ function validateAndApplyFilters() {
     applyFiltersToMap(filters);
 }
 
-// Apply filters to map
+// Apply filters to visible tiles
 function applyFiltersToMap(filters) {
-    if (!map.getSource('all-cities')) {
-        console.warn('No city data loaded');
-        return;
-    }
-
-    // Build color expression
-    const conditions = [];
+    if (!map) return;
     
-    // Add 500k filters first (higher priority)
-    filters.income500k.forEach(f => {
-        conditions.push([
-            'all',
-            ['>=', ['to-number', ['get', 'kids_500k'], 0], f.min],
-            ['<=', ['to-number', ['get', 'kids_500k'], 0], f.max]
-        ]);
-        conditions.push(f.color);
+    loadedTiles.forEach(gridRef => {
+        const layerId = `layer-${gridRef}`;
+        if (map.getLayer(layerId)) {
+            // Build the Mapbox GL style expressions for the filters
+            let filterExpressions = [];
+            let colorExpressions = ['case'];
+            
+            // Add 500k filters first (higher priority)
+            filters.income500k.forEach(f => {
+                if (f.enabled) {
+                    const expression = [
+                        'all',
+                        ['>=', ['to-number', ['get', 'kids_500k'], 0], f.min],
+                        ['<=', ['to-number', ['get', 'kids_500k'], 0], f.max]
+                    ];
+                    filterExpressions.push(expression);
+                    colorExpressions.push(expression);
+                    colorExpressions.push(f.color);
+                }
+            });
+
+            // Add 250k filters second (lower priority)
+            filters.income250k.forEach(f => {
+                if (f.enabled) {
+                    const expression = [
+                        'all',
+                        ['>=', ['to-number', ['get', 'kids_250k'], 0], f.min],
+                        ['<=', ['to-number', ['get', 'kids_250k'], 0], f.max]
+                    ];
+                    filterExpressions.push(expression);
+                    colorExpressions.push(expression);
+                    colorExpressions.push(f.color);
+                }
+            });
+
+            // Add default color at the end
+            colorExpressions.push('rgba(0, 0, 0, 0)');
+
+            // Update the layer's filter and color
+            if (filterExpressions.length > 0) {
+                map.setFilter(layerId, ['any', ...filterExpressions]);
+                map.setPaintProperty(layerId, 'fill-color', colorExpressions);
+                map.setPaintProperty(layerId, 'fill-opacity', 0.7);
+                map.setPaintProperty(layerId, 'fill-outline-color', 'rgba(0, 0, 0, 0)'); // No borders
+            } else {
+                // If no filters active, hide all features
+                map.setFilter(layerId, ['==', ['get', 'kids_500k'], -1]); // Always false condition
+                map.setPaintProperty(layerId, 'fill-opacity', 0);
+            }
+        }
     });
-
-    // Add 250k filters second (lower priority)
-    filters.income250k.forEach(f => {
-        conditions.push([
-            'all',
-            ['>=', ['to-number', ['get', 'kids_250k'], 0], f.min],
-            ['<=', ['to-number', ['get', 'kids_250k'], 0], f.max]
-        ]);
-        conditions.push(f.color);
-    });
-
-    // Default color for the case statement (fully transparent)
-    conditions.push('rgba(0, 0, 0, 0)');
-
-    // Update the layer paint property with filter-based colors
-    if (conditions.length > 1) {  // Only apply if we have actual conditions
-        map.setPaintProperty('city-fills', 'fill-color', [
-            'case',
-            ...conditions
-        ]);
-    } else {
-        // If no conditions, just set the default transparent color
-        map.setPaintProperty('city-fills', 'fill-color', 'rgba(0, 0, 0, 0)');
-    }
-
-    // Ensure no borders by explicitly setting outline color to transparent
-    map.setPaintProperty('city-fills', 'fill-outline-color', 'rgba(0, 0, 0, 0)');
 }
 
 // Setup filter event listeners
