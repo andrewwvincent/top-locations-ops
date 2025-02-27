@@ -37,6 +37,8 @@ jspm_packages/
 data/lat long analysis/
 data/demographics/
 data/High-Demographics/
+data/KMLs/
+data/tiles/
 
 # Large generated files
 data/all_cities_new.geojson

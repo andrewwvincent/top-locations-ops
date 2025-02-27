@@ -6,7 +6,7 @@ let visibleCategories = [];
 
 // Global variables for locations
 let allLocations = null;
-let locations = { preferred: [], other: [], family: [] };
+let locations = {};
 let locationMarkers = [];
 
 // Add label toggle state
@@ -36,6 +36,11 @@ const defaultBucketRanges = [
     { min: 0, max: 500, label: '0-500' }
 ];
 
+// Base URL for data files
+const BASE_URL = window.location.href.includes('github.io') 
+    ? '/dynamic-microschool-heatmaps'  // GitHub Pages path (with leading slash)
+    : ''; // Local development path
+
 // Initialize the map
 function initializeMap() {
     mapboxgl.accessToken = config.accessToken;
@@ -49,76 +54,78 @@ function initializeMap() {
 
     // Wait for map style to load before customizing
     map.on('style.load', () => {
-        // Load all cities GeoJSON data
-        fetch('data/all_cities.geojson')
-            .then(response => response.json())
-            .then(data => {
-                // Add the source for all cities
-                map.addSource('all-cities', {
-                    type: 'geojson',
-                    data: data,
-                    tolerance: 5,  // Simplify geometries for better performance
-                    maxzoom: 12
-                });
+        // Load city boundaries
+        if (config.cityBoundaries) {
+            fetch(`${BASE_URL}/data/all_cities.geojson`)
+                .then(response => response.json())
+                .then(data => {
+                    // Add the source for all cities
+                    map.addSource('all-cities', {
+                        type: 'geojson',
+                        data: data,
+                        tolerance: 5,  // Simplify geometries for better performance
+                        maxzoom: 12
+                    });
 
-                // Add the fill layer for all cities
-                map.addLayer({
-                    'id': 'city-fills',
-                    'type': 'fill',
-                    'source': 'all-cities',
-                    'paint': {
-                        'fill-color': [
-                            'step',
-                            ['get', 'kids_count'],
-                            'rgba(255, 59, 59, 0.1)',   // 0-500
-                            500, 'rgba(255, 149, 5, 0.1)',  // 500-750
-                            750, 'rgba(255, 219, 77, 0.1)',  // 750-1000
-                            1000, 'rgba(51, 153, 0, 0.1)',  // 1000-1250
-                            1250, 'rgba(0, 102, 204, 0.1)',  // 1250-1500
-                            1500, 'rgba(102, 0, 204, 0.1)'   // 1500+
-                        ],
-                        'fill-opacity': [
-                            'interpolate',
-                            ['linear'],
-                            ['zoom'],
-                            4, 0.3,
-                            8, 0.6,
-                            12, 0.8
-                        ]
-                    }
-                });
+                    // Add the fill layer for all cities
+                    map.addLayer({
+                        'id': 'city-fills',
+                        'type': 'fill',
+                        'source': 'all-cities',
+                        'paint': {
+                            'fill-color': [
+                                'step',
+                                ['get', 'kids_count'],
+                                'rgba(255, 59, 59, 0.1)',   // 0-500
+                                500, 'rgba(255, 149, 5, 0.1)',  // 500-750
+                                750, 'rgba(255, 219, 77, 0.1)',  // 750-1000
+                                1000, 'rgba(51, 153, 0, 0.1)',  // 1000-1250
+                                1250, 'rgba(0, 102, 204, 0.1)',  // 1250-1500
+                                1500, 'rgba(102, 0, 204, 0.1)'   // 1500+
+                            ],
+                            'fill-opacity': [
+                                'interpolate',
+                                ['linear'],
+                                ['zoom'],
+                                4, 0.3,
+                                8, 0.6,
+                                12, 0.8
+                            ]
+                        }
+                    });
 
-                // Add outline layer
-                map.addLayer({
-                    'id': 'city-borders',
-                    'type': 'line',
-                    'source': 'all-cities',
-                    'paint': {
-                        'line-color': '#000',
-                        'line-width': 1,
-                        'line-opacity': 0.5
-                    }
-                });
+                    // Add outline layer
+                    map.addLayer({
+                        'id': 'city-borders',
+                        'type': 'line',
+                        'source': 'all-cities',
+                        'paint': {
+                            'line-color': '#000',
+                            'line-width': 1,
+                            'line-opacity': 0.5
+                        }
+                    });
 
-                // Add hover effect layer
-                map.addLayer({
-                    'id': 'city-fills-hover',
-                    'type': 'fill',
-                    'source': 'all-cities',
-                    'paint': {
-                        'fill-color': '#000',
-                        'fill-opacity': [
-                            'case',
-                            ['boolean', ['feature-state', 'hover'], false],
-                            0.2,
-                            0
-                        ]
-                    }
-                });
+                    // Add hover effect layer
+                    map.addLayer({
+                        'id': 'city-fills-hover',
+                        'type': 'fill',
+                        'source': 'all-cities',
+                        'paint': {
+                            'fill-color': '#000',
+                            'fill-opacity': [
+                                'case',
+                                ['boolean', ['feature-state', 'hover'], false],
+                                0.2,
+                                0
+                            ]
+                        }
+                    });
 
-                setupEventListeners();
-                loadLocationPoints();
-            });
+                    setupEventListeners();
+                    loadLocationPoints();
+                });
+        }
     });
     
     // Add navigation controls
@@ -723,7 +730,10 @@ function loadCity(cityName) {
 // Load KML file
 async function loadKMLFile(kmlFile) {
     try {
-        const response = await fetch(kmlFile);
+        const response = await fetch(`${BASE_URL}${kmlFile}`);
+        if (!response.ok) {
+            throw new Error(`Failed to load KML file: ${response.status}`);
+        }
         const kmlText = await response.text();
         const parser = new DOMParser();
         const kml = parser.parseFromString(kmlText, 'text/xml');
@@ -1406,11 +1416,10 @@ async function loadLocationPoints() {
         locationMarkers = [];
         
         // Reset locations
-        locations = {
-            preferred: [],
-            other: [],
-            family: []
-        };
+        locations = {};
+        config.locationLayers.forEach(layer => {
+            locations[layer.id] = [];
+        });
 
         // Wait for map style to load
         if (!map.isStyleLoaded()) {
@@ -1418,15 +1427,20 @@ async function loadLocationPoints() {
         }
 
         // Load KML files
-        const preferredKml = await fetch('data/preferred_locations.kml').then(res => res.text()).then(text => new DOMParser().parseFromString(text, 'text/xml'));
-        const otherKml = await fetch('data/other_locations.kml').then(res => res.text()).then(text => new DOMParser().parseFromString(text, 'text/xml'));
-        const familyKml = await fetch('data/family_locations.kml').then(res => res.text()).then(text => new DOMParser().parseFromString(text, 'text/xml'));
-
-        // Process locations
-        processLocations(preferredKml, 'preferred', '#FF0000');
-        processLocations(otherKml, 'other', '#0000FF');
-        processLocations(familyKml, 'family', '#00FF00');
-
+        for (const layer of config.locationLayers) {
+            try {
+                const kmlResponse = await fetch(`${BASE_URL}${layer.file}`);
+                if (!kmlResponse.ok) {
+                    throw new Error(`Failed to load ${layer.name}: ${kmlResponse.status}`);
+                }
+                const kmlText = await kmlResponse.text();
+                const kmlDoc = new DOMParser().parseFromString(kmlText, 'text/xml');
+                processLocations(kmlDoc, layer);
+            } catch (error) {
+                console.error(`Error loading ${layer.name}:`, error);
+            }
+        }
+        
         // Apply locations from URL
         applyLocationsFromUrl();
         
@@ -1475,7 +1489,7 @@ function initializeFilterStates() {
     validateAndApplyFilters();
 }
 
-function processLocations(kml, type, color) {
+function processLocations(kml, layer) {
     const placemarks = kml.getElementsByTagName('Placemark');
     Array.from(placemarks).forEach(placemark => {
         const pointElem = placemark.getElementsByTagName('Point')[0];
@@ -1495,7 +1509,7 @@ function processLocations(kml, type, color) {
 
         // Create marker element
         const el = document.createElement('div');
-        el.className = `location-marker ${type}`;
+        el.className = `location-marker ${layer.id}`;
 
         // Always add label if name exists, but initially hidden
         if (name) {
@@ -1508,7 +1522,7 @@ function processLocations(kml, type, color) {
         // Create marker
         const marker = new mapboxgl.Marker({
             element: el,
-            color: color
+            color: layer.color
         })
         .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])]);
 
@@ -1524,7 +1538,7 @@ function processLocations(kml, type, color) {
 
         // Add to map and store
         marker.addTo(map);
-        locations[type].push({
+        locations[layer.id].push({
             longitude: parseFloat(coords[0]),
             latitude: parseFloat(coords[1]),
             name,
@@ -1532,36 +1546,55 @@ function processLocations(kml, type, color) {
         });
         locationMarkers.push(marker);
 
-        // Hide non-preferred markers by default
-        if (type !== 'preferred') {
+        // Set initial visibility based on layer settings
+        if (!layer.defaultChecked) {
             marker.getElement().style.display = 'none';
         }
     });
 }
 
-function updateMarkerVisibility() {
-    const preferredVisible = document.getElementById('preferred-locations').checked;
-    const otherVisible = document.getElementById('other-locations').checked;
-    const familyVisible = document.getElementById('family-locations').checked;
-
-    let currentIndex = 0;
+function initializeLocationFilters() {
+    const locationFilters = document.getElementById('location-filters');
     
-    // Update preferred markers
-    locations.preferred.forEach(() => {
-        locationMarkers[currentIndex].getElement().style.display = preferredVisible ? 'block' : 'none';
-        currentIndex++;
+    config.locationLayers.forEach(layer => {
+        const div = document.createElement('div');
+        div.className = 'filter-item';
+        
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = layer.id;
+        checkbox.checked = layer.defaultChecked;
+        
+        const label = document.createElement('label');
+        label.htmlFor = layer.id;
+        label.textContent = layer.name;
+        
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        locationFilters.appendChild(div);
+        
+        checkbox.addEventListener('change', () => {
+            updateMarkerVisibility();
+            updateUrlParameters();
+        });
+    });
+}
+
+function updateMarkerVisibility() {
+    const visibilityStates = {};
+    config.locationLayers.forEach(layer => {
+        visibilityStates[layer.id] = document.getElementById(layer.id).checked;
     });
 
-    // Update other markers
-    locations.other.forEach(() => {
-        locationMarkers[currentIndex].getElement().style.display = otherVisible ? 'block' : 'none';
-        currentIndex++;
-    });
-
-    // Update family markers
-    locations.family.forEach(() => {
-        locationMarkers[currentIndex].getElement().style.display = familyVisible ? 'block' : 'none';
-        currentIndex++;
+    locationMarkers.forEach((marker, index) => {
+        const markerElement = marker.getElement();
+        const markerType = markerElement.className.split(' ')[1]; // Gets the second class which is the type
+        
+        // Find the corresponding layer config
+        const layer = config.locationLayers.find(l => l.id === markerType);
+        if (layer) {
+            markerElement.style.display = visibilityStates[layer.id] ? 'block' : 'none';
+        }
     });
 }
 
@@ -1609,3 +1642,4 @@ function updateLabelVisibility() {
 
 // Initialize the map when the page loads
 initializeMap();
+initializeLocationFilters();

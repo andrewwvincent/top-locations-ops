@@ -11,9 +11,21 @@ let currentlyLoadingTiles = new Set();
 let moveEndTimeout = null;
 const TILE_LOAD_TIMEOUT = 5000; // 5 seconds timeout for tile loading
 
+// Location-related variables
+let geocoder;
+let visibleCategories = [];
+let allLocations = null;
+let locations = {};
+let locationMarkers = [];
+let labelToggles = {
+    preferred: false,
+    other: false,
+    family: false
+};
+
 // Base URL for tile data - change this based on environment
 const BASE_URL = window.location.href.includes('github.io') 
-    ? 'dynamic-microschool-heatmaps'  // GitHub Pages path (no leading slash)
+    ? '/dynamic-microschool-heatmaps'  // GitHub Pages path (with leading slash)
     : ''; // Local development path
 
 // Default colors for buckets
@@ -39,7 +51,7 @@ const defaultBucketRanges = [
 // Load metadata and initialize tile loading
 async function loadMetadata() {
     try {
-        const response = await fetch(`${BASE_URL ? `/${BASE_URL}` : ''}/data/wealth_tiles/metadata.json`);
+        const response = await fetch(`${BASE_URL}/data/wealth_tiles/metadata.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -93,7 +105,7 @@ async function loadTile(gridRef) {
             }
 
             try {
-                const response = await fetch(`${BASE_URL ? `/${BASE_URL}` : ''}/data/wealth_tiles/${income}/${gridRef}.geojson`);
+                const response = await fetch(`${BASE_URL}/data/wealth_tiles/${income}/${gridRef}.geojson`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -137,7 +149,7 @@ async function loadTile(gridRef) {
             }
 
             try {
-                const response = await fetch(`${BASE_URL ? `/${BASE_URL}` : ''}/data/wealth_tiles/${income}/${gridRef}.geojson`);
+                const response = await fetch(`${BASE_URL}/data/wealth_tiles/${income}/${gridRef}.geojson`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -271,7 +283,7 @@ function initializeMap() {
     });
 
     // Add geocoder control
-    const geocoder = new MapboxGeocoder({
+    geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
         countries: 'us',
@@ -492,10 +504,225 @@ function applyFiltersToMap(filters) {
     });
 }
 
+// Initialize location filters and load points
+function initializeLocationFilters() {
+    const locationFilters = document.getElementById('location-filters');
+    
+    config.locationLayers.forEach(layer => {
+        const div = document.createElement('div');
+        div.className = 'filter-item';
+        
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = layer.id;
+        checkbox.checked = layer.defaultChecked;
+        
+        const label = document.createElement('label');
+        label.htmlFor = layer.id;
+        label.textContent = layer.name;
+        
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        locationFilters.appendChild(div);
+        
+        checkbox.addEventListener('change', () => {
+            updateMarkerVisibility();
+        });
+    });
+}
+
+async function loadLocationPoints() {
+    try {
+        // Clear existing markers
+        locationMarkers.forEach(marker => marker.remove());
+        locationMarkers = [];
+        
+        // Reset locations
+        locations = {};
+        config.locationLayers.forEach(layer => {
+            locations[layer.id] = [];
+        });
+
+        // Wait for map style to load
+        if (!map.isStyleLoaded()) {
+            await new Promise(resolve => map.once('style.load', resolve));
+        }
+
+        // Load KML files
+        for (const layer of config.locationLayers) {
+            try {
+                const kmlResponse = await fetch(`${BASE_URL}${layer.file}`);
+                if (!kmlResponse.ok) {
+                    throw new Error(`Failed to load ${layer.name}: ${kmlResponse.status}`);
+                }
+                const kmlText = await kmlResponse.text();
+                const kmlDoc = new DOMParser().parseFromString(kmlText, 'text/xml');
+                processLocations(kmlDoc, layer);
+            } catch (error) {
+                console.error(`Error loading ${layer.name}:`, error);
+            }
+        }
+        
+        // Update visibility based on checkboxes
+        updateMarkerVisibility();
+        
+    } catch (error) {
+        console.error('Error loading location points:', error);
+    }
+}
+
+function processLocations(kml, layer) {
+    const placemarks = kml.getElementsByTagName('Placemark');
+    Array.from(placemarks).forEach(placemark => {
+        const pointElem = placemark.getElementsByTagName('Point')[0];
+        if (!pointElem) return;
+        
+        const coordsElem = pointElem.getElementsByTagName('coordinates')[0];
+        if (!coordsElem) return;
+        
+        const coords = coordsElem.textContent.trim().split(',');
+        if (coords.length < 2) return;
+
+        // Get name and description
+        const nameElem = placemark.getElementsByTagName('name')[0] || placemark.getElementsByTagName('n')[0];
+        const name = nameElem ? nameElem.textContent.trim() : '';
+        const descElem = placemark.getElementsByTagName('description')[0];
+        const description = descElem ? descElem.textContent : '';
+
+        // Create marker element
+        const el = document.createElement('div');
+        el.className = `location-marker ${layer.id}`;
+        el.style.backgroundColor = layer.color;
+
+        // Create marker
+        const marker = new mapboxgl.Marker(el)
+            .setLngLat([parseFloat(coords[0]), parseFloat(coords[1])])
+            .setPopup(new mapboxgl.Popup().setHTML(`<h3>${name}</h3>${description}`))
+            .addTo(map);
+
+        // Store marker reference
+        locationMarkers.push(marker);
+        locations[layer.id].push(marker);
+    });
+}
+
+function updateMarkerVisibility() {
+    config.locationLayers.forEach(layer => {
+        const checkbox = document.getElementById(layer.id);
+        const isVisible = checkbox && checkbox.checked;
+        
+        locations[layer.id]?.forEach(marker => {
+            if (isVisible) {
+                marker.addTo(map);
+            } else {
+                marker.remove();
+            }
+        });
+    });
+}
+
+// URL parameter handling functions
+function getUrlParameters() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        city: params.get('city'),
+        locations: params.get('locations') || '100000',
+        filter250k: params.get('filter250k') || '0111110',  // Default: parent off, first 5 buckets checked
+        filter500k: params.get('filter500k') || '1111110',  // Default: parent on, all but last bucket
+        buckets: params.get('buckets') || '1500A1250B1000C750D500E0F'  // Default bucket min values
+    };
+}
+
+function validateLocationsParam(locations) {
+    if (!locations) return false;
+    if (locations.length !== 6) return false;
+    if (!/^[01]{6}$/.test(locations)) return false;
+    
+    // Check that labels are off if their corresponding filter is off
+    for (let i = 0; i < 3; i++) {
+        if (locations[i] === '0' && locations[i + 3] === '1') {
+            return false; // Invalid: label is on but filter is off
+        }
+    }
+    
+    return true;
+}
+
+function updateUrlParameters() {
+    const params = new URLSearchParams(window.location.search);
+    
+    if (currentCity) {
+        params.set('city', currentCity);
+    } else {
+        params.delete('city');
+    }
+    
+    // Get current state of location filters
+    const visibilityStates = {};
+    config.locationLayers.forEach(layer => {
+        visibilityStates[layer.id] = document.getElementById(layer.id).checked ? '1' : '0';
+    });
+    
+    // Build location string
+    const locationString = Object.values(visibilityStates).join('');
+    params.set('locations', locationString);
+    
+    // Get current state of household filters
+    const parent250k = document.querySelector('#income250k-parent');
+    const parent500k = document.querySelector('#income500k-parent');
+
+    // Build 250k filter string
+    let filter250k = parent250k.checked ? '1' : '0';
+    document.querySelectorAll('#income250k-categories .category-checkbox').forEach(checkbox => {
+        filter250k += checkbox.checked ? '1' : '0';
+    });
+    params.set('filter250k', filter250k);
+    
+    // Build 500k filter string
+    let filter500k = parent500k.checked ? '1' : '0';
+    document.querySelectorAll('#income500k-categories .category-checkbox').forEach(checkbox => {
+        filter500k += checkbox.checked ? '1' : '0';
+    });
+    params.set('filter500k', filter500k);
+    
+    // Update URL without reloading the page
+    const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
+    window.history.pushState({}, '', newUrl);
+}
+
+function applyLocationsFromUrl() {
+    const params = getUrlParameters();
+    const locations = params.locations;
+    
+    if (!validateLocationsParam(locations)) {
+        // Invalid or missing locations parameter, set to default
+        const params = new URLSearchParams(window.location.search);
+        params.set('locations', '100000');
+        window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+        return;
+    }
+    
+    // Apply checkbox states based on config layers
+    config.locationLayers.forEach((layer, index) => {
+        const checkbox = document.getElementById(layer.id);
+        if (checkbox && index < locations.length) {
+            checkbox.checked = locations[index] === '1';
+        }
+    });
+    
+    // Update visibility
+    updateMarkerVisibility();
+}
+
+// Initialize the map and location filters
+initializeMap();
+initializeLocationFilters();
+loadLocationPoints();
+
 // Document ready handler
 document.addEventListener('DOMContentLoaded', function() {
     try {
-        initializeMap();
+        // No-op
     } catch (error) {
         console.error('Error initializing map:', error);
     }
