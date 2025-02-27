@@ -36,6 +36,53 @@
         .categories.collapsed {
             max-height: 0;
         }
+
+        /* Location Controls */
+        .location-controls {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .location-controls h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .location-filters {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .location-filter {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 0;
+        }
+
+        .location-filter input[type="checkbox"] {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .location-filter label {
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .pin-preview {
+            transition: all 0.2s;
+        }
+
+        .location-filter:hover .pin-preview {
+            transform: scale(1.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
     </style>
 </head>
 <body>
@@ -50,15 +97,6 @@
                     <div id="geocoder" class="geocoder"></div>
                 </div>
 
-
-                <!-- Location Filters -->
-                <div class="filter-section">
-                    <h3>Location Filters</h3>
-                    <div class="filter-group" id="location-filters">
-                        <!-- Location filters will be dynamically inserted here -->
-                    </div>
-                </div>
-
                 <!-- Layer Controls -->
                 <div class="layer-controls">
                     <form id="filter-form" onsubmit="return false;">
@@ -69,7 +107,7 @@
                                     <input type="checkbox" class="parent-checkbox" id="income500k-parent" checked>
                                     <h3>$500k+ Households</h3>
                                 </div>
-                                <div id="income500k-categories" class="categories">
+                                <div id="income500k-categories" class="categories hidden">
                                     <div class="categories-container" id="income500k-categories">
                                         <div class="category-item">
                                             <div class="category-header">
@@ -140,7 +178,7 @@
                                     <input type="checkbox" class="parent-checkbox" id="income250k-parent">
                                     <h3>$250k+ Households</h3>
                                 </div>
-                                <div id="income250k-categories" class="categories">
+                                <div id="income250k-categories" class="categories hidden">
                                     <div class="categories-container" id="income250k-categories">
                                         <div class="category-item">
                                             <div class="category-header">
@@ -211,7 +249,7 @@
                                     <input type="checkbox" class="parent-checkbox" id="income200k-parent">
                                     <h3>$200k+ Households</h3>
                                 </div>
-                                <div id="income200k-categories" class="categories">
+                                <div id="income200k-categories" class="categories hidden">
                                     <div class="categories-container" id="income200k-categories">
                                         <div class="category-item">
                                             <div class="category-header">
@@ -282,7 +320,7 @@
                                     <input type="checkbox" class="parent-checkbox" id="income150k-parent">
                                     <h3>$150k+ Households</h3>
                                 </div>
-                                <div id="income150k-categories" class="categories">
+                                <div id="income150k-categories" class="categories hidden">
                                     <div class="categories-container" id="income150k-categories">
                                         <div class="category-item">
                                             <div class="category-header">
@@ -360,8 +398,38 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <script type="module">
-        import { init } from './js/features/tileLoader.js';
-        init();
+        import { config } from './config.js';
+        import { initTileLoader } from './js/features/tileLoader.js';
+        import { initLocationLoader } from './js/features/locationLoader.js';
+
+        // Initialize map
+        mapboxgl.accessToken = config.accessToken;
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: config.style,
+            center: config.center,
+            zoom: config.zoom
+        });
+
+        // Initialize loaders once map is loaded
+        map.on('load', () => {
+            initTileLoader(map);
+            initLocationLoader(map);
+        });
+
+        // Add navigation controls
+        map.addControl(new mapboxgl.NavigationControl());
+        
+        // Add geocoder
+        const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: false
+        });
+        map.addControl(geocoder);
+
+        // Add fullscreen control
+        map.addControl(new mapboxgl.FullscreenControl());
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

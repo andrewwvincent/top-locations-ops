@@ -13,8 +13,8 @@ const TILE_LOAD_TIMEOUT = 5000; // 5 seconds timeout for tile loading
 
 // Base URL for tile data - change this based on environment
 const BASE_URL = window.location.href.includes('github.io') 
-    ? '/dynamic-microschool-heatmaps'  // GitHub Pages path (with leading slash)
-    : ''; // Local development path
+    ? '/dynamic-microschool-heatmaps'  // GitHub Pages URL
+    : '.';  // Local development URL
 
 // Initialize the map
 function initializeMap() {
@@ -102,6 +102,14 @@ async function loadTile(gridRef) {
                 data: `data/tiles/${gridRef}.geojson`
             });
 
+            // Find a good layer to insert before - we want to be above land but below labels
+            const layers = map.getStyle().layers;
+            const labelLayer = layers.find(layer => 
+                layer.id.includes('label') || 
+                layer.id.includes('place') ||
+                layer.id.includes('poi')
+            );
+
             // Add main layer for colors
             map.addLayer({
                 'id': layerId,
@@ -112,7 +120,7 @@ async function loadTile(gridRef) {
                     'fill-opacity': 0.8,
                     'fill-outline-color': 'rgba(0, 0, 0, 0.2)'
                 }
-            });
+            }, labelLayer.id); // Add before the first label layer
 
             loadedTiles.add(gridRef);
         }
@@ -349,37 +357,34 @@ function isGridVisible(gridBounds, viewportBounds) {
            viewportBounds.getNorth() >= gridBounds.min_lat;
 }
 
-// Initialize the map
-export function init() {
-    initializeMap();
+// Export initialization function
+export function initTileLoader(mapInstance) {
+    map = mapInstance;
+    
+    // Initialize filters
+    updateFilters();
+    
+    // Load metadata and initialize UI once map is ready
+    loadMetadata().then(loadedMetadata => {
+        metadata = loadedMetadata;
+        if (metadata) {
+            // Setup map event handlers
+            map.on('moveend', checkVisibleTiles);
+            map.on('zoomend', checkVisibleTiles);
+            
+            // Initial check for visible tiles
+            checkVisibleTiles();
+        }
+    });
 
-    // Document ready handler
-    document.addEventListener('DOMContentLoaded', function() {
-        // Set up event listeners for filter changes
-        document.querySelectorAll('.parent-checkbox, .category-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                Array.from(loadedTiles).forEach(gridId => {
-                    const sourceId = `source-${gridId}`;
-                    const layerId = `layer-${gridId}`;
-                    updateLayerColors(map, sourceId, layerId);
-                });
-            });
-        });
-
-        // Set up collapse functionality
-        document.querySelectorAll('.income-header').forEach(header => {
-            // Prevent checkbox clicks from triggering collapse
-            header.querySelector('input[type="checkbox"]').addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-
-            header.addEventListener('click', (e) => {
-                // Don't collapse if clicking the checkbox
-                if (e.target.type === 'checkbox') return;
-                
-                const categories = header.nextElementSibling;
-                header.classList.toggle('collapsed');
-                categories.classList.toggle('collapsed');
+    // Listen for filter changes
+    document.querySelectorAll('.parent-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            updateFilters();
+            Array.from(loadedTiles).forEach(gridId => {
+                const sourceId = `source-${gridId}`;
+                const layerId = `layer-${gridId}`;
+                updateLayerColors(map, sourceId, layerId);
             });
         });
     });
