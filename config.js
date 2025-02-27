@@ -1,4 +1,5 @@
-const config = {
+// Map configuration
+export const config = {
     style: 'mapbox://styles/mapbox/streets-v12',
     accessToken: 'pk.eyJ1IjoiYW5kcmV3LXZpbmNlbnQiLCJhIjoiY202OW4wNm5yMGlubzJtcTJmMnBxb2x1cSJ9.jrR3Ucv9Nvtc-T_7aKIQCg',
     CSV: '../data/locations.csv',

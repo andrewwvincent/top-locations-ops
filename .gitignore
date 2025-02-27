@@ -38,7 +38,7 @@ data/lat long analysis/
 data/demographics/
 data/High-Demographics/
 data/KMLs/
-data/tiles/
+data/wealth_tiles/
 
 # Large generated files
 data/all_cities_new.geojson
