@@ -12,7 +12,7 @@ let moveEndTimeout = null;
 const TILE_LOAD_TIMEOUT = 5000; // 5 seconds timeout for tile loading
 
 // Base URL for tile data - change this based on environment
-const BASE_URL = window.location.hostname === 'andrewwvincent.github.io' 
+const BASE_URL = window.location.href.includes('github.io') 
     ? '/dynamic-microschool-heatmaps'  // GitHub Pages path
     : ''; // Local development path
 
