@@ -13,7 +13,7 @@ const TILE_LOAD_TIMEOUT = 5000; // 5 seconds timeout for tile loading
 
 // Base URL for tile data - change this based on environment
 const BASE_URL = window.location.href.includes('github.io') 
-    ? '/dynamic-microschool-heatmaps'  // GitHub Pages path
+    ? 'dynamic-microschool-heatmaps'  // GitHub Pages path (no leading slash)
     : ''; // Local development path
 
 // Default colors for buckets
@@ -39,7 +39,7 @@ const defaultBucketRanges = [
 // Load metadata and initialize tile loading
 async function loadMetadata() {
     try {
-        const response = await fetch(`${BASE_URL}/data/wealth_tiles/metadata.json`);
+        const response = await fetch(`${BASE_URL ? `/${BASE_URL}` : ''}/data/wealth_tiles/metadata.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -93,7 +93,7 @@ async function loadTile(gridRef) {
             }
 
             try {
-                const response = await fetch(`${BASE_URL}/data/wealth_tiles/${income}/${gridRef}.geojson`);
+                const response = await fetch(`${BASE_URL ? `/${BASE_URL}` : ''}/data/wealth_tiles/${income}/${gridRef}.geojson`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -137,7 +137,7 @@ async function loadTile(gridRef) {
             }
 
             try {
-                const response = await fetch(`${BASE_URL}/data/wealth_tiles/${income}/${gridRef}.geojson`);
+                const response = await fetch(`${BASE_URL ? `/${BASE_URL}` : ''}/data/wealth_tiles/${income}/${gridRef}.geojson`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
