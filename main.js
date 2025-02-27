@@ -2,8 +2,14 @@
 let map;
 let currentCity = null;
 let loadedTiles = new Set();
+let visibleTiles = new Set(); // Track currently visible tiles
+let loadingTiles = new Set(); // Track tiles currently being loaded
+let tileLoadStartTimes = new Map(); // Track when each tile started loading
 let metadata = null;
+let filters = null; // Will be initialized in initializeFilterStates
 let currentlyLoadingTiles = new Set();
+let moveEndTimeout = null;
+const TILE_LOAD_TIMEOUT = 5000; // 5 seconds timeout for tile loading
 
 // Default colors for buckets
 const defaultColors = [
@@ -28,79 +34,145 @@ const defaultBucketRanges = [
 // Load metadata and initialize tile loading
 async function loadMetadata() {
     try {
-        const response = await fetch('data/tiles/metadata.json');
-        metadata = await response.json();
-        console.log('Metadata loaded:', metadata);
+        const response = await fetch('data/wealth_tiles/metadata.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const metadata = await response.json();
+        return metadata;
     } catch (error) {
         console.error('Error loading metadata:', error);
+        return null;
     }
 }
 
 // Load a specific tile
-function loadTile(gridRef) {
-    const layerId = `layer-${gridRef}`;
-    const sourceId = `source-${gridRef}`;
-
-    // Check if tile is already loaded or layer exists
+async function loadTile(gridRef) {
     if (loadedTiles.has(gridRef)) {
-        console.log(`Tile ${gridRef} already loaded`);
-        return;
+        return; // Already loaded
     }
 
-    // Check if layer already exists
-    if (map.getLayer(layerId)) {
-        console.log(`Layer ${layerId} already exists`);
-        loadedTiles.add(gridRef); // Mark as loaded since layer exists
-        return;
+    // Check if tile has been loading too long
+    if (loadingTiles.has(gridRef)) {
+        const startTime = tileLoadStartTimes.get(gridRef);
+        if (startTime && (Date.now() - startTime) > TILE_LOAD_TIMEOUT) {
+            console.log(`Tile ${gridRef} load timeout, retrying...`);
+            loadingTiles.delete(gridRef);
+            tileLoadStartTimes.delete(gridRef);
+        } else {
+            return; // Still loading within timeout
+        }
     }
 
-    console.log(`Loading tile ${gridRef}...`);
+    loadingTiles.add(gridRef);
+    tileLoadStartTimes.set(gridRef, Date.now());
+    let loadedAny = false;
     
-    // Load the GeoJSON for this grid reference
-    fetch(`data/tiles/${gridRef}.geojson`)
-        .then(response => response.json())
-        .then(data => {
-            // Remove existing source if it exists
+    // Get enabled filters first
+    const enabledFilters = new Set();
+    const parent250k = document.querySelector('#income250k-parent');
+    const parent500k = document.querySelector('#income500k-parent');
+    
+    if (parent250k?.checked) enabledFilters.add('250k');
+    if (parent500k?.checked) enabledFilters.add('500k');
+
+    try {
+        // First load enabled filters
+        for (const income of Array.from(enabledFilters)) {
+            const sourceId = `source-${income}-${gridRef}`;
+            const layerId = `layer-${income}-${gridRef}`;
+
             if (map.getSource(sourceId)) {
-                if (map.getLayer(layerId)) {
-                    map.removeLayer(layerId);
-                }
-                map.removeSource(sourceId);
+                loadedAny = true;
+                continue;
             }
 
-            // Add the source
-            map.addSource(sourceId, {
-                type: 'geojson',
-                data: data
-            });
-
-            // Add a new layer for this tile with no fill or border initially
-            map.addLayer({
-                id: layerId,
-                type: 'fill',
-                source: sourceId,
-                paint: {
-                    'fill-color': 'rgba(0, 0, 0, 0)',
-                    'fill-opacity': 0
+            try {
+                const response = await fetch(`/data/wealth_tiles/${income}/${gridRef}.geojson`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-            });
+                
+                const data = await response.json();
+                
+                if (!map.getSource(sourceId)) {
+                    map.addSource(sourceId, {
+                        type: 'geojson',
+                        data: data
+                    });
 
-            console.log(`Successfully loaded tile ${gridRef}`);
+                    map.addLayer({
+                        id: layerId,
+                        type: 'fill',
+                        source: sourceId,
+                        paint: {
+                            'fill-color': 'rgba(0, 0, 0, 0)',
+                            'fill-opacity': 0.8,
+                            'fill-outline-color': 'rgba(0, 0, 0, 0.2)'
+                        }
+                    });
+                    
+                    loadedAny = true;
+                }
+            } catch (error) {
+                console.error(`Error loading tile ${gridRef} for ${income}: ${error}`);
+            }
+        }
+
+        // Then load disabled filters
+        for (const income of ['250k', '500k']) {
+            if (enabledFilters.has(income)) continue;
+
+            const sourceId = `source-${income}-${gridRef}`;
+            const layerId = `layer-${income}-${gridRef}`;
+
+            if (map.getSource(sourceId)) {
+                loadedAny = true;
+                continue;
+            }
+
+            try {
+                const response = await fetch(`/data/wealth_tiles/${income}/${gridRef}.geojson`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!map.getSource(sourceId)) {
+                    map.addSource(sourceId, {
+                        type: 'geojson',
+                        data: data
+                    });
+
+                    map.addLayer({
+                        id: layerId,
+                        type: 'fill',
+                        source: sourceId,
+                        paint: {
+                            'fill-color': 'rgba(0, 0, 0, 0)',
+                            'fill-opacity': 0.8,
+                            'fill-outline-color': 'rgba(0, 0, 0, 0.2)'
+                        }
+                    });
+                    
+                    loadedAny = true;
+                }
+            } catch (error) {
+                console.error(`Error loading tile ${gridRef} for ${income}: ${error}`);
+            }
+        }
+
+        // Apply filters and update state
+        if (loadedAny) {
             loadedTiles.add(gridRef);
-
-            // Apply current filters to the new layer
             validateAndApplyFilters();
-        })
-        .catch(error => {
-            console.error(`Error loading tile ${gridRef}:`, error);
-            // Clean up any partial state on error
-            if (map.getLayer(layerId)) {
-                map.removeLayer(layerId);
-            }
-            if (map.getSource(sourceId)) {
-                map.removeSource(sourceId);
-            }
-        });
+        }
+    } finally {
+        // Always clean up loading state
+        loadingTiles.delete(gridRef);
+        tileLoadStartTimes.delete(gridRef);
+    }
 }
 
 // Check which tiles need to be loaded based on viewport
@@ -109,11 +181,22 @@ function checkVisibleTiles() {
 
     const bounds = map.getBounds();
     const zoom = map.getZoom();
+    const newVisibleTiles = new Set();
     
     // Only load tiles when zoomed in enough
     if (zoom < 6) {
-        console.log('Zoom level too low for loading tiles');
+        cleanupInvisibleTiles(newVisibleTiles);
         return;
+    }
+
+    // Check for stuck tiles first
+    for (const gridRef of loadingTiles) {
+        const startTime = tileLoadStartTimes.get(gridRef);
+        if (startTime && (Date.now() - startTime) > TILE_LOAD_TIMEOUT) {
+            console.log(`Found stuck tile ${gridRef}, clearing state...`);
+            loadingTiles.delete(gridRef);
+            tileLoadStartTimes.delete(gridRef);
+        }
     }
 
     // Check each grid's bounds against the viewport
@@ -126,71 +209,182 @@ function checkVisibleTiles() {
             bounds.getSouth() <= gridBounds.max_lat && 
             bounds.getNorth() >= gridBounds.min_lat) {
             
-            loadTile(gridRef);
+            newVisibleTiles.add(gridRef);
+            
+            // Load tile if not already loaded or stuck
+            if (!loadedTiles.has(gridRef)) {
+                loadTile(gridRef);
+            }
         }
     }
+
+    // Cleanup tiles that are no longer visible
+    cleanupInvisibleTiles(newVisibleTiles);
+    visibleTiles = newVisibleTiles;
+}
+
+// Cleanup tiles that are no longer visible
+function cleanupInvisibleTiles(newVisibleTiles) {
+    // Find tiles that are loaded but no longer visible
+    for (const gridRef of loadedTiles) {
+        if (!newVisibleTiles.has(gridRef)) {
+            // Remove both income levels
+            for (const income of ['250k', '500k']) {
+                const sourceId = `source-${income}-${gridRef}`;
+                const layerId = `layer-${income}-${gridRef}`;
+
+                try {
+                    // Remove layer first if it exists
+                    if (map.getLayer(layerId)) {
+                        map.removeLayer(layerId);
+                    }
+                    // Then remove source if it exists
+                    if (map.getSource(sourceId)) {
+                        map.removeSource(sourceId);
+                    }
+                } catch (error) {
+                    console.error(`Error cleaning up tile ${gridRef} for ${income}: ${error}`);
+                }
+            }
+            loadedTiles.delete(gridRef);
+        }
+    }
+    
+    // Update visible tiles set
+    visibleTiles = newVisibleTiles;
 }
 
 // Initialize the map
 function initializeMap() {
-    console.log('Initializing map...');
-    mapboxgl.accessToken = config.accessToken;
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmV3LXZpbmNlbnQiLCJhIjoiY202OW4wNm5yMGlubzJtcTJmMnBxb2x1cSJ9.jrR3Ucv9Nvtc-T_7aKIQCg';
     
     map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/basic-v9',
-        center: [-98.5795, 39.8283],
-        zoom: 7,  // Start zoomed in enough to see tiles
-        preserveDrawingBuffer: true
+        center: [-97.7431, 30.2672], // Austin coordinates
+        zoom: 9 // Closer zoom for city view
     });
 
-    // Wait for both style and map to be loaded
-    map.on('style.load', () => {
-        console.log('Style loaded');
-    });
-
+    // Load metadata and initialize UI once map is ready
     map.on('load', async () => {
-        console.log('Map loaded, initializing tile system...');
-        await loadMetadata();
-        
-        // Add move end listener for loading tiles
-        map.on('moveend', checkVisibleTiles);
-        
-        // Initialize other components
-        loadLocationData();
-        initializeLocationFilters();
-        setupFilterEventListeners();
-        setupMapInteractions();
+        try {
+            // Load metadata first
+            metadata = await loadMetadata();
+            
+            // Initialize UI components
+            initializeUI();
+            
+            // Start loading tiles immediately
+            checkVisibleTiles();
+            
+            // Set up map event handlers
+            setupMapEventHandlers();
+        } catch (error) {
+            console.error('Error during initialization:', error);
+        }
     });
+}
+
+// Set up map event handlers
+function setupMapEventHandlers() {
+    // More responsive move handling - check tiles during movement
+    map.on('move', () => {
+        if (moveEndTimeout) {
+            clearTimeout(moveEndTimeout);
+        }
+        moveEndTimeout = setTimeout(() => {
+            checkVisibleTiles();
+        }, 100); // Shorter timeout during movement
+    });
+
+    // Final check after movement ends
+    map.on('moveend', () => {
+        if (moveEndTimeout) {
+            clearTimeout(moveEndTimeout);
+        }
+        checkVisibleTiles();
+    });
+}
+
+// Initialize geocoder
+function initializeGeocoder() {
+    const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        marker: false
+    });
+
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+}
+
+// Initialize city selector
+function initializeCitySelector() {
+    const citySelect = document.getElementById('city-select');
+    if (citySelect) {
+        citySelect.addEventListener('change', (e) => {
+            loadCity(e.target.value);
+        });
+    }
+}
+
+// Initialize collapse button
+function initializeCollapseButton() {
+    const collapseBtn = document.getElementById('collapse-btn');
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (collapseBtn && sidebar) {
+        collapseBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+    }
 }
 
 // Initialize filter states
 function initializeFilterStates() {
-    // Get parent checkboxes
-    const parent250k = document.querySelector('#income250k-parent');
-    const parent500k = document.querySelector('#income500k-parent');
+    const filters = {
+        'income250k': [
+            {
+                min: 500,
+                max: 750,
+                enabled: true,
+                color: 'rgba(255, 59, 59, 0.4)'
+            },
+            {
+                min: 750,
+                max: 1000,
+                enabled: true,
+                color: 'rgba(255, 165, 0, 0.4)'
+            },
+            {
+                min: 1000,
+                max: 2000,
+                enabled: true,
+                color: 'rgba(0, 120, 255, 0.4)'
+            }
+        ],
+        'income500k': [
+            {
+                min: 500,
+                max: 750,
+                enabled: true,
+                color: 'rgba(102, 0, 153, 0.8)'
+            },
+            {
+                min: 750,
+                max: 1000,
+                enabled: true,
+                color: 'rgba(255, 0, 255, 0.8)'
+            },
+            {
+                min: 1000,
+                max: 2000,
+                enabled: true,
+                color: 'rgba(255, 215, 0, 0.8)'
+            }
+        ]
+    };
 
-    // Set 500k checked, 250k unchecked by default
-    if (parent250k) parent250k.checked = false;
-    if (parent500k) parent500k.checked = true;
-
-    // Initialize category checkboxes
-    document.querySelectorAll('.category-checkbox').forEach((checkbox) => {
-        const parentGroup = checkbox.closest('.categories-container');
-        const allCheckboxesInGroup = parentGroup.querySelectorAll('.category-checkbox');
-        const isLastInGroup = checkbox === allCheckboxesInGroup[allCheckboxesInGroup.length - 1];
-        
-        // Set all checkboxes to checked except for the last ones in each group (0-500 buckets)
-        checkbox.checked = !isLastInGroup;
-
-        // Hide 250k group initially since parent is unchecked
-        if (parentGroup.id === 'income250k-categories') {
-            parentGroup.style.display = 'none';
-        }
-    });
-
-    // Apply initial filters
-    validateAndApplyFilters();
+    return filters;
 }
 
 // Validate and apply filters
@@ -254,108 +448,118 @@ function validateAndApplyFilters() {
 
 // Apply filters to visible tiles
 function applyFiltersToMap(filters) {
-    if (!map) return;
-    
+    if (!filters) {
+        console.error('No filters defined');
+        return;
+    }
+
+    // Get all loaded tile layers
     loadedTiles.forEach(gridRef => {
-        const layerId = `layer-${gridRef}`;
-        if (map.getLayer(layerId)) {
-            // Build the Mapbox GL style expressions for the filters
-            let filterExpressions = [];
-            let colorExpressions = ['case'];
+        ['250k', '500k'].forEach(income => {
+            const layerId = `layer-${income}-${gridRef}`;
             
-            // Add 500k filters first (higher priority)
-            filters.income500k.forEach(f => {
-                if (f.enabled) {
-                    const expression = [
-                        'all',
-                        ['>=', ['to-number', ['get', 'kids_500k'], 0], f.min],
-                        ['<=', ['to-number', ['get', 'kids_500k'], 0], f.max]
-                    ];
-                    filterExpressions.push(expression);
-                    colorExpressions.push(expression);
-                    colorExpressions.push(f.color);
+            if (map.getLayer(layerId)) {
+                let filterExpressions = [];
+                const incomeFilters = filters[`income${income}`];
+                
+                // Only create color expressions if we have enabled filters
+                if (incomeFilters && incomeFilters.length > 0) {
+                    let colorExpressions = ['step', ['get', `kids_${income}`], 'rgba(0, 0, 0, 0)'];
+                    
+                    // Sort filters by min value
+                    const sortedFilters = [...incomeFilters].sort((a, b) => a.min - b.min);
+                    
+                    sortedFilters.forEach(f => {
+                        if (f.enabled) {
+                            // Add filter expression
+                            filterExpressions.push([
+                                'all',
+                                ['>=', ['get', `kids_${income}`], f.min],
+                                ['<=', ['get', `kids_${income}`], f.max]
+                            ]);
+
+                            // Add color step
+                            colorExpressions.push(f.min);
+                            colorExpressions.push(f.color);
+                        }
+                    });
+
+                    // Only set color property if we have filters
+                    map.setPaintProperty(layerId, 'fill-color', colorExpressions);
+                } else {
+                    // If no filters, set transparent color
+                    map.setPaintProperty(layerId, 'fill-color', 'rgba(0, 0, 0, 0)');
                 }
-            });
 
-            // Add 250k filters second (lower priority)
-            filters.income250k.forEach(f => {
-                if (f.enabled) {
-                    const expression = [
-                        'all',
-                        ['>=', ['to-number', ['get', 'kids_250k'], 0], f.min],
-                        ['<=', ['to-number', ['get', 'kids_250k'], 0], f.max]
-                    ];
-                    filterExpressions.push(expression);
-                    colorExpressions.push(expression);
-                    colorExpressions.push(f.color);
-                }
-            });
+                // Combine all filter expressions with OR
+                const finalFilter = filterExpressions.length > 0 
+                    ? ['any', ...filterExpressions]
+                    : ['==', ['get', `kids_${income}`], -1]; // No match if no filters enabled
 
-            // Add default color at the end
-            colorExpressions.push('rgba(0, 0, 0, 0)');
-
-            // Update the layer's filter and color
-            if (filterExpressions.length > 0) {
-                map.setFilter(layerId, ['any', ...filterExpressions]);
-                map.setPaintProperty(layerId, 'fill-color', colorExpressions);
-                map.setPaintProperty(layerId, 'fill-opacity', 0.7);
-                map.setPaintProperty(layerId, 'fill-outline-color', 'rgba(0, 0, 0, 0)'); // No borders
-            } else {
-                // If no filters active, hide all features
-                map.setFilter(layerId, ['==', ['get', 'kids_500k'], -1]); // Always false condition
-                map.setPaintProperty(layerId, 'fill-opacity', 0);
+                // Apply the filters to the layer
+                map.setFilter(layerId, finalFilter);
+                map.setPaintProperty(layerId, 'fill-opacity', 0.8);
             }
-        }
+        });
     });
 }
 
 // Setup filter event listeners
 function setupFilterEventListeners() {
-    // Parent checkbox listeners
-    const parent250k = document.querySelector('#income250k-parent');
-    const parent500k = document.querySelector('#income500k-parent');
+    // Remove existing listeners first
+    const filterContainer = document.querySelector('#filter-form');
+    const clone = filterContainer.cloneNode(true);
+    filterContainer.parentNode.replaceChild(clone, filterContainer);
 
-    if (parent250k) {
-        parent250k.addEventListener('change', () => {
-            const group = document.querySelector('#income250k-categories');
-            if (group) {
-                group.style.display = parent250k.checked ? 'block' : 'none';
-                
-                // When parent is checked, restore previous child states (except 0-500)
-                if (parent250k.checked) {
-                    const checkboxes = group.querySelectorAll('.category-checkbox');
-                    checkboxes.forEach((checkbox, index) => {
-                        // Set all to checked except the last one (0-500)
-                        checkbox.checked = (index < checkboxes.length - 1);
-                    });
-                }
-            }
+    // Add new listeners
+    clone.addEventListener('change', (event) => {
+        // Match both parent and category checkboxes
+        if (event.target.matches('.category-checkbox, #income250k-parent, #income500k-parent')) {
+            // Clear loading states when filters change
+            loadingTiles.clear();
+            tileLoadStartTimes.clear();
             validateAndApplyFilters();
-        });
-    }
-
-    if (parent500k) {
-        parent500k.addEventListener('change', () => {
-            const group = document.querySelector('#income500k-categories');
-            if (group) {
-                group.style.display = parent500k.checked ? 'block' : 'none';
-            }
-            validateAndApplyFilters();
-        });
-    }
-
-    // Category checkbox listeners
-    document.querySelectorAll('.category-checkbox').forEach(checkbox => {
-        checkbox.addEventListener('change', validateAndApplyFilters);
+            // Recheck tiles after filter change
+            checkVisibleTiles();
+        }
     });
 
-    // Range input listeners
-    document.querySelectorAll('.range-min, .range-max').forEach(input => {
-        input.addEventListener('change', () => {
-            updateFilterRanges();
-            validateAndApplyFilters();
-        });
+    clone.addEventListener('input', (event) => {
+        if (event.target.matches('.range-min, .range-max')) {
+            const debounceTimeout = setTimeout(() => {
+                validateAndApplyFilters();
+            }, 500);
+
+            // Clean up timeout on next input
+            event.target.addEventListener('input', () => {
+                clearTimeout(debounceTimeout);
+            }, { once: true });
+        }
     });
+}
+
+// Update UI based on current mode
+function updateUIForMode() {
+    const highWealthMetrics = document.querySelector('.high-wealth-metrics');
+    const allMetricsGroups = document.querySelector('.all-metrics-groups');
+    
+    if (highWealthMetrics) highWealthMetrics.style.display = 'block';
+    if (allMetricsGroups) allMetricsGroups.style.display = 'none';
+
+    // Apply filters after changing mode
+    validateAndApplyFilters();
+}
+
+// Initialize mode toggle
+function initializeModeToggle() {
+    const modeToggle = document.getElementById('mode-toggle');
+    const modeLabel = document.querySelector('.mode-label');
+    
+    if (modeToggle && modeLabel) {
+        // Set initial state
+        modeLabel.textContent = 'High-Wealth Mode';
+        updateUIForMode();
+    }
 }
 
 // Update filter ranges
@@ -371,7 +575,7 @@ function updateFilterRanges() {
         const maxInput = category.querySelector('.range-max');
         if (minInput && maxInput) {
             ranges.income250k.push({
-                min: parseInt(minInput.value) || 0,
+                min: parseInt(minInput.value),
                 max: maxInput.value ? parseInt(maxInput.value) : Infinity
             });
         }
@@ -383,7 +587,7 @@ function updateFilterRanges() {
         const maxInput = category.querySelector('.range-max');
         if (minInput && maxInput) {
             ranges.income500k.push({
-                min: parseInt(minInput.value) || 0,
+                min: parseInt(minInput.value),
                 max: maxInput.value ? parseInt(maxInput.value) : Infinity
             });
         }
@@ -417,7 +621,14 @@ function resetBucketValues() {
 
 // Setup map interactions
 function setupMapInteractions() {
-    // No interactions needed
+    // Add navigation control
+    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+    
+    // Add scale control
+    map.addControl(new mapboxgl.ScaleControl({
+        maxWidth: 150,
+        unit: 'imperial'
+    }), 'bottom-right');
 }
 
 // Load city list into dropdown
@@ -639,15 +850,30 @@ function initializeLocationFilters() {
     });
 }
 
-// Initialize everything when the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initializeMap();
+// Initialize all UI components
+function initializeUI() {
+    // Initialize filters first
+    filters = initializeFilterStates();
+    setupFilterEventListeners();
     
-    // Setup city selection listener
-    const citySelect = document.getElementById('city-select');
-    if (citySelect) {
-        citySelect.addEventListener('change', (e) => {
-            loadCity(e.target.value);
-        });
+    // Initialize other UI components
+    initializeGeocoder();
+    initializeCitySelector();
+    initializeCollapseButton();
+    initializeModeToggle();
+    updateUIForMode();
+    
+    // Initialize map components
+    setupMapInteractions();
+    loadLocationData();
+    initializeLocationFilters();
+}
+
+// Document ready handler
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        initializeMap();
+    } catch (error) {
+        console.error('Error initializing map:', error);
     }
 });

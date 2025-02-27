@@ -1,0 +1,967 @@
+{
+  "grids": {
+    "R10C27": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -95.7425,
+        "max_lon": -94.6325
+      },
+      "feature_count": 5625
+    },
+    "R10C28": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -94.6175,
+        "max_lon": -93.5075
+      },
+      "feature_count": 5625
+    },
+    "R10C31": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -91.2425,
+        "max_lon": -90.1325
+      },
+      "feature_count": 5625
+    },
+    "R10C32": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -90.1175,
+        "max_lon": -89.0075
+      },
+      "feature_count": 5625
+    },
+    "R10C35": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -86.7425,
+        "max_lon": -85.6325
+      },
+      "feature_count": 5625
+    },
+    "R10C36": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -85.6175,
+        "max_lon": -84.5075
+      },
+      "feature_count": 5624
+    },
+    "R10C37": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -84.4925,
+        "max_lon": -83.3825
+      },
+      "feature_count": 5625
+    },
+    "R10C3": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -122.7425,
+        "max_lon": -121.6325
+      },
+      "feature_count": 5585
+    },
+    "R10C43": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -77.7425,
+        "max_lon": -76.6325
+      },
+      "feature_count": 5624
+    },
+    "R10C4": {
+      "bounds": {
+        "min_lat": 37.7575,
+        "max_lat": 38.8675,
+        "min_lon": -121.6175,
+        "max_lon": -120.5075
+      },
+      "feature_count": 5625
+    },
+    "R11C25": {
+      "bounds": {
+        "min_lat": 36.6325,
+        "max_lat": 37.7425,
+        "min_lon": -97.9925,
+        "max_lon": -96.8825
+      },
+      "feature_count": 5625
+    },
+    "R11C3": {
+      "bounds": {
+        "min_lat": 36.6325,
+        "max_lat": 37.7425,
+        "min_lon": -122.6525,
+        "max_lon": -121.6325
+      },
+      "feature_count": 3953
+    },
+    "R11C43": {
+      "bounds": {
+        "min_lat": 36.6325,
+        "max_lat": 37.7425,
+        "min_lon": -77.7425,
+        "max_lon": -76.6325
+      },
+      "feature_count": 5625
+    },
+    "R11C44": {
+      "bounds": {
+        "min_lat": 36.6325,
+        "max_lat": 37.7425,
+        "min_lon": -76.6175,
+        "max_lon": -75.5075
+      },
+      "feature_count": 4277
+    },
+    "R11C5": {
+      "bounds": {
+        "min_lat": 36.6325,
+        "max_lat": 37.7425,
+        "min_lon": -120.4925,
+        "max_lon": -119.3825
+      },
+      "feature_count": 5625
+    },
+    "R12C25": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -115.9925,
+        "max_lon": -114.8825
+      },
+      "feature_count": 5389
+    },
+    "R12C26": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -96.8675,
+        "max_lon": -95.7575
+      },
+      "feature_count": 5625
+    },
+    "R12C34": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -87.8675,
+        "max_lon": -86.7575
+      },
+      "feature_count": 5625
+    },
+    "R12C35": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -86.7425,
+        "max_lon": -85.6325
+      },
+      "feature_count": 5625
+    },
+    "R12C40": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -81.1175,
+        "max_lon": -80.0075
+      },
+      "feature_count": 5625
+    },
+    "R12C41": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -79.9925,
+        "max_lon": -78.8825
+      },
+      "feature_count": 5625
+    },
+    "R12C42": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -78.8675,
+        "max_lon": -77.7575
+      },
+      "feature_count": 5625
+    },
+    "R12C9": {
+      "bounds": {
+        "min_lat": 35.5075,
+        "max_lat": 36.6175,
+        "min_lon": -115.9925,
+        "max_lon": -114.8825
+      },
+      "feature_count": 5389
+    },
+    "R13C17": {
+      "bounds": {
+        "min_lat": 34.3825,
+        "max_lat": 35.4925,
+        "min_lon": -106.9925,
+        "max_lon": -105.8825
+      },
+      "feature_count": 5595
+    },
+    "R13C25": {
+      "bounds": {
+        "min_lat": 34.3825,
+        "max_lat": 35.4925,
+        "min_lon": -97.9925,
+        "max_lon": -96.8825
+      },
+      "feature_count": 5621
+    },
+    "R13C32": {
+      "bounds": {
+        "min_lat": 34.3825,
+        "max_lat": 35.4925,
+        "min_lon": -90.1175,
+        "max_lon": -89.0075
+      },
+      "feature_count": 5625
+    },
+    "R13C40": {
+      "bounds": {
+        "min_lat": 34.3825,
+        "max_lat": 35.4925,
+        "min_lon": -81.1175,
+        "max_lon": -80.0075
+      },
+      "feature_count": 5625
+    },
+    "R13C6": {
+      "bounds": {
+        "min_lat": 34.3825,
+        "max_lat": 35.4925,
+        "min_lon": -119.3675,
+        "max_lon": -118.2575
+      },
+      "feature_count": 5607
+    },
+    "R13C7": {
+      "bounds": {
+        "min_lat": 34.3825,
+        "max_lat": 35.4925,
+        "min_lon": -118.2425,
+        "max_lon": -117.1325
+      },
+      "feature_count": 5625
+    },
+    "R14C12": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -112.6175,
+        "max_lon": -111.5075
+      },
+      "feature_count": 5563
+    },
+    "R14C34": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -87.8675,
+        "max_lon": -86.7575
+      },
+      "feature_count": 5625
+    },
+    "R14C35": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -86.7425,
+        "max_lon": -85.6325
+      },
+      "feature_count": 5625
+    },
+    "R14C36": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -85.6175,
+        "max_lon": -84.5075
+      },
+      "feature_count": 5625
+    },
+    "R14C37": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -84.4925,
+        "max_lon": -83.3825
+      },
+      "feature_count": 5625
+    },
+    "R14C6": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -119.3675,
+        "max_lon": -118.2575
+      },
+      "feature_count": 2963
+    },
+    "R14C7": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -118.2425,
+        "max_lon": -117.1325
+      },
+      "feature_count": 5014
+    },
+    "R14C8": {
+      "bounds": {
+        "min_lat": 33.2575,
+        "max_lat": 34.3675,
+        "min_lon": -117.1175,
+        "max_lon": -116.0075
+      },
+      "feature_count": 5490
+    },
+    "R15C12": {
+      "bounds": {
+        "min_lat": 32.1325,
+        "max_lat": 33.2425,
+        "min_lon": -112.6175,
+        "max_lon": -111.5075
+      },
+      "feature_count": 5059
+    },
+    "R15C13": {
+      "bounds": {
+        "min_lat": 32.1325,
+        "max_lat": 33.2425,
+        "min_lon": -111.4925,
+        "max_lon": -110.3825
+      },
+      "feature_count": 5366
+    },
+    "R15C25": {
+      "bounds": {
+        "min_lat": 32.1325,
+        "max_lat": 33.2425,
+        "min_lon": -97.9925,
+        "max_lon": -96.8825
+      },
+      "feature_count": 5625
+    },
+    "R15C26": {
+      "bounds": {
+        "min_lat": 32.1325,
+        "max_lat": 33.2425,
+        "min_lon": -96.8675,
+        "max_lon": -95.7575
+      },
+      "feature_count": 5625
+    },
+    "R15C35": {
+      "bounds": {
+        "min_lat": 32.1325,
+        "max_lat": 33.2425,
+        "min_lon": -86.7425,
+        "max_lon": -85.6325
+      },
+      "feature_count": 5625
+    },
+    "R15C41": {
+      "bounds": {
+        "min_lat": 32.5075,
+        "max_lat": 33.2425,
+        "min_lon": -79.9925,
+        "max_lon": -79.0775
+      },
+      "feature_count": 1624
+    },
+    "R15C7": {
+      "bounds": {
+        "min_lat": 32.4025,
+        "max_lat": 33.2425,
+        "min_lon": -118.2425,
+        "max_lon": -117.1325
+      },
+      "feature_count": 913
+    },
+    "R15C8": {
+      "bounds": {
+        "min_lat": 32.4325,
+        "max_lat": 33.2425,
+        "min_lon": -117.1175,
+        "max_lon": -116.0075
+      },
+      "feature_count": 3414
+    },
+    "R17C25": {
+      "bounds": {
+        "min_lat": 29.8825,
+        "max_lat": 30.9925,
+        "min_lon": -97.9925,
+        "max_lon": -96.8825
+      },
+      "feature_count": 5625
+    },
+    "R17C27": {
+      "bounds": {
+        "min_lat": 29.8825,
+        "max_lat": 30.9925,
+        "min_lon": -95.7425,
+        "max_lon": -94.6325
+      },
+      "feature_count": 5623
+    },
+    "R17C31": {
+      "bounds": {
+        "min_lat": 29.8825,
+        "max_lat": 30.9925,
+        "min_lon": -91.2425,
+        "max_lon": -90.1325
+      },
+      "feature_count": 5603
+    },
+    "R17C32": {
+      "bounds": {
+        "min_lat": 29.8825,
+        "max_lat": 30.9925,
+        "min_lon": -90.1175,
+        "max_lon": -89.0075
+      },
+      "feature_count": 4792
+    },
+    "R17C39": {
+      "bounds": {
+        "min_lat": 29.8825,
+        "max_lat": 30.9925,
+        "min_lon": -82.2425,
+        "max_lon": -81.1475
+      },
+      "feature_count": 4861
+    },
+    "R18C24": {
+      "bounds": {
+        "min_lat": 28.7575,
+        "max_lat": 29.8675,
+        "min_lon": -99.1175,
+        "max_lon": -98.0075
+      },
+      "feature_count": 5625
+    },
+    "R18C26": {
+      "bounds": {
+        "min_lat": 28.7575,
+        "max_lat": 29.8675,
+        "min_lon": -96.8675,
+        "max_lon": -95.7575
+      },
+      "feature_count": 5625
+    },
+    "R18C27": {
+      "bounds": {
+        "min_lat": 28.7575,
+        "max_lat": 29.8675,
+        "min_lon": -95.7425,
+        "max_lon": -94.6325
+      },
+      "feature_count": 4726
+    },
+    "R19C38": {
+      "bounds": {
+        "min_lat": 27.6325,
+        "max_lat": 28.7425,
+        "min_lon": -82.9625,
+        "max_lon": -82.2575
+      },
+      "feature_count": 3112
+    },
+    "R19C39": {
+      "bounds": {
+        "min_lat": 27.6325,
+        "max_lat": 28.7425,
+        "min_lon": -82.2425,
+        "max_lon": -81.1325
+      },
+      "feature_count": 5559
+    },
+    "R19C40": {
+      "bounds": {
+        "min_lat": 27.6325,
+        "max_lat": 28.7425,
+        "min_lon": -81.1175,
+        "max_lon": -80.2175
+      },
+      "feature_count": 3544
+    },
+    "R1C3": {
+      "bounds": {
+        "min_lat": 47.8825,
+        "max_lat": 48.9925,
+        "min_lon": -122.7425,
+        "max_lon": -121.6325
+      },
+      "feature_count": 5530
+    },
+    "R20C40": {
+      "bounds": {
+        "min_lat": 26.5075,
+        "max_lat": 27.6175,
+        "min_lon": -81.1175,
+        "max_lon": -80.0075
+      },
+      "feature_count": 5246
+    },
+    "R21C40": {
+      "bounds": {
+        "min_lat": 25.3825,
+        "max_lat": 26.4925,
+        "min_lon": -81.1175,
+        "max_lon": -80.0075
+      },
+      "feature_count": 4566
+    },
+    "R2C2": {
+      "bounds": {
+        "min_lat": 46.7575,
+        "max_lat": 47.8675,
+        "min_lon": -123.8675,
+        "max_lon": -122.7575
+      },
+      "feature_count": 4905
+    },
+    "R2C3": {
+      "bounds": {
+        "min_lat": 46.7575,
+        "max_lat": 47.8675,
+        "min_lon": -122.7425,
+        "max_lon": -121.6325
+      },
+      "feature_count": 5619
+    },
+    "R3C3": {
+      "bounds": {
+        "min_lat": 45.6325,
+        "max_lat": 46.7425,
+        "min_lon": -122.7425,
+        "max_lon": -121.6325
+      },
+      "feature_count": 5441
+    },
+    "R4C29": {
+      "bounds": {
+        "min_lat": 44.5075,
+        "max_lat": 45.6175,
+        "min_lon": -93.4925,
+        "max_lon": -92.3825
+      },
+      "feature_count": 5625
+    },
+    "R4C2": {
+      "bounds": {
+        "min_lat": 44.5075,
+        "max_lat": 45.6175,
+        "min_lon": -123.8675,
+        "max_lon": -122.7575
+      },
+      "feature_count": 5625
+    },
+    "R4C3": {
+      "bounds": {
+        "min_lat": 44.5075,
+        "max_lat": 45.6175,
+        "min_lon": -122.7425,
+        "max_lon": -121.6325
+      },
+      "feature_count": 5594
+    },
+    "R6C32": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -90.1175,
+        "max_lon": -89.0075
+      },
+      "feature_count": 5625
+    },
+    "R6C33": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -88.9925,
+        "max_lon": -87.8825
+      },
+      "feature_count": 5625
+    },
+    "R6C37": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -84.4925,
+        "max_lon": -83.3825
+      },
+      "feature_count": 5625
+    },
+    "R6C38": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -83.3675,
+        "max_lon": -82.2575
+      },
+      "feature_count": 4583
+    },
+    "R6C42": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -78.8675,
+        "max_lon": -77.7575
+      },
+      "feature_count": 5625
+    },
+    "R6C46": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -74.3675,
+        "max_lon": -73.2575
+      },
+      "feature_count": 5625
+    },
+    "R6C48": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -72.1175,
+        "max_lon": -71.0075
+      },
+      "feature_count": 5625
+    },
+    "R6C49": {
+      "bounds": {
+        "min_lat": 42.2575,
+        "max_lat": 43.3675,
+        "min_lon": -70.9925,
+        "max_lon": -70.2425
+      },
+      "feature_count": 2322
+    },
+    "R7C26": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -96.8675,
+        "max_lon": -95.7575
+      },
+      "feature_count": 5625
+    },
+    "R7C28": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -94.6175,
+        "max_lon": -93.5075
+      },
+      "feature_count": 5625
+    },
+    "R7C33": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -88.9925,
+        "max_lon": -87.8825
+      },
+      "feature_count": 5625
+    },
+    "R7C34": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -87.8675,
+        "max_lon": -86.7575
+      },
+      "feature_count": 4090
+    },
+    "R7C37": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -84.4925,
+        "max_lon": -83.3825
+      },
+      "feature_count": 5625
+    },
+    "R7C39": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 41.9275,
+        "min_lon": -82.2425,
+        "max_lon": -81.1325
+      },
+      "feature_count": 2922
+    },
+    "R7C46": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -74.3675,
+        "max_lon": -73.2575
+      },
+      "feature_count": 5625
+    },
+    "R7C47": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -73.2425,
+        "max_lon": -72.1325
+      },
+      "feature_count": 5601
+    },
+    "R7C48": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -72.1175,
+        "max_lon": -71.0075
+      },
+      "feature_count": 5199
+    },
+    "R7C49": {
+      "bounds": {
+        "min_lat": 41.1325,
+        "max_lat": 42.2425,
+        "min_lon": -70.9925,
+        "max_lon": -69.8825
+      },
+      "feature_count": 4522
+    },
+    "R8C12": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -112.6175,
+        "max_lon": -111.5075
+      },
+      "feature_count": 4971
+    },
+    "R8C18": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -105.8675,
+        "max_lon": -104.7575
+      },
+      "feature_count": 5603
+    },
+    "R8C26": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -96.8675,
+        "max_lon": -95.7575
+      },
+      "feature_count": 5625
+    },
+    "R8C35": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -86.7425,
+        "max_lon": -85.6325
+      },
+      "feature_count": 5625
+    },
+    "R8C38": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -83.3675,
+        "max_lon": -82.2575
+      },
+      "feature_count": 5625
+    },
+    "R8C39": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -82.2425,
+        "max_lon": -81.1325
+      },
+      "feature_count": 5625
+    },
+    "R8C40": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -81.1175,
+        "max_lon": -80.0075
+      },
+      "feature_count": 5625
+    },
+    "R8C41": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -79.9925,
+        "max_lon": -78.8825
+      },
+      "feature_count": 5625
+    },
+    "R8C44": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -76.6175,
+        "max_lon": -75.5075
+      },
+      "feature_count": 5625
+    },
+    "R8C45": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -75.4925,
+        "max_lon": -74.3825
+      },
+      "feature_count": 5625
+    },
+    "R8C46": {
+      "bounds": {
+        "min_lat": 40.0075,
+        "max_lat": 41.1175,
+        "min_lon": -74.3675,
+        "max_lon": -73.2575
+      },
+      "feature_count": 4295
+    },
+    "R8C47": {
+      "bounds": {
+        "min_lat": 40.5175,
+        "max_lat": 41.1175,
+        "min_lon": -73.2425,
+        "max_lon": -72.1325
+      },
+      "feature_count": 2159
+    },
+    "R9C18": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -105.8675,
+        "max_lon": -104.7575
+      },
+      "feature_count": 5620
+    },
+    "R9C19": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -104.7425,
+        "max_lon": -103.6325
+      },
+      "feature_count": 5622
+    },
+    "R9C27": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -95.7425,
+        "max_lon": -94.6325
+      },
+      "feature_count": 5624
+    },
+    "R9C28": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -94.6175,
+        "max_lon": -93.5075
+      },
+      "feature_count": 5625
+    },
+    "R9C35": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -86.7425,
+        "max_lon": -85.6325
+      },
+      "feature_count": 5624
+    },
+    "R9C36": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -85.6175,
+        "max_lon": -84.5075
+      },
+      "feature_count": 5625
+    },
+    "R9C37": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -84.4925,
+        "max_lon": -83.3825
+      },
+      "feature_count": 5625
+    },
+    "R9C38": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -83.3675,
+        "max_lon": -82.2575
+      },
+      "feature_count": 5625
+    },
+    "R9C43": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -77.7425,
+        "max_lon": -76.6325
+      },
+      "feature_count": 5625
+    },
+    "R9C44": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -76.6175,
+        "max_lon": -75.5075
+      },
+      "feature_count": 5625
+    },
+    "R9C45": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -75.4925,
+        "max_lon": -74.3825
+      },
+      "feature_count": 5180
+    },
+    "R9C5": {
+      "bounds": {
+        "min_lat": 38.8825,
+        "max_lat": 39.9925,
+        "min_lon": -120.4925,
+        "max_lon": -119.3825
+      },
+      "feature_count": 5578
+    }
+  }
+}
