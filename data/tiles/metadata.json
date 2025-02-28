@@ -137,12 +137,12 @@
     },
     "R12C25": {
       "bounds": {
-        "min_lat": 35.5075,
+        "min_lat": 35.50749999999996,
         "max_lat": 36.6175,
-        "min_lon": -115.9925,
-        "max_lon": -114.8825
+        "min_lon": -97.9925,
+        "max_lon": -96.88249999999996
       },
-      "feature_count": 5389
+      "feature_count": 11250
     },
     "R12C26": {
       "bounds": {
