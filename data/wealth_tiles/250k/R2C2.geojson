@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[-122.76499999999999, 47.05], [-122.75, 47.05], [-122.75, 47.065], [-122.76499999999999, 47.065], [-122.76499999999999, 47.05]]]}, "properties": {"name": "R2C2_104125", "grid": "R2C2", "kids_250k": 519.2939998}}]}
