@@ -39,6 +39,7 @@ data/demographics/
 data/High-Demographics/
 data/KMLs/
 data/wealth_tiles/
+data/Medium-Demographics/
 
 # Large generated files
 data/all_cities_new.geojson

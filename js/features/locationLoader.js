@@ -11,7 +11,11 @@ export function initLocationLoader(mapInstance) {
     // Create popup
     popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: false,
+        offset: 15,
+        className: 'location-popup',
+        anchor: 'bottom',
+        maxWidth: '300px'
     });
 
     createLocationFilters();
@@ -137,7 +141,8 @@ function loadLocationLayers() {
                         },
                         'circle-stroke-width-transition': {
                             duration: 200
-                        }
+                        },
+                        'circle-stroke-opacity': 0.8
                     }
                 });
 
@@ -145,6 +150,7 @@ function loadLocationLayers() {
                 map.on('mouseenter', layerId, (e) => {
                     map.setPaintProperty(layerId, 'circle-radius', (layer.size / 2 || 8) + 2);
                     map.setPaintProperty(layerId, 'circle-stroke-width', 2);
+                    map.setPaintProperty(layerId, 'circle-stroke-opacity', 1);
                     map.getCanvas().style.cursor = 'pointer';
 
                     // Show popup for the specific feature being hovered
@@ -156,13 +162,20 @@ function loadLocationLayers() {
                     const name = feature.properties.name;
                     const description = feature.properties.description;
 
+                    // Format popup content with better HTML structure
+                    const popupContent = `
+                        <div class="location-popup-content">
+                            <h3>${name}</h3>
+                            ${description ? `<p>${description}</p>` : ''}
+                        </div>
+                    `;
+
                     popup.setLngLat(coordinates)
-                        .setHTML(`<h3>${name}</h3>${description ? `<p>${description}</p>` : ''}`)
+                        .setHTML(popupContent)
                         .addTo(map);
                 });
 
                 map.on('mousemove', layerId, (e) => {
-                    // Update popup position and content as mouse moves
                     const features = map.queryRenderedFeatures(e.point, { layers: [layerId] });
                     if (!features.length) {
                         popup.remove();
@@ -174,14 +187,23 @@ function loadLocationLayers() {
                     const name = feature.properties.name;
                     const description = feature.properties.description;
 
+                    // Format popup content with better HTML structure
+                    const popupContent = `
+                        <div class="location-popup-content">
+                            <h3>${name}</h3>
+                            ${description ? `<p>${description}</p>` : ''}
+                        </div>
+                    `;
+
                     popup.setLngLat(coordinates)
-                        .setHTML(`<h3>${name}</h3>${description ? `<p>${description}</p>` : ''}`)
+                        .setHTML(popupContent)
                         .addTo(map);
                 });
 
                 map.on('mouseleave', layerId, () => {
                     map.setPaintProperty(layerId, 'circle-radius', layer.size / 2 || 8);
                     map.setPaintProperty(layerId, 'circle-stroke-width', 1.5);
+                    map.setPaintProperty(layerId, 'circle-stroke-opacity', 0.8);
                     map.getCanvas().style.cursor = '';
                     popup.remove();
                 });

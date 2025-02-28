@@ -771,38 +771,31 @@ body {
 }
 
 /* Location Popup Styles */
-.location-popup {
-    max-width: 300px;
-}
-
 .location-popup .mapboxgl-popup-content {
-    padding: 15px;
-    font-family: Arial, sans-serif;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.95);
+    transition: all 0.2s ease;
 }
 
-.location-popup h3 {
-    margin: 0 0 10px 0;
-    color: #333;
-    font-size: 16px;
+.location-popup .mapboxgl-popup-tip {
+    border-top-color: rgba(255,255,255,0.95);
 }
 
-.location-popup p {
-    margin: 5px 0;
+.location-popup-content h3 {
+    margin: 0 0 8px 0;
     font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.location-popup-content p {
+    margin: 0;
+    font-size: 13px;
     line-height: 1.4;
-}
-
-.location-popup strong {
-    color: #555;
-}
-
-.location-popup a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.location-popup a:hover {
-    text-decoration: underline;
+    color: #666;
 }
 
 /* Marker Styles */
