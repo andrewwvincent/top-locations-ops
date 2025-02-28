@@ -124,7 +124,7 @@ def process_csv_files(input_dir, output_dir):
     print("Conversion complete!")
 
 if __name__ == "__main__":
-    input_dir = r"c:\Users\andre\OneDrive\Documents\Trilogy-Andrew-Desktop\Demo Heatmaps\Convert Points to Area\Final Heatmaps\data\High-Demographics"
-    output_dir = r"c:\Users\andre\OneDrive\Documents\Trilogy-Andrew-Desktop\Demo Heatmaps\Convert Points to Area\Final Heatmaps\data"
+    input_dir = r"c:\Users\andre\OneDrive\Documents\Trilogy-Andrew-Desktop\Demo Heatmaps\Convert Points to Area\Final Heatmaps\data\demographics"
+    output_dir = r"c:\Users\andre\OneDrive\Documents\Trilogy-Andrew-Desktop\Demo Heatmaps\Convert Points to Area\Final Heatmaps\data\tiles"
     
     process_csv_files(input_dir, output_dir)
