@@ -147,17 +147,13 @@ function loadLocationLayers() {
                 });
 
                 // Add hover state
-                map.on('mouseenter', layerId, (e) => {
-                    map.setPaintProperty(layerId, 'circle-radius', (layer.size / 2 || 8) + 2);
-                    map.setPaintProperty(layerId, 'circle-stroke-width', 2);
-                    map.setPaintProperty(layerId, 'circle-stroke-opacity', 1);
-                    map.getCanvas().style.cursor = 'pointer';
+                let currentFeature = null;
+                let isHovering = false;
 
-                    // Show popup for the specific feature being hovered
-                    const features = map.queryRenderedFeatures(e.point, { layers: [layerId] });
-                    if (!features.length) return;
-
-                    const feature = features[0];
+                // Helper function to update popup
+                function updatePopup(feature) {
+                    if (!feature) return;
+                    
                     const coordinates = feature.geometry.coordinates.slice();
                     const name = feature.properties.name;
                     const description = feature.properties.description;
@@ -170,41 +166,61 @@ function loadLocationLayers() {
                         </div>
                     `;
 
-                    popup.setLngLat(coordinates)
-                        .setHTML(popupContent)
-                        .addTo(map);
+                    // Ensure the popup is added only once
+                    if (!popup.isOpen()) {
+                        popup.setLngLat(coordinates)
+                            .setHTML(popupContent)
+                            .addTo(map);
+                    } else {
+                        popup.setLngLat(coordinates)
+                            .setHTML(popupContent);
+                    }
+                }
+
+                map.on('mouseenter', layerId, (e) => {
+                    isHovering = true;
+                    const features = map.queryRenderedFeatures(e.point, { layers: [layerId] });
+                    if (!features.length) return;
+
+                    map.getCanvas().style.cursor = 'pointer';
+                    map.setPaintProperty(layerId, 'circle-radius', (layer.size / 2 || 8) + 2);
+                    map.setPaintProperty(layerId, 'circle-stroke-width', 2);
+                    map.setPaintProperty(layerId, 'circle-stroke-opacity', 1);
+
+                    currentFeature = features[0];
+                    updatePopup(currentFeature);
                 });
 
                 map.on('mousemove', layerId, (e) => {
+                    if (!isHovering) return;
+                    
                     const features = map.queryRenderedFeatures(e.point, { layers: [layerId] });
                     if (!features.length) {
+                        currentFeature = null;
                         popup.remove();
                         return;
                     }
 
+                    // Only update if we're hovering over a different feature
                     const feature = features[0];
-                    const coordinates = feature.geometry.coordinates.slice();
-                    const name = feature.properties.name;
-                    const description = feature.properties.description;
+                    if (currentFeature && 
+                        currentFeature.properties.name === feature.properties.name && 
+                        currentFeature.geometry.coordinates[0] === feature.geometry.coordinates[0] && 
+                        currentFeature.geometry.coordinates[1] === feature.geometry.coordinates[1]) {
+                        return;
+                    }
 
-                    // Format popup content with better HTML structure
-                    const popupContent = `
-                        <div class="location-popup-content">
-                            <h3>${name}</h3>
-                            ${description ? `<p>${description}</p>` : ''}
-                        </div>
-                    `;
-
-                    popup.setLngLat(coordinates)
-                        .setHTML(popupContent)
-                        .addTo(map);
+                    currentFeature = feature;
+                    updatePopup(currentFeature);
                 });
 
                 map.on('mouseleave', layerId, () => {
+                    isHovering = false;
+                    currentFeature = null;
+                    map.getCanvas().style.cursor = '';
                     map.setPaintProperty(layerId, 'circle-radius', layer.size / 2 || 8);
                     map.setPaintProperty(layerId, 'circle-stroke-width', 1.5);
                     map.setPaintProperty(layerId, 'circle-stroke-opacity', 0.8);
-                    map.getCanvas().style.cursor = '';
                     popup.remove();
                 });
 
