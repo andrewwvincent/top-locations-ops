@@ -10,11 +10,27 @@ let filters = null; // Will be initialized in initializeFilterStates
 let currentlyLoadingTiles = new Set();
 let moveEndTimeout = null;
 const TILE_LOAD_TIMEOUT = 5000; // 5 seconds timeout for tile loading
+const ZOOM_THRESHOLD = 4; // Zoom level threshold for loading/unloading tiles
+const LOAD_BATCH_SIZE = 10; // Number of tiles to load in parallel
 
 // Base URL for tile data - change this based on environment
 const BASE_URL = window.location.href.includes('github.io') 
     ? '/dynamic-microschool-heatmaps'  // GitHub Pages URL
     : '.';  // Local development URL
+
+// Helper function to calculate distance from viewport center
+function getDistanceFromCenter(gridBounds, viewportCenter) {
+    const gridCenterLat = (gridBounds.min_lat + gridBounds.max_lat) / 2;
+    const gridCenterLon = (gridBounds.min_lon + gridBounds.max_lon) / 2;
+    const dlat = gridCenterLat - viewportCenter.lat;
+    const dlon = gridCenterLon - viewportCenter.lng;
+    return Math.sqrt(dlat * dlat + dlon * dlon);
+}
+
+// Load a batch of tiles in parallel
+async function loadTileBatch(tiles) {
+    return Promise.all(tiles.map(gridRef => loadTile(gridRef)));
+}
 
 // Initialize the map
 function initializeMap() {
@@ -37,26 +53,11 @@ function initializeMap() {
     map.addControl(geocoder);
     map.addControl(new mapboxgl.NavigationControl());
 
-    // Add map event handlers
-    map.on('move', () => {
-        if (moveEndTimeout) {
-            clearTimeout(moveEndTimeout);
-        }
-        moveEndTimeout = setTimeout(() => {
-            if (metadata) {
-                checkVisibleTiles();
-            }
-        }, 100);
-    });
-
-    map.on('moveend', () => {
-        if (moveEndTimeout) {
-            clearTimeout(moveEndTimeout);
-        }
-        if (metadata) {
-            checkVisibleTiles();
-        }
-    });
+    // Add map event handlers with throttling
+    map.on('move', throttledCheckVisibleTiles);
+    map.on('moveend', throttledCheckVisibleTiles);
+    map.on('zoom', throttledCheckVisibleTiles);
+    map.on('zoomend', throttledCheckVisibleTiles);
 
     // Load metadata and initialize UI once map is ready
     map.on('load', async () => {
@@ -90,16 +91,45 @@ async function loadMetadata() {
 
 // Load a specific tile
 async function loadTile(gridRef) {
-    try {
-        const sourceId = `source-${gridRef}`;
-        const layerId = `layer-${gridRef}`;
+    // Skip if already loaded or currently loading
+    if (loadedTiles.has(gridRef) || currentlyLoadingTiles.has(gridRef)) {
+        console.log(`Skipping ${gridRef} - already loaded or loading`);
+        return;
+    }
 
-        // Only load if not already loaded
-        if (!loadedTiles.has(gridRef)) {
-            // Add source
+    const sourceId = `source-${gridRef}`;
+    const layerId = `layer-${gridRef}`;
+
+    try {
+        // Mark as loading
+        currentlyLoadingTiles.add(gridRef);
+        console.log(`Starting to load ${gridRef}`);
+
+        // Ensure source and layer don't exist
+        if (map.getSource(sourceId)) {
+            console.log(`Removing existing source for ${gridRef}`);
+            map.removeSource(sourceId);
+        }
+        if (map.getLayer(layerId)) {
+            console.log(`Removing existing layer for ${gridRef}`);
+            map.removeLayer(layerId);
+        }
+
+        // Fetch the data
+        console.log(`Fetching data for ${gridRef}`);
+        const response = await fetch(`data/tiles/${gridRef}.geojson`);
+        if (!response.ok) {
+            throw new Error(`Failed to load tile ${gridRef} - HTTP ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(`Successfully fetched data for ${gridRef} - ${data.features.length} features`);
+        
+        // Double check the source doesn't exist before adding
+        if (!map.getSource(sourceId)) {
+            console.log(`Adding source for ${gridRef}`);
             map.addSource(sourceId, {
                 type: 'geojson',
-                data: `data/tiles/${gridRef}.geojson`
+                data: data
             });
 
             // Find a good layer to insert before - we want to be above land but below labels
@@ -110,6 +140,7 @@ async function loadTile(gridRef) {
                 layer.id.includes('poi')
             );
 
+            console.log(`Adding layer for ${gridRef}`);
             // Add main layer for colors
             map.addLayer({
                 'id': layerId,
@@ -120,14 +151,20 @@ async function loadTile(gridRef) {
                     'fill-opacity': 0.8,
                     'fill-outline-color': 'rgba(0, 0, 0, 0.2)'
                 }
-            }, labelLayer.id); // Add before the first label layer
+            }, labelLayer ? labelLayer.id : undefined);
 
             loadedTiles.add(gridRef);
+            console.log(`Updating colors for ${gridRef}`);
+            updateLayerColors(map, sourceId, layerId);
+            console.log(`Successfully loaded ${gridRef}`);
         }
-
-        updateLayerColors(map, sourceId, layerId);
     } catch (error) {
-        console.error('Error loading tile:', error);
+        console.error(`Error loading tile ${gridRef}:`, error);
+        // Clean up if there was an error
+        unloadTile(gridRef);
+    } finally {
+        // Remove from loading set
+        currentlyLoadingTiles.delete(gridRef);
     }
 }
 
@@ -141,16 +178,19 @@ function unloadTile(gridRef) {
             map.removeLayer(layerId);
         }
         if (map.getSource(sourceId)) {
+            // Set the data to null before removing the source
+            map.getSource(sourceId).setData({ type: 'FeatureCollection', features: [] });
             map.removeSource(sourceId);
         }
     } catch (error) {
         console.error(`Error unloading tile ${gridRef}:`, error);
     }
     loadedTiles.delete(gridRef);
+    currentlyLoadingTiles.delete(gridRef);
 }
 
 // Check which tiles need to be loaded based on viewport
-function checkVisibleTiles() {
+async function checkVisibleTiles() {
     if (!metadata || !map) {
         console.warn('Metadata or map not yet initialized');
         return;
@@ -158,26 +198,115 @@ function checkVisibleTiles() {
 
     try {
         const bounds = map.getBounds();
-        const visibleGrids = Object.keys(metadata.grids).filter(gridRef => {
-            return isGridVisible(metadata.grids[gridRef].bounds, bounds);
-        });
+        const zoom = map.getZoom();
+        const center = map.getCenter();
+        
+        console.log(`Current viewport - zoom: ${zoom}, center: ${center.lng.toFixed(4)}, ${center.lat.toFixed(4)}`);
+        console.log(`R12C25 metadata:`, metadata.grids['R12C25']);
+        
+        console.log(`Viewport bounds: W:${bounds.getWest().toFixed(4)} E:${bounds.getEast().toFixed(4)} S:${bounds.getSouth().toFixed(4)} N:${bounds.getNorth().toFixed(4)}`);
+        
+        // Clear loading queue and unload all tiles if below zoom threshold
+        if (zoom <= ZOOM_THRESHOLD) {
+            console.log(`Below zoom threshold (${ZOOM_THRESHOLD}), unloading all tiles`);
+            currentlyLoadingTiles.clear();
+            Array.from(loadedTiles).forEach(gridRef => {
+                unloadTile(gridRef);
+            });
+            return;
+        }
 
-        // Load new tiles that are visible
-        visibleGrids.forEach(async (gridRef) => {
-            if (!loadedTiles.has(gridRef)) {
-                await loadTile(gridRef);
-            }
-        });
+        // Get visible grids and sort by distance from center
+        const visibleGrids = Object.keys(metadata.grids)
+            .filter(gridRef => {
+                const gridBounds = metadata.grids[gridRef].bounds;
+                const visible = isGridVisible(gridBounds, bounds);
+                if (gridRef === 'R12C25') {
+                    console.log(`R12C25 bounds:`, gridBounds);
+                    console.log(`R12C25 visible:`, visible);
+                }
+                return visible;
+            })
+            .sort((a, b) => {
+                const distA = getDistanceFromCenter(metadata.grids[a].bounds, center);
+                const distB = getDistanceFromCenter(metadata.grids[b].bounds, center);
+                return distA - distB;
+            });
+
+        console.log(`Found ${visibleGrids.length} visible grids`);
+        if (visibleGrids.includes('R12C25')) {
+            console.log('R12C25 is in visible grids');
+        }
+
+        // Limit the number of visible tiles to prevent memory issues
+        // Scale max tiles based on zoom level, but keep it reasonable
+        const MAX_TILES = Math.min(150, Math.floor(75 * (zoom / ZOOM_THRESHOLD)));
+        const tilesToLoad = visibleGrids.slice(0, MAX_TILES);
+        
+        console.log(`Loading up to ${MAX_TILES} tiles`);
+        if (tilesToLoad.includes('R12C25')) {
+            console.log('R12C25 is in tiles to load');
+            const index = tilesToLoad.indexOf('R12C25');
+            console.log(`R12C25 is at position ${index} in load queue`);
+        }
 
         // Unload tiles that are no longer visible
         Array.from(loadedTiles).forEach(gridRef => {
-            if (!visibleGrids.includes(gridRef)) {
+            if (!tilesToLoad.includes(gridRef)) {
+                console.log(`Unloading ${gridRef} - no longer visible`);
                 unloadTile(gridRef);
             }
         });
+
+        // Split tiles into batches and load them
+        const unloadedTiles = tilesToLoad.filter(gridRef => 
+            !loadedTiles.has(gridRef) && !currentlyLoadingTiles.has(gridRef)
+        );
+
+        console.log(`${unloadedTiles.length} tiles need loading`);
+        if (unloadedTiles.includes('R12C25')) {
+            console.log('R12C25 is in unloaded tiles queue');
+        }
+
+        for (let i = 0; i < unloadedTiles.length; i += LOAD_BATCH_SIZE) {
+            const batch = unloadedTiles.slice(i, i + LOAD_BATCH_SIZE);
+            console.log(`Loading batch ${i/LOAD_BATCH_SIZE + 1}:`, batch);
+            await loadTileBatch(batch);
+        }
     } catch (error) {
         console.error('Error in checkVisibleTiles:', error);
     }
+}
+
+// Throttle the checkVisibleTiles function for smoother zooming
+function throttledCheckVisibleTiles() {
+    if (moveEndTimeout) {
+        clearTimeout(moveEndTimeout);
+    }
+    moveEndTimeout = setTimeout(() => {
+        checkVisibleTiles();
+    }, 100); // Increased delay for smoother zooming
+}
+
+// Check if a grid's bounds intersect with the viewport bounds
+function isGridVisible(gridBounds, viewportBounds) {
+    if (!gridBounds || !viewportBounds) return false;
+    
+    // Get viewport bounds
+    const west = viewportBounds.getWest();
+    const east = viewportBounds.getEast();
+    const south = viewportBounds.getSouth();
+    const north = viewportBounds.getNorth();
+    
+    // Log bounds for R12C25
+    console.log('Checking visibility - viewport:', {west, east, south, north});
+    console.log('Grid bounds:', gridBounds);
+    
+    // Check if grid intersects viewport
+    return west <= gridBounds.max_lon && 
+           east >= gridBounds.min_lon &&
+           south <= gridBounds.max_lat && 
+           north >= gridBounds.min_lat;
 }
 
 function updateFilters() {
@@ -345,16 +474,6 @@ function updateLayerColors(map, sourceId, layerId) {
     } catch (error) {
         console.error('Error in updateLayerColors:', error);
     }
-}
-
-// Check if a grid's bounds intersect with the viewport bounds
-function isGridVisible(gridBounds, viewportBounds) {
-    if (!gridBounds || !viewportBounds) return false;
-    
-    return viewportBounds.getWest() <= gridBounds.max_lon && 
-           viewportBounds.getEast() >= gridBounds.min_lon &&
-           viewportBounds.getSouth() <= gridBounds.max_lat && 
-           viewportBounds.getNorth() >= gridBounds.min_lat;
 }
 
 // Export initialization function
