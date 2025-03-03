@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="Target">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <n>Redline Athletics - Anaheim/Fullerton</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[149 E Orangethorpe Ave,, Anaheim, CA 92801]]></description>
+      <Point>
+        <coordinates>-117.91605,33.859931</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Bedford</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[21 Commerce Park North, Bedford, NH 03110]]></description>
+      <Point>
+        <coordinates>-71.4582,42.931784</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Bowie</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4891 Tesla Dr Suite E, Bowie, MD 20715]]></description>
+      <Point>
+        <coordinates>-76.710482,38.956586</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Buford</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1839 Buford Hwy, Buford,GA 30518]]></description>
+      <Point>
+        <coordinates>-84.005412,34.102827</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Coppell</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[801 Hammond Street, Suite 100, Coppell, Texas 75019]]></description>
+      <Point>
+        <coordinates>-97.0,32.951723</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Carrollwood</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14420 N Dale Mabry Hwy, Tampa, FL 33618, USA]]></description>
+      <Point>
+        <coordinates>-82.507869,28.079204</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Weston</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1756 North Commerce Parkway, Weston, FL, USA]]></description>
+      <Point>
+        <coordinates>-80.365614,26.095721</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Denver East</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4444 Forest St, Denver, CO]]></description>
+      <Point>
+        <coordinates>-104.926797,39.778057</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Farmington Hills</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[24800 N. Industrial Dr, Farmington Hills, MI 48335]]></description>
+      <Point>
+        <coordinates>-83.425039,42.474116</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Fayetteville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1311 Steamboat Dr. Ste. 1,, Fayetteville, AR 72704]]></description>
+      <Point>
+        <coordinates>-94.204204,36.080722</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Ft. Myers</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4429 Cleveland Avenue, Suite 130, Ft. Myers, FL 33901]]></description>
+      <Point>
+        <coordinates>-81.869862,26.598025</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Gig Harbor</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[9644 Bujacich Rd., Bldg C/Suite F, Gig Harbor, WA 98332]]></description>
+      <Point>
+        <coordinates>-122.615847,47.342432</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Gretna</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[17878 Oakmont Dr., Omaha, NE 68136]]></description>
+      <Point>
+        <coordinates>-96.194707,41.148656</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Hudson</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3 Security Drive, Hudson, NH 03051]]></description>
+      <Point>
+        <coordinates>-71.42028,42.702444</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Idlewild</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6420 Albemarle Rd., Charlotte, NC 28212]]></description>
+      <Point>
+        <coordinates>-80.735942,35.201476</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Jenks</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3412 W. 114th St. South Suite 104, Jenks, OK, 74037]]></description>
+      <Point>
+        <coordinates>-96.014855,35.998314</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Lenexa</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14851 W 101st Terrace, Lenexa, KS 66215]]></description>
+      <Point>
+        <coordinates>-94.757039,38.944046</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Liberty</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[750 Haines Drive, Suite 100,, Liberty MO 64068]]></description>
+      <Point>
+        <coordinates>-94.476635,39.218437</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Mount Pleasant</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3400 Turgot Lane,, Mount Pleasant, SC 29466]]></description>
+      <Point>
+        <coordinates>-79.766825,32.854262</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - North Sioux City</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[300 Centennial Dr, North Sioux City, SD 57049]]></description>
+      <Point>
+        <coordinates>-96.48912,42.528914</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Peachtree Corners</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4975 Avalon Ridge Parkway, Suite 100, Peachtree Corners, GA 30071]]></description>
+      <Point>
+        <coordinates>-84.194627,33.961997</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - San Marcos</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2937 Norman Strasse Rd, San Marcos, CA 92069]]></description>
+      <Point>
+        <coordinates>-117.202316,33.159947</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Siouxland</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4501 Southern Hills Dr, Sioux City, IA 51106]]></description>
+      <Point>
+        <coordinates>-96.348974,42.441304</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Sioux Falls</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2325 Enterprise Ave, Tea, SD 57064]]></description>
+      <Point>
+        <coordinates>-96.83588,43.44637</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Springfield</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4234 S. Reed Ave, Springfield, MO 65804]]></description>
+      <Point>
+        <coordinates>-93.249868,37.136068</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Sugar Land</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[826 Summer Park Dr. Suite# 800, Stafford, TX 77477]]></description>
+      <Point>
+        <coordinates>-95.569856,29.608445</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Sutton Square</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6325 Falls of Neuse Rd, Suite #24, Raleigh, NC 27615]]></description>
+      <Point>
+        <coordinates>-78.623062,35.869356</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Twin Cities NW</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7115 Northland Terrace N, Brooklyn Park, MN 55428]]></description>
+      <Point>
+        <coordinates>-93.399822,45.084233</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Ventura</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5120 Ralston Street, Ventura, CA 93003]]></description>
+      <Point>
+        <coordinates>-119.22227,34.259758</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Webster</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1425 Atlantis Drive, Suite G, Webster, TX 77598]]></description>
+      <Point>
+        <coordinates>-95.137466,29.526512</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Westerville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[200 Hoff Road, Suite A, Westerville, OH 43082]]></description>
+      <Point>
+        <coordinates>-82.921804,40.14288</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Cypress</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5930 Lakeshore Drive, Cypress, CA 90630]]></description>
+      <Point>
+        <coordinates>-118.030754,33.829213</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Lake Forest</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[22600 Lambert St, Lake Forest, CA 92630]]></description>
+      <Point>
+        <coordinates>-117.715236,33.635074</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - San Juan Capistrano</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[32405 Calle Perfecto, San Juan Capistrano, CA]]></description>
+      <Point>
+        <coordinates>-117.66523,33.489544</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - 4S Ranch</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[10890 Thornmint Road, San Diego, CA]]></description>
+      <Point>
+        <coordinates>-117.0987,33.016793</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Scottsdale</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14000 Hayden Rd, Scottsdale, AZ 85260]]></description>
+      <Point>
+        <coordinates>-111.90927,33.612722</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Westminster</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1401 W 122nd Ave, Westminster, Colorado]]></description>
+      <Point>
+        <coordinates>-105.002315,39.918615</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Woodbury</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[707 Commerce Drive #300, Woodbury, MN 55125]]></description>
+      <Point>
+        <coordinates>-92.913931,44.940686</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - McKinney</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6151 County Road 124, McKinney, TX 75071, USA]]></description>
+      <Point>
+        <coordinates>-96.699049,33.230589</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Frisco</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[145 Rose Lane, Frisco, TX 75034, USA]]></description>
+      <Point>
+        <coordinates>-96.913126,33.149782</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Keller</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5951 Park Vista Circle, Keller, TX, USA]]></description>
+      <Point>
+        <coordinates>-97.258309,32.910561</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - San Antonio</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14886 Tradesman Dr, 102-110 San Antonio, TX, USA]]></description>
+      <Point>
+        <coordinates>-98.582972,29.581899</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Buffalo Grove</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1455 Busch Parkway, Buffalo Grove, IL, USA]]></description>
+      <Point>
+        <coordinates>-87.927343,42.170656</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Maumee</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[440 W Dussel Dr, Maumee, OH 43537, USA]]></description>
+      <Point>
+        <coordinates>-83.675857,41.580552</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Forsyth County</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1670 Redi Rd, Cumming, GA, USA]]></description>
+      <Point>
+        <coordinates>-84.165378,34.177752</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Morristown</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[900 American Rd, Morris Plains, NJ, USA]]></description>
+      <Point>
+        <coordinates>-74.47121,40.825506</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Manalapan</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[28 Harrison Ave, Englishtown, NJ 07726, USA]]></description>
+      <Point>
+        <coordinates>-74.354454,40.297985</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Montgomeryville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[101 Commerce Drive, Montgomeryville, PA, USA]]></description>
+      <Point>
+        <coordinates>-75.225155,40.233182</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Clarksburg</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[22616 Gateway Center Drive, Clarksburg, MD, USA]]></description>
+      <Point>
+        <coordinates>-77.281281,39.233449</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Reline Athletics - Kensington</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3835 Plyers Mill Rd, Kensington, MD 20895, USA]]></description>
+      <Point>
+        <coordinates>-77.076865,39.029834</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Hemlock Plaza</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2978 Kildaire Farm Road, Cary, NC, USA]]></description>
+      <Point>
+        <coordinates>-78.788704,35.718097</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Carrollwood</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14420 N Dale Mabry Hwy, Tampa, FL 33618, USA]]></description>
+      <Point>
+        <coordinates>-82.507869,28.079204</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Weston</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1756 North Commerce Parkway, Weston, FL, USA]]></description>
+      <Point>
+        <coordinates>-80.365614,26.095721</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

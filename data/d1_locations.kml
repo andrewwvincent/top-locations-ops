@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="Target">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <n>D1 Training Alamo Ranch</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[11121 Westwood Loop Ste 104 San Antonio, TX 78253]]></description>
+      <Point>
+        <coordinates>-98.711892,29.493519</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Aledo</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[250 Bailey Ranch Road Aledo, TX 76008]]></description>
+      <Point>
+        <coordinates>-97.604853,32.709125</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Armonk</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[130 Business Park Dr Armonk, NY 10504]]></description>
+      <Point>
+        <coordinates>-73.708429,41.116992</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Dallas</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[8081 Walnut Hill Lane Dallas, TX 75231]]></description>
+      <Point>
+        <coordinates>-96.767224,32.882242</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Anderson Township</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[8315 Beechmont Ave Suite 40 Cincinnati, OH 45255]]></description>
+      <Point>
+        <coordinates>-84.324706,39.071821</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Arcadia</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2303 N 44th Street Phoenix, AZ 85008]]></description>
+      <Point>
+        <coordinates>-111.986578,33.473781</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Arlington</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3811 S. Cooper Street Suite #1198 Arlington, TX 76015]]></description>
+      <Point>
+        <coordinates>-97.12898,32.680153</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Arlington Heights</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[71 W Rand Road Arlington Heights, IL 60004]]></description>
+      <Point>
+        <coordinates>-87.984923,42.114085</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Fox Valley</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[403 S IL-59 Aurora, IL 60504]]></description>
+      <Point>
+        <coordinates>-88.208628,41.750427</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Atascocita</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7040 FM 1960 East Unit B Humble, TX 77346]]></description>
+      <Point>
+        <coordinates>-95.174457,29.998242</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Athens</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7920 Macon HWY Suite 150 Watkinsville, GA 30677]]></description>
+      <Point>
+        <coordinates>-83.412777,33.887248</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Aurora</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[18825 N. Marketplace Dr. Aurora, OH 44202]]></description>
+      <Point>
+        <coordinates>-81.386472,41.359562</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Baton Rouge</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6401 Bluebonnet Blvd Suite 505 Baton Rouge, LA 70836]]></description>
+      <Point>
+        <coordinates>-91.087554,30.389106</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Beaverton</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[11445 SW Scholls Ferry Rd. Beaverton, OR 97008]]></description>
+      <Point>
+        <coordinates>-122.794061,45.446608</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Frisco</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4944 Preston Road, Suite 252, Frisco, TX 75034]]></description>
+      <Point>
+        <coordinates>-96.803935,33.119735</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Bergen County</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[107 Pleasant Avenue Upper Saddle River, NJ 07458]]></description>
+      <Point>
+        <coordinates>-74.117372,41.051628</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Billings</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1678 Shiloh Rd Suite 3 Billings, MT 59106]]></description>
+      <Point>
+        <coordinates>-108.618914,45.786434</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Bloomingdale</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[400 Army Trail Road #103 Bloomingdale, IL 60108]]></description>
+      <Point>
+        <coordinates>-88.115476,41.939155</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Blount</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3443 Louisville Road Louisville, TN 37777]]></description>
+      <Point>
+        <coordinates>-84.055247,35.818942</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Boerne</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[132 Old San Antonio Road Boerne, TX 78006]]></description>
+      <Point>
+        <coordinates>-98.709809,29.762129</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Boise</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3750 E. Pewter Falls Street STE 120 Meridian, ID 83642]]></description>
+      <Point>
+        <coordinates>-116.347056,43.58712</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Mission Viejo</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[555 The Shops at Mission Viejo Mission Viejo, CA 92691]]></description>
+      <Point>
+        <coordinates>-117.667923,33.605527</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Bowling Green</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[946 Searcy Way Bowling Green, KY 42103]]></description>
+      <Point>
+        <coordinates>-86.418752,36.955906</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training North Shore</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2345 Willow Road Glenview, IL 60025]]></description>
+      <Point>
+        <coordinates>-87.790159,42.105437</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Bryant</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1800 N. Reynolds Road Suite 4 Bryant, AR 72002]]></description>
+      <Point>
+        <coordinates>-92.494484,34.611393</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Buford</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2725 Hamilton Mill Road Suite A800 Buford, GA 30519]]></description>
+      <Point>
+        <coordinates>-83.919638,34.081457</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Bux-Mont</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[285 Bethlehem Pike Colmar, PA 18915]]></description>
+      <Point>
+        <coordinates>-75.25837,40.275129</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Cabot</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[209 North 10th Street Cabot, AR 72023]]></description>
+      <Point>
+        <coordinates>-92.025323,34.970545</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Carmel</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[650 W. Carmel Dr., Suite 120 Carmel, IN 46032]]></description>
+      <Point>
+        <coordinates>-86.140346,39.965664</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Cedar Park</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[601 W. New Hope Drive Cedar Park, TX 78613]]></description>
+      <Point>
+        <coordinates>-97.842332,30.531182</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Centennial Hills</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7083 W. Craig Road, Suite 180 Las Vegas, NV 89129]]></description>
+      <Point>
+        <coordinates>-115.248772,36.239665</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Oswego</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1670 Douglas Rd Oswego, IL 60543]]></description>
+      <Point>
+        <coordinates>-88.311027,41.696969</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Chattanooga</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7430 Commons Boulevard Chattanooga, TN 37421]]></description>
+      <Point>
+        <coordinates>-85.148365,35.034772</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Cincy North</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[9573 Fields Ertel Road Loveland, OH 45140]]></description>
+      <Point>
+        <coordinates>-84.297433,39.289167</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Colleyville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4906 Colleyville Blvd Suite 214 Colleyville, TX 76034]]></description>
+      <Point>
+        <coordinates>-97.156649,32.882534</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Colorado Springs</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5815 Mark Dabling Boulevard Colorado Springs, CO 80919]]></description>
+      <Point>
+        <coordinates>-104.820834,38.917205</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Cool Springs</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7115 South Springs Drive Franklin, TN 37067]]></description>
+      <Point>
+        <coordinates>-86.814945,35.951959</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Coral Springs</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3450 NW 62nd Ave Margate, FL 33063]]></description>
+      <Point>
+        <coordinates>-80.140165,26.654642</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Coralville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2441 James St. Suite 2 Coralville, IA 52241]]></description>
+      <Point>
+        <coordinates>-91.603588,41.684885</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Pleasanton</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4299 Rosewood Dr, Suite 100 Pleasanton, CA 94588]]></description>
+      <Point>
+        <coordinates>-121.873057,37.699486</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Deerfield Beach</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1401 Green Road Suites D/E/F Deerfield Beach, FL 33064]]></description>
+      <Point>
+        <coordinates>-80.060475,26.668544</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training DeLand</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2610 S Woodland Blvd Deland, FL 32720]]></description>
+      <Point>
+        <coordinates>-81.300191,28.982604</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Denton</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2119 Sadau Ct Denton, TX 76210]]></description>
+      <Point>
+        <coordinates>-97.10206,33.188837</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Princeton</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3373 Brunswick Pike RT.1 #46 Lawrenceville, NJ 08648]]></description>
+      <Point>
+        <coordinates>-74.682758,40.294798</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Downtown Orlando</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2771 E. Livingston Street Orlando, FL 32803]]></description>
+      <Point>
+        <coordinates>-81.348261,28.548224</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Dr. Phillips</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[11444 S. Apopka Vineland Rd., Suite 105 Orlando, FL 32836]]></description>
+      <Point>
+        <coordinates>-81.503585,28.399233</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training East Cooper</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1220 Ben Sawyer Blvd Mt Pleasant, SC 29464]]></description>
+      <Point>
+        <coordinates>-79.861222,32.794611</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training East Jacksonville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[11744 Beach Blvd Jacksonville, FL 32246]]></description>
+      <Point>
+        <coordinates>-81.513579,30.285891</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training East Mesa</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1257 S. Crismon Rd Suite 104 Mesa, AZ 85209]]></description>
+      <Point>
+        <coordinates>-111.614985,33.391704</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training East Wichita</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[12938 E 21st N Suite 120 Wichita, KS 67230]]></description>
+      <Point>
+        <coordinates>-97.187622,37.723574</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training East Woodlands</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[8821 Metropark Dr STE 300 Shenandoah, TX 77385]]></description>
+      <Point>
+        <coordinates>-95.452703,30.195155</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Edmond</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1289 E 15th Street Suite 112 Edmond, OK 73013]]></description>
+      <Point>
+        <coordinates>-97.463657,35.638431</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Fairport</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[25 Parce Ave. Suite 115 Fairport, NY 14450]]></description>
+      <Point>
+        <coordinates>-77.443289,43.105111</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Prosper</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[100 S. Preston Road Suite 30 Prosper, TX 75078]]></description>
+      <Point>
+        <coordinates>-96.790883,33.235399</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Fort Myers</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[9359 Six-Mile Cypress Parkway STE 415 Fort Myers, FL 33966]]></description>
+      <Point>
+        <coordinates>-81.909597,26.545453</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Fort Wayne SW</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[9307 Illinois Road Fort Wayne, IN 46804]]></description>
+      <Point>
+        <coordinates>-85.262938,41.074046</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Reston</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1700 Bracknell Dr. Suite A Reston, VA 20194]]></description>
+      <Point>
+        <coordinates>-77.35777,38.96731</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Sandy</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[61 West 10600 South Sandy, UT 84070]]></description>
+      <Point>
+        <coordinates>-111.892674,40.558151</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Southlake</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[500 W. Southlake Blvd, Suite 100 Southlake, TX 76092]]></description>
+      <Point>
+        <coordinates>-97.158583,32.941549</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Gainesville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[426 SW 140th Ter Suite 1 Newberry, FL 32669]]></description>
+      <Point>
+        <coordinates>-82.491319,29.649491</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Spring</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[8727 W. Rayford Rd. Suite 150 Spring, TX 77389]]></description>
+      <Point>
+        <coordinates>-95.51655,30.124278</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Grand Rapids</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5435 28th Street Court SE Grand Rapids, MI 49546]]></description>
+      <Point>
+        <coordinates>-85.533277,42.917052</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Greenville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1280 Woodruff Rd Greenville, SC 29607]]></description>
+      <Point>
+        <coordinates>-82.285602,34.820736</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Torrance</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[21760 Hawthorne Blvd Ste 284A Torrance, CA 90503]]></description>
+      <Point>
+        <coordinates>-118.349442,33.830645</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Hardin Valley</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[10258 Hardin Valley Road Hardin Valley, TN 37932]]></description>
+      <Point>
+        <coordinates>-84.141403,35.955173</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Henderson</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1300 W Sunset Road Suite 1920 Henderson, NV 89014]]></description>
+      <Point>
+        <coordinates>-115.043861,36.069431</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Hendersonville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[117 Saundersville Rd. Hendersonville, TN 37075]]></description>
+      <Point>
+        <coordinates>-86.591426,36.327075</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Holly Springs</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[250 Premier Dr Holly Springs, NC 27540]]></description>
+      <Point>
+        <coordinates>-78.859076,35.652024</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Hoover</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5508 Stadium Trace Hoover, AL 35244]]></description>
+      <Point>
+        <coordinates>-86.844884,33.336701</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Hulen</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4800 S. Hulen St., Space 1165 Ft. Worth, TX 76132]]></description>
+      <Point>
+        <coordinates>-97.400029,32.679303</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Huntsville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1963 Memorial Parkway SW Huntsville, AL 35801]]></description>
+      <Point>
+        <coordinates>-86.586205,34.71722</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Indianapolis</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[9625 E 150th St. Noblesville, IN 46060]]></description>
+      <Point>
+        <coordinates>-85.956725,40.027725</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Jackson</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1068 Highland Colony Parkway Suite E Ridgeland, MS 39157]]></description>
+      <Point>
+        <coordinates>-90.138878,32.398903</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Jacksonville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14550 Old St. Augustine Rd. Jacksonville, FL 32258]]></description>
+      <Point>
+        <coordinates>-81.633055,30.156944</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Katy</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[23541 Westheimer Parkway Katy, TX 77494]]></description>
+      <Point>
+        <coordinates>-95.804444,29.733889</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Knoxville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[11217 Chapman Highway Seymour, TN 37865]]></description>
+      <Point>
+        <coordinates>-83.778889,35.865556</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Lake Charles</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4101 Lake Street Lake Charles, LA 70605]]></description>
+      <Point>
+        <coordinates>-93.217778,30.183333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Lake Mary</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[920 Williston Park Point Lake Mary, FL 32746]]></description>
+      <Point>
+        <coordinates>-81.328333,28.756667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Las Vegas</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6587 Las Vegas Blvd S Las Vegas, NV 89119]]></description>
+      <Point>
+        <coordinates>-115.171944,36.068889</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Lawrenceville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1708 Scenic Highway North Snellville, GA 30078]]></description>
+      <Point>
+        <coordinates>-84.017778,33.885556</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training League City</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2955 Gulf Fwy S League City, TX 77573]]></description>
+      <Point>
+        <coordinates>-95.135278,29.488889</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Lebanon</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1113 Murfreesboro Road Lebanon, TN 37090]]></description>
+      <Point>
+        <coordinates>-86.283889,36.203889</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Lexington</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1205 E New Circle Rd Lexington, KY 40505]]></description>
+      <Point>
+        <coordinates>-84.466667,38.033333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Little Rock</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1516 Macon Dr. Little Rock, AR 72211]]></description>
+      <Point>
+        <coordinates>-92.399722,34.766944</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Louisville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[12365 Shelbyville Road Louisville, KY 40243]]></description>
+      <Point>
+        <coordinates>-85.533333,38.25</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Lubbock</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7806 Milwaukee Avenue Lubbock, TX 79424]]></description>
+      <Point>
+        <coordinates>-101.933333,33.533333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Madison</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1241 Fourier Drive Madison, WI 53717]]></description>
+      <Point>
+        <coordinates>-89.516667,43.083333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training McKinney</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2960 Eldorado Parkway McKinney, TX 75070]]></description>
+      <Point>
+        <coordinates>-96.716667,33.166667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Memphis</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7790 Trinity Road Suite 126 Cordova, TN 38018]]></description>
+      <Point>
+        <coordinates>-89.8,35.15</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Midland</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5109 W Wadley Ave Midland, TX 79707]]></description>
+      <Point>
+        <coordinates>-102.116667,32.016667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Mobile</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3702 Airport Blvd Mobile, AL 36608]]></description>
+      <Point>
+        <coordinates>-88.15,30.683333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Montgomery</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[8125 Decker Lane Montgomery, AL 36117]]></description>
+      <Point>
+        <coordinates>-86.166667,32.366667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Murfreesboro</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1970 Medical Center Parkway Murfreesboro, TN 37129]]></description>
+      <Point>
+        <coordinates>-86.416667,35.85</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Nashville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7115 South Springs Drive Franklin, TN 37067]]></description>
+      <Point>
+        <coordinates>-86.866667,35.933333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training New Braunfels</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[651 N Business IH 35 Suite 820 New Braunfels, TX 78130]]></description>
+      <Point>
+        <coordinates>-98.116667,29.7</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training North Austin</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[12129 Ranch Road 620 N Austin, TX 78750]]></description>
+      <Point>
+        <coordinates>-97.85,30.433333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training North Port</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14942 Tamiami Trail North Port, FL 34287]]></description>
+      <Point>
+        <coordinates>-82.233333,27.05</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training North Raleigh</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[8701 Glenwood Avenue Raleigh, NC 27617]]></description>
+      <Point>
+        <coordinates>-78.716667,35.866667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Northshore</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[206 Lake Drive Covington, LA 70433]]></description>
+      <Point>
+        <coordinates>-90.1,30.466667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Oklahoma City</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14701 N. Kelly Ave. Oklahoma City, OK 73013]]></description>
+      <Point>
+        <coordinates>-97.5,35.616667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Omaha</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[17660 Wright Plaza Suite 150 Omaha, NE 68130]]></description>
+      <Point>
+        <coordinates>-96.166667,41.233333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Orlando</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7345 West Sand Lake Road Orlando, FL 32819]]></description>
+      <Point>
+        <coordinates>-81.483333,28.45</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Oxford</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2619 West Oxford Loop Oxford, MS 38655]]></description>
+      <Point>
+        <coordinates>-89.55,34.366667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Pensacola</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6235 North Davis Highway Pensacola, FL 32504]]></description>
+      <Point>
+        <coordinates>-87.216667,30.483333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Phoenix</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4730 E Indian School Rd Phoenix, AZ 85018]]></description>
+      <Point>
+        <coordinates>-111.983333,33.483333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Plano</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6205 Chapel Hill Blvd Suite 100 Plano, TX 75093]]></description>
+      <Point>
+        <coordinates>-96.833333,33.033333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Ponte Vedra</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[111 Nature Walk Parkway St. Augustine, FL 32092]]></description>
+      <Point>
+        <coordinates>-81.466667,30.016667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Port Orange</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5521 S Williamson Blvd Port Orange, FL 32128]]></description>
+      <Point>
+        <coordinates>-81.05,29.116667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Raleigh</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6531 Creedmoor Road Raleigh, NC 27613]]></description>
+      <Point>
+        <coordinates>-78.683333,35.883333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Richmond</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2231 Old Brick Road Glen Allen, VA 23060]]></description>
+      <Point>
+        <coordinates>-77.6,37.666667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Round Rock</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2800 South IH-35 Suite 180 Round Rock, TX 78681]]></description>
+      <Point>
+        <coordinates>-97.683333,30.483333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training San Antonio</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[18010 Bulverde Road San Antonio, TX 78259]]></description>
+      <Point>
+        <coordinates>-98.466667,29.616667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Sarasota</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[935 N Beneva Rd Suite 613 Sarasota, FL 34232]]></description>
+      <Point>
+        <coordinates>-82.5,27.333333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Savannah</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7135 Hodgson Memorial Drive Savannah, GA 31406]]></description>
+      <Point>
+        <coordinates>-81.1,32.033333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Shreveport</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7455 Youree Drive Shreveport, LA 71105]]></description>
+      <Point>
+        <coordinates>-93.716667,32.5</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training South Austin</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1221 S. Lamar Blvd Austin, TX 78704]]></description>
+      <Point>
+        <coordinates>-97.766667,30.25</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training South Charlotte</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[9101 Pineville-Matthews Road Pineville, NC 28134]]></description>
+      <Point>
+        <coordinates>-80.883333,35.083333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training South Fort Worth</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[5836 SW Loop 820 Fort Worth, TX 76132]]></description>
+      <Point>
+        <coordinates>-97.416667,32.666667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training South Nashville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2000 Glen Echo Road Nashville, TN 37215]]></description>
+      <Point>
+        <coordinates>-86.816667,36.1</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training South Tampa</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[4340 W. El Prado Blvd Tampa, FL 33629]]></description>
+      <Point>
+        <coordinates>-82.516667,27.916667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training St. Augustine</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[145 Hilden Road Suite 119 St. Augustine, FL 32084]]></description>
+      <Point>
+        <coordinates>-81.316667,29.916667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training St. Charles</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[3101 Dardenne Crossing Dr. Dardenne Prairie, MO 63368]]></description>
+      <Point>
+        <coordinates>-90.733333,38.766667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training St. Petersburg</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[570 71st Street North St. Petersburg, FL 33710]]></description>
+      <Point>
+        <coordinates>-82.733333,27.783333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Sugar Land</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[16560 Southwest Freeway Suite A Sugar Land, TX 77479]]></description>
+      <Point>
+        <coordinates>-95.616667,29.583333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Tallahassee</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1921 N Monroe Street Tallahassee, FL 32303]]></description>
+      <Point>
+        <coordinates>-84.283333,30.466667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Tampa</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[14313 N. Dale Mabry Hwy Tampa, FL 33618]]></description>
+      <Point>
+        <coordinates>-82.5,28.083333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training The Woodlands</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[6700 Woodlands Parkway Suite 220 Spring, TX 77382]]></description>
+      <Point>
+        <coordinates>-95.516667,30.166667</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Tuscaloosa</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[1800 McFarland Blvd E Suite 420 Tuscaloosa, AL 35404]]></description>
+      <Point>
+        <coordinates>-87.516667,33.183333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training Tyler</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[2121 W SW Loop 323 Tyler, TX 75701]]></description>
+      <Point>
+        <coordinates>-95.316667,32.333333</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <n>D1 Training West Nashville</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[7100 Charlotte Pike Nashville, TN 37209]]></description>
+      <Point>
+        <coordinates>-86.916667,36.133333</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

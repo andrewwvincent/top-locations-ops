@@ -49,6 +49,26 @@ export const config = {
             size: 16,
             defaultChecked: false,
             defaultLabels: false
+        },
+        {
+            id: 'redline',
+            name: 'Redline Athletics Locations',
+            file: 'data/redline_locations.kml',
+            color: '#FFA500',  // Orange
+            shape: 'circle',
+            size: 16,
+            defaultChecked: false,
+            defaultLabels: false
+        },
+        {
+            id: 'D1',
+            name: 'D1 Training Locations',
+            file: 'data/d1_locations.kml',
+            color: '#808080',  // Grey
+            shape: 'circle',
+            size: 16,
+            defaultChecked: false,
+            defaultLabels: false
         }
     ]
 };
