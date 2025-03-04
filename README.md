@@ -6,9 +6,7 @@ An interactive web application for visualizing demographic data through dynamic 
 
 - Dynamic heatmap visualization of demographic data
 - City-based filtering with automatic statistics
-- Two types of location markers (preferred and other) with detailed popups
-- Customizable filter ranges for demographic data
-- Responsive design that works on both desktop and mobile devices
+- Location markers with detailed popups
 
 ## Setup
 
@@ -22,7 +20,7 @@ An interactive web application for visualizing demographic data through dynamic 
 
 - Mapbox GL JS for map rendering and data visualization
 - HTML/CSS/JavaScript
-- KML for geographic data storage
+- KML/GeoJSON for geographic data storage
 
 ## License
 
