@@ -432,5 +432,13 @@
         <coordinates>-80.365614,26.095721</coordinates>
       </Point>
     </Placemark>
+    <Placemark>
+      <n>Redline Athletics - Culver City</n>
+      <styleUrl>#Target</styleUrl>
+      <description><![CDATA[11520 Jefferson Blvd Suite 100, Culver City, CA 90230]]></description>
+      <Point>
+        <coordinates>-118.39791,33.98841</coordinates>
+      </Point>
+    </Placemark>
   </Document>
 </kml>
