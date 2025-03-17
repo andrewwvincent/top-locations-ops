@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="Fusion">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+ <Placemark>
+<n>Fusion Academy - Gilbert</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 400 E. Rivulon Boulevard, Suite 113, Gilbert, AZ 85297]]></description>
+<Point>
+<coordinates>-111.780404,33.289379</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Scottsdale</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 8700 N. Gainey Center Drive, Suite 150, Scottsdale, AZ 85258]]></description>
+<Point>
+<coordinates>-111.91346,33.564439</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Berkeley</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 811 University Ave., Suite 100, Berkeley, CA 94710]]></description>
+<Point>
+<coordinates>-122.298246,37.868301</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Cupertino</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 19638 Stevens Creek Blvd, Suite 230, Cupertino, CA 95014]]></description>
+<Point>
+<coordinates>-122.017564,37.322634</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Los Gatos</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 50 University Ave., Suite A300, Los Gatos, CA 95030]]></description>
+<Point>
+<coordinates>-121.981786,37.223111</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Marin</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1600 Los Gamos Drive Lobby D, Suite 380, San Rafael, CA 94903]]></description>
+<Point>
+<coordinates>-122.541456,38.019637</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Palo Alto</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 2191 E. Bayshore Road, Suite 100, Palo Alto, CA 94303]]></description>
+<Point>
+<coordinates>-122.124158,37.450952</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Pleasanton</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 4301 Hacienda Dr., Suite 120, Pleasanton, CA 94588]]></description>
+<Point>
+<coordinates>-121.893019,37.692638</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - San Francisco</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1160 Battery Street, Suite 40, San Francisco, CA 94111]]></description>
+<Point>
+<coordinates>-122.40112,37.801916</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - San Mateo</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 2000 Alameda de las Pulgas, Suite 128, San Mateo, CA 94403]]></description>
+<Point>
+<coordinates>-122.321218,37.544742</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - San Mateo Foster City</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1840 Gateway Dr., Suite 100, San Mateo, CA 94404]]></description>
+<Point>
+<coordinates>-122.279864,37.558349</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Walnut Creek</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 3003 Oak Road, Suite 150, Walnut Creek, CA 94597]]></description>
+<Point>
+<coordinates>-122.058582,37.92896</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Walnut Creek Downtown</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 101 Ygnacio Valley Road, Suite 150, Walnut Creek, CA 94596]]></description>
+<Point>
+<coordinates>-122.069129,37.903912</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Folsom</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 420 Palladio Parkway, Suite 1717, Folsom, CA 95630]]></description>
+<Point>
+<coordinates>-121.121524,38.65045</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Los Angeles Miracle Mile</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 5757 Wilshire Blvd. Promenade One, , Los Angeles, CA 90036]]></description>
+<Point>
+<coordinates>-118.35341,34.06259</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Los Angeles West LA</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1640 S. Sepulveda Blvd., Suite 100, Los Angeles, CA 90025]]></description>
+<Point>
+<coordinates>-118.44468,34.04838</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Palos Verdes</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 550 Deep Valley Dr., Suite 250, Rolling Hills Estates, CA 90274]]></description>
+<Point>
+<coordinates>-118.374644,33.772927</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Pasadena</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 825 Colorado Blvd., Suite 118, Los Angeles, CA 90041]]></description>
+<Point>
+<coordinates>-118.056043,34.148133</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Pasadena Downtown</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 35 N. Lake Ave, Suite 160, Pasadena, CA 91101]]></description>
+<Point>
+<coordinates>-118.132211,34.14669</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Santa Barbara</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 510 State Street, Suite 200, Santa Barbara, CA 93101]]></description>
+<Point>
+<coordinates>-118.272141,34.152398</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - South Bay</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1601 Pacific Coast Highway, Suite 260, Hermosa Beach, CA 90254]]></description>
+<Point>
+<coordinates>-118.306833,33.789318</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Warner Center</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 21650 Oxnard Street, Suite 100, Woodland Hills, CA 91367]]></description>
+<Point>
+<coordinates>-118.600297,34.179018</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Westlake Village</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 30700 Russell Ranch Road, Suite 175, Westlake Village, CA 91362]]></description>
+<Point>
+<coordinates>-118.248405,33.973951</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Aliso Viejo</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 120 Vantis Dr., Suite 100, Aliso Viejo, CA 92656]]></description>
+<Point>
+<coordinates>-117.73002,33.578894</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Anaheim Hills</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 3111 N. Tustin Street, Suite 240, Orange, CA 92865]]></description>
+<Point>
+<coordinates>-117.832376,33.841975</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Huntington Beach</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 7711 Center Ave, Suite 120, Huntington Beach, CA 92647]]></description>
+<Point>
+<coordinates>-117.995304,33.7352</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Mission Viejo</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 23456 Madero, Suite 140, Mission Viejo, CA 92691]]></description>
+<Point>
+<coordinates>-117.676905,33.623101</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Newport Beach</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 18881 Von Karman Ave, Suite 900, Irvine, CA 92612]]></description>
+<Point>
+<coordinates>-117.858178,33.671301</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - San Diego</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 5060 Shoreham Place, Suite 130, San Diego, CA 92122]]></description>
+<Point>
+<coordinates>-117.185478,32.851879</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - San Diego Scripps Ranch</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 9915 Mira Mesa Blvd., Suite 210, San Diego, CA 92131]]></description>
+<Point>
+<coordinates>-117.114296,32.916732</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Solana Beach</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 512 Via De La Valle, Suite 201, Solana Beach, CA 92075]]></description>
+<Point>
+<coordinates>-117.260566,32.980695</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Boulder County</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 168 Centennial Parkway, Suite 100, Louisville, CO 80027]]></description>
+<Point>
+<coordinates>-105.166953,39.970317</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Denver</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 5340 South Quebec Street, Suite 100N, Greenwood Village, CO 80111]]></description>
+<Point>
+<coordinates>-104.903361,39.619613</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Fairfield</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 777 Commerce Drive, Suite 100, Fairfield, CT 06824]]></description>
+<Point>
+<coordinates>-73.234679,41.1622</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Greenwich</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 66 Gatehouse Rd., , Stamford, CT 06902]]></description>
+<Point>
+<coordinates>-73.550222,41.028493</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Boca Raton</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 5050 Conference Way N, Suite 110, Boca Raton, FL 33431]]></description>
+<Point>
+<coordinates>-80.109773,26.392546</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Miami</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 9130 S. Dadeland Blvd., Suite 102, Miami, FL 33156]]></description>
+<Point>
+<coordinates>-80.314134,25.685665</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Palm Beach Gardens</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 11300 Legacy Avenue, Suite 220, Palm Beach Gardens, FL 33410]]></description>
+<Point>
+<coordinates>-80.090051,26.842634</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Pembroke Pines</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 880 Southwest 145th Ave, Suite 100, Pembroke Pines, FL 33027]]></description>
+<Point>
+<coordinates>-80.337672,26.001061</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Alpharetta</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 10000 Avalon Blvd.,, Suite 150, Alpharetta, GA 30009]]></description>
+<Point>
+<coordinates>-84.274568,34.069967</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Buckhead</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 3414 Peachtree Road NE, Suite 200, Atlanta, GA 30326]]></description>
+<Point>
+<coordinates>-84.364758,33.851634</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Evanston</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 847 Chicago Avenue, Suite 200, Evanston, IL 60202]]></description>
+<Point>
+<coordinates>-87.679067,42.033569</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Lake Forest</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 840 S. Waukegan Road, Suite 224, Lake Forest, IL 60045]]></description>
+<Point>
+<coordinates>-87.873873,42.22489</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Lincoln Park</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1440 N. Dayton Street, Suite 104, Chicago, IL 60642]]></description>
+<Point>
+<coordinates>-87.649947,41.90767</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Oak Brook</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 3041 Butterfield Road, Suite 200, Oak Brook, IL 60523]]></description>
+<Point>
+<coordinates>-87.991682,41.842566</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Columbia</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 10175 Little Patuxent Pkwy, Suite 120, Columbia, MD 21044]]></description>
+<Point>
+<coordinates>-76.857396,39.21709</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Rockville</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 275 N. Washington Street, Suite 200, Rockville, MD 20850]]></description>
+<Point>
+<coordinates>-77.153285,39.088248</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Burlington</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 100 Summit Drive, Suite 200, Burlington, MA 01803]]></description>
+<Point>
+<coordinates>-71.215444,42.476199</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Hingham</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 99 Derby Street, Suite 103, Hingham, MA 02043]]></description>
+<Point>
+<coordinates>-70.907216,42.181328</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Newton</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 320 Needham Street, Suite 100, Newton, MA 02464]]></description>
+<Point>
+<coordinates>-71.215957,42.307176</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Minneapolis</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 7545 France Avenue S, , Edina, Minnesota 55435]]></description>
+<Point>
+<coordinates>-93.326604,44.866092</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Cherry Hill</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 923 Haddonfield Road, Suite 2B, Cherry Hill, NJ 08002]]></description>
+<Point>
+<coordinates>-75.034915,39.925004</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Englewood</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 10 Sterling Blvd, Suite 201, Englewood, NJ 07631]]></description>
+<Point>
+<coordinates>-73.989439,40.882084</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Montclair</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 427 Bloomfield Avenue, 3rd Floor, Montclair, NJ 07042]]></description>
+<Point>
+<coordinates>-74.216728,40.813442</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Morristown</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 182 South Street Suite 4, , Morristown, NJ 07960]]></description>
+<Point>
+<coordinates>-74.475039,40.792229</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Princeton</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 116 Stanhope St., , Princeton, NJ 08540]]></description>
+<Point>
+<coordinates>-74.61298,40.355974</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Brooklyn</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1 Metrotech Center North, Suite 1004, Brooklyn, NY 11201]]></description>
+<Point>
+<coordinates>-73.987071,40.69348</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Long Island</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 260 Crossways Park Dr., Suite A, Woodbury, NY 11797]]></description>
+<Point>
+<coordinates>-73.481715,40.807946</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Upper West Side</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 157 Columbus Avenue, 3rd Floor, New York, NY 10023]]></description>
+<Point>
+<coordinates>-73.980805,40.774346</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Westchester</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1 North Broadway Suite 120, , White Plains, NY 10601]]></description>
+<Point>
+<coordinates>-73.764147,41.034052</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Chapel Hill</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 101 Glen Lennox Drive, Suite 130, Chapel Hill, NC 27517]]></description>
+<Point>
+<coordinates>-79.025599,35.913424</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Charlotte</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 3540 Toringdon Way, Suite 100, Charlotte, NC 28277]]></description>
+<Point>
+<coordinates>-80.840062,35.066818</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Raleigh</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 2418 Blue Ridge Road, Suite 200, Raleigh, NC 27607]]></description>
+<Point>
+<coordinates>-78.705057,35.814145</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Ardmore</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 40 Coulter Ave., Suite 200, Ardmore, PA 19003]]></description>
+<Point>
+<coordinates>-75.289101,40.008182</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Malvern</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 700 Steel Lane, Suite 200, Malvern, PA 19355]]></description>
+<Point>
+<coordinates>-75.517447,40.049639</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Franklin</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 2550 Meridian Blvd., Suite 100, Franklin, TN 37067]]></description>
+<Point>
+<coordinates>-86.809247,35.951688</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Austin</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 4701 Bee Caves Road, Suite 101, Austin, TX 78746]]></description>
+<Point>
+<coordinates>-97.81646,30.287724</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Dallas</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 8128 Park Lane, Suite 125, Dallas, TX 75231]]></description>
+<Point>
+<coordinates>-96.766974,32.870671</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Houston Galleria</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 5065 Westheimer Road, Suite 840, Houston, TX 77056]]></description>
+<Point>
+<coordinates>-95.462852,29.740536</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Plano</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 2400 Dallas Pkwy., Suite 180, Plano, TX 75093]]></description>
+<Point>
+<coordinates>-96.827429,33.032221</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - San Antonio</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 227 North Loop 1604 East, Suite 100, San Antonio, TX 78232]]></description>
+<Point>
+<coordinates>-98.484224,29.611042</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Southlake</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 301 State Street, Suite 200, Southlake, TX 76092]]></description>
+<Point>
+<coordinates>-97.131869,32.94407</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Sugar Land</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 13440 University Blvd., Suite 260, Sugar Land, TX 77479]]></description>
+<Point>
+<coordinates>-95.648757,29.585654</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - The Woodlands</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1201 Lake Woodlands Drive, Suite 4000, The Woodlands, TX 77380]]></description>
+<Point>
+<coordinates>-95.456175,30.166421</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Alexandria</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 333 John Carlyle Street, Suite 100, Alexandria, VA 22314]]></description>
+<Point>
+<coordinates>-77.062169,38.803845</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Loudoun</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 19300 Promenade Dr., Suite 200, Leesburg, VA 20176]]></description>
+<Point>
+<coordinates>-77.495418,39.082587</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Reston</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 11700 Plaza America Drive, Suite 150, Reston, VA 20190]]></description>
+<Point>
+<coordinates>-77.35005,38.952752</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Tysons</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 1934 Old Gallows Road, Suite 200, Vienna, VA 22182]]></description>
+<Point>
+<coordinates>-77.222328,38.912024</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Washington D.C.</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 2000 Florida Ave NW, 2nd Floor, Washington, DC 20009]]></description>
+<Point>
+<coordinates>-77.045207,38.91466</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Fusion Academy - Seattle</n>
+<styleUrl>#Fusion</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 214 E. Galer Street, Suite 200, Seattle, WA 98102]]></description>
+<Point>
+<coordinates>-122.325289,47.632454</coordinates>
+</Point>
+</Placemark>
+
+  </Document>
+</kml>
