@@ -3,6 +3,7 @@ import { config } from '../../config.js';
 
 let map; // Will be initialized from main script
 let popup; // Global popup for hover states
+let activeStatusFilters = new Set(['#Location', '#Active', '#No-Contract', '#Fusion']); // Track active status filters
 
 // Initialize location loader
 export function initLocationLoader(mapInstance) {
@@ -19,6 +20,7 @@ export function initLocationLoader(mapInstance) {
     });
 
     createLocationFilters();
+    createStatusFilters();
     loadLocationLayers();
 }
 
@@ -44,18 +46,16 @@ function createLocationFilters() {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = `location-${layer.id}`;
-        checkbox.checked = true; // Default to checked
+        checkbox.checked = true; // Always checked by default
         checkbox.addEventListener('change', () => toggleLocationLayer(layer.id));
 
         // Create pin preview that matches the map shape
         const pinPreview = document.createElement('span');
         pinPreview.className = 'pin-preview';
-        const isSquare = layer.defaultShape === 'square' || Object.values(layer.styles || {}).includes('square');
         pinPreview.style.cssText = `
             display: inline-block;
             width: 12px;
             height: 12px;
-            border-radius: ${isSquare ? '2px' : '50%'};
             background-color: ${layer.color};
             border: 1.5px solid #000000;
             margin-right: 6px;
@@ -76,6 +76,145 @@ function createLocationFilters() {
 
     locationSection.appendChild(locationFilters);
     filterForm.appendChild(locationSection);
+}
+
+// Create status filters in HTML
+function createStatusFilters() {
+    const filterForm = document.getElementById('filter-form');
+
+    // Create status filters section
+    const statusSection = document.createElement('div');
+    statusSection.className = 'status-controls';
+    statusSection.innerHTML = '<h3>Status Filters</h3>';
+
+    // Create container for status filters with grey background
+    const statusFilters = document.createElement('div');
+    statusFilters.className = 'status-filters';
+    statusFilters.style.cssText = `
+        background-color: #f8f8f8;
+        border-radius: 4px;
+        padding: 10px;
+    `;
+
+    // Define status types and their corresponding shapes
+    const statusTypes = [
+        { id: 'Location', label: 'Potential Partner', shape: 'circle' },
+        { id: 'Active', label: 'Active Location', shape: 'star' },
+        { id: 'No-Contract', label: 'No Contract', shape: 'square' },
+        { id: 'Fusion', label: 'Fusion Academy', shape: 'triangle' }
+    ];
+
+    // Create filters for each status type
+    statusTypes.forEach(status => {
+        const filterContainer = document.createElement('div');
+        filterContainer.className = 'status-filter';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `status-${status.id}`;
+        checkbox.checked = true;
+        checkbox.addEventListener('change', (e) => toggleStatusFilter(status.id, e.target.checked));
+
+        // Create shape preview using SVG for better control
+        const shapeContainer = document.createElement('span');
+        shapeContainer.style.cssText = `
+            display: inline-flex;
+            align-items: center;
+            margin-right: 6px;
+            vertical-align: middle;
+        `;
+
+        // Create SVG element
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '16');
+        svg.setAttribute('height', '16');
+        svg.setAttribute('viewBox', '0 0 16 16');
+        svg.style.display = 'block';
+
+        let shapePath;
+        if (status.shape === 'circle') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            shapePath.setAttribute('cx', '8');
+            shapePath.setAttribute('cy', '8');
+            shapePath.setAttribute('r', '6');
+        } else if (status.shape === 'square') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            shapePath.setAttribute('x', '2');
+            shapePath.setAttribute('y', '2');
+            shapePath.setAttribute('width', '12');
+            shapePath.setAttribute('height', '12');
+        } else if (status.shape === 'star') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const starPoints = [];
+            for (let i = 0; i < 5; i++) {
+                const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+                const x = 8 + 6 * Math.cos(angle);
+                const y = 8 + 6 * Math.sin(angle);
+                const innerAngle = angle + Math.PI / 5;
+                const innerX = 8 + 2.5 * Math.cos(innerAngle);
+                const innerY = 8 + 2.5 * Math.sin(innerAngle);
+                if (i === 0) {
+                    starPoints.push(`M ${x} ${y}`);
+                } else {
+                    starPoints.push(`L ${x} ${y}`);
+                }
+                starPoints.push(`L ${innerX} ${innerY}`);
+            }
+            starPoints.push('Z');
+            shapePath.setAttribute('d', starPoints.join(' '));
+        } else if (status.shape === 'triangle') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            shapePath.setAttribute('d', 'M 8 2 L 14 14 L 2 14 Z');
+        }
+
+        shapePath.setAttribute('fill', '#f5f5f5');
+        shapePath.setAttribute('stroke', '#000');
+        shapePath.setAttribute('stroke-width', '2');
+
+        svg.appendChild(shapePath);
+        shapeContainer.appendChild(svg);
+
+        const label = document.createElement('label');
+        label.htmlFor = `status-${status.id}`;
+        label.textContent = status.label;
+        label.style.verticalAlign = 'middle';
+
+        filterContainer.appendChild(checkbox);
+        filterContainer.appendChild(shapeContainer);
+        filterContainer.appendChild(label);
+        statusFilters.appendChild(filterContainer);
+    });
+
+    statusSection.appendChild(statusFilters);
+    filterForm.appendChild(statusSection);
+}
+
+// Toggle status filter
+function toggleStatusFilter(statusId, isVisible) {
+    const styleUrl = `#${statusId}`;
+    if (isVisible) {
+        activeStatusFilters.add(styleUrl);
+    } else {
+        activeStatusFilters.delete(styleUrl);
+    }
+
+    // Update visibility for all layers
+    config.locationLayers.forEach(layer => {
+        const shapes = ['circle', 'square', 'star', 'triangle'];
+        shapes.forEach(shape => {
+            const layerId = `layer-${layer.id}-${shape}`;
+            if (map.getLayer(layerId)) {
+                const visibility = document.getElementById(`location-${layer.id}`).checked ? 'visible' : 'none';
+                map.setLayoutProperty(layerId, 'visibility', visibility);
+
+                if (visibility === 'visible') {
+                    // Filter features based on active status filters
+                    const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
+                    map.setFilter(layerId, filter);
+                }
+            }
+        });
+    });
 }
 
 // Load KML layers
@@ -180,7 +319,8 @@ function loadLocationLayers() {
                         // Set up common styles
                         ctx.fillStyle = color;
                         ctx.strokeStyle = '#000000';
-                        ctx.lineWidth = 2;
+                        // Thicker stroke for star and triangle
+                        ctx.lineWidth = (shape === 'star' || shape === 'triangle') ? 3 : 2;
 
                         switch (shape) {
                             case 'square':
@@ -302,6 +442,12 @@ function toggleLocationLayer(layerId) {
             const visibility = map.getLayoutProperty(shapeLayerId, 'visibility');
             const newVisibility = visibility === 'visible' ? 'none' : 'visible';
             map.setLayoutProperty(shapeLayerId, 'visibility', newVisibility);
+
+            if (newVisibility === 'visible') {
+                // Filter features based on active status filters
+                const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
+                map.setFilter(shapeLayerId, filter);
+            }
         }
     });
 }

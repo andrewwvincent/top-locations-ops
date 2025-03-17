@@ -38,38 +38,38 @@
         }
 
         /* Location Controls */
-        .location-controls {
+        .location-controls, .status-controls {
             margin-top: 20px;
             padding: 10px;
             border-top: 1px solid #ccc;
         }
 
-        .location-controls h3 {
+        .location-controls h3, .status-controls h3 {
             margin: 0 0 10px 0;
             font-size: 14px;
             font-weight: bold;
             color: #333;
         }
 
-        .location-filters {
+        .location-filters, .status-filters {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
-        .location-filter {
+        .location-filter, .status-filter {
             display: flex;
             align-items: center;
             gap: 6px;
             padding: 4px 0;
         }
 
-        .location-filter input[type="checkbox"] {
+        .location-filter input[type="checkbox"], .status-filter input[type="checkbox"] {
             margin: 0;
             cursor: pointer;
         }
 
-        .location-filter label {
+        .location-filter label, .status-filter label {
             font-size: 13px;
             cursor: pointer;
             user-select: none;
@@ -79,7 +79,7 @@
             transition: all 0.2s;
         }
 
-        .location-filter:hover .pin-preview {
+        .location-filter:hover .pin-preview, .status-filter:hover .pin-preview {
             transform: scale(1.2);
             box-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
