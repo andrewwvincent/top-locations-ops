@@ -26,7 +26,6 @@ export function initLocationLoader(mapInstance) {
 
 // Create location filters in HTML
 function createLocationFilters() {
-    const sidebar = document.querySelector('.sidebar-content');
     const filterForm = document.getElementById('filter-form');
 
     // Create location filters section
@@ -204,7 +203,8 @@ function toggleStatusFilter(statusId, isVisible) {
         shapes.forEach(shape => {
             const layerId = `layer-${layer.id}-${shape}`;
             if (map.getLayer(layerId)) {
-                const visibility = document.getElementById(`location-${layer.id}`).checked ? 'visible' : 'none';
+                const locationEnabled = document.getElementById(`location-${layer.id}`).checked;
+                const visibility = locationEnabled ? 'visible' : 'none';
                 map.setLayoutProperty(layerId, 'visibility', visibility);
 
                 if (visibility === 'visible') {
@@ -214,6 +214,24 @@ function toggleStatusFilter(statusId, isVisible) {
                 }
             }
         });
+    });
+}
+
+// Toggle location layer
+function toggleLocationLayer(layerId) {
+    const shapes = ['circle', 'square', 'star', 'triangle'];
+    shapes.forEach(shape => {
+        const fullLayerId = `layer-${layerId}-${shape}`;
+        if (map.getLayer(fullLayerId)) {
+            const isVisible = document.getElementById(`location-${layerId}`).checked;
+            map.setLayoutProperty(fullLayerId, 'visibility', isVisible ? 'visible' : 'none');
+            
+            if (isVisible) {
+                // Re-apply status filters when showing layer
+                const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
+                map.setFilter(fullLayerId, filter);
+            }
+        }
     });
 }
 
@@ -399,81 +417,49 @@ function loadLocationLayers() {
                             'icon-size': defaultSize / 50, // Adjust size based on default
                             'icon-allow-overlap': true
                         },
-                        paint: {
-                            'icon-opacity': 1 // No transparency
+                        filter: ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]]
+                    });
+
+                    // Add hover effect
+                    map.on('mouseenter', shapeLayerId, (e) => {
+                        map.getCanvas().style.cursor = 'pointer';
+                        if (e.features.length > 0) {
+                            updatePopup(e.features[0]);
                         }
                     });
 
-                    // Add hover state
-                    let currentFeature = null;
-                    let isHovering = false;
-
-                    map.on('mouseenter', shapeLayerId, (e) => {
-                        isHovering = true;
-                        const features = map.queryRenderedFeatures(e.point, { layers: [shapeLayerId] });
-                        if (!features.length) return;
-
-                        map.getCanvas().style.cursor = 'pointer';
-                        // No opacity change on hover since we want full opacity always
-
-                        currentFeature = features[0];
-                        updatePopup(currentFeature);
-                    });
-
                     map.on('mouseleave', shapeLayerId, () => {
-                        isHovering = false;
                         map.getCanvas().style.cursor = '';
                         popup.remove();
                     });
                 });
             })
-            .catch(error => {
-                console.error(`Error loading KML file for ${layer.id}:`, error);
-            });
-    });
-}
-
-// Toggle layer visibility
-function toggleLocationLayer(layerId) {
-    const shapes = ['circle', 'square', 'star', 'triangle'];
-    shapes.forEach(shape => {
-        const shapeLayerId = `layer-${layerId}-${shape}`;
-        if (map.getLayer(shapeLayerId)) {
-            const visibility = map.getLayoutProperty(shapeLayerId, 'visibility');
-            const newVisibility = visibility === 'visible' ? 'none' : 'visible';
-            map.setLayoutProperty(shapeLayerId, 'visibility', newVisibility);
-
-            if (newVisibility === 'visible') {
-                // Filter features based on active status filters
-                const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
-                map.setFilter(shapeLayerId, filter);
-            }
-        }
+            .catch(error => console.error(`Error loading KML for ${layer.id}:`, error));
     });
 }
 
 // Helper function to update popup
 function updatePopup(feature) {
-    if (!feature) return;
     const coordinates = feature.geometry.coordinates.slice();
     const name = feature.properties.name;
     const description = feature.properties.description;
 
-    // Format popup content with better HTML structure
-    const popupContent = `
-        <div class="location-popup-content">
-            <h3>${name}</h3>
+    // Format popup content
+    const content = `
+        <div class="popup-content">
+            <h4>${name}</h4>
             ${description ? `<p>${description}</p>` : ''}
         </div>
     `;
 
-    // Ensure the popup is added only once
-    if (!popup.isOpen()) {
-        popup.setLngLat(coordinates)
-            .setHTML(popupContent)
-            .addTo(map);
-    } else {
-        popup.setLngLat(coordinates)
-            .setHTML(popupContent);
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(coordinates[0]) > 180) {
+        coordinates[0] += coordinates[0] > 0 ? -360 : 360;
     }
+
+    popup.setLngLat(coordinates)
+        .setHTML(content)
+        .addTo(map);
 }

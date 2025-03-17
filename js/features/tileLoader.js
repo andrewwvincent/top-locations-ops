@@ -149,7 +149,7 @@ async function loadTile(gridRef) {
                 'paint': {
                     'fill-color': 'rgba(0, 0, 0, 0)',
                     'fill-opacity': 0.8,
-                    'fill-outline-color': 'rgba(0, 0, 0, 0.2)'
+                    'fill-outline-color': 'rgba(0, 0, 0, 0)'
                 }
             }, labelLayer ? labelLayer.id : undefined);
 
@@ -309,6 +309,141 @@ function isGridVisible(gridBounds, viewportBounds) {
            north >= gridBounds.min_lat;
 }
 
+function updateLayerColors(map, sourceId, layerId) {
+    try {
+        // Helper function to safely get element state
+        const getElementState = (id) => {
+            const element = document.getElementById(id);
+            return element ? element.checked : false;
+        };
+
+        // Helper function to safely get color boxes and their states
+        const getColorBoxesAndStates = (id) => {
+            const container = document.getElementById(id);
+            if (!container) return { colors: [], categoryStates: [] };
+            
+            const items = container.querySelectorAll('.category-item');
+            const result = Array.from(items).map(item => {
+                const colorBox = item.querySelector('.color-box');
+                const checkbox = item.querySelector('.category-checkbox');
+                const color = window.getComputedStyle(colorBox).backgroundColor;
+                return {
+                    color: color.replace(/rgba?\(([^)]+)\)/, (_, p1) => {
+                        const parts = p1.split(',').map(p => p.trim());
+                        return `rgb(${parts[0]}, ${parts[1]}, ${parts[2]})`;
+                    }),
+                    enabled: checkbox ? checkbox.checked : false
+                };
+            });
+            
+            return {
+                colors: result.map(r => r.color),
+                categoryStates: result.map(r => r.enabled)
+            };
+        };
+
+        // Get current filter states and colors
+        const filters = {
+            '500k': {
+                enabled: getElementState('income500k-parent'),
+                ...getColorBoxesAndStates('income500k-categories')
+            },
+            '250k': {
+                enabled: getElementState('income250k-parent'),
+                ...getColorBoxesAndStates('income250k-categories')
+            },
+            '200k': {
+                enabled: getElementState('income200k-parent'),
+                ...getColorBoxesAndStates('income200k-categories')
+            }
+        };
+
+        // Fallback colors if needed
+        const colorScheme = {
+            '500k': ['rgba(255, 0, 0, 0.5)', 'rgba(255, 128, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 
+                    'rgba(0, 128, 0, 0.5)', 'rgba(0, 0, 255, 0.5)'],
+            '250k': ['rgba(255, 0, 0, 0.5)', 'rgba(255, 128, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 
+                    'rgba(0, 128, 0, 0.5)', 'rgba(0, 0, 255, 0.5)'],
+            '200k': ['rgba(255, 0, 0, 0.5)', 'rgba(255, 128, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 
+                    'rgba(0, 128, 0, 0.5)', 'rgba(0, 0, 255, 0.5)']
+        };
+        
+        Object.keys(filters).forEach(level => {
+            if (!filters[level].colors.length) {
+                console.warn(`No colors found for ${level}, using fallback colors`);
+                filters[level].colors = colorScheme[level];
+                filters[level].categoryStates = [true, true, true, true, true];
+            } else {
+                // Convert existing colors to have 0.5 opacity
+                filters[level].colors = filters[level].colors.map(color => {
+                    return color.replace(/rgba?\(([^)]+)\)/, (_, p1) => {
+                        const parts = p1.split(',').map(p => p.trim());
+                        return `rgba(${parts[0]}, ${parts[1]}, ${parts[2]}, 0.5)`;
+                    });
+                });
+            }
+        });
+
+        // Set up color expression for solid colors
+        const colorExpression = [
+            'case',
+            // If 500k is enabled and has >500 kids
+            ['all',
+                ['boolean', filters['500k'].enabled],
+                ['>', ['get', 'kids_500k'], 500]
+            ],
+            [
+                'case',
+                ['all', ['boolean', filters['500k'].categoryStates[0]], ['>=', ['get', 'kids_500k'], 1500]], filters['500k'].colors[0],
+                ['all', ['boolean', filters['500k'].categoryStates[1]], ['>=', ['get', 'kids_500k'], 1250]], filters['500k'].colors[1],
+                ['all', ['boolean', filters['500k'].categoryStates[2]], ['>=', ['get', 'kids_500k'], 1000]], filters['500k'].colors[2],
+                ['all', ['boolean', filters['500k'].categoryStates[3]], ['>=', ['get', 'kids_500k'], 750]], filters['500k'].colors[3],
+                ['all', ['boolean', filters['500k'].categoryStates[4]], ['>=', ['get', 'kids_500k'], 500]], filters['500k'].colors[4],
+                'rgba(0, 0, 0, 0)'
+            ],
+            // If 250k is enabled and has >500 kids
+            ['all',
+                ['boolean', filters['250k'].enabled],
+                ['>', ['get', 'kids_250k'], 500]
+            ],
+            [
+                'case',
+                ['all', ['boolean', filters['250k'].categoryStates[0]], ['>=', ['get', 'kids_250k'], 1500]], filters['250k'].colors[0],
+                ['all', ['boolean', filters['250k'].categoryStates[1]], ['>=', ['get', 'kids_250k'], 1250]], filters['250k'].colors[1],
+                ['all', ['boolean', filters['250k'].categoryStates[2]], ['>=', ['get', 'kids_250k'], 1000]], filters['250k'].colors[2],
+                ['all', ['boolean', filters['250k'].categoryStates[3]], ['>=', ['get', 'kids_250k'], 750]], filters['250k'].colors[3],
+                ['all', ['boolean', filters['250k'].categoryStates[4]], ['>=', ['get', 'kids_250k'], 500]], filters['250k'].colors[4],
+                'rgba(0, 0, 0, 0)'
+            ],
+            // If 200k is enabled and has >500 kids
+            ['all',
+                ['boolean', filters['200k'].enabled],
+                ['>', ['get', 'kids_200k'], 500]
+            ],
+            [
+                'case',
+                ['all', ['boolean', filters['200k'].categoryStates[0]], ['>=', ['get', 'kids_200k'], 1500]], filters['200k'].colors[0],
+                ['all', ['boolean', filters['200k'].categoryStates[1]], ['>=', ['get', 'kids_200k'], 1250]], filters['200k'].colors[1],
+                ['all', ['boolean', filters['200k'].categoryStates[2]], ['>=', ['get', 'kids_200k'], 1000]], filters['200k'].colors[2],
+                ['all', ['boolean', filters['200k'].categoryStates[3]], ['>=', ['get', 'kids_200k'], 750]], filters['200k'].colors[3],
+                ['all', ['boolean', filters['200k'].categoryStates[4]], ['>=', ['get', 'kids_200k'], 500]], filters['200k'].colors[4],
+                'rgba(0, 0, 0, 0)'
+            ],
+            // Default: transparent
+            'rgba(0, 0, 0, 0)'
+        ];
+
+        // Update the layer properties
+        if (map.getLayer(layerId)) {
+            map.setPaintProperty(layerId, 'fill-color', colorExpression);
+        } else {
+            console.warn(`Layer ${layerId} not found`);
+        }
+    } catch (error) {
+        console.error('Error in updateLayerColors:', error);
+    }
+}
+
 function updateFilters() {
     const income200kCategories = document.getElementById('income200k-categories');
     const income250kCategories = document.getElementById('income250k-categories');
@@ -320,7 +455,6 @@ function updateFilters() {
             categories: {},
             colors: Array.from(income500kCategories.querySelectorAll('.color-box')).map(box => {
                 const color = window.getComputedStyle(box).backgroundColor;
-                // Remove any existing opacity
                 return color.replace(/rgba?\(([^)]+)\)/, (_, p1) => {
                     const parts = p1.split(',').map(p => p.trim());
                     return `rgb(${parts[0]}, ${parts[1]}, ${parts[2]})`;
@@ -330,150 +464,38 @@ function updateFilters() {
         '250k': {
             enabled: document.getElementById('income250k-parent').checked,
             categories: {},
-            colors: Array.from(income250kCategories.querySelectorAll('.color-box')).map(box => box.style.backgroundColor)
+            colors: Array.from(income250kCategories.querySelectorAll('.color-box')).map(box => {
+                const color = window.getComputedStyle(box).backgroundColor;
+                return color.replace(/rgba?\(([^)]+)\)/, (_, p1) => {
+                    const parts = p1.split(',').map(p => p.trim());
+                    return `rgb(${parts[0]}, ${parts[1]}, ${parts[2]})`;
+                });
+            })
         },
         '200k': {
             enabled: document.getElementById('income200k-parent').checked,
             categories: {},
-            colors: Array.from(document.getElementById('income200k-categories').querySelectorAll('.color-box')).map(box => box.style.backgroundColor)
-        },
-        '150k': {
-            enabled: document.getElementById('income150k-parent').checked,
-            categories: {},
-            colors: Array.from(document.getElementById('income150k-categories').querySelectorAll('.color-box')).map(box => box.style.backgroundColor)
+            colors: Array.from(income200kCategories.querySelectorAll('.color-box')).map(box => {
+                const color = window.getComputedStyle(box).backgroundColor;
+                return color.replace(/rgba?\(([^)]+)\)/, (_, p1) => {
+                    const parts = p1.split(',').map(p => p.trim());
+                    return `rgb(${parts[0]}, ${parts[1]}, ${parts[2]})`;
+                });
+            })
         }
     };
 
     // Update category states
-    ['500k', '250k', '200k', '150k'].forEach(level => {
+    ['500k', '250k', '200k'].forEach(level => {
         const categories = document.getElementById(`income${level}-categories`);
-        categories.querySelectorAll('.category-item').forEach((item, index) => {
-            const checkbox = item.querySelector('.category-checkbox');
-            const label = item.querySelector('.category-label').textContent;
-            filters[level].categories[label] = checkbox.checked;
-        });
+        if (categories) {
+            categories.querySelectorAll('.category-item').forEach((item, index) => {
+                const checkbox = item.querySelector('.category-checkbox');
+                const label = item.querySelector('.category-label').textContent;
+                filters[level].categories[label] = checkbox.checked;
+            });
+        }
     });
-}
-
-function updateLayerColors(map, sourceId, layerId) {
-    try {
-        // Helper function to safely get element state
-        const getElementState = (id) => {
-            const element = document.getElementById(id);
-            return element ? element.checked : false;
-        };
-
-        // Helper function to safely get color boxes
-        const getColorBoxes = (id) => {
-            const container = document.getElementById(id);
-            return container ? Array.from(container.querySelectorAll('.color-box'))
-                .map(box => window.getComputedStyle(box).backgroundColor) : [];
-        };
-
-        // Get current filter states and colors
-        const filters = {
-            '500k': {
-                enabled: getElementState('income500k-parent'),
-                colors: getColorBoxes('income500k-categories')
-            },
-            '250k': {
-                enabled: getElementState('income250k-parent'),
-                colors: getColorBoxes('income250k-categories')
-            },
-            '200k': {
-                enabled: getElementState('income200k-parent'),
-                colors: getColorBoxes('income200k-categories')
-            },
-            '150k': {
-                enabled: getElementState('income150k-parent'),
-                colors: getColorBoxes('income150k-categories')
-            }
-        };
-
-        // Ensure we have colors for each level before proceeding
-        if (!filters['500k'].colors.length || !filters['250k'].colors.length || !filters['200k'].colors.length || !filters['150k'].colors.length) {
-            console.warn('Some color elements not found, using fallback colors');
-            const fallbackColors = ['rgba(255,0,0,0.8)', 'rgba(255,165,0,0.8)', 'rgba(255,255,0,0.8)', 
-                                  'rgba(0,255,0,0.8)', 'rgba(0,0,255,0.8)'];
-            if (!filters['500k'].colors.length) filters['500k'].colors = fallbackColors;
-            if (!filters['250k'].colors.length) filters['250k'].colors = fallbackColors;
-            if (!filters['200k'].colors.length) filters['200k'].colors = fallbackColors;
-            if (!filters['150k'].colors.length) filters['150k'].colors = fallbackColors;
-        }
-
-        // Set up color expression for solid colors
-        const colorExpression = [
-            'case',
-            // If 500k is enabled and has >500 kids
-            ['all',
-                ['boolean', filters['500k'].enabled],
-                ['>', ['get', 'kids_500k'], 500]
-            ],
-            ['step', 
-                ['get', 'kids_500k'],
-                'rgba(0, 0, 0, 0)',
-                500, filters['500k'].colors[4],
-                750, filters['500k'].colors[3],
-                1000, filters['500k'].colors[2],
-                1250, filters['500k'].colors[1],
-                1500, filters['500k'].colors[0]
-            ],
-            // If 250k is enabled and has >500 kids
-            ['all',
-                ['boolean', filters['250k'].enabled],
-                ['>', ['get', 'kids_250k'], 500]
-            ],
-            ['step', 
-                ['get', 'kids_250k'],
-                'rgba(0, 0, 0, 0)',
-                500, filters['250k'].colors[4],
-                750, filters['250k'].colors[3],
-                1000, filters['250k'].colors[2],
-                1250, filters['250k'].colors[1],
-                1500, filters['250k'].colors[0]
-            ],
-            // If 200k is enabled and has >500 kids
-            ['all',
-                ['boolean', filters['200k'].enabled],
-                ['>', ['get', 'kids_200k'], 500]
-            ],
-            ['step', 
-                ['get', 'kids_200k'],
-                'rgba(0, 0, 0, 0)',
-                500, filters['200k'].colors[4],
-                750, filters['200k'].colors[3],
-                1000, filters['200k'].colors[2],
-                1250, filters['200k'].colors[1],
-                1500, filters['200k'].colors[0]
-            ],
-            // If 150k is enabled and has >500 kids
-            ['all',
-                ['boolean', filters['150k'].enabled],
-                ['>', ['get', 'kids_150k'], 500]
-            ],
-            ['step', 
-                ['get', 'kids_150k'],
-                'rgba(0, 0, 0, 0)',
-                500, filters['150k'].colors[4],
-                750, filters['150k'].colors[3],
-                1000, filters['150k'].colors[2],
-                1250, filters['150k'].colors[1],
-                1500, filters['150k'].colors[0]
-            ],
-            // Default: transparent
-            'rgba(0, 0, 0, 0)'
-        ];
-
-        // Update the layer properties
-        if (map.getLayer(layerId)) {
-            // Update main layer colors
-            map.setPaintProperty(layerId, 'fill-color', colorExpression);
-        } else {
-            console.warn(`Layer ${layerId} not found`);
-        }
-    } catch (error) {
-        console.error('Error in updateLayerColors:', error);
-    }
 }
 
 // Export initialization function
@@ -497,7 +519,7 @@ export function initTileLoader(mapInstance) {
     });
 
     // Listen for filter changes
-    document.querySelectorAll('.parent-checkbox').forEach(checkbox => {
+    document.querySelectorAll('.parent-checkbox, .category-checkbox').forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             updateFilters();
             Array.from(loadedTiles).forEach(gridId => {
