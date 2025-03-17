@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
-    <Style id="Fusion">
-      <IconStyle>
-        <Icon>
-          <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
-        </Icon>
-      </IconStyle>
-    </Style>
  <Placemark>
 <n>Fusion Academy - Gilbert</n>
 <styleUrl>#Fusion</styleUrl>

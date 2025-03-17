@@ -47,14 +47,15 @@ function createLocationFilters() {
         checkbox.checked = true; // Default to checked
         checkbox.addEventListener('change', () => toggleLocationLayer(layer.id));
 
-        // Create pin preview
+        // Create pin preview that matches the map shape
         const pinPreview = document.createElement('span');
         pinPreview.className = 'pin-preview';
+        const isSquare = layer.defaultShape === 'square' || Object.values(layer.styles || {}).includes('square');
         pinPreview.style.cssText = `
             display: inline-block;
-            width: ${layer.size || 12}px;
-            height: ${layer.size || 12}px;
-            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            border-radius: ${isSquare ? '2px' : '50%'};
             background-color: ${layer.color};
             border: 1.5px solid #000000;
             margin-right: 6px;
@@ -98,6 +99,7 @@ function loadLocationLayers() {
                     const nTag = placemark.getElementsByTagName('n')[0];
                     const title = nTag ? nTag.textContent : '';
                     const description = placemark.getElementsByTagName('description')[0]?.textContent || '';
+                    const styleUrl = placemark.getElementsByTagName('styleUrl')[0]?.textContent || '';
                     
                     // Remove CDATA wrapper if present
                     const cleanDescription = description.replace(/^\[CDATA\[|\]\]$/g, '').trim();
@@ -110,7 +112,8 @@ function loadLocationLayers() {
                         },
                         properties: {
                             name: title,
-                            description: cleanDescription
+                            description: cleanDescription,
+                            styleUrl: styleUrl
                         }
                     };
                 });
@@ -125,137 +128,206 @@ function loadLocationLayers() {
                     }
                 });
 
-                // Add layer for points
+                // Add layer for points based on shape type
                 const layerId = `layer-${layer.id}`;
-                map.addLayer({
-                    id: layerId,
-                    type: 'circle',
-                    source: sourceId,
-                    paint: {
-                        'circle-radius': layer.size / 2 || 8,
-                        'circle-color': layer.color,
-                        'circle-stroke-width': 1.5,
-                        'circle-stroke-color': '#000000',
-                        'circle-radius-transition': {
-                            duration: 200
-                        },
-                        'circle-stroke-width-transition': {
-                            duration: 200
-                        },
-                        'circle-stroke-opacity': 0.8
+                
+                // Get the shape type for this feature based on styleUrl
+                const getShapeType = (feature) => {
+                    const styleUrl = feature.properties.styleUrl;
+                    return layer.styles[styleUrl] || layer.defaultShape || 'circle';
+                };
+
+                // Group features by shape type
+                const featuresByShape = features.reduce((acc, feature) => {
+                    const shape = getShapeType(feature);
+                    if (!acc[shape]) {
+                        acc[shape] = [];
                     }
-                });
+                    acc[shape].push(feature);
+                    return acc;
+                }, {});
 
-                // Add hover state
-                let currentFeature = null;
-                let isHovering = false;
+                // Create a layer for each shape type
+                Object.entries(featuresByShape).forEach(([shape, shapeFeatures], index) => {
+                    const shapeLayerId = `${layerId}-${shape}`;
+                    const shapeSource = `${sourceId}-${shape}`;
 
-                // Helper function to update popup
-                function updatePopup(feature) {
-                    if (!feature) return;
-                    
-                    const coordinates = feature.geometry.coordinates.slice();
-                    const name = feature.properties.name;
-                    const description = feature.properties.description;
-
-                    // Format popup content with better HTML structure
-                    const popupContent = `
-                        <div class="location-popup-content">
-                            <h3>${name}</h3>
-                            ${description ? `<p>${description}</p>` : ''}
-                        </div>
-                    `;
-
-                    // Ensure the popup is added only once
-                    if (!popup.isOpen()) {
-                        popup.setLngLat(coordinates)
-                            .setHTML(popupContent)
-                            .addTo(map);
-                    } else {
-                        popup.setLngLat(coordinates)
-                            .setHTML(popupContent);
-                    }
-                }
-
-                map.on('mouseenter', layerId, (e) => {
-                    isHovering = true;
-                    const features = map.queryRenderedFeatures(e.point, { layers: [layerId] });
-                    if (!features.length) return;
-
-                    map.getCanvas().style.cursor = 'pointer';
-                    map.setPaintProperty(layerId, 'circle-radius', (layer.size / 2 || 8) + 2);
-                    map.setPaintProperty(layerId, 'circle-stroke-width', 2);
-                    map.setPaintProperty(layerId, 'circle-stroke-opacity', 1);
-
-                    currentFeature = features[0];
-                    updatePopup(currentFeature);
-                });
-
-                map.on('mousemove', layerId, (e) => {
-                    if (!isHovering) return;
-                    
-                    const features = map.queryRenderedFeatures(e.point, { layers: [layerId] });
-                    if (!features.length) {
-                        currentFeature = null;
-                        popup.remove();
-                        return;
-                    }
-
-                    // Only update if we're hovering over a different feature
-                    const feature = features[0];
-                    if (currentFeature && 
-                        currentFeature.properties.name === feature.properties.name && 
-                        currentFeature.geometry.coordinates[0] === feature.geometry.coordinates[0] && 
-                        currentFeature.geometry.coordinates[1] === feature.geometry.coordinates[1]) {
-                        return;
-                    }
-
-                    currentFeature = feature;
-                    updatePopup(currentFeature);
-                });
-
-                map.on('mouseleave', layerId, () => {
-                    isHovering = false;
-                    currentFeature = null;
-                    map.getCanvas().style.cursor = '';
-                    map.setPaintProperty(layerId, 'circle-radius', layer.size / 2 || 8);
-                    map.setPaintProperty(layerId, 'circle-stroke-width', 1.5);
-                    map.setPaintProperty(layerId, 'circle-stroke-opacity', 0.8);
-                    popup.remove();
-                });
-
-                // Add layer for labels if enabled
-                if (layer.defaultLabels) {
-                    const labelLayerId = `label-${layer.id}`;
-                    map.addLayer({
-                        id: labelLayerId,
-                        type: 'symbol',
-                        source: sourceId,
-                        layout: {
-                            'text-field': ['get', 'name'],
-                            'text-offset': [0, 1.5],
-                            'text-anchor': 'top',
-                            'text-size': 12
-                        },
-                        paint: {
-                            'text-color': '#000000',
-                            'text-halo-color': '#FFFFFF',
-                            'text-halo-width': 1.5
+                    // Add source for this shape type
+                    map.addSource(shapeSource, {
+                        type: 'geojson',
+                        data: {
+                            type: 'FeatureCollection',
+                            features: shapeFeatures
                         }
                     });
-                }
+
+                    // Create icons for different shapes if they don't exist
+                    const createShapeIcon = (shape, color) => {
+                        const iconId = `${shape}-${color.replace('#', '')}`;
+                        if (map.hasImage(iconId)) return iconId;
+
+                        const size = 100; // Base size for the icon
+                        const canvas = document.createElement('canvas');
+                        canvas.width = size;
+                        canvas.height = size;
+                        const ctx = canvas.getContext('2d');
+                        const center = size / 2;
+                        const padding = 2;
+
+                        // Clear the canvas
+                        ctx.clearRect(0, 0, size, size);
+
+                        // Set up common styles
+                        ctx.fillStyle = color;
+                        ctx.strokeStyle = '#000000';
+                        ctx.lineWidth = 2;
+
+                        switch (shape) {
+                            case 'square':
+                                // Draw square
+                                ctx.fillRect(padding, padding, size - 2 * padding, size - 2 * padding);
+                                ctx.strokeRect(padding, padding, size - 2 * padding, size - 2 * padding);
+                                break;
+
+                            case 'star':
+                                // Draw 5-pointed star
+                                const outerRadius = size / 2 - padding;
+                                const innerRadius = outerRadius * 0.4;
+                                ctx.beginPath();
+                                for (let i = 0; i < 10; i++) {
+                                    const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                                    const angle = (i * Math.PI) / 5 - Math.PI / 2;
+                                    const x = center + radius * Math.cos(angle);
+                                    const y = center + radius * Math.sin(angle);
+                                    if (i === 0) ctx.moveTo(x, y);
+                                    else ctx.lineTo(x, y);
+                                }
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.stroke();
+                                break;
+
+                            case 'triangle':
+                                // Draw equilateral triangle
+                                const height = size - 2 * padding;
+                                const side = height * 2 / Math.sqrt(3);
+                                const top = padding;
+                                const bottom = size - padding;
+                                const middle = size / 2;
+                                
+                                ctx.beginPath();
+                                ctx.moveTo(middle, top); // Top point
+                                ctx.lineTo(middle + side/2, bottom); // Bottom right
+                                ctx.lineTo(middle - side/2, bottom); // Bottom left
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.stroke();
+                                break;
+
+                            case 'circle':
+                            default:
+                                // Draw circle
+                                ctx.beginPath();
+                                ctx.arc(center, center, (size - 2 * padding) / 2, 0, Math.PI * 2);
+                                ctx.fill();
+                                ctx.stroke();
+                                break;
+                        }
+
+                        map.addImage(iconId, {
+                            width: size,
+                            height: size,
+                            data: ctx.getImageData(0, 0, size, size).data
+                        });
+
+                        return iconId;
+                    };
+
+                    // Get shape type and create icon
+                    const shapeType = getShapeType(shapeFeatures[0]);
+                    const iconId = createShapeIcon(shapeType, layer.color);
+                    const defaultSize = config.defaultShapeSizes[shapeType] || 8;
+
+                    // Add symbol layer for the shape
+                    map.addLayer({
+                        id: shapeLayerId,
+                        type: 'symbol',
+                        source: shapeSource,
+                        layout: {
+                            'symbol-placement': 'point',
+                            'icon-image': iconId,
+                            'icon-size': defaultSize / 50, // Adjust size based on default
+                            'icon-allow-overlap': true
+                        },
+                        paint: {
+                            'icon-opacity': 1 // No transparency
+                        }
+                    });
+
+                    // Add hover state
+                    let currentFeature = null;
+                    let isHovering = false;
+
+                    map.on('mouseenter', shapeLayerId, (e) => {
+                        isHovering = true;
+                        const features = map.queryRenderedFeatures(e.point, { layers: [shapeLayerId] });
+                        if (!features.length) return;
+
+                        map.getCanvas().style.cursor = 'pointer';
+                        // No opacity change on hover since we want full opacity always
+
+                        currentFeature = features[0];
+                        updatePopup(currentFeature);
+                    });
+
+                    map.on('mouseleave', shapeLayerId, () => {
+                        isHovering = false;
+                        map.getCanvas().style.cursor = '';
+                        popup.remove();
+                    });
+                });
             })
-            .catch(error => console.error(`Error loading KML for ${layer.id}:`, error));
+            .catch(error => {
+                console.error(`Error loading KML file for ${layer.id}:`, error);
+            });
     });
 }
 
 // Toggle layer visibility
 function toggleLocationLayer(layerId) {
-    const visibility = document.getElementById(`location-${layerId}`).checked ? 'visible' : 'none';
-    map.setLayoutProperty(`layer-${layerId}`, 'visibility', visibility);
-    
-    // Also toggle label layer if it exists
-    if (map.getLayer(`label-${layerId}`)) {
-        map.setLayoutProperty(`label-${layerId}`, 'visibility', visibility);
+    const shapes = ['circle', 'square', 'star', 'triangle'];
+    shapes.forEach(shape => {
+        const shapeLayerId = `layer-${layerId}-${shape}`;
+        if (map.getLayer(shapeLayerId)) {
+            const visibility = map.getLayoutProperty(shapeLayerId, 'visibility');
+            const newVisibility = visibility === 'visible' ? 'none' : 'visible';
+            map.setLayoutProperty(shapeLayerId, 'visibility', newVisibility);
+        }
+    });
+}
+
+// Helper function to update popup
+function updatePopup(feature) {
+    if (!feature) return;
+    const coordinates = feature.geometry.coordinates.slice();
+    const name = feature.properties.name;
+    const description = feature.properties.description;
+
+    // Format popup content with better HTML structure
+    const popupContent = `
+        <div class="location-popup-content">
+            <h3>${name}</h3>
+            ${description ? `<p>${description}</p>` : ''}
+        </div>
+    `;
+
+    // Ensure the popup is added only once
+    if (!popup.isOpen()) {
+        popup.setLngLat(coordinates)
+            .setHTML(popupContent)
+            .addTo(map);
+    } else {
+        popup.setLngLat(coordinates)
+            .setHTML(popupContent);
     }
 }

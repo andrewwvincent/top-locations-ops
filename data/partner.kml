@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
-    <Style id="Partner">
+    <Style id="Location">
       <IconStyle>
         <Icon>
           <href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
         </Icon>
       </IconStyle>
     </Style>
-    <Placemark>
-      <n>CERA</n>
-      <styleUrl>#Partner</styleUrl>
-      <description><![CDATA[3300 Bryant Irvin Rd, Fort Worth, TX 76109]]></description>
-      <Point>
-        <coordinates>-97.412779,32.702523</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <n>Westlake Athletic and Community Center (WACC)</n>
-      <styleUrl>#Partner</styleUrl>
-      <description><![CDATA[4300 Westbank Dr, West Lake Hills, TX 78746]]></description>
-      <Point>
-        <coordinates>-97.817274,30.27821</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <n>101 Innovation Place</n>
-      <styleUrl>#Partner</styleUrl>
-      <description><![CDATA[101 Innovation Place, Santa Barbara, CA 93108]]></description>
-      <Point>
-        <coordinates>-119.60744,34.42323</coordinates>
-      </Point>
-    </Placemark>
+<Placemark>
+<n>CERA</n>
+<styleUrl>#Active</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 3300 Bryant Irvin Rd, Fort Worth, TX 76109]]></description>
+<Point>
+<coordinates>-97.412779,32.702523</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>WACC</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 4300 Westbank Dr, West Lake Hills, TX 78746]]></description>
+<Point>
+<coordinates>-97.817274,30.27821</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Asphalt Green - Upper East Side</n>
+<styleUrl>#Active</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 555 E 90th St, New York, NY 10128]]></description>
+<Point>
+<coordinates>-73.943485,40.778152</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>180 Maiden Lane</n>
+<styleUrl>#Active</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 180 Maiden Ln, New York, NY 10038]]></description>
+<Point>
+<coordinates>-74.005065,40.705272</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Oxbridge Academy</n>
+<styleUrl>#Active</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 3151 N Military Trl, West Palm Beach, FL 33409]]></description>
+<Point>
+<coordinates>-80.112005,26.723592</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>101 Innovation Pl.</n>
+<styleUrl>#Active</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 101 Innovation Pl, Santa Barbara, CA 93108]]></description>
+<Point>
+<coordinates>-119.608809,34.422458</coordinates>
+</Point>
+</Placemark>
+
   </Document>
 </kml>
