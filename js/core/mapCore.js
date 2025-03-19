@@ -64,6 +64,18 @@ export class MapCore {
                     sidebarContent.insertBefore(geocoderContainer, title.nextSibling);
                     geocoderContainer.appendChild(geocoder.onAdd(this.map));
 
+                    // Initialize city selector if cities are configured
+                    if (this.config.cities && this.config.cities.length > 0) {
+                        import('./citySelector.js').then(module => {
+                            const CitySelector = module.CitySelector;
+                            const citySelector = new CitySelector(this.map, this.config.cities);
+                            const citySelectorElement = citySelector.initialize();
+                            sidebarContent.insertBefore(citySelectorElement, geocoderContainer.nextSibling);
+                        }).catch(error => {
+                            console.error('Error loading city selector:', error);
+                        });
+                    }
+
                     // Handle search results
                     geocoder.on('result', (e) => {
                         // Remove previous marker if it exists

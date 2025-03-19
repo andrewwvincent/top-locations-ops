@@ -103,12 +103,35 @@ body {
     margin: 15px 0;
 }
 
-#city-select {
+.city-selector {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.city-select {
     width: 100%;
     padding: 8px;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.city-select:hover {
+    border-color: #999;
+}
+
+.city-select:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+}
+
+/* Remove old city select styles */
+#city-select {
+    display: none;
 }
 
 .legend {
@@ -321,16 +344,6 @@ body {
     outline: none;
     border-color: #4CAF50;
     box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-}
-
-#citySelect {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    font-size: 14px;
-    color: #333;
 }
 
 /* Category Filters */
