@@ -26,7 +26,7 @@
 </Placemark>
 <Placemark>
 <n>Asphalt Green - Upper East Side</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 555 E 90th St, New York, NY 10128]]></description>
 <Point>
 <coordinates>-73.943485,40.778152</coordinates>
@@ -34,7 +34,7 @@
 </Placemark>
 <Placemark>
 <n>180 Maiden Lane</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 180 Maiden Ln, New York, NY 10038]]></description>
 <Point>
 <coordinates>-74.005065,40.705272</coordinates>
@@ -42,7 +42,7 @@
 </Placemark>
 <Placemark>
 <n>Oxbridge Academy</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 3151 N Military Trl, West Palm Beach, FL 33409]]></description>
 <Point>
 <coordinates>-80.112005,26.723592</coordinates>
@@ -50,7 +50,7 @@
 </Placemark>
 <Placemark>
 <n>101 Innovation Pl.</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 101 Innovation Pl, Santa Barbara, CA 93108]]></description>
 <Point>
 <coordinates>-119.608809,34.422458</coordinates>

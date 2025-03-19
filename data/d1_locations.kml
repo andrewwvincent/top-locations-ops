@@ -362,7 +362,7 @@
 </Placemark>
 <Placemark>
 <n>D1 Training Deerfield Beach</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 1401 Green Road, Suites D/E/F, Deerfield Beach, FL 33064]]></description>
 <Point>
 <coordinates>-80.1426320641208,26.2918967231536</coordinates>
@@ -610,7 +610,7 @@
 </Placemark>
 <Placemark>
 <n>D1 Training Huntington Beach</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 10188 Adams Ave, Huntington Beach, CA 92646]]></description>
 <Point>
 <coordinates>-117.950812286719,33.6720044496237</coordinates>
@@ -962,7 +962,7 @@
 </Placemark>
 <Placemark>
 <n>D1 Training Ponte Vedra</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 10860 US Highway 1 North, #202, Ponte Vedra Beach, FL 32081]]></description>
 <Point>
 <coordinates>-81.4577873830955,30.086040409435</coordinates>
@@ -1186,7 +1186,7 @@
 </Placemark>
 <Placemark>
 <n>D1 Training Torrance</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 21760 Hawthorne Blvd, Ste 284A, Torrance, CA 90503]]></description>
 <Point>
 <coordinates>-118.349658402061,33.8308058314455</coordinates>
@@ -1322,7 +1322,7 @@
 </Placemark>
 <Placemark>
 <n>D1 Training Winter Garden</n>
-<styleUrl>#Active</styleUrl>
+<styleUrl>#Negotiations</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 765 Garden Commerce Parkway, Winter Garden, FL 34787]]></description>
 <Point>
 <coordinates>-81.5675594175313,28.5537317295704</coordinates>

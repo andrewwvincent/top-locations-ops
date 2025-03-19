@@ -3,7 +3,7 @@ import { config } from '../../config.js';
 
 let map; // Will be initialized from main script
 let popup; // Global popup for hover states
-let activeStatusFilters = new Set(['#Location', '#Active', '#No-Contract', '#Fusion']); // Track active status filters
+let activeStatusFilters = new Set(['#Location', '#Active', '#No-Contract', '#Negotiations']); // Track active status filters
 
 // Initialize location loader
 export function initLocationLoader(mapInstance) {
@@ -48,19 +48,64 @@ function createLocationFilters() {
         checkbox.checked = true; // Always checked by default
         checkbox.addEventListener('change', () => toggleLocationLayer(layer.id));
 
-        // Create pin preview that matches the map shape
-        const pinPreview = document.createElement('span');
-        pinPreview.className = 'pin-preview';
-        pinPreview.style.cssText = `
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background-color: ${layer.color};
-            border: 1.5px solid #000000;
+        // Create shape preview using SVG
+        const shapeContainer = document.createElement('span');
+        shapeContainer.style.cssText = `
+            display: inline-flex;
+            align-items: center;
             margin-right: 6px;
             vertical-align: middle;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
         `;
+
+        // Create SVG element
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '16');
+        svg.setAttribute('height', '16');
+        svg.setAttribute('viewBox', '0 0 16 16');
+        svg.style.display = 'block';
+
+        let shapePath;
+        if (layer.defaultShape === 'circle') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            shapePath.setAttribute('cx', '8');
+            shapePath.setAttribute('cy', '8');
+            shapePath.setAttribute('r', '6');
+        } else if (layer.defaultShape === 'square') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            shapePath.setAttribute('x', '2');
+            shapePath.setAttribute('y', '2');
+            shapePath.setAttribute('width', '12');
+            shapePath.setAttribute('height', '12');
+        } else if (layer.defaultShape === 'star') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const starPoints = [];
+            for (let i = 0; i < 5; i++) {
+                const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+                const x = 8 + 6 * Math.cos(angle);
+                const y = 8 + 6 * Math.sin(angle);
+                const innerAngle = angle + Math.PI / 5;
+                const innerX = 8 + 2.5 * Math.cos(innerAngle);
+                const innerY = 8 + 2.5 * Math.sin(innerAngle);
+                if (i === 0) {
+                    starPoints.push(`M ${x} ${y}`);
+                } else {
+                    starPoints.push(`L ${x} ${y}`);
+                }
+                starPoints.push(`L ${innerX} ${innerY}`);
+            }
+            starPoints.push('Z');
+            shapePath.setAttribute('d', starPoints.join(' '));
+        } else if (layer.defaultShape === 'triangle') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            shapePath.setAttribute('d', 'M 8 2 L 14 14 L 2 14 Z');
+        }
+
+        shapePath.setAttribute('fill', '#888888'); // Use a neutral gray for shape preview
+        shapePath.setAttribute('stroke', '#000');
+        shapePath.setAttribute('stroke-width', '2');
+
+        svg.appendChild(shapePath);
+        shapeContainer.appendChild(svg);
 
         const label = document.createElement('label');
         label.htmlFor = `location-${layer.id}`;
@@ -68,7 +113,7 @@ function createLocationFilters() {
         label.style.verticalAlign = 'middle';
 
         filterContainer.appendChild(checkbox);
-        filterContainer.appendChild(pinPreview);
+        filterContainer.appendChild(shapeContainer);
         filterContainer.appendChild(label);
         locationFilters.appendChild(filterContainer);
     });
@@ -95,12 +140,12 @@ function createStatusFilters() {
         padding: 10px;
     `;
 
-    // Define status types and their corresponding shapes
+    // Define status types and their labels
     const statusTypes = [
-        { id: 'Location', label: 'Potential Partner', shape: 'circle' },
-        { id: 'Active', label: 'Active Location', shape: 'star' },
-        { id: 'No-Contract', label: 'No Contract', shape: 'square' },
-        { id: 'Fusion', label: 'Fusion Academy', shape: 'triangle' }
+        { id: 'Active', label: 'Active Location' },
+        { id: 'Negotiations', label: 'In Discussions' },
+        { id: 'Location', label: 'Potential Partner' },
+        { id: 'No-Contract', label: 'Partnership Rejected' }
     ];
 
     // Create filters for each status type
@@ -114,64 +159,17 @@ function createStatusFilters() {
         checkbox.checked = true;
         checkbox.addEventListener('change', (e) => toggleStatusFilter(status.id, e.target.checked));
 
-        // Create shape preview using SVG for better control
-        const shapeContainer = document.createElement('span');
-        shapeContainer.style.cssText = `
-            display: inline-flex;
-            align-items: center;
+        // Create color preview box
+        const colorBox = document.createElement('div');
+        colorBox.style.cssText = `
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: ${config.statusColors['#' + status.id]};
+            border: 1px solid #000000;
             margin-right: 6px;
             vertical-align: middle;
         `;
-
-        // Create SVG element
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', '16');
-        svg.setAttribute('height', '16');
-        svg.setAttribute('viewBox', '0 0 16 16');
-        svg.style.display = 'block';
-
-        let shapePath;
-        if (status.shape === 'circle') {
-            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            shapePath.setAttribute('cx', '8');
-            shapePath.setAttribute('cy', '8');
-            shapePath.setAttribute('r', '6');
-        } else if (status.shape === 'square') {
-            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            shapePath.setAttribute('x', '2');
-            shapePath.setAttribute('y', '2');
-            shapePath.setAttribute('width', '12');
-            shapePath.setAttribute('height', '12');
-        } else if (status.shape === 'star') {
-            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            const starPoints = [];
-            for (let i = 0; i < 5; i++) {
-                const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
-                const x = 8 + 6 * Math.cos(angle);
-                const y = 8 + 6 * Math.sin(angle);
-                const innerAngle = angle + Math.PI / 5;
-                const innerX = 8 + 2.5 * Math.cos(innerAngle);
-                const innerY = 8 + 2.5 * Math.sin(innerAngle);
-                if (i === 0) {
-                    starPoints.push(`M ${x} ${y}`);
-                } else {
-                    starPoints.push(`L ${x} ${y}`);
-                }
-                starPoints.push(`L ${innerX} ${innerY}`);
-            }
-            starPoints.push('Z');
-            shapePath.setAttribute('d', starPoints.join(' '));
-        } else if (status.shape === 'triangle') {
-            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            shapePath.setAttribute('d', 'M 8 2 L 14 14 L 2 14 Z');
-        }
-
-        shapePath.setAttribute('fill', '#f5f5f5');
-        shapePath.setAttribute('stroke', '#000');
-        shapePath.setAttribute('stroke-width', '2');
-
-        svg.appendChild(shapePath);
-        shapeContainer.appendChild(svg);
 
         const label = document.createElement('label');
         label.htmlFor = `status-${status.id}`;
@@ -179,7 +177,7 @@ function createStatusFilters() {
         label.style.verticalAlign = 'middle';
 
         filterContainer.appendChild(checkbox);
-        filterContainer.appendChild(shapeContainer);
+        filterContainer.appendChild(colorBox);
         filterContainer.appendChild(label);
         statusFilters.appendChild(filterContainer);
     });
@@ -199,40 +197,34 @@ function toggleStatusFilter(statusId, isVisible) {
 
     // Update visibility for all layers
     config.locationLayers.forEach(layer => {
-        const shapes = ['circle', 'square', 'star', 'triangle'];
-        shapes.forEach(shape => {
-            const layerId = `layer-${layer.id}-${shape}`;
-            if (map.getLayer(layerId)) {
-                const locationEnabled = document.getElementById(`location-${layer.id}`).checked;
-                const visibility = locationEnabled ? 'visible' : 'none';
-                map.setLayoutProperty(layerId, 'visibility', visibility);
+        const layerId = `layer-${layer.id}`;
+        if (map.getLayer(layerId)) {
+            const locationEnabled = document.getElementById(`location-${layer.id}`).checked;
+            const visibility = locationEnabled ? 'visible' : 'none';
+            map.setLayoutProperty(layerId, 'visibility', visibility);
 
-                if (visibility === 'visible') {
-                    // Filter features based on active status filters
-                    const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
-                    map.setFilter(layerId, filter);
-                }
+            if (visibility === 'visible') {
+                // Filter features based on active status filters
+                const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
+                map.setFilter(layerId, filter);
             }
-        });
+        }
     });
 }
 
 // Toggle location layer
 function toggleLocationLayer(layerId) {
-    const shapes = ['circle', 'square', 'star', 'triangle'];
-    shapes.forEach(shape => {
-        const fullLayerId = `layer-${layerId}-${shape}`;
-        if (map.getLayer(fullLayerId)) {
-            const isVisible = document.getElementById(`location-${layerId}`).checked;
-            map.setLayoutProperty(fullLayerId, 'visibility', isVisible ? 'visible' : 'none');
-            
-            if (isVisible) {
-                // Re-apply status filters when showing layer
-                const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
-                map.setFilter(fullLayerId, filter);
-            }
+    const fullLayerId = `layer-${layerId}`;
+    if (map.getLayer(fullLayerId)) {
+        const isVisible = document.getElementById(`location-${layerId}`).checked;
+        map.setLayoutProperty(fullLayerId, 'visibility', isVisible ? 'visible' : 'none');
+        
+        if (isVisible) {
+            // Re-apply status filters when showing layer
+            const filter = ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]];
+            map.setFilter(fullLayerId, filter);
         }
-    });
+    }
 }
 
 // Load KML layers
@@ -285,44 +277,16 @@ function loadLocationLayers() {
                     }
                 });
 
-                // Add layer for points based on shape type
+                // Add layer for points
                 const layerId = `layer-${layer.id}`;
-                
-                // Get the shape type for this feature based on styleUrl
-                const getShapeType = (feature) => {
-                    const styleUrl = feature.properties.styleUrl;
-                    return layer.styles[styleUrl] || layer.defaultShape || 'circle';
-                };
 
-                // Group features by shape type
-                const featuresByShape = features.reduce((acc, feature) => {
-                    const shape = getShapeType(feature);
-                    if (!acc[shape]) {
-                        acc[shape] = [];
-                    }
-                    acc[shape].push(feature);
-                    return acc;
-                }, {});
-
-                // Create a layer for each shape type
-                Object.entries(featuresByShape).forEach(([shape, shapeFeatures], index) => {
-                    const shapeLayerId = `${layerId}-${shape}`;
-                    const shapeSource = `${sourceId}-${shape}`;
-
-                    // Add source for this shape type
-                    map.addSource(shapeSource, {
-                        type: 'geojson',
-                        data: {
-                            type: 'FeatureCollection',
-                            features: shapeFeatures
-                        }
-                    });
-
-                    // Create icons for different shapes if they don't exist
-                    const createShapeIcon = (shape, color) => {
-                        const iconId = `${shape}-${color.replace('#', '')}`;
-                        if (map.hasImage(iconId)) return iconId;
-
+                // Create icons for each status color
+                Object.entries(config.statusColors).forEach(([status, color]) => {
+                    // Create icon with the status color and shape
+                    // Remove the '#' from status since KML uses styleUrl format: <styleUrl>#Location</styleUrl>
+                    const statusId = status.slice(1);
+                    const iconId = `${layer.defaultShape}-${statusId}`;
+                    if (!map.hasImage(iconId)) {
                         const size = 100; // Base size for the icon
                         const canvas = document.createElement('canvas');
                         canvas.width = size;
@@ -335,20 +299,17 @@ function loadLocationLayers() {
                         ctx.clearRect(0, 0, size, size);
 
                         // Set up common styles
-                        ctx.fillStyle = color;
+                        ctx.fillStyle = color; // Use the status color
                         ctx.strokeStyle = '#000000';
-                        // Thicker stroke for star and triangle
-                        ctx.lineWidth = (shape === 'star' || shape === 'triangle') ? 3 : 2;
+                        ctx.lineWidth = (layer.defaultShape === 'star' || layer.defaultShape === 'triangle') ? 3 : 2;
 
-                        switch (shape) {
+                        switch (layer.defaultShape) {
                             case 'square':
-                                // Draw square
                                 ctx.fillRect(padding, padding, size - 2 * padding, size - 2 * padding);
                                 ctx.strokeRect(padding, padding, size - 2 * padding, size - 2 * padding);
                                 break;
 
                             case 'star':
-                                // Draw 5-pointed star
                                 const outerRadius = size / 2 - padding;
                                 const innerRadius = outerRadius * 0.4;
                                 ctx.beginPath();
@@ -366,7 +327,6 @@ function loadLocationLayers() {
                                 break;
 
                             case 'triangle':
-                                // Draw equilateral triangle
                                 const height = size - 2 * padding;
                                 const side = height * 2 / Math.sqrt(3);
                                 const top = padding;
@@ -374,9 +334,9 @@ function loadLocationLayers() {
                                 const middle = size / 2;
                                 
                                 ctx.beginPath();
-                                ctx.moveTo(middle, top); // Top point
-                                ctx.lineTo(middle + side/2, bottom); // Bottom right
-                                ctx.lineTo(middle - side/2, bottom); // Bottom left
+                                ctx.moveTo(middle, top);
+                                ctx.lineTo(middle + side/2, bottom);
+                                ctx.lineTo(middle - side/2, bottom);
                                 ctx.closePath();
                                 ctx.fill();
                                 ctx.stroke();
@@ -384,7 +344,6 @@ function loadLocationLayers() {
 
                             case 'circle':
                             default:
-                                // Draw circle
                                 ctx.beginPath();
                                 ctx.arc(center, center, (size - 2 * padding) / 2, 0, Math.PI * 2);
                                 ctx.fill();
@@ -397,41 +356,40 @@ function loadLocationLayers() {
                             height: size,
                             data: ctx.getImageData(0, 0, size, size).data
                         });
+                    }
+                });
 
-                        return iconId;
-                    };
+                // Add symbol layer for the points
+                map.addLayer({
+                    id: layerId,
+                    type: 'symbol',
+                    source: sourceId,
+                    layout: {
+                        'symbol-placement': 'point',
+                        'icon-image': [
+                            'concat',
+                            layer.defaultShape,
+                            '-',
+                            // Remove the '#' from styleUrl since our icons are named without it
+                            ['slice', ['get', 'styleUrl'], 1]
+                        ],
+                        'icon-size': config.defaultShapeSizes[layer.defaultShape] / 50,
+                        'icon-allow-overlap': true
+                    },
+                    filter: ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]]
+                });
 
-                    // Get shape type and create icon
-                    const shapeType = getShapeType(shapeFeatures[0]);
-                    const iconId = createShapeIcon(shapeType, layer.color);
-                    const defaultSize = config.defaultShapeSizes[shapeType] || 8;
+                // Add hover effect
+                map.on('mouseenter', layerId, (e) => {
+                    map.getCanvas().style.cursor = 'pointer';
+                    if (e.features.length > 0) {
+                        updatePopup(e.features[0]);
+                    }
+                });
 
-                    // Add symbol layer for the shape
-                    map.addLayer({
-                        id: shapeLayerId,
-                        type: 'symbol',
-                        source: shapeSource,
-                        layout: {
-                            'symbol-placement': 'point',
-                            'icon-image': iconId,
-                            'icon-size': defaultSize / 50, // Adjust size based on default
-                            'icon-allow-overlap': true
-                        },
-                        filter: ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]]
-                    });
-
-                    // Add hover effect
-                    map.on('mouseenter', shapeLayerId, (e) => {
-                        map.getCanvas().style.cursor = 'pointer';
-                        if (e.features.length > 0) {
-                            updatePopup(e.features[0]);
-                        }
-                    });
-
-                    map.on('mouseleave', shapeLayerId, () => {
-                        map.getCanvas().style.cursor = '';
-                        popup.remove();
-                    });
+                map.on('mouseleave', layerId, () => {
+                    map.getCanvas().style.cursor = '';
+                    popup.remove();
                 });
             })
             .catch(error => console.error(`Error loading KML for ${layer.id}:`, error));

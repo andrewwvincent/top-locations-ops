@@ -17,65 +17,68 @@ export const config = {
         star: 10,
         triangle: 10
     },
+    // Define status colors
+    statusColors: {
+        '#Location': '#f8ea01',    // Yellow for potential partners
+        '#Active': '#039147',      // Green for active locations
+        '#Negotiations': '#023a9b', // Blue for negotiations
+        '#No-Contract': '#db050d' // Red for no contract
+    },
     locationLayers: [
         {
             id: 'redline',
             name: 'Redline Athletics Locations',
             file: 'data/redline_locations.kml',
-            color: '#FF0000',  // Red
-            defaultShape: 'circle',  // Default shape if no matching styleUrl
+            defaultShape: 'circle',  // This location uses circles
             defaultChecked: false,
             defaultLabels: false,
             styles: {
-                '#Location': 'circle',  // Use circle shape for #Location styleUrl
-                '#Active': 'star',  // Use star shape for #Active styleUrl
-                '#No-Contract': 'square',  // Use square shape for #No-Contract styleUrl
-                '#Fusion': 'triangle' // Use triangle shape for #Fusion styleUrl
+                '#Location': '#4CAF50',   // Each status has its own color
+                '#Active': '#2196F3',
+                '#No-Contract': '#FFC107',
+                '#Fusion': '#9C27B0'
             }
         },
         {
             id: 'D1',
             name: 'D1 Training Locations',
             file: 'data/d1_locations.kml',
-            color: '#6f6f6f',  // Light Grey
-            defaultShape: 'circle',
+            defaultShape: 'star',    // This location uses stars
             defaultChecked: false,
             defaultLabels: false,
             styles: {
-                '#Location': 'circle',  // Use circle shape for #Location styleUrl
-                '#Active': 'star',  // Use star shape for #Active styleUrl
-                '#No-Contract': 'square',  // Use square shape for #No-Contract styleUrl
-                '#Fusion': 'triangle' // Use triangle shape for #Fusion styleUrl
+                '#Location': '#4CAF50',
+                '#Active': '#2196F3',
+                '#No-Contract': '#FFC107',
+                '#Fusion': '#9C27B0'
             }
         },
         {
             id: 'Fusion Academy',
             name: 'Fusion Academy Locations',
             file: 'data/fusion_academy_locations.kml',
-            color: '#832891',  // Purple
-            defaultShape: 'square',  // Default to square for unmatched styleUrls
+            defaultShape: 'square',  // This location uses squares
             defaultChecked: false,
             defaultLabels: false,
             styles: {
-                '#Location': 'circle',  // Use circle shape for #Location styleUrl
-                '#Active': 'star',  // Use star shape for #Active styleUrl
-                '#No-Contract': 'square',  // Use square shape for #No-Contract styleUrl
-                '#Fusion': 'triangle' // Use triangle shape for #Fusion styleUrl
+                '#Location': '#4CAF50',
+                '#Active': '#2196F3',
+                '#No-Contract': '#FFC107',
+                '#Fusion': '#9C27B0'
             }
         },
         {
             id: 'Individual Partnerships',
             name: 'Individual Partnerships',
             file: 'data/partner.kml',
-            color: '#0000FF',  // Blue
-            defaultShape: 'circle',  // Default to square for unmatched styleUrls
+            defaultShape: 'triangle',  // This location uses triangles
             defaultChecked: false,
             defaultLabels: false,
             styles: {
-                '#Location': 'circle',  // Use circle shape for #Location styleUrl
-                '#Active': 'star',  // Use star shape for #Active styleUrl
-                '#No-Contract': 'square',  // Use square shape for #No-Contract styleUrl
-                '#Fusion': 'triangle' // Use triangle shape for #Fusion styleUrl
+                '#Location': '#4CAF50',
+                '#Active': '#2196F3',
+                '#No-Contract': '#FFC107',
+                '#Fusion': '#9C27B0'
             }
         }
     ]
