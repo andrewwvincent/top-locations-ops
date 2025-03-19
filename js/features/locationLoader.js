@@ -48,61 +48,85 @@ function createLocationFilters() {
         checkbox.checked = true; // Always checked by default
         checkbox.addEventListener('change', () => toggleLocationLayer(layer.id));
 
-        // Create shape preview using SVG
+        // Create shape preview container
         const shapeContainer = document.createElement('span');
         shapeContainer.style.cssText = `
-            display: inline-flex;
-            align-items: center;
-            margin-right: 6px;
+            display: inline-block;
             vertical-align: middle;
+            margin: 0 8px;
         `;
 
-        // Create SVG element
+        // Create SVG for shape preview
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', '16');
-        svg.setAttribute('height', '16');
-        svg.setAttribute('viewBox', '0 0 16 16');
-        svg.style.display = 'block';
-
+        svg.setAttribute('width', '24');
+        svg.setAttribute('height', '24');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        
         let shapePath;
         if (layer.defaultShape === 'circle') {
             shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            shapePath.setAttribute('cx', '8');
-            shapePath.setAttribute('cy', '8');
-            shapePath.setAttribute('r', '6');
+            shapePath.setAttribute('cx', '12');
+            shapePath.setAttribute('cy', '12');
+            shapePath.setAttribute('r', '8');
         } else if (layer.defaultShape === 'square') {
             shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            shapePath.setAttribute('x', '2');
-            shapePath.setAttribute('y', '2');
-            shapePath.setAttribute('width', '12');
-            shapePath.setAttribute('height', '12');
+            shapePath.setAttribute('x', '4');
+            shapePath.setAttribute('y', '4');
+            shapePath.setAttribute('width', '16');
+            shapePath.setAttribute('height', '16');
         } else if (layer.defaultShape === 'star') {
             shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            const starPoints = [];
-            for (let i = 0; i < 5; i++) {
-                const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
-                const x = 8 + 6 * Math.cos(angle);
-                const y = 8 + 6 * Math.sin(angle);
-                const innerAngle = angle + Math.PI / 5;
-                const innerX = 8 + 2.5 * Math.cos(innerAngle);
-                const innerY = 8 + 2.5 * Math.sin(innerAngle);
-                if (i === 0) {
-                    starPoints.push(`M ${x} ${y}`);
-                } else {
-                    starPoints.push(`L ${x} ${y}`);
-                }
-                starPoints.push(`L ${innerX} ${innerY}`);
+            const points = [];
+            const outerRadius = 10;
+            const innerRadius = outerRadius * 0.4;
+            for (let i = 0; i < 10; i++) {
+                const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                const angle = (i * Math.PI) / 5 - Math.PI / 2;
+                const x = 12 + radius * Math.cos(angle);
+                const y = 12 + radius * Math.sin(angle);
+                points.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`);
             }
-            starPoints.push('Z');
-            shapePath.setAttribute('d', starPoints.join(' '));
+            points.push('Z');
+            shapePath.setAttribute('d', points.join(' '));
         } else if (layer.defaultShape === 'triangle') {
             shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            shapePath.setAttribute('d', 'M 8 2 L 14 14 L 2 14 Z');
+            const height = 16;
+            const side = height * 2 / Math.sqrt(3);
+            shapePath.setAttribute('d', `M 12 4 L ${12 + side/2} 20 L ${12 - side/2} 20 Z`);
+        } else if (layer.defaultShape === 'diamond') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            shapePath.setAttribute('d', 'M 12 4 L 20 12 L 12 20 L 4 12 Z');
+        } else if (layer.defaultShape === 'hexagon') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const hexPoints = [];
+            for (let i = 0; i < 6; i++) {
+                const angle = (i * Math.PI) / 3 - Math.PI / 6;
+                const x = 12 + 8 * Math.cos(angle);
+                const y = 12 + 8 * Math.sin(angle);
+                hexPoints.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`);
+            }
+            hexPoints.push('Z');
+            shapePath.setAttribute('d', hexPoints.join(' '));
+        } else if (layer.defaultShape === 'pentagon') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const pentPoints = [];
+            for (let i = 0; i < 5; i++) {
+                const angle = (i * 2 * Math.PI) / 5 - Math.PI / 2;
+                const x = 12 + 8 * Math.cos(angle);
+                const y = 12 + 8 * Math.sin(angle);
+                pentPoints.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`);
+            }
+            pentPoints.push('Z');
+            shapePath.setAttribute('d', pentPoints.join(' '));
+        } else if (layer.defaultShape === 'cross') {
+            shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            shapePath.setAttribute('d', 'M 4 12 L 20 12 M 12 4 L 12 20');
+            shapePath.setAttribute('stroke-linecap', 'square');
         }
 
         shapePath.setAttribute('fill', '#888888'); // Use a neutral gray for shape preview
         shapePath.setAttribute('stroke', '#000');
-        shapePath.setAttribute('stroke-width', '2');
+        shapePath.setAttribute('stroke-width', config.defaultStrokeWidths[layer.defaultShape]);
 
         svg.appendChild(shapePath);
         shapeContainer.appendChild(svg);
@@ -283,41 +307,107 @@ function loadLocationLayers() {
                 // Create icons for each status color
                 Object.entries(config.statusColors).forEach(([status, color]) => {
                     // Create icon with the status color and shape
-                    // Remove the '#' from status since KML uses styleUrl format: <styleUrl>#Location</styleUrl>
+                    // Remove the '#' from status since our icons are named without it
                     const statusId = status.slice(1);
                     const iconId = `${layer.defaultShape}-${statusId}`;
                     if (!map.hasImage(iconId)) {
-                        const size = 100; // Base size for the icon
+                        const { canvasSize, displaySize, padding } = config.iconConfig;
+                        const scale = canvasSize / displaySize;
+                        
                         const canvas = document.createElement('canvas');
-                        canvas.width = size;
-                        canvas.height = size;
+                        canvas.width = canvasSize;
+                        canvas.height = canvasSize;
                         const ctx = canvas.getContext('2d');
-                        const center = size / 2;
-                        const padding = 2;
-
+                        
                         // Clear the canvas
-                        ctx.clearRect(0, 0, size, size);
+                        ctx.clearRect(0, 0, canvasSize, canvasSize);
+
+                        // Scale everything up
+                        ctx.save();
+                        ctx.scale(scale, scale);
 
                         // Set up common styles
-                        ctx.fillStyle = color; // Use the status color
+                        ctx.fillStyle = color; 
                         ctx.strokeStyle = '#000000';
-                        ctx.lineWidth = (layer.defaultShape === 'star' || layer.defaultShape === 'triangle') ? 3 : 2;
+                        // Scale the stroke width relative to the display size
+                        const baseStrokeWidth = config.defaultStrokeWidths[layer.defaultShape];
+                        const scaledStrokeWidth = (baseStrokeWidth * displaySize * config.iconConfig.strokeScale) / 24;
+                        ctx.lineWidth = scaledStrokeWidth;
+                        ctx.lineCap = 'square';
+
+                        // Convert coordinates to display size
+                        const drawCenter = displaySize / 2;
+                        const drawPadding = padding;
 
                         switch (layer.defaultShape) {
                             case 'square':
-                                ctx.fillRect(padding, padding, size - 2 * padding, size - 2 * padding);
-                                ctx.strokeRect(padding, padding, size - 2 * padding, size - 2 * padding);
+                                ctx.beginPath();
+                                ctx.rect(drawPadding, drawPadding, displaySize - 2 * drawPadding, displaySize - 2 * drawPadding);
+                                ctx.fill();
+                                ctx.stroke();
+                                break;
+
+                            case 'diamond':
+                                ctx.beginPath();
+                                ctx.moveTo(drawCenter, drawPadding);
+                                ctx.lineTo(displaySize - drawPadding, drawCenter);
+                                ctx.lineTo(drawCenter, displaySize - drawPadding);
+                                ctx.lineTo(drawPadding, drawCenter);
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.stroke();
+                                break;
+
+                            case 'hexagon':
+                                ctx.beginPath();
+                                const hexRadius = (displaySize - 2 * drawPadding) / 2;
+                                for (let i = 0; i < 6; i++) {
+                                    const angle = (i * Math.PI) / 3 - Math.PI / 6;
+                                    const x = drawCenter + hexRadius * Math.cos(angle);
+                                    const y = drawCenter + hexRadius * Math.sin(angle);
+                                    if (i === 0) ctx.moveTo(x, y);
+                                    else ctx.lineTo(x, y);
+                                }
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.stroke();
+                                break;
+
+                            case 'pentagon':
+                                ctx.beginPath();
+                                const pentRadius = (displaySize - 2 * drawPadding) / 2;
+                                for (let i = 0; i < 5; i++) {
+                                    const angle = (i * 2 * Math.PI) / 5 - Math.PI / 2;
+                                    const x = drawCenter + pentRadius * Math.cos(angle);
+                                    const y = drawCenter + pentRadius * Math.sin(angle);
+                                    if (i === 0) ctx.moveTo(x, y);
+                                    else ctx.lineTo(x, y);
+                                }
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.stroke();
+                                break;
+
+                            case 'cross':
+                                const crossWidth = (displaySize - 2 * drawPadding) / 3;
+                                ctx.beginPath();
+                                // Horizontal bar
+                                ctx.rect(drawPadding, drawCenter - crossWidth/2, displaySize - 2*drawPadding, crossWidth);
+                                // Vertical bar
+                                ctx.rect(drawCenter - crossWidth/2, drawPadding, crossWidth, displaySize - 2*drawPadding);
+                                ctx.fill();
+                                ctx.stroke();
                                 break;
 
                             case 'star':
-                                const outerRadius = size / 2 - padding;
+                                const outerRadius = (displaySize - 2 * drawPadding) / 2;
                                 const innerRadius = outerRadius * 0.4;
                                 ctx.beginPath();
                                 for (let i = 0; i < 10; i++) {
                                     const radius = i % 2 === 0 ? outerRadius : innerRadius;
                                     const angle = (i * Math.PI) / 5 - Math.PI / 2;
-                                    const x = center + radius * Math.cos(angle);
-                                    const y = center + radius * Math.sin(angle);
+                                    const x = drawCenter + radius * Math.cos(angle);
+                                    const y = drawCenter + radius * Math.sin(angle);
                                     if (i === 0) ctx.moveTo(x, y);
                                     else ctx.lineTo(x, y);
                                 }
@@ -327,16 +417,12 @@ function loadLocationLayers() {
                                 break;
 
                             case 'triangle':
-                                const height = size - 2 * padding;
+                                const height = displaySize - 2 * drawPadding;
                                 const side = height * 2 / Math.sqrt(3);
-                                const top = padding;
-                                const bottom = size - padding;
-                                const middle = size / 2;
-                                
                                 ctx.beginPath();
-                                ctx.moveTo(middle, top);
-                                ctx.lineTo(middle + side/2, bottom);
-                                ctx.lineTo(middle - side/2, bottom);
+                                ctx.moveTo(drawCenter, drawPadding);
+                                ctx.lineTo(drawCenter + side/2, displaySize - drawPadding);
+                                ctx.lineTo(drawCenter - side/2, displaySize - drawPadding);
                                 ctx.closePath();
                                 ctx.fill();
                                 ctx.stroke();
@@ -345,16 +431,18 @@ function loadLocationLayers() {
                             case 'circle':
                             default:
                                 ctx.beginPath();
-                                ctx.arc(center, center, (size - 2 * padding) / 2, 0, Math.PI * 2);
+                                ctx.arc(drawCenter, drawCenter, (displaySize - 2 * drawPadding) / 2, 0, Math.PI * 2);
                                 ctx.fill();
                                 ctx.stroke();
                                 break;
                         }
 
+                        ctx.restore();
+
                         map.addImage(iconId, {
-                            width: size,
-                            height: size,
-                            data: ctx.getImageData(0, 0, size, size).data
+                            width: canvasSize,
+                            height: canvasSize,
+                            data: ctx.getImageData(0, 0, canvasSize, canvasSize).data
                         });
                     }
                 });
@@ -373,7 +461,7 @@ function loadLocationLayers() {
                             // Remove the '#' from styleUrl since our icons are named without it
                             ['slice', ['get', 'styleUrl'], 1]
                         ],
-                        'icon-size': config.defaultShapeSizes[layer.defaultShape] / 50,
+                        'icon-size': config.iconConfig.mapIconScale,
                         'icon-allow-overlap': true
                     },
                     filter: ['in', ['get', 'styleUrl'], ['literal', Array.from(activeStatusFilters)]]

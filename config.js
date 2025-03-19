@@ -15,7 +15,28 @@ export const config = {
         circle: 8,
         square: 8,
         star: 10,
-        triangle: 10
+        triangle: 10,
+        diamond: 9,
+        hexagon: 9,
+        pentagon: 9,
+        cross: 10
+    },
+    defaultStrokeWidths: {
+        circle: 2,      // Base stroke width for simple shapes
+        square: 2,      // Match circle stroke width
+        star: 2.5,      // Slightly thicker for complex shapes
+        triangle: 2.5,  // Match star stroke width
+        diamond: 2,     // Match simple shape stroke width
+        hexagon: 2,     // Match simple shape stroke width
+        pentagon: 2,    // Match simple shape stroke width
+        cross: 2.5      // Match complex shape stroke width
+    },
+    iconConfig: {
+        canvasSize: 32,       // Size of the canvas for map icons
+        displaySize: 18,      // Base size for calculations
+        mapIconScale: 1,   // Scale factor for icons on the map
+        padding: 4,           // Padding around shapes
+        strokeScale: 0.5     // Scale factor for stroke widths (smaller = thinner strokes)
     },
     // Define status colors
     statusColors: {
@@ -43,7 +64,7 @@ export const config = {
             id: 'D1',
             name: 'D1 Training Locations',
             file: 'data/d1_locations.kml',
-            defaultShape: 'star',    // This location uses stars
+            defaultShape: 'diamond',    // This location uses stars
             defaultChecked: false,
             defaultLabels: false,
             styles: {
