@@ -136,12 +136,37 @@ body {
     margin: 15px 0;
 }
 
+/* Geocoder styling */
+.geocoder-container {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
 .mapboxgl-ctrl-geocoder {
     width: 100% !important;
     max-width: none !important;
-    box-shadow: none;
+    font-size: 15px;
+    line-height: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    box-shadow: none !important;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+    height: 36px;
+    padding: 6px 35px;
+}
+
+.mapboxgl-ctrl-geocoder--icon {
+    top: 8px;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+    background: #fff;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion-title {
+    font-weight: bold;
 }
 
 /* Dynamic Buckets Styles */

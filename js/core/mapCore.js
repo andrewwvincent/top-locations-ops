@@ -6,6 +6,7 @@ export class MapCore {
         this.geocoder = null;
         this.moveEndTimeout = null;
         this.onTileCheckNeeded = null;  // Callback for when tiles need to be checked
+        this.searchMarker = null; // Add marker for search results
 
         // Austin, TX coordinates and zoom level
         this.initialView = {
@@ -23,7 +24,7 @@ export class MapCore {
             center: this.initialView.center,
             zoom: this.initialView.zoom,
             minZoom: 4,
-            maxZoom: 12
+            maxZoom: 20
         });
 
         this.initializeControls();
@@ -36,6 +37,9 @@ export class MapCore {
         // Add navigation control first
         this.map.addControl(new mapboxgl.NavigationControl());
 
+        // Add fullscreen control
+        this.map.addControl(new mapboxgl.FullscreenControl());
+
         // Add geocoder control with retry
         const initGeocoder = () => {
             if (typeof MapboxGeocoder !== 'undefined') {
@@ -43,10 +47,66 @@ export class MapCore {
                     const geocoder = new MapboxGeocoder({
                         accessToken: mapboxgl.accessToken,
                         mapboxgl: mapboxgl,
+                        marker: false, // Disable default marker
                         countries: 'us',
-                        types: 'place,locality,neighborhood'
+                        types: 'address,place,locality,neighborhood,postcode',
+                        flyTo: {
+                            duration: 2000,
+                            zoom: 16 // Zoom level for addresses
+                        }
                     });
-                    this.map.addControl(geocoder);
+
+                    // Add geocoder to sidebar
+                    const sidebarContent = document.querySelector('.sidebar-content');
+                    const title = document.getElementById('title');
+                    const geocoderContainer = document.createElement('div');
+                    geocoderContainer.className = 'geocoder-container';
+                    sidebarContent.insertBefore(geocoderContainer, title.nextSibling);
+                    geocoderContainer.appendChild(geocoder.onAdd(this.map));
+
+                    // Handle search results
+                    geocoder.on('result', (e) => {
+                        // Remove previous marker if it exists
+                        if (this.searchMarker) {
+                            this.searchMarker.remove();
+                        }
+
+                        // Create new marker at search result location
+                        this.searchMarker = new mapboxgl.Marker({
+                            color: '#FF0000',
+                            scale: 0.8
+                        })
+                        .setLngLat(e.result.center)
+                        .addTo(this.map);
+
+                        // Adjust zoom based on result type
+                        const type = e.result.place_type[0];
+                        let zoom = 16; // Default zoom for addresses
+                        
+                        if (type === 'place' || type === 'locality') {
+                            zoom = 12; // City level
+                        } else if (type === 'neighborhood') {
+                            zoom = 14; // Neighborhood level
+                        } else if (type === 'postcode') {
+                            zoom = 13; // Postal code level
+                        }
+
+                        // Fly to the location with appropriate zoom
+                        this.map.flyTo({
+                            center: e.result.center,
+                            zoom: zoom,
+                            duration: 2000
+                        });
+                    });
+
+                    // Clear marker when search is cleared
+                    geocoder.on('clear', () => {
+                        if (this.searchMarker) {
+                            this.searchMarker.remove();
+                            this.searchMarker = null;
+                        }
+                    });
+
                 } catch (error) {
                     console.error('Error initializing MapboxGeocoder:', error);
                 }

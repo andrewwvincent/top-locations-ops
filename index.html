@@ -90,12 +90,6 @@
         <div class="sidebar">
             <div class="sidebar-content">
                 <h1 id="title">Dynamic Heatmaps - Wealth Distribution</h1>
-                
-
-                <!-- Search Box -->
-                <div class="search-box">
-                    <div id="geocoder" class="geocoder"></div>
-                </div>
 
                 <!-- Layer Controls -->
                 <div class="layer-controls">
@@ -391,35 +385,20 @@
         import { config } from './config.js';
         import { initTileLoader } from './js/features/tileLoader.js';
         import { initLocationLoader } from './js/features/locationLoader.js';
+        import { MapCore } from './js/core/mapCore.js';
 
-        // Initialize map
-        mapboxgl.accessToken = config.accessToken;
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: config.style,
-            center: config.center,
-            zoom: config.zoom
+        // Wait for DOM and scripts to load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize map using MapCore
+            const mapCore = new MapCore(config);
+            const map = mapCore.initialize();
+
+            // Initialize loaders once map is loaded
+            map.on('load', () => {
+                initTileLoader(map);
+                initLocationLoader(map);
+            });
         });
-
-        // Initialize loaders once map is loaded
-        map.on('load', () => {
-            initTileLoader(map);
-            initLocationLoader(map);
-        });
-
-        // Add navigation controls
-        map.addControl(new mapboxgl.NavigationControl());
-        
-        // Add geocoder
-        const geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl,
-            marker: false
-        });
-        map.addControl(geocoder);
-
-        // Add fullscreen control
-        map.addControl(new mapboxgl.FullscreenControl());
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

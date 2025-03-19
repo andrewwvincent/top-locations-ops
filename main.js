@@ -286,11 +286,44 @@ function initializeMap() {
     geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl,
+        marker: false, // Disable default marker
         countries: 'us',
         types: 'place,locality,neighborhood'
     });
 
-    map.addControl(geocoder);
+    // Add geocoder to sidebar
+    const sidebarContent = document.querySelector('.sidebar-content');
+    const title = document.getElementById('title');
+    const geocoderContainer = document.createElement('div');
+    geocoderContainer.className = 'geocoder-container';
+    sidebarContent.insertBefore(geocoderContainer, title.nextSibling);
+    geocoderContainer.appendChild(geocoder.onAdd(map));
+
+    // Add search result marker handling
+    let searchMarker = null;
+    geocoder.on('result', (e) => {
+        // Remove previous marker if it exists
+        if (searchMarker) {
+            searchMarker.remove();
+        }
+
+        // Create new marker at search result location
+        searchMarker = new mapboxgl.Marker({
+            color: '#FF0000',
+            scale: 0.8
+        })
+        .setLngLat(e.result.center)
+        .addTo(map);
+    });
+
+    // Clear marker when search is cleared
+    geocoder.on('clear', () => {
+        if (searchMarker) {
+            searchMarker.remove();
+            searchMarker = null;
+        }
+    });
+
     map.addControl(new mapboxgl.NavigationControl());
 
     // Add map event handlers
