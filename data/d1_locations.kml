@@ -130,7 +130,7 @@
 </Placemark>
 <Placemark>
 <n>D1 Training Bellaire</n>
-<styleUrl>#Location</styleUrl>
+<styleUrl>#Active</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 5300 N. Braeswood Blvd, Suite 44, Houston, TX 77096]]></description>
 <Point>
 <coordinates>-95.4782618621937,29.6779998471169</coordinates>
@@ -446,14 +446,6 @@
 <description><![CDATA[<b><u>Address:</u></b> 12938 E 21st N, Suite 120, Wichita, KS 67230]]></description>
 <Point>
 <coordinates>-97.1875064447907,37.7236948822732</coordinates>
-</Point>
-</Placemark>
-<Placemark>
-<n>D1 Training East Woodlands</n>
-<styleUrl>#Location</styleUrl>
-<description><![CDATA[<b><u>Address:</u></b> 8821 Metropark Dr, STE 300, Shenandoah, TX 77385]]></description>
-<Point>
-<coordinates>-95.4518388738176,30.1953966789573</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -1178,7 +1170,7 @@
 </Placemark>
 <Placemark>
 <n>D1 Training The Woodlands</n>
-<styleUrl>#Location</styleUrl>
+<styleUrl>#No-Contract</styleUrl>
 <description><![CDATA[<b><u>Address:</u></b> 30340 FM 2978, Suite 100, The Woodlands, TX 77354]]></description>
 <Point>
 <coordinates>-95.5900178547617,30.1899411901406</coordinates>

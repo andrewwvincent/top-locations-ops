@@ -56,6 +56,126 @@
 <coordinates>-119.608809,34.422458</coordinates>
 </Point>
 </Placemark>
+<Placemark>
+<n>115 W Micheltorena St</n>
+<styleUrl>#Location</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 115 W Micheltorena St, Santa Barbara, CA 93101]]></description>
+<Point>
+<coordinates>-119.707969, 34.42447</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>600 Chapala Street</n>
+<styleUrl>#Location</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	600 Chapala St, Santa Barbara, CA 93101]]></description>
+<Point>
+<coordinates>-119.69791, 34.41728</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>F45 Training West Brandon</n>
+<styleUrl>#Location</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	1562 W Brandon Blvd, Brandon, FL 33510]]></description>
+<Point>
+<coordinates>-82.30794, 27.93889</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Chelsea Piers Fitness</n>
+<styleUrl>#Location</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	265 Schermerhorn St, Brooklyn, NY 11217]]></description>
+<Point>
+<coordinates>-73.98321, 40.68825</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>25 E Mason St</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	25 E Mason St, Santa Barbara, CA 93101]]></description>
+<Point>
+<coordinates>-119.6899, 34.41413</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Aspen Recreation Center</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	0861 Maroon Creek Rd, Aspen, CO 81611]]></description>
+<Point>
+<coordinates>-106.85099, 39.18957</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Asphalt Green - Battery Park City</n>
+<styleUrl>#Location</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	212 N End Ave New York, NY 10282]]></description>
+<Point>
+<coordinates>-74.01494, 40.71617</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Campo Family YMCA</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	3414 Culbreath Rd, Valrico, FL 33596]]></description>
+<Point>
+<coordinates>-82.24817, 27.89294</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Globall Sports Centers - Brooklyn</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	1561 Bedford Ave, Brooklyn, NY 11225]]></description>
+<Point>
+<coordinates>-73.95536, 40.66908</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Lake Nona Performance Club</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	6775 Chopra Ter, Orlando, FL 32827]]></description>
+<Point>
+<coordinates>-81.28198, 28.37162</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Palm Beach Atlantic University - Greene Complex for Sports and Recreation</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	1100 S Dixie Hwy, West Palm Beach, FL 33403]]></description>
+<Point>
+<coordinates>-80.05339, 26.70359</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Pembroke Pines YMCA Family Center</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	501 SW 172nd Ave, Pembroke Pines, FL 33029]]></description>
+<Point>
+<coordinates>-80.37591, 26.00150</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>South Tampa Family YMCA</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	​4411 S Himes Ave, Tampa, FL 33611]]></description>
+<Point>
+<coordinates>-82.50254, 27.90206</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>The Club at Cheval</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	4312 Cheval Blvd, Lutz, FL 33558]]></description>
+<Point>
+<coordinates>-82.50678, 28.14972</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<n>Weston YMCA Family Center</n>
+<styleUrl>#No-Contract</styleUrl>
+<description><![CDATA[<b><u>Address:</u></b> 	20201 Saddle Club Rd, Weston, FL 33327]]></description>
+<Point>
+<coordinates>-80.41860, 26.10561</coordinates>
+</Point>
+</Placemark>
 
   </Document>
 </kml>
